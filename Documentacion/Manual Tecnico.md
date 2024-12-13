@@ -40,23 +40,23 @@ Ejemplo del core del negocio: En el caso de Money Bin Bank, el core del negocio 
 
 ### Beneficios Estratégicos
 
-* **Ampliación del alcance y la inclusión financiera**
+1. **Ampliación del alcance y la inclusión financiera**
     * Aumenta el acceso a servicios financieros para individuos y empresas excluidos del sistema.
     * Facilita la expansión de la base de clientes.
 
-* **Fortalecimiento de la confianza y la lealtad del cliente**
+2. **Fortalecimiento de la confianza y la lealtad del cliente**
     * Mejora la seguridad y personalización de los servicios financieros.
     * Proporciona una experiencia de usuario superior y simplificada.
 
-* **Innovación tecnológica y adaptabilidad**
+3. **Innovación tecnológica y adaptabilidad**
     * Integra tecnologías avanzadas para escalar y responder a cambios en el mercado.
     * Garantiza una operación eficiente, moderna y competitiva.
 
-* **Optimización operativa y reducción de costos**
+4. **Optimización operativa y reducción de costos**
     * Automatiza procesos clave para mejorar la eficiencia.
     * Reduce costos operativos relacionados con operaciones manuales.
 
-* **Posicionamiento como líder del sector**
+5. **Posicionamiento como líder del sector**
     * Refuerza la imagen de Money Bin Bank como una institución innovadora y accesible.
     * Incrementa ingresos mediante la creación de nuevos productos y servicios adaptados a las necesidades de los usuarios.
 
@@ -77,3 +77,57 @@ Ejemplo del core del negocio: En el caso de Money Bin Bank, el core del negocio 
     * Búsqueda de cuentas: Localización de cuentas por número de cuenta o CUI.
     * Consulta de saldos: Visualización en tiempo real del saldo disponible.
     * Historial de transacciones: Acceso a movimientos recientes de las cuentas, permitiendo un seguimiento completo de las actividades bancarias.
+
+3. Generación de Comprobantes de Transacción
+
+    Para cada operación realizada, el sistema genera comprobantes digitales y físicos, asegurando que el cliente reciba un registro confiable y verificable.
+
+    * Genera registros digitales y físicos de cada operación realizada.
+    * Proporciona al cliente comprobantes seguros y verificables.
+    * Almacena los registros en una base de datos centralizada para auditorías y seguimiento.
+
+4. Gestión de Seguridad y Validaciones
+
+    Se implementan diversas medidas de seguridad para proteger las cuentas de los clientes y garantizar la autenticidad de las transacciones:
+
+    * Validación de identidad: Mediante CUI y otros mecanismos de autenticación.
+    * Límites transaccionales: Establecimiento de límites diarios y mensuales para prevenir fraudes.
+    * Bloqueo de tarjetas: Permite bloquear tarjetas de crédito o débito en caso de pérdida, robo o sospecha de fraude, con notificaciones automáticas a los clientes y al equipo de fraude.
+
+5. Gestion de Cuentas y Servicios Financieros
+
+    El sistema permite la creación y administración de cuentas bancarias, tanto en quetzales como en dólares, y otros productos financieros:
+
+    * Apertura de cuentas: Los clientes pueden abrir cuentas de ahorro o monetarias, con validaciones y asignación de un número de cuenta único.
+    * Actualización de datos: Los clientes pueden actualizar su información personal, como teléfono, dirección y correo electrónico, con verificación de identidad.
+    * Solicitudes de nuevos servicios: Los clientes pueden solicitar nuevas tarjetas de crédito o débito, así como préstamos, con análisis automático de capacidad de pago.
+
+6. Gestión de Préstamos y Créditos
+
+    Permite a los clientes solicitar y gestionar diferentes tipos de préstamos, como personales, hipotecarios o vehiculares:
+
+    * Solicitud de préstamos: Los clientes pueden solicitar préstamos con validación automática de su capacidad de pago.
+    * Gestión de pagos: Facilita el pago de préstamos con opciones de pago parcial o total, garantizando una correcta aplicación de los pagos a los saldos correspondientes.
+    * Generación de reportes: El sistema permite a los supervisores generar reportes detallados de los préstamos y la actividad financiera del cliente.
+
+7. Atención al Cliente y Feedback
+    
+    El banco valora la retroalimentación de los clientes para mejorar continuamente sus servicios:
+
+    * Encuestas de satisfacción: Permite a los clientes evaluar la calidad de los servicios, facilitando la identificación de áreas de mejora.
+    * Registro de quejas: Los clientes pueden registrar quejas sobre productos o servicios, las cuales son gestionadas y respondidas por el equipo de atención al cliente.
+
+8. Gestión Administrativa Interna
+
+    Los administradores y supervisores gestionan y supervisan las operaciones internas del banco para garantizar la eficiencia y seguridad de los procesos:
+
+    * Asignación de roles: Los administradores asignan y actualizan los roles de los empleados según sus responsabilidades.
+    * Monitoreo en tiempo real: Los supervisores pueden monitorear las actividades de los empleados, como retiros de dinero, solicitudes de préstamos, bloqueos de tarjetas y más, para asegurar el cumplimiento de políticas.
+    * Gestión de inventarios bancarios: Control y supervisión del efectivo disponible en las sucursales, con registros detallados de entradas y salidas.
+
+9. Seguridad de la Información y Gestión de Copias de Seguridad
+    
+    La seguridad de la información y la integridad del sistema son prioridades para el banco:
+
+    * Copia de seguridad: Los administradores generan copias de seguridad periódicas de la base de datos del banco, que se almacenan de manera segura en la nube.
+    * Monitoreo de actividad: Se realiza un seguimiento en tiempo real de las actividades de todos los usuarios del sistema, generando alertas automáticas ante actividades sospechosas o incumplimientos de políticas internas.
