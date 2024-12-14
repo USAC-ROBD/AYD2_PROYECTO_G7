@@ -4,6 +4,8 @@ Proyecto del Laboratorio del Curso de Análisis y Diseño 2
 
 ## Módulo Administrador de Sistemas
 
+Administrador de sistemas.
+
 ### CDU alto nivel
 
 ### CDU expandidos
