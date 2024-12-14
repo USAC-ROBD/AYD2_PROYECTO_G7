@@ -13,6 +13,8 @@
 ## 4. Requerimientos no funcionales
 
 ## 5. CDU Expandidos
+### CDU-4.1 - Login de Supervisor
+![CDU-4.1](./cdu/CDU-4.1.png)
 
 ## 6. Matrices de Trazabilidad
 ### Stakeholders vrs Requerimientos
