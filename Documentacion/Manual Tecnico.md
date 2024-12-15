@@ -62,8 +62,26 @@ El sistema debe asegurar que el supervisor pueda tener versatilidad a la hora de
 El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real del supervisor, inclusive en los momentos de alta demanda del sistema.
 
 ## 5. CDU Expandidos
-### CDU-4.1 - Login de Supervisor
-![CDU-4.1](./cdu/CDU-4.1.png)
+### DCDU-4.1 - Login del supervisor
+![DCDU-4.1](./cdu/DCDU-4.1.png)
+
+### DCDU-4.2 - Modificación de información del empleado
+![DCDU-4.2](./cdu/DCDU-4.2.png)
+
+### DCDU-4.3 - Aceptar o rechazar prestamo
+![DCDU-4.3](./cdu/DCDU-4.3.png)
+
+### DCDU-4.4 - Revisar encuestas de satisfacción y registros de quejas
+![DCDU-4.4](./cdu/DCDU-4.4.png)
+
+### DCDU-4.5 - Registro y modificación de administradores del sistema
+![DCDU-4.5](./cdu/DCDU-4.5.png)
+
+### DCDU-4.6 - Gestión de inventarios, monitoreo en tiempo real y reportes
+![DCDU-4.6](./cdu/DCDU-4.6.png)
+
+### DCDU-4.7 - Aprobar tarjetas y cancelación de servicios
+![DCDU-4.7](./cdu/DCDU-4.7.png)
 
 ## 6. Matrices de Trazabilidad
 ### Stakeholders vrs Requerimientos
