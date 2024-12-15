@@ -543,4 +543,27 @@
 
 ## PATRONES DE DISEÑO
 
+### 1. SINGLETON
+
+El patrón de diseño Singleton es un patrón creacional que garantiza que una clase tenga una única instancia en toda la aplicación y proporciona un punto de acceso global a esa instancia.
+
+Caractersticas:
+
+- Única instancia: Solo existe un objeto de la clase.
+- Punto de acceso global: Se puede acceder a esa instancia desde cualquier parte del código.
+
+#### Implementación
+
+- Conexiones a la base de datos (MySQL):
+
+ Asegura que solo se cree una instancia de la conexión a la base de datos, evitando múltiples conexiones innecesarias que podrían agotar los recursos del servidor.
+
+#### Ventajas
+
+- Ahorro de recursos ya que se evita crear múltiples instancias innecesarias.
+
+- La instancia única garantiza un estado centralizado y consistente.
+
+- Proporciona un punto de acceso global en la aplicación para que sea facil de usar.
+
 ## TABLERO KANBAN
