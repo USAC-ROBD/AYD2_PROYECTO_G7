@@ -9,6 +9,17 @@
 ### CDU Primera Descomposición
 
 ## 3. Requerimientos Funcionales
+### RF-4.1 - Login de Supervisor
+El supervisor del sistema debe poder hacer login al sistema y posteriormente validar su identidad por medio de una clave tipo `.pem`.
+
+### RF-4.2 - Modificar información del empleado
+El supervisor debe poder actualizar la información del empleados en caso de ser requerido. De igual forma, si el empleado requiere un cambio de contraseña, el administrador puede enviar una notificación con una nueva, siempre y cuando el empleado no haya solicitado una contraseña mas de 3 veces, de otra forma, el empleado será despedido.
+
+### RF-4.3 - Aceptar Prestamo
+El supervisor debe poder aceptar o rechazar las solicitudes de prestamos de los clientes, simpre y cuando el sistema valide que el cliente no tiene ninguna solicitud o prestamos pendiente.
+
+### RF-4.4 - Revisar encuestas de satisfacción
+El supervisor deberá poder revisar las encuestas de satisfacción que los clientes hubiesen respondido, para poder encontrar puntos de mejora.
 
 ## 4. Requerimientos no funcionales
 
