@@ -65,3 +65,24 @@ El Encargado de dar autorización de los prestamos es el supervisor.
 
 ### Registro de Quejas
 Debe de permitirse registrar quejas hechas por los clientes. Debe registrarse los detalles de la queja, los datos importantes del cliente como su número de cuenta, etc. y el servicio del que se va a presentar la queja. Al completarse el registro de la queja se envía automáticamente un correo electrónico al supervisor para notificar sobre el incidente.
+
+## Requerimientos No Funcionales
+
+### Seguridad
+Los datos personales y financieros de los clientes deben ser cifrados tanto en tránsito como en reposo. Las preguntas de seguridad y contraseñas deben utilizar algoritmos de encriptación robustos.  
+Todo acceso a módulos sensibles debe requerir autenticación y autorización, garantizando que solo usuarios válidos y con permisos adecuados puedan interactuar con el sistema.
+
+### Usabilidad
+La interfaz de usuario debe ser intuitiva y accesible, garantizando que los clientes puedan completar las tareas en un máximo de 3 pasos por módulo.
+
+### Escalabilidad
+El sistema debe ser capaz de ampliarse para soportar el crecimiento futuro del banco, permitiendo agregar nuevas funcionalidades sin afectar el rendimiento de los módulos existentes.
+
+### Mantenibilidad
+Debe ser posible realizar actualizaciones o correcciones sin interrumpir el servicio, utilizando un modelo de despliegue continuo (CI/CD).
+
+### Auditoría y Registro
+Todas las acciones realizadas en el sistema deben registrarse en un historial con detalles como fecha, hora, usuario y acción realizada.
+
+### Conformidad Legal
+El sistema debe cumplir con las normativas locales e internacionales aplicables, como la Ley de Protección de Datos Personales y regulaciones bancarias específicas.
