@@ -46,6 +46,20 @@ El supervisor será el encargado de aprobar o rechazar las solicitudes de cancel
 El supervisor deberá poder visualizar una serie de reportes que le facilitarán la toma de decisiones respecto al banco y sus actividades.
 
 ## 4. Requerimientos no funcionales
+### RNF-4.1 - Seguridad de la autenticación del supervisor
+El sistema debe proveer los métodos de seguridad necesarios para minimizar el riesgo a un posible ingreso no deseado al perfil del supervisor del sistema.
+
+### RNF-4.2 - Rendimiento del módulo del supervisor
+El sistema debe asegurar un rendimiento adecuado en el módulo del supervisor, permitiendole realizar las tareas con un tiempo de respuesta aceptable para una mejor experiencia del usuario.
+
+### RNF-4.3 - Usabilidad y diseño de interfaz del modulo del supervisor
+El sistema de asegurar una buena experiencia para el usuario tanto en usabilidad como en interfaz. Esto para asegurarnos que el usuario pueda comprender el uso del sistema de una manerar mucho más fácil y ágil.
+
+### RNF-4.4 - Versatilidad en los reportes del supervisor
+El sistema debe asegurar que el supervisor pueda tener versatilidad a la hora de ver sus reportes, logrando esto por medio de filtros y buenos tiempos de respuesta que aseguren una mejor toma de decisiones.
+
+### RNF-4.5 - Disponibilidad en los reportes del supervisor
+El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real del supervisor, inclusive en los momentos de alta demanda del sistema.
 
 ## 5. CDU Expandidos
 ### CDU-4.1 - Login de Supervisor
