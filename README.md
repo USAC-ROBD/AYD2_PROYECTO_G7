@@ -11,3 +11,5 @@ Administrador de sistemas.
 Casos de uso de alto nivel
 
 ### CDU expandidos
+
+Casos de uso expandidos
