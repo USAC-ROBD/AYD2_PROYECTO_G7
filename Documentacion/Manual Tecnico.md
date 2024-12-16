@@ -1618,6 +1618,7 @@ _Resumen:_ Los clientes pueden registrar quejas clasificadas por tipo y detallar
 
 ### a. Stakeholders vs Requerimientos
 
+<<<<<<< HEAD
 | **Stakeholders / Requerimientos**  | **RF-1.1** | **RF-1.2** | **RF-1.3** | **RF-1.4** | **RF-1.5** | **RF-1.6** | **RF-1.7** | **RF-1.8** | **RF-1.9** | **RF-1.10** |
 | ---------------------------------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ----------- |
 | **Clientes**                       |            | X          | X          |            | X          | X          | X          | X          | X          | X           |
@@ -1654,6 +1655,146 @@ _Resumen:_ Los clientes pueden registrar quejas clasificadas por tipo y detallar
 | **CDU-1.8: Retiro de Dinero**             |            |            |            |            |            |            | X          | X          |            |             |
 | **CDU-1.9: Depósito de Dinero**           |            |            |            |            |            |            | X          |            | X          |             |
 | **CDU-1.10: Pago de Tarjetas de Crédito** |            |            |            |            |            |            | X          |            |            | X           |
+=======
+# Matriz de Requerimientos vs Stakeholders
+
+| Requerimiento                                     | Cajero | Empleado de Atención al Cliente | Administrador de Sistemas | Supervisor | Clientes |
+|---------------------------------------------------|--------|---------------------------------|----------------------------|------------|----------|
+| **RF-1.1. Gestión de Acceso: Login**              |   X    |                                 |                            |            |          |
+| **RF-1.2. Pago de Servicios**                     |   X    |                                 |                            |            |    X     |
+| **RF-1.3. Pago de Préstamos**                     |   X    |                                 |                            |            |    X     |
+| **RF-1.4. Búsqueda de Clientes**                  |   X    |   X                             |                            |            |          |
+| **RF-1.5. Consulta de Saldo**                     |   X    |                                 |                            |            |    X     |
+| **RF-1.6. Cambio de Moneda**                      |   X    |                                 |                            |            |    X     |
+| **RF-1.7. Generación de Comprobantes**            |   X    |                                 |                            |            |          |
+| **RF-1.8. Retiro de Dinero**                      |   X    |                                 |                            |            |    X     |
+| **RF-1.9. Depósito de Dinero**                    |   X    |                                 |                            |            |    X     |
+| **RF-1.10. Pago de Tarjetas de Crédito**          |   X    |                                 |                            |            |    X     |
+| **RF-2.1. Creación de Cuenta Bancaria Normal y en Dólares** |        |   X                             |                            |            |    X     |
+| **RF-2.2. Actualización de Datos del Cliente**    |        |   X                             |                            |            |    X     |
+| **RF-2.3. Creación de Tarjetas de Crédito o Débito** |        |   X                             |                            |            |    X     |
+| **RF-2.4. Bloqueo de Tarjetas de Crédito o Débito** |        |   X                             |                            |            |    X     |
+| **RF-2.5. Solicitud de Cancelación de Cuenta o Tarjeta** |        |   X                             |                            |     X      |    X     |
+| **RF-2.6. Encuesta de Satisfacción**              |        |   X                             |                            |     X      |    X     |
+| **RF-2.7. Solicitud de Préstamo**                 |        |   X                             |                            |     X      |    X     |
+| **RF-2.8. Registro de Quejas**                    |        |   X                             |                            |     X      |    X     |
+| **RF-3.1. Inicio de sesión de administrador de sistema** |        |                                 |   X                        |            |          |
+| **RF-3.2. Creación de nuevo empleado**            |        |                                 |   X                        |            |          |
+| **RF-3.3. Asignación de roles**                   |        |                                 |   X                        |            |          |
+| **RF-3.4. Eliminar empleados**                    |        |                                 |   X                        |     X      |          |
+| **RF-3.5. Cambio de contraseña de empleado**      |        |                                 |   X                        |     X      |          |
+| **RF-3.6. Gestión de copias de seguridad**        |        |                                 |   X                        |            |          |
+| **RF-4.1 - Login de Supervisor**                  |        |                                 |                            |     X      |          |
+| **RF-4.2 - Modificar información del empleado**  |        |                                 |                            |     X      |          |
+| **RF-4.3 - Aceptar Préstamo**                     |        |                                 |                            |     X      |    X     |
+| **RF-4.4 - Revisar encuestas de satisfacción**    |        |                                 |                            |     X      |    X     |
+| **RF-4.5 - Ver registros de quejas**              |        |                                 |                            |     X      |    X     |
+| **RF-4.6 - Registro de administradores**          |        |                                 |                            |     X      |          |
+| **RF-4.7 - Ver información de los administradores del sistema** |        |                                 |                            |     X      |          |
+| **RF-4.8 - Monitoreo de actividad en tiempo real**|        |                                 |                            |     X      |          |
+| **RF-4.9 - Gestión de inventarios bancarios**     |        |                                 |                            |     X      |          |
+| **RF-4.10 - Aprobación de tarjetas**              |        |                                 |                            |     X      |    X     |
+| **RF-4.11 - Aprobación de solicitudes de cancelación de servicios** |        |                                 |                            |     X      |    X     |
+| **RF-4.12 - Reportes**                            |        |                                 |                            |     X      |          |
+
+### b. Stakeholders vs CDU
+
+| **CDUs / Stakeholders**          | **Clientes** | **Cajeros** | **Agentes de Servicio al Cliente** | **Supervisores** | **Administradores de Sistemas** |
+|----------------------------------|--------------|-------------|------------------------------------|------------------|----------------------------------|
+| **CDU-1.1** Gestión de Acceso     |              | X           |                                    | X                | X                                |
+| **CDU-1.2** Pago de Servicios     | X            | X           |                                    |                  |                                  |
+| **CDU-1.3** Pago de Préstamos     | X            | X           |                                    |                  |                                  |
+| **CDU-1.4** Búsqueda de Clientes | X            | X           |                                    |                  |                                  |
+| **CDU-1.5** Consulta de Saldo    | X            | X           |                                    |                  |                                  |
+| **CDU-1.6** Cambio de Moneda     | X            | X           |                                    |                  |                                  |
+| **CDU-1.7** Generación de Comprobantes | X      | X           |                                    |                  |                                  |
+| **CDU-1.8** Retiro de Dinero     | X            | X           |                                    |                  |                                  |
+| **CDU-1.9** Depósito de Dinero   | X            | X           |                                    |                  |                                  |
+| **CDU-1.10** Pago de Tarjetas    | X            | X           |                                    |                  |                                  |
+| **CDU-2.1** Creación de Cuentas  | X            |             | X                                  |                  |                                  |
+| **CDU-2.2** Actualización de Datos | X          |             | X                                  |                  |                                  |
+| **CDU-2.3** Creación de Tarjetas | X            |             | X                                  |                  |                                  |
+| **CDU-2.4** Bloqueo de Tarjetas  | X            |             | X                                  |                  |                                  |
+| **CDU-2.5** Cancelación de Cuentas o Tarjetas | X |             | X                                  | X                |                                  |
+| **CDU-2.6** Encuesta de Satisfacción | X        |             | X                                  | X                |                                  |
+| **CDU-2.7** Solicitud de Préstamos | X          |             | X                                  | X                |                                  |
+| **CDU-2.8** Registro de Quejas   | X            |             | X                                  | X                |                                  |
+| **CDU-3.1** Login de Administrador |            |             |                                    |                  | X                                |
+| **CDU-3.2** Registro de Empleados |            |             |                                    |                  | X                                |
+| **CDU-3.3** Asignación de Roles  |              |             |                                    | X                | X                                |
+| **CDU-3.4** Eliminación de Empleados |          |             |                                    | X                | X                                |
+| **CDU-3.5** Cambio de Contraseñas |             |             |                                    | X                | X                                |
+| **CDU-3.6** Gestión de Copias de Seguridad |    |             |                                    |                  | X                                |
+| **CDU-4.1** Login de Supervisor  |              |             |                                    | X                |                                  |
+| **CDU-4.2** Verificar Clave      |              |             |                                    | X                |                                  |
+| **CDU-4.3** Modificar Información de Empleados | |             |                                    | X                |                                  |
+| **CDU-4.4** Reiniciar Contraseña |              |             |                                    | X                |                                  |
+| **CDU-4.5** Bloqueo de Acceso a Empleado |     |             |                                    | X                |                                  |
+| **CDU-4.6** Aceptar o Rechazar Préstamos | X   |             | X                                  | X                |                                  |
+| **CDU-4.7** Validar Préstamos Existentes | X   |             | X                                  | X                |                                  |
+| **CDU-4.8** Revisar Encuestas de Satisfacción | X |          | X                                  | X                |                                  |
+| **CDU-4.9** Ver Registro de Quejas | X         |             | X                                  | X                |                                  |
+| **CDU-4.10** Registro de Administradores |     |             |                                    | X                | X                                |
+| **CDU-4.11** Modificación de Administradores | |             |                                    | X                | X                                |
+| **CDU-4.12** Monitoreo en Tiempo Real |        |             |                                    | X                |                                  |
+| **CDU-4.13** Vista de Reportes   |              |             |                                    | X                |                                  |
+| **CDU-4.14** Gestión de Inventarios |          |             |                                    | X                |                                  |
+| **CDU-4.15** Aprobar o Rechazar Tarjetas | X   |             | X                                  | X                |                                  |
+| **CDU-4.16** Cancelación de Servicios | X     |             | X                                  | X                |                                  |
+| **CDU-4.17** Verificar Inconvenientes de Servicio | |         | X                                  | X                |                                  |
+
+### c. Requerimientos vs CDU
+
+| Requerimientos / CDUs                            | CDU-1.1 | CDU-1.2 | CDU-1.3 | CDU-1.4 | CDU-1.5 | CDU-1.6 | CDU-1.7 | CDU-1.8 | CDU-1.9 | CDU-1.10 |
+|--------------------------------------------------|---------|---------|---------|---------|---------|---------|---------|---------|---------|----------|
+| RF-1.1 Gestión de Acceso: Login                  | X       |         |         |         |         |         |         |         |         |          |
+| RF-1.2 Pago de Servicios                         |         | X       |         |         |         |         |         |         |         |          |
+| RF-1.3 Pago de Préstamos                         |         |         | X       |         |         |         |         |         |         |          |
+| RF-1.4 Búsqueda de Clientes                      |         |         |         | X       |         |         |         |         |         |          |
+| RF-1.5 Consulta de Saldo                         |         |         |         |         | X       |         |         |         |         |          |
+| RF-1.6 Cambio de Moneda                          |         |         |         |         |         | X       |         |         |         |          |
+| RF-1.7 Generación de Comprobantes                |         |         |         |         |         |         | X       |         |         |          |
+| RF-1.8 Retiro de Dinero                          |         |         |         |         |         |         |         | X       |         |          |
+| RF-1.9 Depósito de Dinero                        |         |         |         |         |         |         |         |         | X       |          |
+| RF-1.10 Pago de Tarjetas de Crédito              |         |         |         |         |         |         |         |         |         | X        |
+
+
+| Requerimientos / CDUs                            | CDU-2.1 | CDU-2.2 | CDU-2.3 | CDU-2.4 | CDU-2.5 | CDU-2.6 | CDU-2.7 | CDU-2.8 |
+|--------------------------------------------------|---------|---------|---------|---------|---------|---------|---------|---------|
+| RF-2.1 Creación de Cuenta Bancaria Normal y en Dólares | X       |         |         |         |         |         |         |         |
+| RF-2.2 Actualización de Datos del Cliente         |         | X       |         |         |         |         |         |         |
+| RF-2.3 Creación de Tarjetas de Crédito o Débito  |         |         | X       |         |         |         |         |         |
+| RF-2.4 Bloqueo de Tarjetas de Crédito o Débito   |         |         |         | X       |         |         |         |         |
+| RF-2.5 Solicitud de Cancelación de Cuenta o Tarjeta |         |         |         |         | X       |         |         |         |
+| RF-2.6 Encuesta de Satisfacción                  |         |         |         |         |         | X       |         |         |
+| RF-2.7 Solicitud de Préstamo                     |         |         |         |         |         |         | X       |         |
+| RF-2.8 Registro de Quejas                        |         |         |         |         |         |         |         | X       |
+
+| Requerimientos / CDUs | CDU-3.1 | CDU-3.2 | CDU-3.3 | CDU-3.4 | CDU-3.5 | CDU-3.6 |
+|------------------------|---------|---------|---------|---------|---------|---------|
+| RF-3.1 Inicio de sesión de administrador de sistema | X       |         |         |         |         |         |
+| RF-3.2 Creación de nuevo empleado |         | X       |         | X       |         |         |
+| RF-3.3 Asignación de roles |         |         | X       |         |         |         |
+| RF-3.4 Eliminar empleados |         | X       |         | X       |         |         |
+| RF-3.5 Cambio de contraseña de empleado |         |         |         |         | X       |         |
+| RF-3.6 Gestión de copias de seguridad |         |         |         |         |         | X       |
+
+| **Requerimientos / CDU**                                  | **CDU-4.1** | **CDU-4.2** | **CDU-4.3** | **CDU-4.4** | **CDU-4.5** | **CDU-4.6** | **CDU-4.7** | **CDU-4.8** | **CDU-4.9** | **CDU-4.10** | **CDU-4.11** | **CDU-4.12** |
+|------------------------------------------------------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|--------------|--------------|--------------|
+| **RF-4.1 Login de Supervisor**                             | X           |             |             |             |             |             |             |             |             |              |              |              |
+| **RF-4.2 Modificar información del empleado**              |             | X           |             |             |             |             |             |             |             |              |              |              |
+| **RF-4.3 Aceptar Préstamo**                                |             |             | X           |             |             |             |             |             |             |              |              |              |
+| **RF-4.4 Revisar encuestas de satisfacción**               |             |             |             | X           |             |             |             |             |             |              |              |              |
+| **RF-4.5 Ver registros de quejas**                         |             |             |             |             | X           |             |             |             |             |              |              |              |
+| **RF-4.6 Registro de administradores**                     |             |             |             |             |             | X           |             |             |             |              |              |              |
+| **RF-4.7 Ver información de los administradores del sistema** |             |             |             |             |             |             | X           |             |             |              |              |              |
+| **RF-4.8 Monitoreo de actividad en tiempo real**           |             |             |             |             |             |             |             | X           |             |              |              |              |
+| **RF-4.9 Gestión de inventarios bancarios**                |             |             |             |             |             |             |             |             | X           |              |              |              |
+| **RF-4.10 Aprobación de tarjetas**                         |             |             |             |             |             |             |             |             |             | X            |              |              |
+| **RF-4.11 Aprobación de solicitudes de cancelación de servicios** |             |             |             |             |             |             |             |             |             |              | X            |              |
+| **RF-4.12 Reportes**                                       |             |             |             |             |             |             |             |             |             |              |              | X            |
+
+>>>>>>> origin/develop
 
 ## ESTILOS ARQUITECTONICOS
 
@@ -1713,45 +1854,81 @@ _Resumen:_ Los clientes pueden registrar quejas clasificadas por tipo y detallar
 
 #### PTPO-1.1 Login
 
+<<<<<<< HEAD
 ![Login](./assets/cajero/maquetas/Login.png)
+=======
+![PTPO-1.](./assets/cajero/maquetas/Login.png)
+>>>>>>> origin/develop
 
 #### PTPO-1.2 Home
 
-![Home](./assets/cajero/maquetas/Home.png)
+![PTPO-1.2](./assets/cajero/maquetas/Home.png)
 
 #### PTPO-1.3 Pago de Servicios
 
-![Pago Servicios](./assets/cajero/maquetas/Pago%20de%20servicios.png)
+![PTPO-1.3](./assets/cajero/maquetas/Pago%20de%20servicios.png)
 
 #### PTPO-1.4 Pago de Prestamos
 
-![Login](./assets/cajero/maquetas/Pago%20de%20Prestamos.png)
+![PTPO-1.4](./assets/cajero/maquetas/Pago%20de%20Prestamos.png)
 
 #### PTPO-1.5 Busqueda de Cuentas
 
-![Login](./assets/cajero/maquetas/Busqueda%20de%20cuentas.png)
+![PTPO-1.5](./assets/cajero/maquetas/Busqueda%20de%20cuentas.png)
 
 #### PTPO-1.6 Consulta de Saldo
 
-![Login](./assets/cajero/maquetas/Consulta%20Saldo.png)
+![PTPO-1.6](./assets/cajero/maquetas/Consulta%20Saldo.png)
 
 #### PTPO-1.7 Cambio de moneda
 
-![Login](./assets/cajero/maquetas/Cambiar%20Moneda.png)
+![PTPO-1.7](./assets/cajero/maquetas/Cambiar%20Moneda.png)
 
 #### PTPO-1.8 Retiros
 
-![Login](./assets/cajero/maquetas/Retiro%20de%20Dinero.png)
+![PTPO-1.8](./assets/cajero/maquetas/Retiro%20de%20Dinero.png)
 
 #### PTPO-1.9 Depositos
 
-![Login](./assets/cajero/maquetas/Deposito%20de%20Dinero.png)
+![PTPO-1.9](./assets/cajero/maquetas/Deposito%20de%20Dinero.png)
 
 #### PTPO-1.10 Pago de Tarjeta
 
-![Login](./assets/cajero/maquetas/Pago%20de%20Trajeta.png)
+![PTPO-1.10](./assets/cajero/maquetas/Pago%20de%20Trajeta.png)
 
 ### 2. ATENCIÓN AL CLIENTE
+
+#### PTPO-2.1 Creacion de Cuenta Bancaria Normal y en Dólares
+
+![PTPO-2.1](./assets/atencion_al_cliente/prototipos/CrearCuenta.png)
+
+#### PTPO-2.2 Actualización de Datos del Cliente
+
+![PTPO-2.2](./assets/atencion_al_cliente/prototipos/ActualizarCuenta.png)
+
+#### PTPO-2.3 Creación de Tarjetas de Crédito o Débito
+
+![PTPO-2.3](./assets/atencion_al_cliente/prototipos/CrearTarjeta.png)
+
+#### PTPO-2.4 Bloqueo de Tarjetas de Crédito o Débito
+
+![PTPO-2.4](./assets/atencion_al_cliente/prototipos/BloquearTarjeta.png)
+
+#### PTPO-2.5 Solicitud de Cancelación de Cuenta o Tarjeta
+
+![PTPO-2.5](./assets/atencion_al_cliente/prototipos/CancelacionServicios.png)
+
+#### PTPO-2.6 Encuesta de Satisfacción
+
+![PTPO-2.6](./assets/atencion_al_cliente/prototipos/Encuesta.png)
+
+#### PTPO-2.7 Solicitud de Préstamo
+
+![PTPO-2.7](./assets/atencion_al_cliente/prototipos/Prestamo.png)
+
+#### PTPO-2.8 Registro de Quejas
+
+![PTPO-2.8](./assets/atencion_al_cliente/prototipos/Quejas.png)
 
 ### 3. ADMINISTRADOR DE SISTEMAS
 
@@ -1769,31 +1946,31 @@ _Resumen:_ Los clientes pueden registrar quejas clasificadas por tipo y detallar
 
 ### 4. SUPERVISOR
 
-### PTPO-4.1 - Login
+#### PTPO-4.1 - Login
 
 ![PTPO-4.1](./assets/ptpo-login.png)
 
-### PTPO-4.2 - Validar Clave
+#### PTPO-4.2 - Validar Clave
 
 ![PTPO-4.2](./assets/ptpo-aydkey.png)
 
-### PTPO-4.3 - Menú Supervisor
+#### PTPO-4.3 - Menú Supervisor
 
 ![PTPO-4.3](./assets/ptpo-supervisor.png)
 
-### PTPO-4.4 - Catálogos
+#### PTPO-4.4 - Catálogos
 
 ![PTPO-4.4](./assets/ptpo-listas.png)
 
-### PTPO-4.5 - Formularios
+#### PTPO-4.5 - Formularios
 
 ![PTPO-4.5](./assets/ptpo-formulario.png)
 
-### PTPO-4.6 - Monitor
+#### PTPO-4.6 - Monitor
 
 ![PTPO-4.6](./assets/ptpo-monitor.png)
 
-### PTPO-4.7 - Reportes
+#### PTPO-4.7 - Reportes
 
 ![PTPO-4.7](./assets/ptpo-reportes.png)
 
