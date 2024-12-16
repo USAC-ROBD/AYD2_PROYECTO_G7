@@ -73,6 +73,32 @@
 ##### DCDU-2.8 Registro de Quejas
 ![DCDU-2.8](./assets/atencion_al_cliente/RegistroQuejas.jpg)
 
+#### 3. ROL ADMINISTRADOR DE SISTEMAS
+
+##### DCDU-3.1 Login
+
+![DCDU-3.1](./assets/administrador/login-administrador.jpg)
+
+##### DCDU-3.2 Registrar empleado
+
+![DCDU-3.2](./assets/administrador/creacion-empleado.jpg)
+
+##### DCDU-3.3 Asignación de roles
+
+![DCDU-3.3](./assets/administrador/asignar-rol.jpg)
+
+##### DCDU-3.4 Eliminar empleados
+
+![DCDU-3.4](./assets/administrador/eliminacion-empleado.jpg)
+
+##### DCDU-3.5 Cambio de contraseña de empleado
+
+![DCDU-3.5](./assets/administrador/cambio-password.jpg)
+
+##### DCDU-3.6 Gestión de copias de seguridad.
+
+![DCDU-3.6](./assets/administrador/copia-seguridad.jpg)
+
 #### 4. ROL SUPERVISOR
 
 ### DCDU-4.1 - Login del supervisor
@@ -95,8 +121,6 @@
 
 ### DCDU-4.7 - Aprobar tarjetas y cancelación de servicios
 ![DCDU-4.7](./cdu/DCDU-4.7.png)
-
-#### ROL ADMON SISTEMAS
 
 ## REQUERIMIENTOS FUNCIONALES
 
@@ -248,7 +272,37 @@
 - Debe registrarse los detalles de la queja, los datos importantes del cliente como su número de cuenta, etc., y el servicio del que se va a presentar la queja.
 - Al completarse el registro de la queja se envía automáticamente un correo electrónico al supervisor para notificar sobre el incidente.
 
-### 4. Módulo Supervisor
+### 3. MÓDULO ADMINISTRADOR DE SISTEMAS
+
+#### RF-3.1. Inicio de sesión de administrador de sistema
+
+- El sistema debe permitir que el administador de sistemas inicie sesión por medio de correo electrónico y contraseña
+
+#### RF-3.2. Creación de nuevo empleado
+
+- El sistema debe permitir que un usuario administrador cree nuevos empleados.
+
+#### RF-3.3. Asignación de roles
+
+- El sistema debe permitir agregar o cambiar el rol de un empleado
+
+#### RF-3.4. Eliminar empleados
+
+- El sistema debe permitir que un usuario administrador elimine empleados
+  - Un usuario supervisor debe autorizar la eliminación del usuario
+- El sistema debe permitir que el administrador adjunte la autorización de eliminación en un archivo PDF
+
+#### RF-3.5. Cambio de contraseña de empleado
+
+- El sistema debe permitir que un usuario administrador cambie la contraseña de un empleado
+  - Un usuario supervisor debe autorizar el cambio de contraseña
+
+#### RF-3.6. Gestión de copias de seguridad
+
+- El sistema debe permitir que un usuario administrador cree copias de seguridad de la base de datos
+  - Las copias de seguridad deben almacenarse en la nube y estar disponibles ante cualquier eventualidad
+
+### 4. MÓDULO SUPERVISOR
 
 #### RF-4.1 - Login de Supervisor
 El supervisor del sistema debe poder hacer login al sistema y posteriormente validar su identidad por medio de una clave tipo `.pem`.
@@ -806,6 +860,171 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 
 ---
 
+### 3. MÓDULO ADMINISTRADOR DE SISTEMAS
+
+#### CDU-3.1: Inicio de sesión (Login)
+
+**ID:** CDU-01  
+**Nombre:** Inicio de sesión
+**Actor Principal:** Administrador de sistemas
+**Propósito:** Permite a un administrador de sistemas acceder al sistema por medio de sus credenciales
+**Resumen:** El administrador podrá iniciar sesión al sistema por medio de las credenciales que le han sido otorgadas.
+
+#### Flujo Principal
+
+1. El administrador de sistemas abre la pantalla de inicio de sesión.
+2. El sistema muestra los campos para ingresar:
+   - Correo y contraseña.
+3. El administrador de sistemas ingresa las credenciales.
+4. El sistema valida las credenciales.
+5. Si las credenciales son válidas, el administrador de sistemas accede a la plataforma.
+6. El sistema muestra el menú principal con las opciones que el administrador de sistemas tiene activas.
+
+#### Flujo Alternativo
+
+- **Credenciales inválidas:**
+  1. El sistema muestra un mensaje de error.
+  2. El administrador de sistemas tiene la opción de reintentar.
+
+**Postcondición:** El administrador accede al sistema o recibe un mensaje indicando que sus credenciales son incorrectas.
+
+---
+
+#### CDU-3.2: Registrar empleado
+
+**ID:** CDU-02
+**Nombre:** Registrar empleado
+**Actor Principal:** Administrador de sistemas
+**Propósito:** Permite a un administrador de sistemas crear nuevos usuarios en el sistema
+**Resumen:** El adminisrador accede a la vista de creación de empleados y completa los datos requeridos.
+
+#### Flujo Principal
+
+1. El administrador de sistemas abre el módulo de empleados > registro de empleados
+2. El sistema muestra los campos para ingresar:
+   - Nombre completo
+   - Número de teléfono
+   - Edad
+   - Numero de DPI
+   - Correo electrónico
+   - Papelería completa (PDF)
+   - Fotografía
+   - Genero
+   - Estado Civil
+3. El sistema valida la información ingresada
+4. Si la información es correcta, el sistema crea el nuevo usuario
+5. El sistema envía las credenciales al nuevo empleado por correo electrónico
+
+#### Flujo Alternativo
+
+- **Información incorrecta o usuario existente:**
+  1. El sistema muestra un mensaje de error.
+  2. El administrador de sistemas tiene la opción de reintentar.
+
+**Postcondición:** Se crea el usuario o el administrador de sistemas recibe un mensaje indicando que sus credenciales son incorrectas.
+
+---
+
+#### CDU-3.3: Asignación de roles
+
+**ID:** CDU-03
+**Nombre:** Asignación de roles
+**Actor Principal:** Administrador de sistemas
+**Propósito:** Permite a un administrador de sistemas asignar roles a los empleados
+**Resumen:** El adminisrador accede a la vista de asignación de roles y selecciona los roles que que un empleado debe tener, según sus funciones
+
+#### Flujo Principal
+
+1. El administrador de sistemas abre el módulo de empleados > asignación de roles
+2. El sistema permite buscar a un empleado
+3. El administrador de sistemas elige el usuario al que desea modificarle el rol
+4. El sistema permite seleccionar o quitar la selección de los roles disponibles
+5. El sistema asigna al rol y notifica que la asignación fue exitosa
+
+#### Flujo Alternativo
+
+- **Usuario no existente:**
+  1. El sistema muestra un mensaje de usuario/empleado no encontrado.
+  2. El administrador de sistemas tiene la opción de modificar la búsqueda.
+
+**Postcondición:** Se asignan los roles al empleado o el administrador de sistemas recibe un mensaje indicando que el usuario que busca no existe.
+
+---
+
+#### CDU-3.4: Eliminar empleados
+
+**ID:** CDU-04
+**Nombre:** Eliminar empleados
+**Actor Principal:** Administrador de sistemas
+**Propósito:** Permite a un administrador de sistemas eliminar empleados del sistema
+**Resumen:** El adminisrador accede a la vista de eliminación de empleados, busca y elimina el usuario deseado. Un supervisor debe autorizar esta acción
+
+#### Flujo Principal
+
+1. Un supervisor autoriza la eliminación de un empleado
+2. El administrador de sistemas abre el módulo de empleados > eliminación
+3. El sistema permite buscar a un empleado
+4. El administrador de sistemas elige el usuario que debe eliminar
+5. El sistema pregunta si el administrador de sistemas desea eliminar al usuario
+6. El administrador de sistemas seleccióna si está seguro de eliminar al usuario
+7. Si el administrador de sistemas confirma la eliminación del usuario, el sistema elimina el usuario.
+
+#### Flujo Alternativo
+
+- **Administrador de sistemas no confirma la eliminación:**
+  1. El administrador de sistemas selecciona que no está seguro de eliminar al usuario
+  2. El sistema cancela la transacción y regresa a la pantalla principal del módulo de empleados.
+
+**Postcondición:** Se elimina al usuario existente o se reresa a a la pantalla principal del módulo de empleados.
+
+---
+
+#### CDU-3.5: Cambio de contraseña de empleado
+
+**ID:** CDU-05
+**Nombre:** Cambio de contraseña de empleado
+**Actor Principal:** Administrador de sistemas
+**Propósito:** Permite a un administrador de sistemas cambiar la contraseña de un empleado
+**Resumen:** El adminisrador accede a la vista de cambio de contraseña y realiza el cambio, siempre y cuando un supervisor haya autorizado el cambio
+
+#### Flujo Principal
+
+1. Un supervisor autoriza el cambio de contraseña
+2. El administrador de sistemas abre el módulo de empleados > cambio de contraseña
+3. El sistema permite buscar a un empleado
+4. El administrador de sistemas elige el usuario al que debe cambiarle la contraseña
+5. El administrador de sistemas cambia la contraseña del empleado
+6. El sistema guarda la nueva contraseña y envía un correo electrónico al usuario con la nueva contraseña
+
+#### Flujo Alternativo
+
+- **El usuario no existe:**
+  1. El usuario buscado por el administrador de sistemas no existe
+  2. El sistema muestra un mensaje de error
+
+**Postcondición:** Se cambia la contraseña del usuario o se permite modificar la búsqueda
+
+---
+
+#### CDU-3.6: Gestión de copias de seguridad
+
+**ID:** CDU-06
+**Nombre:** Gestión de copias de seguridad
+**Actor Principal:** Administrador de sistemas
+**Propósito:** Permite a un administrador de sistemas crear copias de seguridad
+**Resumen:** El adminisrador accede a la vista de copias de seguridad y realiza una nueva copia de seguridad
+
+#### Flujo Principal
+
+1. El administrador de sistemas ingresa al módulo de copias de seguridad
+2. El sistema permite crear una nueva copia
+3. El administrador de sistemas elige crear una nueva copia de seguiridad de la base de datos
+4. El sistema realiza la copia de seguridad y la sube a la nube
+
+**Postcondición:** Se realiza una copia de seguridad y se sube a la nube.
+
+---
+
 ### 4. MÓDULO SUPERVISOR
 
 ### CDU-4.1: Login
@@ -1250,6 +1469,8 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 
 ### 2. ATENCIÓN AL CLIENTE
 
+### 3. ADMINISTRADOR DE SISTEMAS
+
 ### 4. SUPERVISOR
 ### PTPO-4.1 - Login
 ![PTPO-4.1](./assets/ptpo-login.png)
@@ -1322,13 +1543,49 @@ Caractersticas:
 - Proporciona un punto de acceso global en la aplicación para que sea facil de usar.
 - Mantiene el código del objeto real más limpio y enfocado en sus funciones principales.
 
+### 3. CONTAINER-PRESENTATIONAL
+
+El Container-Presentational Pattern es un patrón de diseño popular en el desarrollo de interfaces de usuario, especialmente en aplicaciones con React. Divide los componentes en dos tipos principales: Container Components y Presentational Components, con responsabilidades claramente separadas.
+
+**Características**
+
+Container Components:
+
+- Manejan la lógica de la aplicación, como acceder al estado global, realizar llamadas a APIs o manejar eventos complejos.
+- Deciden qué datos pasar a los Presentational Components.
+- Pueden conectarse con bibliotecas de gestión de estado como Redux o Context API.
+
+Presentational Components:
+
+- Son responsables de la presentación y renderizado de la interfaz de usuario.
+- Reciben datos y funciones como propiedades (props).
+- No contienen lógica de negocio, solo lógica visual (cómo mostrar los datos).
+
+#### Ventajas
+Separación de responsabilidades:
+Facilita mantener y escalar la aplicación al separar lógica de negocio de la interfaz visual.
+Reutilización:
+Los Presentational Components son reutilizables en diferentes partes de la aplicación, ya que no dependen del estado global o la lógica de negocio.
+Facilita pruebas unitarias:
+Los Presentational Components son más fáciles de probar debido a su naturaleza pura (sin dependencias externas).
+Claridad:
+Facilita entender el propósito de cada componente, mejorando la legibilidad del código.
+
+#### Desventajas
+Sobrecarga inicial:
+Puede ser más complejo estructurar la aplicación en pequeños componentes si el equipo no está familiarizado con el patrón.
+Mayor número de componentes:
+Aumenta el número total de archivos y componentes, lo que podría ser innecesario para aplicaciones pequeñas.
+Dependencia de bibliotecas:
+Los Container Components a menudo dependen de herramientas como Redux o Context API, lo que puede aumentar la complejidad.
+
 ### 4. COMMAND
 El Patrón de Diseño Command es uno de los patrones de comportamiento que permite encapsular una solicitud como un objeto, lo que te permite parametrizar a los clientes con diferentes solicitudes, hacer cola o registrar las solicitudes, y soportar la deshacer operaciones. Es útil para desacoplar los emisores de las solicitudes de los objetos que las ejecutan.
 
 La idea central del patrón Command es que, en lugar de ejecutar una acción directamente, se crea un objeto de comando que encapsula toda la información necesaria para llevar a cabo una acción o invocar un método específico en un objeto receptor. Este patrón es muy útil cuando las operaciones o solicitudes que un sistema debe realizar son complejas, deben ser deshechas o incluso almacenadas para ser ejecutadas más tarde.
 
 #### Ventajas
- 
+
 1. **Desacoplamiento**: 
 Permite desacoplar el objeto que invoca la operación del objeto que la realiza. Esto facilita la extensión del sistema, ya que puedes agregar nuevos comandos sin modificar las clases existentes.
 
