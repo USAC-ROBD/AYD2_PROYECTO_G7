@@ -1794,81 +1794,116 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 
 ## DIAGRAMA ENTIDAD RELACION
 
+![DIAGRAMA ER](./assets/Diagramas/Relational.jpg)
+
+
 ## PROTOTIPOS
 
 ### CAJERO
 
 #### PTPO-1.1 Login
 
- ![Login](./assets/cajero/maquetas/Login.png)
+![PTPO-1.](./assets/cajero/maquetas/Login.png)
 
 #### PTPO-1.2 Home
 
-![Home](./assets/cajero/maquetas/Home.png)
+![PTPO-1.2](./assets/cajero/maquetas/Home.png)
 
 #### PTPO-1.3 Pago de Servicios
 
-![Pago Servicios](./assets/cajero/maquetas/Pago%20de%20servicios.png)
+![PTPO-1.3](./assets/cajero/maquetas/Pago%20de%20servicios.png)
 
 #### PTPO-1.4 Pago de Prestamos
 
-![Login](./assets/cajero/maquetas/Pago%20de%20Prestamos.png)
+![PTPO-1.4](./assets/cajero/maquetas/Pago%20de%20Prestamos.png)
 
 #### PTPO-1.5 Busqueda de Cuentas
 
-![Login](./assets/cajero/maquetas/Busqueda%20de%20cuentas.png)
+![PTPO-1.5](./assets/cajero/maquetas/Busqueda%20de%20cuentas.png)
 
 #### PTPO-1.6 Consulta de Saldo
 
-![Login](./assets/cajero/maquetas/Consulta%20Saldo.png)
+![PTPO-1.6](./assets/cajero/maquetas/Consulta%20Saldo.png)
 
 #### PTPO-1.7 Cambio de moneda
 
-![Login](./assets/cajero/maquetas/Cambiar%20Moneda.png)
+![PTPO-1.7](./assets/cajero/maquetas/Cambiar%20Moneda.png)
 
 #### PTPO-1.8 Retiros
 
-![Login](./assets/cajero/maquetas/Retiro%20de%20Dinero.png)
+![PTPO-1.8](./assets/cajero/maquetas/Retiro%20de%20Dinero.png)
 
 #### PTPO-1.9 Depositos
 
-![Login](./assets/cajero/maquetas/Deposito%20de%20Dinero.png)
+![PTPO-1.9](./assets/cajero/maquetas/Deposito%20de%20Dinero.png)
 
 #### PTPO-1.10 Pago de Tarjeta
 
-![Login](./assets/cajero/maquetas/Pago%20de%20Trajeta.png)
+![PTPO-1.10](./assets/cajero/maquetas/Pago%20de%20Trajeta.png)
 
 ### 2. ATENCIÓN AL CLIENTE
+
+#### PTPO-2.1 Creacion de Cuenta Bancaria Normal y en Dólares
+
+![PTPO-2.1](./assets/atencion_al_cliente/prototipos/CrearCuenta.png)
+
+#### PTPO-2.2 Actualización de Datos del Cliente
+
+![PTPO-2.2](./assets/atencion_al_cliente/prototipos/ActualizarCuenta.png)
+
+#### PTPO-2.3 Creación de Tarjetas de Crédito o Débito
+
+![PTPO-2.3](./assets/atencion_al_cliente/prototipos/CrearTarjeta.png)
+
+#### PTPO-2.4 Bloqueo de Tarjetas de Crédito o Débito
+
+![PTPO-2.4](./assets/atencion_al_cliente/prototipos/BloquearTarjeta.png)
+
+#### PTPO-2.5 Solicitud de Cancelación de Cuenta o Tarjeta
+
+![PTPO-2.5](./assets/atencion_al_cliente/prototipos/CancelacionServicios.png)
+
+#### PTPO-2.6 Encuesta de Satisfacción
+
+![PTPO-2.6](./assets/atencion_al_cliente/prototipos/Encuesta.png)
+
+#### PTPO-2.7 Solicitud de Préstamo
+
+![PTPO-2.7](./assets/atencion_al_cliente/prototipos/Prestamo.png)
+
+#### PTPO-2.8 Registro de Quejas
+
+![PTPO-2.8](./assets/atencion_al_cliente/prototipos/Quejas.png)
 
 ### 3. ADMINISTRADOR DE SISTEMAS
 
 ### 4. SUPERVISOR
 
-### PTPO-4.1 - Login
+#### PTPO-4.1 - Login
 
 ![PTPO-4.1](./assets/ptpo-login.png)
 
-### PTPO-4.2 - Validar Clave
+#### PTPO-4.2 - Validar Clave
 
 ![PTPO-4.2](./assets/ptpo-aydkey.png)
 
-### PTPO-4.3 - Menú Supervisor
+#### PTPO-4.3 - Menú Supervisor
 
 ![PTPO-4.3](./assets/ptpo-supervisor.png)
 
-### PTPO-4.4 - Catálogos
+#### PTPO-4.4 - Catálogos
 
 ![PTPO-4.4](./assets/ptpo-listas.png)
 
-### PTPO-4.5 - Formularios
+#### PTPO-4.5 - Formularios
 
 ![PTPO-4.5](./assets/ptpo-formulario.png)
 
-### PTPO-4.6 - Monitor
+#### PTPO-4.6 - Monitor
 
 ![PTPO-4.6](./assets/ptpo-monitor.png)
 
-### PTPO-4.7 - Reportes
+#### PTPO-4.7 - Reportes
 
 ![PTPO-4.7](./assets/ptpo-reportes.png)
 
