@@ -168,3 +168,27 @@ Ejemplo del core del negocio: En el caso de Money Bin Bank, el core del negocio 
 
     * Pruebas independientes: Cada capa puede ser probada de forma separada, garantizando calidad y reduciendo errores.
     * Reutilización de componentes: Por ejemplo, el módulo de autenticación puede ser usado por todos los roles sin duplicar código.
+
+
+### 5. Factory Pattern
+El Patrón Factory  Pattern, es un patron de diseño creacional que perite instanciar objetos sin exponer su lógica  de cracion. Para u sistema bancario, su implementación aporta beneficios clave en términos de escalabilida, flexibiliad y mantenimiento.
+
+Características:
+- Centraliza la creación de objetos en una clase dedicada (la fábrica).
+
+- Oculta la lógica de creación al resto del sistema.
+- Crea objetos basados en clases abstractas o interfaces.
+- Facilita la configuración y validación de objetos al momento de su creación.
+
+### Implementación
+- Define una clase o método estático encargado de crear instancias.
+- Utiliza parámetros para determinar el tipo de objeto a crear.
+- Opcionalmente, integra validaciones específicas según el tipo de objeto.
+- Devuelve instancias de una clase base o una interfaz común.
+
+### Ventajas
+- Centraliza la lógica de creación, facilitando actualizaciones y modificaciones.
+- Permite agregar nuevos tipos de objetos sin modificar el código existente.
+- Simplifica la creación de objetos complejos con múltiples configuraciones.
+- Garantiza que todos los objetos relacionados se creen de manera uniforme.
+- Favorece la separación de responsabilidades y el principio abierto/cerrado.
