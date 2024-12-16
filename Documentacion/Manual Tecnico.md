@@ -30,9 +30,7 @@ Administrador de sistemas.
 
 ![Gestión de copias de seguridad](./assets/administrador/copia-seguridad.jpg)
 
-### CDU expandidos
-
-Casos de uso expandidos
+### Requerimientos funcionales y no funcionales
 
 ### Requerimientos funcionales
 
@@ -242,3 +240,41 @@ Casos de uso expandidos
 **Postcondición:** Se realiza una copia de seguridad y se sube a la nube.
 
 ---
+
+### Patrones de diseño
+
+#### Container-Presentational Pattern
+
+El Container-Presentational Pattern es un patrón de diseño popular en el desarrollo de interfaces de usuario, especialmente en aplicaciones con React. Divide los componentes en dos tipos principales: Container Components y Presentational Components, con responsabilidades claramente separadas.
+
+**Características**
+
+Container Components:
+
+Manejan la lógica de la aplicación, como acceder al estado global, realizar llamadas a APIs o manejar eventos complejos.
+Deciden qué datos pasar a los Presentational Components.
+Pueden conectarse con bibliotecas de gestión de estado como Redux o Context API.
+
+Presentational Components:
+
+Son responsables de la presentación y renderizado de la interfaz de usuario.
+Reciben datos y funciones como propiedades (props).
+No contienen lógica de negocio, solo lógica visual (cómo mostrar los datos).
+
+Ventajas
+Separación de responsabilidades:
+Facilita mantener y escalar la aplicación al separar lógica de negocio de la interfaz visual.
+Reutilización:
+Los Presentational Components son reutilizables en diferentes partes de la aplicación, ya que no dependen del estado global o la lógica de negocio.
+Facilita pruebas unitarias:
+Los Presentational Components son más fáciles de probar debido a su naturaleza pura (sin dependencias externas).
+Claridad:
+Facilita entender el propósito de cada componente, mejorando la legibilidad del código.
+
+Desventajas
+Sobrecarga inicial:
+Puede ser más complejo estructurar la aplicación en pequeños componentes si el equipo no está familiarizado con el patrón.
+Mayor número de componentes:
+Aumenta el número total de archivos y componentes, lo que podría ser innecesario para aplicaciones pequeñas.
+Dependencia de bibliotecas:
+Los Container Components a menudo dependen de herramientas como Redux o Context API, lo que puede aumentar la complejidad.
