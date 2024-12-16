@@ -243,3 +243,28 @@ El sistema debe cumplir con las normativas locales e internacionales aplicables,
 
 ##### Flujo Alternativo
 - Si el cliente no proporciona su número de cuenta o identificación, la queja puede ser registrada de forma anónima, pero será más difícil darle seguimiento.
+
+## Patrones de Diseño
+
+### Proxy
+El patrón Proxy actúa como un intermediario o representante para otro objeto, permitiendo controlar el acceso a él. El objetivo principal es ofrecer una capa adicional de control antes de interactuar con el objeto real, ya sea para verificar permisos, optimizar recursos, o agregar funcionalidades sin modificar la implementación original.
+
+Caractersticas:
+
+- **Intermediario**: Proporciona una capa de acceso indirecto al objeto real.
+- **Control de acceso**: Puede restringir o condicionar las operaciones en función de reglas predefinidas.
+- **Desacoplamiento**: Separa la lógica del cliente y del objeto real, manteniendo el sistema modular.
+
+#### Implementación
+- Validación de identidad en operaciones sensibles:
+    - Para Actualización de datos, bloqueo de tarjetas, y cancelación de servicios.
+    - Un Protection Proxy verifica que el cliente esté autorizado para realizar la operación (por ejemplo, usando una pregunta de seguridad).
+- Optimización en la creación de recursos:
+    - Para Creación de cuentas o tarjetas.
+    - Un Virtual Proxy asegura que el número de cuenta o tarjeta solo se genere tras completar validaciones previas.
+
+#### Ventajas
+- Protege recursos críticos mediante validaciones antes de otorgar acceso.
+- Facilita la extensión o modificación de funcionalidades sin afectar directamente al objeto real.
+- Proporciona un punto de acceso global en la aplicación para que sea facil de usar.
+- Mantiene el código del objeto real más limpio y enfocado en sus funciones principales.
