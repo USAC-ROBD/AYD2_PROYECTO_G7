@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="966pt" height="402pt" viewBox="0.00 0.00 966.04 402.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 398)">
+<title>Architecture</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-398 962.04,-398 962.04,4 -4,4"/>
+<g id="clust1" class="cluster">
+<title>cluster_Presentation</title>
+<polygon fill="lightgrey" stroke="lightgrey" points="8,-201 8,-386 246.96,-386 246.96,-201 8,-201"/>
+<text text-anchor="middle" x="127.48" y="-369.4" font-family="Times,serif" font-size="14.00">Capa de Presentación</text>
+</g>
+<g id="clust2" class="cluster">
+<title>cluster_BusinessLogic</title>
+<polygon fill="lightyellow" stroke="lightyellow" points="361.84,-93 361.84,-386 601.61,-386 601.61,-93 361.84,-93"/>
+<text text-anchor="middle" x="481.73" y="-369.4" font-family="Times,serif" font-size="14.00">Capa de Lógica de Negocio</text>
+</g>
+<g id="clust3" class="cluster">
+<title>cluster_DataAccess</title>
+<polygon fill="lightgreen" stroke="lightgreen" points="363.39,-8 363.39,-85 950.04,-85 950.04,-8 363.39,-8"/>
+<text text-anchor="middle" x="656.71" y="-68.4" font-family="Times,serif" font-size="14.00">Capa de Acceso a Datos</text>
+</g>
+<!-- ClientInterface -->
+<g id="node1" class="node">
+<title>ClientInterface</title>
+<polygon fill="lightblue" stroke="lightblue" points="238.96,-353 16,-353 16,-317 238.96,-317 238.96,-353"/>
+<text text-anchor="middle" x="127.48" y="-330.8" font-family="Arial" font-size="14.00">Interfaces de Cliente (Web/Móvil)</text>
+</g>
+<!-- TransactionProcessing -->
+<g id="node4" class="node">
+<title>TransactionProcessing</title>
+<polygon fill="lightblue" stroke="lightblue" points="593.61,-353 369.84,-353 369.84,-317 593.61,-317 593.61,-353"/>
+<text text-anchor="middle" x="481.73" y="-330.8" font-family="Arial" font-size="14.00">Procesamiento de Transacciones</text>
+</g>
+<!-- ClientInterface&#45;&gt;TransactionProcessing -->
+<g id="edge1" class="edge">
+<title>ClientInterface-&gt;TransactionProcessing</title>
+<path fill="none" stroke="black" d="M239.45,-335C277.17,-335 319.53,-335 358.1,-335"/>
+<polygon fill="black" stroke="black" points="357.89,-338.5 367.89,-335 357.89,-331.5 357.89,-338.5"/>
+<text text-anchor="middle" x="304.4" y="-339.2" font-family="Times,serif" font-size="14.00">Solicitudes</text>
+</g>
+<!-- EmployeeInterface -->
+<g id="node2" class="node">
+<title>EmployeeInterface</title>
+<polygon fill="lightblue" stroke="lightblue" points="209.41,-299 45.54,-299 45.54,-263 209.41,-263 209.41,-299"/>
+<text text-anchor="middle" x="127.48" y="-276.8" font-family="Arial" font-size="14.00">Interfaces de Empleado</text>
+</g>
+<!-- AccountManagement -->
+<g id="node6" class="node">
+<title>AccountManagement</title>
+<polygon fill="lightblue" stroke="lightblue" points="551.6,-299 411.86,-299 411.86,-263 551.6,-263 551.6,-299"/>
+<text text-anchor="middle" x="481.73" y="-276.8" font-family="Arial" font-size="14.00">Gestión de Cuentas</text>
+</g>
+<!-- EmployeeInterface&#45;&gt;AccountManagement -->
+<g id="edge2" class="edge">
+<title>EmployeeInterface-&gt;AccountManagement</title>
+<path fill="none" stroke="black" d="M209.73,-281C266.85,-281 342.95,-281 399.96,-281"/>
+<polygon fill="black" stroke="black" points="399.95,-284.5 409.95,-281 399.95,-277.5 399.95,-284.5"/>
+<text text-anchor="middle" x="304.4" y="-285.2" font-family="Times,serif" font-size="14.00">Consultas</text>
+</g>
+<!-- AdminInterface -->
+<g id="node3" class="node">
+<title>AdminInterface</title>
+<polygon fill="lightblue" stroke="lightblue" points="199.29,-245 55.67,-245 55.67,-209 199.29,-209 199.29,-245"/>
+<text text-anchor="middle" x="127.48" y="-222.8" font-family="Arial" font-size="14.00">Panel Administrativo</text>
+</g>
+<!-- SecurityManagement -->
+<g id="node5" class="node">
+<title>SecurityManagement</title>
+<polygon fill="lightblue" stroke="lightblue" points="557.44,-245 406.02,-245 406.02,-209 557.44,-209 557.44,-245"/>
+<text text-anchor="middle" x="481.73" y="-222.8" font-family="Arial" font-size="14.00">Gestión de Seguridad</text>
+</g>
+<!-- AdminInterface&#45;&gt;SecurityManagement -->
+<g id="edge3" class="edge">
+<title>AdminInterface-&gt;SecurityManagement</title>
+<path fill="none" stroke="black" d="M199.76,-227C255.95,-227 334.51,-227 394.28,-227"/>
+<polygon fill="black" stroke="black" points="394.08,-230.5 404.08,-227 394.08,-223.5 394.08,-230.5"/>
+<text text-anchor="middle" x="304.4" y="-231.2" font-family="Times,serif" font-size="14.00">Control de Roles</text>
+</g>
+<!-- Database -->
+<g id="node9" class="node">
+<title>Database</title>
+<polygon fill="lightblue" stroke="lightblue" points="942.04,-52 751.72,-52 751.72,-16 942.04,-16 942.04,-52"/>
+<text text-anchor="middle" x="846.88" y="-29.8" font-family="Arial" font-size="14.00">Base de Datos Centralizada</text>
+</g>
+<!-- TransactionProcessing&#45;&gt;Database -->
+<g id="edge4" class="edge">
+<title>TransactionProcessing-&gt;Database</title>
+<path fill="none" stroke="black" d="M593.94,-341.71C641.28,-339.1 694.5,-328.29 733.72,-298 809.72,-239.29 834.86,-119.22 842.64,-63.55"/>
+<polygon fill="black" stroke="black" points="846.08,-64.26 843.89,-53.89 839.14,-63.36 846.08,-64.26"/>
+<text text-anchor="middle" x="672.66" y="-344.37" font-family="Times,serif" font-size="14.00">Guardar / Leer Datos</text>
+</g>
+<!-- SecurityManagement&#45;&gt;Database -->
+<g id="edge5" class="edge">
+<title>SecurityManagement-&gt;Database</title>
+<path fill="none" stroke="black" d="M557.83,-222.36C610.4,-216.2 680.47,-201.94 733.72,-169 777.02,-142.21 811.58,-92.87 830.36,-61.84"/>
+<polygon fill="black" stroke="black" points="833.29,-63.77 835.35,-53.38 827.26,-60.22 833.29,-63.77"/>
+<text text-anchor="middle" x="672.66" y="-216.98" font-family="Times,serif" font-size="14.00">Validaciones</text>
+</g>
+<!-- AccountManagement&#45;&gt;Database -->
+<g id="edge6" class="edge">
+<title>AccountManagement-&gt;Database</title>
+<path fill="none" stroke="black" d="M551.96,-283.35C606.12,-281.82 680.86,-271.93 733.72,-234 792.8,-191.6 824.67,-107.87 838.09,-63.39"/>
+<polygon fill="black" stroke="black" points="841.41,-64.49 840.82,-53.92 834.69,-62.55 841.41,-64.49"/>
+<text text-anchor="middle" x="672.66" y="-282.4" font-family="Times,serif" font-size="14.00">Consultas de Cuentas</text>
+</g>
+<!-- FeedbackProcessing -->
+<g id="node7" class="node">
+<title>FeedbackProcessing</title>
+<polygon fill="lightblue" stroke="lightblue" points="556.26,-191 407.19,-191 407.19,-155 556.26,-155 556.26,-191"/>
+<text text-anchor="middle" x="481.73" y="-168.8" font-family="Arial" font-size="14.00">Gestión de Feedback</text>
+</g>
+<!-- FeedbackProcessing&#45;&gt;Database -->
+<g id="edge7" class="edge">
+<title>FeedbackProcessing-&gt;Database</title>
+<path fill="none" stroke="black" d="M556.72,-160.62C607.98,-150.36 676.94,-133.18 733.72,-107 762.02,-93.95 791.46,-74.53 813.07,-59"/>
+<polygon fill="black" stroke="black" points="814.89,-62.01 820.9,-53.29 810.76,-56.36 814.89,-62.01"/>
+<text text-anchor="middle" x="672.66" y="-152.07" font-family="Times,serif" font-size="14.00">Guardar Feedback</text>
+</g>
+<!-- LoanManagement -->
+<g id="node8" class="node">
+<title>LoanManagement</title>
+<polygon fill="lightblue" stroke="lightblue" points="558.97,-137 404.48,-137 404.48,-101 558.97,-101 558.97,-137"/>
+<text text-anchor="middle" x="481.73" y="-114.8" font-family="Arial" font-size="14.00">Gestión de Préstamos</text>
+</g>
+<!-- LoanManagement&#45;&gt;Database -->
+<g id="edge8" class="edge">
+<title>LoanManagement-&gt;Database</title>
+<path fill="none" stroke="black" d="M559.3,-101.08C616.7,-87.64 695.43,-69.22 755.84,-55.07"/>
+<polygon fill="black" stroke="black" points="756.49,-58.52 765.43,-52.83 754.89,-51.7 756.49,-58.52"/>
+<text text-anchor="middle" x="672.66" y="-90.81" font-family="Times,serif" font-size="14.00">Gestión de Préstamos</text>
+</g>
+<!-- BackupSystem -->
+<g id="node10" class="node">
+<title>BackupSystem</title>
+<polygon fill="lightblue" stroke="lightblue" points="592.07,-52 371.39,-52 371.39,-16 592.07,-16 592.07,-52"/>
+<text text-anchor="middle" x="481.73" y="-29.8" font-family="Arial" font-size="14.00">Sistema de Copias de Seguridad</text>
+</g>
+<!-- BackupSystem&#45;&gt;Database -->
+<g id="edge9" class="edge">
+<title>BackupSystem-&gt;Database</title>
+<path fill="none" stroke="black" d="M592.18,-34C639.06,-34 693.6,-34 740.08,-34"/>
+<polygon fill="black" stroke="black" points="739.88,-37.5 749.88,-34 739.88,-30.5 739.88,-37.5"/>
+<text text-anchor="middle" x="672.66" y="-38.2" font-family="Times,serif" font-size="14.00">Sincronización</text>
+</g>
+</g>
+</svg>
