@@ -1,0 +1,7 @@
+**/*.localz
+**/*.local
+**/*.git
+**/*.DS_Store
+**/*DIAGRAMAER
+
+Documentacion/assets/cajero/general.vsdx
