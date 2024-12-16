@@ -12,110 +12,114 @@ El desarrollo de esta plataforma digital representa un paso más en la evolució
 
 ### DESCRIPCIÓN
 
-  Money Bin Bank se posiciona como una institución financiera moderna, ágil y accesible, enfocada en ofrecer soluciones innovadoras y personalizadas tanto para individuos como para empresas. Su propósito central es facilitar el acceso a servicios financieros de manera segura, promoviendo la inclusión y el crecimiento económico de sus clientes.
-  
-  Con un fuerte compromiso con la innovación tecnológica, el banco busca anticiparse a las necesidades de un entorno financiero cambiante y altamente regulado. Money Bin Bank trabaja para generar confianza en sus clientes a través de experiencias excepcionales que combinan personalización y seguridad.
-  
-  Su misión está orientada a promover la inclusión financiera, rompiendo barreras para que más personas y empresas puedan acceder a productos y servicios financieros que antes eran inaccesibles. Su visión estratégica se centra en convertirse en un referente en la industria financiera, liderando con un enfoque en la adaptabilidad y la implementación de tecnologías avanzadas que respondan tanto a las expectativas actuales como a las futuras.
-  
-  La institución se rige por valores fundamentales como la innovación, la accesibilidad y la confianza, que se reflejan en cada aspecto de sus operaciones. Money Bin Bank no solo busca cumplir con las expectativas de sus clientes, sino también superar sus necesidades, fortaleciendo su posición como un líder inclusivo e innovador en el sector.
+Money Bin Bank se posiciona como una institución financiera moderna, ágil y accesible, enfocada en ofrecer soluciones innovadoras y personalizadas tanto para individuos como para empresas. Su propósito central es facilitar el acceso a servicios financieros de manera segura, promoviendo la inclusión y el crecimiento económico de sus clientes.
+
+Con un fuerte compromiso con la innovación tecnológica, el banco busca anticiparse a las necesidades de un entorno financiero cambiante y altamente regulado. Money Bin Bank trabaja para generar confianza en sus clientes a través de experiencias excepcionales que combinan personalización y seguridad.
+
+Su misión está orientada a promover la inclusión financiera, rompiendo barreras para que más personas y empresas puedan acceder a productos y servicios financieros que antes eran inaccesibles. Su visión estratégica se centra en convertirse en un referente en la industria financiera, liderando con un enfoque en la adaptabilidad y la implementación de tecnologías avanzadas que respondan tanto a las expectativas actuales como a las futuras.
+
+La institución se rige por valores fundamentales como la innovación, la accesibilidad y la confianza, que se reflejan en cada aspecto de sus operaciones. Money Bin Bank no solo busca cumplir con las expectativas de sus clientes, sino también superar sus necesidades, fortaleciendo su posición como un líder inclusivo e innovador en el sector.
+
 ### Beneficios Estratégicos
 
 1. **Ampliación del alcance y la inclusión financiera**
-    * Aumenta el acceso a servicios financieros para individuos y empresas excluidos del sistema.
-    * Facilita la expansión de la base de clientes.
+
+   - Aumenta el acceso a servicios financieros para individuos y empresas excluidos del sistema.
+   - Facilita la expansión de la base de clientes.
 
 2. **Fortalecimiento de la confianza y la lealtad del cliente**
-    * Mejora la seguridad y personalización de los servicios financieros.
-    * Proporciona una experiencia de usuario superior y simplificada.
+
+   - Mejora la seguridad y personalización de los servicios financieros.
+   - Proporciona una experiencia de usuario superior y simplificada.
 
 3. **Innovación tecnológica y adaptabilidad**
-    * Integra tecnologías avanzadas para escalar y responder a cambios en el mercado.
-    * Garantiza una operación eficiente, moderna y competitiva.
+
+   - Integra tecnologías avanzadas para escalar y responder a cambios en el mercado.
+   - Garantiza una operación eficiente, moderna y competitiva.
 
 4. **Optimización operativa y reducción de costos**
-    * Automatiza procesos clave para mejorar la eficiencia.
-    * Reduce costos operativos relacionados con operaciones manuales.
+
+   - Automatiza procesos clave para mejorar la eficiencia.
+   - Reduce costos operativos relacionados con operaciones manuales.
 
 5. **Posicionamiento como líder del sector**
-    * Refuerza la imagen de Money Bin Bank como una institución innovadora y accesible.
-    * Incrementa ingresos mediante la creación de nuevos productos y servicios adaptados a las necesidades de los usuarios.
+   - Refuerza la imagen de Money Bin Bank como una institución innovadora y accesible.
+   - Incrementa ingresos mediante la creación de nuevos productos y servicios adaptados a las necesidades de los usuarios.
 
 ### Procesos Principales
+
 1. Transacciones Bancarias Básicas
 
-    El sistema permite realizar las transacciones financieras fundamentales, tales como:
+   El sistema permite realizar las transacciones financieras fundamentales, tales como:
 
-    * Pagos de servicios: Liquidación de servicios como agua, luz, teléfono e internet en nombre de los clientes.
-    * Pagos de préstamos: Realización de abonos parciales o totales a préstamos personales del cliente.
-    * Depósitos: Transferencia de dinero a cuentas propias o de terceros.
-    * Retiros: Extracción de fondos directamente en el establecimiento afiliado, garantizando la seguridad y la eficiencia.
+   - Pagos de servicios: Liquidación de servicios como agua, luz, teléfono e internet en nombre de los clientes.
+   - Pagos de préstamos: Realización de abonos parciales o totales a préstamos personales del cliente.
+   - Depósitos: Transferencia de dinero a cuentas propias o de terceros.
+   - Retiros: Extracción de fondos directamente en el establecimiento afiliado, garantizando la seguridad y la eficiencia.
 
 2. Consulta y Manejo de Información del Cliente
 
-    El sistema proporciona acceso a información relevante para el cliente y empleados, mejorando la gestión de datos:
+   El sistema proporciona acceso a información relevante para el cliente y empleados, mejorando la gestión de datos:
 
-    * Búsqueda de cuentas: Localización de cuentas por número de cuenta o CUI.
-    * Consulta de saldos: Visualización en tiempo real del saldo disponible.
-    * Historial de transacciones: Acceso a movimientos recientes de las cuentas, permitiendo un seguimiento completo de las actividades bancarias.
+   - Búsqueda de cuentas: Localización de cuentas por número de cuenta o CUI.
+   - Consulta de saldos: Visualización en tiempo real del saldo disponible.
+   - Historial de transacciones: Acceso a movimientos recientes de las cuentas, permitiendo un seguimiento completo de las actividades bancarias.
 
 3. Generación de Comprobantes de Transacción
 
-    Para cada operación realizada, el sistema genera comprobantes digitales y físicos, asegurando que el cliente reciba un registro confiable y verificable.
+   Para cada operación realizada, el sistema genera comprobantes digitales y físicos, asegurando que el cliente reciba un registro confiable y verificable.
 
-    * Genera registros digitales y físicos de cada operación realizada.
-    * Proporciona al cliente comprobantes seguros y verificables.
-    * Almacena los registros en una base de datos centralizada para auditorías y seguimiento.
+   - Genera registros digitales y físicos de cada operación realizada.
+   - Proporciona al cliente comprobantes seguros y verificables.
+   - Almacena los registros en una base de datos centralizada para auditorías y seguimiento.
 
 4. Gestión de Seguridad y Validaciones
 
-    Se implementan diversas medidas de seguridad para proteger las cuentas de los clientes y garantizar la autenticidad de las transacciones:
+   Se implementan diversas medidas de seguridad para proteger las cuentas de los clientes y garantizar la autenticidad de las transacciones:
 
-    * Validación de identidad: Mediante CUI y otros mecanismos de autenticación.
-    * Límites transaccionales: Establecimiento de límites diarios y mensuales para prevenir fraudes.
-    * Bloqueo de tarjetas: Permite bloquear tarjetas de crédito o débito en caso de pérdida, robo o sospecha de fraude, con notificaciones automáticas a los clientes y al equipo de fraude.
+   - Validación de identidad: Mediante CUI y otros mecanismos de autenticación.
+   - Límites transaccionales: Establecimiento de límites diarios y mensuales para prevenir fraudes.
+   - Bloqueo de tarjetas: Permite bloquear tarjetas de crédito o débito en caso de pérdida, robo o sospecha de fraude, con notificaciones automáticas a los clientes y al equipo de fraude.
 
 5. Gestion de Cuentas y Servicios Financieros
 
-    El sistema permite la creación y administración de cuentas bancarias, tanto en quetzales como en dólares, y otros productos financieros:
+   El sistema permite la creación y administración de cuentas bancarias, tanto en quetzales como en dólares, y otros productos financieros:
 
-    * Apertura de cuentas: Los clientes pueden abrir cuentas de ahorro o monetarias, con validaciones y asignación de un número de cuenta único.
-    * Actualización de datos: Los clientes pueden actualizar su información personal, como teléfono, dirección y correo electrónico, con verificación de identidad.
-    * Solicitudes de nuevos servicios: Los clientes pueden solicitar nuevas tarjetas de crédito o débito, así como préstamos, con análisis automático de capacidad de pago.
+   - Apertura de cuentas: Los clientes pueden abrir cuentas de ahorro o monetarias, con validaciones y asignación de un número de cuenta único.
+   - Actualización de datos: Los clientes pueden actualizar su información personal, como teléfono, dirección y correo electrónico, con verificación de identidad.
+   - Solicitudes de nuevos servicios: Los clientes pueden solicitar nuevas tarjetas de crédito o débito, así como préstamos, con análisis automático de capacidad de pago.
 
 6. Gestión de Préstamos y Créditos
 
-    Permite a los clientes solicitar y gestionar diferentes tipos de préstamos, como personales, hipotecarios o vehiculares:
+   Permite a los clientes solicitar y gestionar diferentes tipos de préstamos, como personales, hipotecarios o vehiculares:
 
-    * Solicitud de préstamos: Los clientes pueden solicitar préstamos con validación automática de su capacidad de pago.
-    * Gestión de pagos: Facilita el pago de préstamos con opciones de pago parcial o total, garantizando una correcta aplicación de los pagos a los saldos correspondientes.
-    * Generación de reportes: El sistema permite a los supervisores generar reportes detallados de los préstamos y la actividad financiera del cliente.
+   - Solicitud de préstamos: Los clientes pueden solicitar préstamos con validación automática de su capacidad de pago.
+   - Gestión de pagos: Facilita el pago de préstamos con opciones de pago parcial o total, garantizando una correcta aplicación de los pagos a los saldos correspondientes.
+   - Generación de reportes: El sistema permite a los supervisores generar reportes detallados de los préstamos y la actividad financiera del cliente.
 
 7. Atención al Cliente y Feedback
-    
-    El banco valora la retroalimentación de los clientes para mejorar continuamente sus servicios:
 
-    * Encuestas de satisfacción: Permite a los clientes evaluar la calidad de los servicios, facilitando la identificación de áreas de mejora.
-    * Registro de quejas: Los clientes pueden registrar quejas sobre productos o servicios, las cuales son gestionadas y respondidas por el equipo de atención al cliente.
+   El banco valora la retroalimentación de los clientes para mejorar continuamente sus servicios:
+
+   - Encuestas de satisfacción: Permite a los clientes evaluar la calidad de los servicios, facilitando la identificación de áreas de mejora.
+   - Registro de quejas: Los clientes pueden registrar quejas sobre productos o servicios, las cuales son gestionadas y respondidas por el equipo de atención al cliente.
 
 8. Gestión Administrativa Interna
 
-    Los administradores y supervisores gestionan y supervisan las operaciones internas del banco para garantizar la eficiencia y seguridad de los procesos:
+   Los administradores y supervisores gestionan y supervisan las operaciones internas del banco para garantizar la eficiencia y seguridad de los procesos:
 
-    * Asignación de roles: Los administradores asignan y actualizan los roles de los empleados según sus responsabilidades.
-    * Monitoreo en tiempo real: Los supervisores pueden monitorear las actividades de los empleados, como retiros de dinero, solicitudes de préstamos, bloqueos de tarjetas y más, para asegurar el cumplimiento de políticas.
-    * Gestión de inventarios bancarios: Control y supervisión del efectivo disponible en las sucursales, con registros detallados de entradas y salidas.
+   - Asignación de roles: Los administradores asignan y actualizan los roles de los empleados según sus responsabilidades.
+   - Monitoreo en tiempo real: Los supervisores pueden monitorear las actividades de los empleados, como retiros de dinero, solicitudes de préstamos, bloqueos de tarjetas y más, para asegurar el cumplimiento de políticas.
+   - Gestión de inventarios bancarios: Control y supervisión del efectivo disponible en las sucursales, con registros detallados de entradas y salidas.
 
 9. Seguridad de la Información y Gestión de Copias de Seguridad
-    
-    La seguridad de la información y la integridad del sistema son prioridades para el banco:
 
-    * Copia de seguridad: Los administradores generan copias de seguridad periódicas de la base de datos del banco, que se almacenan de manera segura en la nube.
-    * Monitoreo de actividad: Se realiza un seguimiento en tiempo real de las actividades de todos los usuarios del sistema, generando alertas automáticas ante actividades sospechosas o incumplimientos de políticas internas.
+   La seguridad de la información y la integridad del sistema son prioridades para el banco:
+
+   - Copia de seguridad: Los administradores generan copias de seguridad periódicas de la base de datos del banco, que se almacenan de manera segura en la nube.
+   - Monitoreo de actividad: Se realiza un seguimiento en tiempo real de las actividades de todos los usuarios del sistema, generando alertas automáticas ante actividades sospechosas o incumplimientos de políticas internas.
 
 ### CDU ALTO NIVEL
-
-
 
 #### Primera Descomposición
 
@@ -249,7 +253,7 @@ El desarrollo de esta plataforma digital representa un paso más en la evolució
 
 ## REQUERIMIENTOS FUNCIONALES
 
-### 1. MÓDULO CAJERO  
+### 1. MÓDULO CAJERO
 
 #### RF-1.1. Gestión de Acceso: Login
 
@@ -338,7 +342,7 @@ El desarrollo de esta plataforma digital representa un paso más en la evolució
 - Registrar pagos de tarjetas de crédito.
 - Calcular los cargos mensuales de Q 75.00 y los intereses simples del 5% en caso de atrasos.
 
-### 2. MÓDULO ATENCIÓN AL CLIENTE  
+### 2. MÓDULO ATENCIÓN AL CLIENTE
 
 #### RF-2.1. Creación de Cuenta Bancaria Normal y en Dólares
 
@@ -541,7 +545,7 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 **Nombre:** Gestión de Acceso  
 **Actor Principal:** Cajero bancario  
 **Propósito:** Permitir al cajero iniciar sesión en el sistema de forma segura.  
-**Resumen:** El cajero podrá iniciar sesión utilizando sus credenciales registradas en el sistema.  
+**Resumen:** El cajero podrá iniciar sesión utilizando sus credenciales registradas en el sistema.
 
 #### Flujo Principal
 
@@ -559,7 +563,7 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
   1. El sistema muestra un mensaje de error.
   2. El cajero tiene la opción de reintentar.
 
-**Postcondición:** El cajero accede al sistema o recibe un mensaje indicando que sus credenciales son incorrectas.  
+**Postcondición:** El cajero accede al sistema o recibe un mensaje indicando que sus credenciales son incorrectas.
 
 ---
 
@@ -595,12 +599,12 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 4. El sistema valida que la cuenta y el DPI coincidan con el titular.
 5. Si es válido, el sistema registra el pago y genera un comprobante.
 
-#### Flujo Alternativo  
+#### Flujo Alternativo
 
-- **Datos inválidos:**  
-  1. El sistema muestra un mensaje de error y solicita corregir la información.  
+- **Datos inválidos:**
+  1. El sistema muestra un mensaje de error y solicita corregir la información.
 
-**Postcondición:** El pago queda registrado y el cliente recibe el comprobante correspondiente.  
+**Postcondición:** El pago queda registrado y el cliente recibe el comprobante correspondiente.
 
 ---
 
@@ -610,7 +614,7 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 **Nombre:** Pago de Préstamos  
 **Actor Principal:** Cajero bancario  
 **Propósito:** Registrar pagos de préstamos adquiridos por los clientes.  
-**Resumen:** El cajero puede procesar pagos parciales o totales de préstamos.  
+**Resumen:** El cajero puede procesar pagos parciales o totales de préstamos.
 
 #### Flujo Principal
 
@@ -627,10 +631,10 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 
 #### Flujo Alternativo
 
-- **Datos inválidos:**  
-  1. El sistema muestra un mensaje de error y permite reintentar.  
+- **Datos inválidos:**
+  1. El sistema muestra un mensaje de error y permite reintentar.
 
-**Postcondición:** El pago del préstamo queda registrado correctamente.  
+**Postcondición:** El pago del préstamo queda registrado correctamente.
 
 ---
 
@@ -640,7 +644,7 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 **Nombre:** Búsqueda de Clientes  
 **Actor Principal:** Cajero bancario  
 **Propósito:** Permitir la búsqueda de clientes mediante número de cuenta o CUI.  
-**Resumen:** El cajero puede localizar la información de un cliente de manera rápida y precisa.  
+**Resumen:** El cajero puede localizar la información de un cliente de manera rápida y precisa.
 
 #### Flujo Principal
 
@@ -654,10 +658,10 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 
 #### Flujo Alternativo
 
-- **Cliente no encontrado:**  
-  1. El sistema muestra un mensaje indicando que no hay coincidencias.  
+- **Cliente no encontrado:**
+  1. El sistema muestra un mensaje indicando que no hay coincidencias.
 
-**Postcondición:** El cajero accede a la información del cliente o recibe un mensaje de error.  
+**Postcondición:** El cajero accede a la información del cliente o recibe un mensaje de error.
 
 ---
 
@@ -667,7 +671,7 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 **Nombre:** Consulta de Saldo  
 **Actor Principal:** Cajero bancario y cliente  
 **Propósito:** Mostrar el saldo actual disponible en una cuenta.  
-**Resumen:** El cajero puede consultar el saldo de una cuenta bancaria en nombre del cliente.  
+**Resumen:** El cajero puede consultar el saldo de una cuenta bancaria en nombre del cliente.
 
 #### Flujo Principal
 
@@ -680,10 +684,10 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 
 #### Flujo Alternativo
 
-- **Número de cuenta inválido:**  
-  1. El sistema muestra un mensaje de error.  
+- **Número de cuenta inválido:**
+  1. El sistema muestra un mensaje de error.
 
-**Postcondición:** El sistema muestra el saldo de la cuenta o un mensaje de error.  
+**Postcondición:** El sistema muestra el saldo de la cuenta o un mensaje de error.
 
 ---
 
@@ -693,7 +697,7 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 **Nombre:** Cambio de Moneda  
 **Actor Principal:** Cajero bancario  
 **Propósito:** Permitir al cliente realizar el cambio de quetzales a dólares.  
-**Resumen:** El cajero procesa el cambio de moneda bajo las restricciones definidas.  
+**Resumen:** El cajero procesa el cambio de moneda bajo las restricciones definidas.
 
 #### Flujo Principal
 
@@ -709,10 +713,10 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 
 #### Flujo Alternativo
 
-- **Restricciones no cumplidas:**  
-  1. El sistema muestra un mensaje de error.  
+- **Restricciones no cumplidas:**
+  1. El sistema muestra un mensaje de error.
 
-**Postcondición:** El cambio de moneda queda registrado correctamente.  
+**Postcondición:** El cambio de moneda queda registrado correctamente.
 
 ---
 
@@ -722,7 +726,7 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 **Nombre:** Generación de Comprobantes  
 **Actor Principal:** Sistema bancario  
 **Propósito:** Generar un comprobante en PDF para cada transacción.  
-**Resumen:** El sistema genera comprobantes de las operaciones realizadas.  
+**Resumen:** El sistema genera comprobantes de las operaciones realizadas.
 
 #### Flujo Principal
 
@@ -734,7 +738,7 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
    - Nombre y firma digital del cajero autorizado.
 2. El sistema genera un comprobante en PDF y lo envía al cliente.
 
-**Postcondición:** El cliente recibe un comprobante válido de la transacción.  
+**Postcondición:** El cliente recibe un comprobante válido de la transacción.
 
 ---
 
@@ -744,7 +748,7 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 **Nombre:** Retiro de Dinero  
 **Actor Principal:** Cajero bancario  
 **Propósito:** Registrar retiros de efectivo realizados por clientes.  
-**Resumen:** El cajero puede procesar retiros de efectivo desde cuentas bancarias bajo las validaciones de identidad y límites establecidos.  
+**Resumen:** El cajero puede procesar retiros de efectivo desde cuentas bancarias bajo las validaciones de identidad y límites establecidos.
 
 #### Flujo Principal
 
@@ -764,10 +768,10 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 
 #### Flujo Alternativo
 
-- **Datos inválidos o límites excedidos:**  
+- **Datos inválidos o límites excedidos:**
   1. El sistema muestra un mensaje de error e indica la causa.
 
-**Postcondición:** El retiro queda registrado y se entrega el efectivo al cliente.  
+**Postcondición:** El retiro queda registrado y se entrega el efectivo al cliente.
 
 ---
 
@@ -777,7 +781,7 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 **Nombre:** Depósito de Dinero  
 **Actor Principal:** Cajero bancario  
 **Propósito:** Registrar depósitos realizados por clientes en sus cuentas bancarias.  
-**Resumen:** El cajero puede procesar depósitos, actualizando el saldo de la cuenta en tiempo real.  
+**Resumen:** El cajero puede procesar depósitos, actualizando el saldo de la cuenta en tiempo real.
 
 #### Flujo Principal
 
@@ -796,10 +800,10 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 
 #### Flujo Alternativo
 
-- **Datos inválidos o módulo deshabilitado:**  
+- **Datos inválidos o módulo deshabilitado:**
   1. El sistema muestra un mensaje de error y detalla el motivo.
 
-**Postcondición:** El depósito queda registrado correctamente en el sistema.  
+**Postcondición:** El depósito queda registrado correctamente en el sistema.
 
 ---
 
@@ -809,7 +813,7 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 **Nombre:** Pago de Tarjetas de Crédito  
 **Actor Principal:** Cajero bancario  
 **Propósito:** Registrar pagos de tarjetas de crédito realizadas por los clientes.  
-**Resumen:** El cajero puede procesar pagos de tarjetas de crédito, incluyendo el cálculo de cargos y posibles intereses.  
+**Resumen:** El cajero puede procesar pagos de tarjetas de crédito, incluyendo el cálculo de cargos y posibles intereses.
 
 #### Flujo Principal
 
@@ -827,10 +831,10 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 
 #### Flujo Alternativo
 
-- **Datos inválidos o inconsistencias:**  
+- **Datos inválidos o inconsistencias:**
   1. El sistema muestra un mensaje de error.
 
-**Postcondición:** El pago de la tarjeta queda registrado correctamente en el sistema.  
+**Postcondición:** El pago de la tarjeta queda registrado correctamente en el sistema.
 
 ---
 
@@ -838,11 +842,11 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 
 ##### CDU-2.1: Creación de Cuenta Bancaria Normal y en Dólares
 
-*ID:* CDU-2.1  
-*Nombre:* Creación de Cuenta Bancaria Normal y en Dólares  
-*Actor Principal:* Empleado de Atención al Cliente  
-*Propósito:* Abrir una nueva cuenta monetaria o de ahorro con toda la información necesaria y garantizar su validación y seguridad.  
-*Resumen:* El encargado de atención al cliente podrá completar un formulario con datos personales del cliente, seleccionar el tipo de cuenta y proporcionar un monto inicial. El sistema valida la información, genera un número de cuenta único y almacena los datos en la base de datos.  
+_ID:_ CDU-2.1  
+_Nombre:_ Creación de Cuenta Bancaria Normal y en Dólares  
+_Actor Principal:_ Empleado de Atención al Cliente  
+_Propósito:_ Abrir una nueva cuenta monetaria o de ahorro con toda la información necesaria y garantizar su validación y seguridad.  
+_Resumen:_ El encargado de atención al cliente podrá completar un formulario con datos personales del cliente, seleccionar el tipo de cuenta y proporcionar un monto inicial. El sistema valida la información, genera un número de cuenta único y almacena los datos en la base de datos.
 
 ##### Flujo Principal
 
@@ -863,11 +867,11 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 
 ##### CDU-2.2: Actualización de Datos del Cliente
 
-*ID:* CDU-2.2  
-*Nombre:* Actualización de Datos del Cliente  
-*Actor Principal:* Empleado de Atención al Cliente  
-*Propósito:* Modificar datos personales del cliente manteniendo la seguridad y un historial de cambios.  
-*Resumen:* El empleado selecciona los datos que el cliente desea actualizar, verifica su identidad mediante una pregunta de seguridad y el sistema actualiza la información manteniendo un registro en el historial.
+_ID:_ CDU-2.2  
+_Nombre:_ Actualización de Datos del Cliente  
+_Actor Principal:_ Empleado de Atención al Cliente  
+_Propósito:_ Modificar datos personales del cliente manteniendo la seguridad y un historial de cambios.  
+_Resumen:_ El empleado selecciona los datos que el cliente desea actualizar, verifica su identidad mediante una pregunta de seguridad y el sistema actualiza la información manteniendo un registro en el historial.
 
 ##### Flujo Principal
 
@@ -885,11 +889,11 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 
 ##### CDU-2.3: Creación de Tarjetas de Crédito o Débito
 
-*ID:* CDU-2.3  
-*Nombre:* Creación de Tarjetas de Crédito o Débito  
-*Actor Principal:* Empleado de Atención al Cliente  
-*Propósito:* Facilitar la solicitud de nuevas tarjetas de crédito o débito de manera segura.  
-*Resumen:* El cliente solicita una tarjeta, el sistema valida la identidad y la información proporcionada, y la solicitud pasa a revisión por parte del supervisor para su aprobación.  
+_ID:_ CDU-2.3  
+_Nombre:_ Creación de Tarjetas de Crédito o Débito  
+_Actor Principal:_ Empleado de Atención al Cliente  
+_Propósito:_ Facilitar la solicitud de nuevas tarjetas de crédito o débito de manera segura.  
+_Resumen:_ El cliente solicita una tarjeta, el sistema valida la identidad y la información proporcionada, y la solicitud pasa a revisión por parte del supervisor para su aprobación.
 
 ##### Flujo Principal
 
@@ -908,11 +912,11 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 
 ##### CDU-2.4: Bloqueo de Tarjetas de Crédito o Débito
 
-*ID:* CDU-2.4  
-*Nombre:* Bloqueo de Tarjetas de Crédito o Débito  
-*Actor Principal:* Empleado de Atención al Cliente  
-*Propósito:* Permitir a los clientes bloquear sus tarjetas de manera inmediata en caso de pérdida, robo o fraude.  
-*Resumen:* El cliente solicita el bloqueo de su tarjeta indicando el motivo y verifica su identidad. El sistema bloquea la tarjeta, notifica al cliente y genera un reporte al equipo de fraude.  
+_ID:_ CDU-2.4  
+_Nombre:_ Bloqueo de Tarjetas de Crédito o Débito  
+_Actor Principal:_ Empleado de Atención al Cliente  
+_Propósito:_ Permitir a los clientes bloquear sus tarjetas de manera inmediata en caso de pérdida, robo o fraude.  
+_Resumen:_ El cliente solicita el bloqueo de su tarjeta indicando el motivo y verifica su identidad. El sistema bloquea la tarjeta, notifica al cliente y genera un reporte al equipo de fraude.
 
 ##### Flujo Principal
 
@@ -931,11 +935,11 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 
 ##### CDU-2.5: Solicitud de Cancelación de Cuenta o Tarjeta
 
-*ID:* CDU-2.5  
-*Nombre:* Solicitud de Cancelación de Cuenta o Tarjeta  
-*Actor Principal:* Empleado de Atención al Cliente  
-*Propósito:* Permitir a los clientes solicitar la cancelación de servicios o productos financieros de forma controlada.  
-*Resumen:* El cliente solicita la cancelación de un servicio proporcionando su identificación y motivo. El supervisor revisa la solicitud y confirma la cancelación después de verificar los requisitos.  
+_ID:_ CDU-2.5  
+_Nombre:_ Solicitud de Cancelación de Cuenta o Tarjeta  
+_Actor Principal:_ Empleado de Atención al Cliente  
+_Propósito:_ Permitir a los clientes solicitar la cancelación de servicios o productos financieros de forma controlada.  
+_Resumen:_ El cliente solicita la cancelación de un servicio proporcionando su identificación y motivo. El supervisor revisa la solicitud y confirma la cancelación después de verificar los requisitos.
 
 ##### Flujo Principal
 
@@ -954,11 +958,11 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 
 ##### CDU-2.6: Encuesta de Satisfacción
 
-*ID:* CDU-2.6  
-*Nombre:* Encuesta de Satisfacción  
-*Actor Principal:* Empleado de Atención al Cliente  
-*Propósito:* Evaluar la calidad de los servicios del banco y recolectar datos para análisis estadísticos y retroalimentación.  
-*Resumen:* Permite a los clientes calificar los servicios del banco en categorías como atención al cliente, productos y servicios. Incluye un sistema de puntuación y comentarios opcionales. Las encuestas serán realizadas por el personal de atención al cliente.  
+_ID:_ CDU-2.6  
+_Nombre:_ Encuesta de Satisfacción  
+_Actor Principal:_ Empleado de Atención al Cliente  
+_Propósito:_ Evaluar la calidad de los servicios del banco y recolectar datos para análisis estadísticos y retroalimentación.  
+_Resumen:_ Permite a los clientes calificar los servicios del banco en categorías como atención al cliente, productos y servicios. Incluye un sistema de puntuación y comentarios opcionales. Las encuestas serán realizadas por el personal de atención al cliente.
 
 ##### Flujo Principal
 
@@ -977,11 +981,11 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 
 ##### CDU-2.7: Solicitud de Préstamo
 
-*ID:* CDU-2.7  
-*Nombre:* Solicitud de Préstamo  
-*Actor Principal:* Empleado de Atención al Cliente  
-*Propósito:* Permitir a los clientes solicitar préstamos personales, hipotecarios, vehiculares u otros de forma transparente y segura.  
-*Resumen:* Este módulo recopila información necesaria para que los clientes soliciten préstamos. Incluye validaciones, análisis de capacidad de pago y procesos de autorización supervisados.  
+_ID:_ CDU-2.7  
+_Nombre:_ Solicitud de Préstamo  
+_Actor Principal:_ Empleado de Atención al Cliente  
+_Propósito:_ Permitir a los clientes solicitar préstamos personales, hipotecarios, vehiculares u otros de forma transparente y segura.  
+_Resumen:_ Este módulo recopila información necesaria para que los clientes soliciten préstamos. Incluye validaciones, análisis de capacidad de pago y procesos de autorización supervisados.
 
 ##### Flujo Principal
 
@@ -1004,11 +1008,11 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 
 ##### CDU-2.8: Registro de Quejas
 
-*ID:* CDU-2.8  
-*Nombre:* Registro de Quejas  
-*Actor Principal:* Empleado de Atención al Cliente  
-*Propósito:* Permitir a los clientes registrar quejas relacionadas con los servicios del banco, para su atención y resolución priorizada.  
-*Resumen:* Los clientes pueden registrar quejas clasificadas por tipo y detallar su problema. El sistema almacena la información y notifica al supervisor para su seguimiento.  
+_ID:_ CDU-2.8  
+_Nombre:_ Registro de Quejas  
+_Actor Principal:_ Empleado de Atención al Cliente  
+_Propósito:_ Permitir a los clientes registrar quejas relacionadas con los servicios del banco, para su atención y resolución priorizada.  
+_Resumen:_ Los clientes pueden registrar quejas clasificadas por tipo y detallar su problema. El sistema almacena la información y notifica al supervisor para su seguimiento.
 
 ##### Flujo Principal
 
@@ -1198,7 +1202,7 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 **Nombre:** Login
 **Actor Principal:** Supervisor
 **Propósito:** Permitir al supervisor iniciar sesión en el sistema de forma segura.  
-**Resumen:** El supervisor podrá iniciar sesión utilizando sus credenciales registradas en el sistema.  
+**Resumen:** El supervisor podrá iniciar sesión utilizando sus credenciales registradas en el sistema.
 
 #### Flujo Principal
 
@@ -1213,10 +1217,11 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 #### Flujo Alternativo
 
 - **Credenciales inválidas:**
+
   1. El sistema muestra un mensaje de error.
   2. El supervisor tiene la opción de reintentar.
 
-- **Postcondición:** El supervisor accede al sistema o recibe un mensaje indicando que sus credenciales son incorrectas.  
+- **Postcondición:** El supervisor accede al sistema o recibe un mensaje indicando que sus credenciales son incorrectas.
 
 ---
 
@@ -1226,22 +1231,23 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 **Nombre:** Verificar clave
 **Actor Principal:** Supervisor
 **Propósito:** Permitir al supervisor cargar su archivo de claves `.ayd` para asegurar su identidad.  
-**Resumen:** El supervisor podra cargar su archivo de claves `.ayd` para confirmar su identidad y tener mayor seguridad de su perfil.  
+**Resumen:** El supervisor podra cargar su archivo de claves `.ayd` para confirmar su identidad y tener mayor seguridad de su perfil.
 
 #### Flujo Principal
 
 1. El supervisor cargar el archivo de claves `.ayd` en el espacio destinado.
 2. El supervisor confirma la carga de archivos.
 3. El sistema valida las credenciales.
-5. Si las credenciales son válidas, el supervisor accede al sistema.
+4. Si las credenciales son válidas, el supervisor accede al sistema.
 
 #### Flujo Alternativo
 
 - **Credenciales inválidas:**
+
   1. El sistema muestra un mensaje de error.
   2. El supervisor tiene la opción de reintentar.
 
-- **Postcondición:** El supervisor accede al sistema o recibe un mensaje indicando que sus credenciales son incorrectas.  
+- **Postcondición:** El supervisor accede al sistema o recibe un mensaje indicando que sus credenciales son incorrectas.
 
 ---
 
@@ -1251,29 +1257,30 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 **Nombre:** Modificar información del empleado
 **Actor Principal:** Supervisor
 **Propósito:** Permitir al supervisor modificar la información de los empleados registrados en el sistema.  
-**Resumen:** El supervisor podrá modificar, eliminar o agregar información de los empleados registrados en el sistema.  
+**Resumen:** El supervisor podrá modificar, eliminar o agregar información de los empleados registrados en el sistema.
 
 #### Flujo Principal
 
 1. El supervisor ingresa a la opción de 'Empleados'.
 2. El supervisor identifica al empleado por medio del CUI y presiona el botón 'Editar'.
 3. El supervisor podrá modificar el nombre, teléfono, correo, fotografía, genero y estado civil siempre y cuando estos datos contengan información.
-5. El supervisor dará click en el botón 'Guardar'.
+4. El supervisor dará click en el botón 'Guardar'.
 
 #### Flujo Alternativo
 
 - **Reiniciar contraseña:**
-    1. El supervisor ingresa a la opción de 'Empleados'.
-    2. El supervisor identifica al empleado por medio del CUI y presiona el botón 'Editar'.
-    3. El supervisor dará click en la opción 'Solicitar nueva contraseña'.
+  1. El supervisor ingresa a la opción de 'Empleados'.
+  2. El supervisor identifica al empleado por medio del CUI y presiona el botón 'Editar'.
+  3. El supervisor dará click en la opción 'Solicitar nueva contraseña'.
 
 #### Excepciones
 
 - **Datos incorrectos:**
-    1. El sistema valida existen datos incorrectos.
-    2. El sistema notifica al supervisor que debe corregir los datos incorrectos.
 
-- **Postcondición:** En caso de realizar el flujo alterno de 'Reiniciar contraseña' se debe continuar con el CDU-4.4.  
+  1. El sistema valida existen datos incorrectos.
+  2. El sistema notifica al supervisor que debe corregir los datos incorrectos.
+
+- **Postcondición:** En caso de realizar el flujo alterno de 'Reiniciar contraseña' se debe continuar con el CDU-4.4.
 
 ---
 
@@ -1285,7 +1292,7 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 **Propósito:** Permitir al supervisor solicitar al administrador del sistema el reinicio de la contraseña de un empleado.  
 **Resumen:** El supervisor podrá solicitar al administrador del sistema que este le pueda reiniciar la contraseña a un empleado.
 
-- **Precondición:** Haber realizado el flujo alterno del CDU-4.3.  
+- **Precondición:** Haber realizado el flujo alterno del CDU-4.3.
 
 #### Flujo Principal
 
@@ -1295,11 +1302,12 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 #### Flujo Alternativo
 
 - **Cancelar:**
-    1. El sistema solicitará al supervisor una confirmación del reinicio de contraseña para el empleado.
-    2. El supervisor cancela el reinicio.
-    3. El sistema redirigirá al supervisor a la pantalla de modificación de empleado.
 
-- **Postcondición:** Realizar CDU-4.5.  
+  1. El sistema solicitará al supervisor una confirmación del reinicio de contraseña para el empleado.
+  2. El supervisor cancela el reinicio.
+  3. El sistema redirigirá al supervisor a la pantalla de modificación de empleado.
+
+- **Postcondición:** Realizar CDU-4.5.
 
 ---
 
@@ -1311,7 +1319,7 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 **Propósito:** Validar que el empleado no tenga mas de 3 solicitudes de reinicio de contraseña.  
 **Resumen:** El sistema deberá validar que el empleado no tenga mas de 3 solicitudes de reinicio de contraseña, de lo contrario se bloqueará el acceso al sistema.
 
-- **Precondición:** Haber realizado el flujo principal del CDU-4.4.  
+- **Precondición:** Haber realizado el flujo principal del CDU-4.4.
 
 #### Flujo Principal
 
@@ -1321,8 +1329,8 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 #### Flujo Alternativo
 
 - **Envío de solicitud al administrador:**
-    1. El sistema verifica que el empleado no ha realizado mas de 3 solicitudes de reinicio de contraseña.
-    2. El sistema envía una solicitud de reinicio de contraseña del empleado al administrador.
+  1. El sistema verifica que el empleado no ha realizado mas de 3 solicitudes de reinicio de contraseña.
+  2. El sistema envía una solicitud de reinicio de contraseña del empleado al administrador.
 
 ---
 
@@ -1334,7 +1342,7 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 **Propósito:** Permitir al supervisor aceptar o rechazar las solicitudes de préstamos.  
 **Resumen:** El supervisor podrá revisar las solicitudes de prestamos válidad y aceptarlas o rechazarlas.
 
-- **Precondición:** Haber realizado el CDU-4.7.  
+- **Precondición:** Haber realizado el CDU-4.7.
 
 #### Flujo Principal
 
@@ -1346,10 +1354,10 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 #### Flujo Alternativo
 
 - **Rechazo de solicitud:**
-    1. El supervisor se dirige a la opción de 'Solicitudes de Préstamos'.
-    2. El supervisor identifica la solicitud de préstamo y selecciona la opción 'Ver información'
-    3. El sistema muestra la información relacionada a la solicitud de préstamo.
-    4. El supervisor selecciona la opción 'Rechazar'.
+  1. El supervisor se dirige a la opción de 'Solicitudes de Préstamos'.
+  2. El supervisor identifica la solicitud de préstamo y selecciona la opción 'Ver información'
+  3. El sistema muestra la información relacionada a la solicitud de préstamo.
+  4. El supervisor selecciona la opción 'Rechazar'.
 
 ---
 
@@ -1369,8 +1377,8 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 #### Flujo Alternativo
 
 - **Ingreso de solicitud:**
-    1. El sistema valida que el usuario no cuenta con préstamos existentes.
-    2. El sistema registra la solicitud para revisión del supervisor.
+  1. El sistema valida que el usuario no cuenta con préstamos existentes.
+  2. El sistema registra la solicitud para revisión del supervisor.
 
 ---
 
@@ -1410,7 +1418,7 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 **Nombre:** Registro de administrador del sistema
 **Actor Principal:** Supervisor
 **Propósito:** Permitir al supervisor poder registrar administradores del sistema.  
-**Resumen:** El supervisor podrá registrar nuevos usuarios administradores del sistema.  
+**Resumen:** El supervisor podrá registrar nuevos usuarios administradores del sistema.
 
 #### Flujo Principal
 
@@ -1425,8 +1433,8 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 #### Excepciones
 
 - **Datos incorrectos:**
-    1. El sistema valida existen datos incorrectos.
-    2. El sistema notifica al supervisor que debe corregir los datos incorrectos.
+  1. El sistema valida existen datos incorrectos.
+  2. El sistema notifica al supervisor que debe corregir los datos incorrectos.
 
 ---
 
@@ -1436,7 +1444,7 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 **Nombre:** Modificación de administrador del sistema
 **Actor Principal:** Supervisor
 **Propósito:** Permitir al supervisor poder modificar la información de los administradores del sistema.  
-**Resumen:** El supervisor podrá modificar la información de los administradores del sistema.  
+**Resumen:** El supervisor podrá modificar la información de los administradores del sistema.
 
 #### Flujo Principal
 
@@ -1450,16 +1458,16 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 #### Flujo Alternativo
 
 - **Ver información:**
-    1. El supervisor ingresa a la opción de 'Administradores'
-    2. El supervisor identificará al administrador y dará click en la opción 'Ver'
-    3. El sistema mostrará la información del administrador.
-    5. El supervisor debe dar click en la opción 'Cerrar'.
+  1. El supervisor ingresa a la opción de 'Administradores'
+  2. El supervisor identificará al administrador y dará click en la opción 'Ver'
+  3. El sistema mostrará la información del administrador.
+  4. El supervisor debe dar click en la opción 'Cerrar'.
 
 #### Excepciones
 
 - **Datos incorrectos:**
-    1. El sistema valida existen datos incorrectos.
-    2. El sistema notifica al supervisor que debe corregir los datos incorrectos.
+  1. El sistema valida existen datos incorrectos.
+  2. El sistema notifica al supervisor que debe corregir los datos incorrectos.
 
 ---
 
@@ -1469,7 +1477,7 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 **Nombre:** Monitoreo en tiempo real
 **Actor Principal:** Supervisor
 **Propósito:** Permitir al supervisor realizar un monitoreo en tiempo real de las actividades en el sistema.  
-**Resumen:** El supervisor podrá monitorear en tiempo real las actividades que se estén realizando dentro del sistema.  
+**Resumen:** El supervisor podrá monitorear en tiempo real las actividades que se estén realizando dentro del sistema.
 
 #### Flujo Principal
 
@@ -1484,7 +1492,7 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 **Nombre:** Vista de Reportes
 **Actor Principal:** Supervisor
 **Propósito:** Permitir al supervisor poder visualizar los reportes del sistema.  
-**Resumen:** El supervisor podrá visualizar los reportes del sistema.  
+**Resumen:** El supervisor podrá visualizar los reportes del sistema.
 
 #### Flujo Principal
 
@@ -1502,7 +1510,7 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 **Nombre:** Gestión de inventarios bancarios
 **Actor Principal:** Supervisor
 **Propósito:** Permitir al supervisor poder gestionar el efectivo y otros recursos de la sucursal.  
-**Resumen:** El supervisor podrá gestionar el efectivo y otros recursos de la sucursal.  
+**Resumen:** El supervisor podrá gestionar el efectivo y otros recursos de la sucursal.
 
 #### Flujo Principal
 
@@ -1514,15 +1522,15 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 #### Flujo Alternativo
 
 - **Ver información:**
-    1. El supervisor ingresa a la opción de 'Gestión de Inventario Bancario'
-    2. El sistema le mostrará al usuario la información actual de los recursos de la sucursal.
-    4. El supervisor debe seleccionar el botón 'Cerrar'.
+  1. El supervisor ingresa a la opción de 'Gestión de Inventario Bancario'
+  2. El sistema le mostrará al usuario la información actual de los recursos de la sucursal.
+  3. El supervisor debe seleccionar el botón 'Cerrar'.
 
 #### Excepciones
 
 - **Datos incorrectos:**
-    1. El sistema valida existen datos incorrectos.
-    2. El sistema notifica al supervisor que debe corregir los datos incorrectos.
+  1. El sistema valida existen datos incorrectos.
+  2. El sistema notifica al supervisor que debe corregir los datos incorrectos.
 
 ---
 
@@ -1532,7 +1540,7 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 **Nombre:** Aprobar o rechazar tarjeta
 **Actor Principal:** Supervisor
 **Propósito:** Permitir al supervisor poder aprobar o rechazar las solicitudes de tarjetas de los clientes.  
-**Resumen:** El supervisor podrá aprobar o rechazar las solicitudes de tarjetas ingresadas por los clientes.  
+**Resumen:** El supervisor podrá aprobar o rechazar las solicitudes de tarjetas ingresadas por los clientes.
 
 #### Flujo Principal
 
@@ -1546,11 +1554,11 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 #### Flujo Alternativo
 
 - **Rechazar solicitud:**
-    1. El supervisor ingresa a la opción de 'Solicitudes de Tarjetas'.
-    2. El sistema mostrará las solicitudes en el sistema.
-    3. El supervisor identificará la solicitud y seleccionará la opción 'Revisar'.
-    4. El sistema mostrará al supervisor toda la información relacionada a la solicitud.
-    5. El supervisor seleccionará el botón 'Rechazar'.
+  1. El supervisor ingresa a la opción de 'Solicitudes de Tarjetas'.
+  2. El sistema mostrará las solicitudes en el sistema.
+  3. El supervisor identificará la solicitud y seleccionará la opción 'Revisar'.
+  4. El sistema mostrará al supervisor toda la información relacionada a la solicitud.
+  5. El supervisor seleccionará el botón 'Rechazar'.
 
 ---
 
@@ -1560,7 +1568,7 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 **Nombre:** Cancelar servicio
 **Actor Principal:** Supervisor
 **Propósito:** Permitir al supervisor poder aprobar o rechazar las solicitudes de cancelación de servicios de los clientes.  
-**Resumen:** El supervisor podrá aprobar o rechazar las solicitudes de cancelación de servicios ingresadas por los clientes.  
+**Resumen:** El supervisor podrá aprobar o rechazar las solicitudes de cancelación de servicios ingresadas por los clientes.
 
 #### Flujo Principal
 
@@ -1573,11 +1581,12 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 #### Flujo Alternativo
 
 - **Rechazar solicitud:**
-    1. El supervisor ingresa a la opción de 'Cancelación de servicios'.
-    2. El sistema mostrará las solicitudes en el sistema.
-    3. El supervisor identificará la solicitud y seleccionará la opción 'Revisar'.
-    4. El sistema mostrará al supervisor toda la información relacionada a la solicitud.
-    5. El supervisor seleccionará el botón 'Rechazar'.
+
+  1. El supervisor ingresa a la opción de 'Cancelación de servicios'.
+  2. El sistema mostrará las solicitudes en el sistema.
+  3. El supervisor identificará la solicitud y seleccionará la opción 'Revisar'.
+  4. El sistema mostrará al supervisor toda la información relacionada a la solicitud.
+  5. El supervisor seleccionará el botón 'Rechazar'.
 
 - **Postcondición:** En caso de realizar el flujo principal, continuar con el CDU-4.17
 
@@ -1590,7 +1599,7 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 **Actor Principal:** Sistema
 **Actor Secundario:** Supervisor
 **Propósito:** Validar que el sistema a cancelar no cuente con ningún inconveniente.  
-**Resumen:** El sistema validará que el sistema que se está cancelando no cuente con ningún inconveniente.  
+**Resumen:** El sistema validará que el sistema que se está cancelando no cuente con ningún inconveniente.
 
 - **Precondición:** Haber realizado el flujo principal del CDU-4.16
 
@@ -1602,85 +1611,89 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 #### Flujo Alternativo
 
 - **Servicio con inconvenientes:**
-    1. El sistema verificará que el servicio cuenta con inconvenientes.
-    2. El sistema notificará al supervisor de que el servicio no puede ser cancelado y mostrará los inconvenientes relacionados.
+  1. El sistema verificará que el servicio cuenta con inconvenientes.
+  2. El sistema notificará al supervisor de que el servicio no puede ser cancelado y mostrará los inconvenientes relacionados.
 
 ## MATRICES DE TRAZABILIDAD
 
 ### a. Stakeholders vs Requerimientos
 
-| **Stakeholders / Requerimientos** | **RF-1.1** | **RF-1.2** | **RF-1.3** | **RF-1.4** | **RF-1.5** | **RF-1.6** | **RF-1.7** | **RF-1.8** | **RF-1.9** | **RF-1.10** |
-|------------------------------------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|
-| **Clientes**                      |           | X         | X         |           | X         | X         | X         | X         | X         | X         |
-| **Directivos y gerentes**         |           |           |           |           |           |           | X         |           |           | X         |
-| **Agentes de Servicio al Cliente**|           | X         | X         | X         | X         |           |           |           |           |           |
-| **Cajeros**                       | X         | X         | X         | X         | X         | X         | X         | X         | X         | X         |
-| **Administradores de sistemas**   | X         |           |           |           |           |           | X         | X         | X         | X         |
-| **Socios comerciales**            |           | X         | X         |           |           | X         | X         |           |           |           |
-| **Entidades regulatorias**        | X         |           |           |           |           |           | X         | X         | X         | X         |
+| **Stakeholders / Requerimientos**  | **RF-1.1** | **RF-1.2** | **RF-1.3** | **RF-1.4** | **RF-1.5** | **RF-1.6** | **RF-1.7** | **RF-1.8** | **RF-1.9** | **RF-1.10** |
+| ---------------------------------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ----------- |
+| **Clientes**                       |            | X          | X          |            | X          | X          | X          | X          | X          | X           |
+| **Directivos y gerentes**          |            |            |            |            |            |            | X          |            |            | X           |
+| **Agentes de Servicio al Cliente** |            | X          | X          | X          | X          |            |            |            |            |             |
+| **Cajeros**                        | X          | X          | X          | X          | X          | X          | X          | X          | X          | X           |
+| **Administradores de sistemas**    | X          |            |            |            |            |            | X          | X          | X          | X           |
+| **Socios comerciales**             |            | X          | X          |            |            | X          | X          |            |            |             |
+| **Entidades regulatorias**         | X          |            |            |            |            |            | X          | X          | X          | X           |
 
 ### b. Stakeholders vs CDU
 
-| **Stakeholders / CDU**            | **CDU-1.1** | **CDU-1.2** | **CDU-1.3** | **CDU-1.4** | **CDU-1.5** | **CDU-1.6** | **CDU-1.7** | **CDU-1.8** | **CDU-1.9** | **CDU-1.10** |
-|------------------------------------|------------|------------|------------|------------|------------|------------|------------|------------|------------|------------|
-| **Clientes**                      |            | X          | X          |            | X          | X          | X          | X          | X          | X          |
-| **Directivos y gerentes**         |            |            |            |            |            |            | X          |            |            | X          |
-| **Agentes de Servicio al Cliente**|            | X          | X          | X          | X          |            |            |            |            |            |
-| **Cajeros**                       | X          | X          | X          | X          | X          | X          | X          | X          | X          | X          |
-| **Administradores de sistemas**   | X          |            |            |            |            |            | X          | X          | X          | X          |
-| **Socios comerciales**            |            | X          | X          |            |            | X          | X          |            |            |            |
-| **Entidades regulatorias**        | X          |            |            |            |            |            | X          | X          | X          | X          |
+| **Stakeholders / CDU**             | **CDU-1.1** | **CDU-1.2** | **CDU-1.3** | **CDU-1.4** | **CDU-1.5** | **CDU-1.6** | **CDU-1.7** | **CDU-1.8** | **CDU-1.9** | **CDU-1.10** |
+| ---------------------------------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ----------- | ------------ |
+| **Clientes**                       |             | X           | X           |             | X           | X           | X           | X           | X           | X            |
+| **Directivos y gerentes**          |             |             |             |             |             |             | X           |             |             | X            |
+| **Agentes de Servicio al Cliente** |             | X           | X           | X           | X           |             |             |             |             |              |
+| **Cajeros**                        | X           | X           | X           | X           | X           | X           | X           | X           | X           | X            |
+| **Administradores de sistemas**    | X           |             |             |             |             |             | X           | X           | X           | X            |
+| **Socios comerciales**             |             | X           | X           |             |             | X           | X           |             |             |              |
+| **Entidades regulatorias**         | X           |             |             |             |             |             | X           | X           | X           | X            |
 
 ### c. Requerimientos vs CDU
 
-| **CDU / Requerimientos**          | **RF-1.1** | **RF-1.2** | **RF-1.3** | **RF-1.4** | **RF-1.5** | **RF-1.6** | **RF-1.7** | **RF-1.8** | **RF-1.9** | **RF-1.10** |
-|------------------------------------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|
-| **CDU-1.1: Gestión de Acceso**      | X         |           |           |           |           |           |           |           |           |           |
-| **CDU-1.2: Pago de Servicios**      |           | X         |           |           |           |           | X         |           |           |           |
-| **CDU-1.3: Pago de Préstamos**      |           |           | X         |           |           |           | X         |           |           |           |
-| **CDU-1.4: Búsqueda de Clientes**   |           |           |           | X         |           |           |           |           |           |           |
-| **CDU-1.5: Consulta de Saldo**      |           |           |           |           | X         |           |           |           |           |           |
-| **CDU-1.6: Cambio de Moneda**       |           |           |           |           |           | X         | X         |           |           |           |
-| **CDU-1.7: Generación de Comprobantes** |       | X         | X         |           | X         | X         | X         | X         | X         | X         |
-| **CDU-1.8: Retiro de Dinero**       |           |           |           |           |           |           | X         | X         |           |           |
-| **CDU-1.9: Depósito de Dinero**     |           |           |           |           |           |           | X         |           | X         |           |
-| **CDU-1.10: Pago de Tarjetas de Crédito** |       |           |           |           |           |           | X         |           |           | X         |
+| **CDU / Requerimientos**                  | **RF-1.1** | **RF-1.2** | **RF-1.3** | **RF-1.4** | **RF-1.5** | **RF-1.6** | **RF-1.7** | **RF-1.8** | **RF-1.9** | **RF-1.10** |
+| ----------------------------------------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ----------- |
+| **CDU-1.1: Gestión de Acceso**            | X          |            |            |            |            |            |            |            |            |             |
+| **CDU-1.2: Pago de Servicios**            |            | X          |            |            |            |            | X          |            |            |             |
+| **CDU-1.3: Pago de Préstamos**            |            |            | X          |            |            |            | X          |            |            |             |
+| **CDU-1.4: Búsqueda de Clientes**         |            |            |            | X          |            |            |            |            |            |             |
+| **CDU-1.5: Consulta de Saldo**            |            |            |            |            | X          |            |            |            |            |             |
+| **CDU-1.6: Cambio de Moneda**             |            |            |            |            |            | X          | X          |            |            |             |
+| **CDU-1.7: Generación de Comprobantes**   |            | X          | X          |            | X          | X          | X          | X          | X          | X           |
+| **CDU-1.8: Retiro de Dinero**             |            |            |            |            |            |            | X          | X          |            |             |
+| **CDU-1.9: Depósito de Dinero**           |            |            |            |            |            |            | X          |            | X          |             |
+| **CDU-1.10: Pago de Tarjetas de Crédito** |            |            |            |            |            |            | X          |            |            | X           |
 
 ## ESTILOS ARQUITECTONICOS
 
 1. Organización y Mantenimiento:
-    La arquitectura en capas divide el sistema en módulos independientes con responsabilidades bien definidas (como capa de presentación, lógica de negocio y acceso a datos). Esto facilita:
+   La arquitectura en capas divide el sistema en módulos independientes con responsabilidades bien definidas (como capa de presentación, lógica de negocio y acceso a datos). Esto facilita:
 
-    * Mantenimiento: Al estar el sistema dividido, cualquier modificación en una capa (como cambiar la base de datos o ajustar la interfaz de usuario) no afecta las otras capas, siempre y cuando se respeten las interfaces.
-    * Escalabilidad: Agregar nuevas funcionalidades, como un nuevo módulo de pago o gestión de clientes, puede hacerse extendiendo o modificando las capas necesarias sin romper el sistema existente.
+   - Mantenimiento: Al estar el sistema dividido, cualquier modificación en una capa (como cambiar la base de datos o ajustar la interfaz de usuario) no afecta las otras capas, siempre y cuando se respeten las interfaces.
+   - Escalabilidad: Agregar nuevas funcionalidades, como un nuevo módulo de pago o gestión de clientes, puede hacerse extendiendo o modificando las capas necesarias sin romper el sistema existente.
+
 2. Separación de Responsabilidades:
-    Cada módulo (como Pago de Servicios, Gestión de Cuentas, o Registro de Quejas) se puede asignar a una capa específica:
+   Cada módulo (como Pago de Servicios, Gestión de Cuentas, o Registro de Quejas) se puede asignar a una capa específica:
 
-    * Capa de presentación: Maneja la interfaz para los usuarios (cajeros, atención al cliente, administradores, etc.), garantizando una experiencia intuitiva y clara.
-    * Capa de lógica de negocio: Contiene las reglas de validación, cálculos y procesos como la validación del límite de cambios de moneda o cálculo de intereses en tarjetas de crédito.
-    * Capa de acceso a datos: Se encarga de interactuar con la base de datos para almacenar o recuperar información, como el historial de transacciones o los datos de las cuentas.
+   - Capa de presentación: Maneja la interfaz para los usuarios (cajeros, atención al cliente, administradores, etc.), garantizando una experiencia intuitiva y clara.
+   - Capa de lógica de negocio: Contiene las reglas de validación, cálculos y procesos como la validación del límite de cambios de moneda o cálculo de intereses en tarjetas de crédito.
+   - Capa de acceso a datos: Se encarga de interactuar con la base de datos para almacenar o recuperar información, como el historial de transacciones o los datos de las cuentas.
+
 3. Escalabilidad y Flexibilidad:
-    La arquitectura de capas es especialmente útil para un sistema bancario como este debido a:
+   La arquitectura de capas es especialmente útil para un sistema bancario como este debido a:
 
-    * Ampliaciones futuras: Si más adelante se desean añadir nuevas funcionalidades (como pagos internacionales o integración con billeteras digitales), estas pueden integrarse fácilmente en la capa de lógica de negocio.
-    * Flexibilidad tecnológica: Cambiar la base de datos o el frontend puede hacerse con mínimas repercusiones, ya que las capas están desacopladas.
+   - Ampliaciones futuras: Si más adelante se desean añadir nuevas funcionalidades (como pagos internacionales o integración con billeteras digitales), estas pueden integrarse fácilmente en la capa de lógica de negocio.
+   - Flexibilidad tecnológica: Cambiar la base de datos o el frontend puede hacerse con mínimas repercusiones, ya que las capas están desacopladas.
+
 4. Seguridad:
-    La seguridad es crucial en un entorno bancario. Una arquitectura de capas permite:
+   La seguridad es crucial en un entorno bancario. Una arquitectura de capas permite:
 
-    * Control en cada nivel: Validaciones como autenticación en la capa de presentación y encriptación en la capa de datos aseguran que cada interacción con el sistema esté protegida.
-    * Protección de datos sensibles: Al restringir el acceso a la capa de datos mediante una capa intermedia de lógica de negocio, se reduce la posibilidad de que datos sensibles sean expuestos.
+   - Control en cada nivel: Validaciones como autenticación en la capa de presentación y encriptación en la capa de datos aseguran que cada interacción con el sistema esté protegida.
+   - Protección de datos sensibles: Al restringir el acceso a la capa de datos mediante una capa intermedia de lógica de negocio, se reduce la posibilidad de que datos sensibles sean expuestos.
+
 5. Modularidad por Roles:
-    Cada rol (cajero, atención al cliente, administrador) tiene funcionalidades específicas, que pueden asignarse a módulos dentro de las capas:
+   Cada rol (cajero, atención al cliente, administrador) tiene funcionalidades específicas, que pueden asignarse a módulos dentro de las capas:
 
-    * El rol de cajero tiene acceso a funciones como pagos y consultas, pero no puede acceder a la gestión de empleados, lo cual queda en la capa de lógica de negocio y control de acceso.
-    * El rol de atención al cliente tiene capacidades como actualizar datos y gestionar quejas, integrando validaciones desde la capa de negocio para verificar permisos.
-    * El rol de administrador de sistemas realiza tareas sensibles como registro y eliminación de empleados, lo cual se aísla en módulos específicos.
+   - El rol de cajero tiene acceso a funciones como pagos y consultas, pero no puede acceder a la gestión de empleados, lo cual queda en la capa de lógica de negocio y control de acceso.
+   - El rol de atención al cliente tiene capacidades como actualizar datos y gestionar quejas, integrando validaciones desde la capa de negocio para verificar permisos.
+   - El rol de administrador de sistemas realiza tareas sensibles como registro y eliminación de empleados, lo cual se aísla en módulos específicos.
 
 6. Cumplimiento de Buenas Prácticas de Desarrollo:
-    Esta arquitectura favorece:
+   Esta arquitectura favorece:
 
-    * Pruebas independientes: Cada capa puede ser probada de forma separada, garantizando calidad y reduciendo errores.
-    * Reutilización de componentes: Por ejemplo, el módulo de autenticación puede ser usado por todos los roles sin duplicar código.
+   - Pruebas independientes: Cada capa puede ser probada de forma separada, garantizando calidad y reduciendo errores.
+   - Reutilización de componentes: Por ejemplo, el módulo de autenticación puede ser usado por todos los roles sin duplicar código.
 
 ## DIAGRAMA DE DESPLIEGUE
 
@@ -1694,14 +1707,13 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 
 ![DIAGRAMA ER](./assets/Diagramas/Relational.jpg)
 
-
 ## PROTOTIPOS
 
 ### CAJERO
 
 #### PTPO-1.1 Login
 
- ![Login](./assets/cajero/maquetas/Login.png)
+![Login](./assets/cajero/maquetas/Login.png)
 
 #### PTPO-1.2 Home
 
@@ -1742,6 +1754,18 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 ### 2. ATENCIÓN AL CLIENTE
 
 ### 3. ADMINISTRADOR DE SISTEMAS
+
+#### PTPO-3.1 Login
+
+![PTPO-4.1](./assets/administrador/pt_login-administrador.png)
+
+#### PTPO-3.2 Menú de administración de sistema
+
+![PTPO-4.1](./assets/administrador/menu-administrador.png)
+
+#### PTPO-3.3 Módulo de Empleados
+
+![PTPO-4.1](./assets/administrador/menu-empleado.png)
 
 ### 4. SUPERVISOR
 
@@ -1790,7 +1814,7 @@ Caractersticas:
 
 - Conexiones a la base de datos (MySQL):
 
- Asegura que solo se cree una instancia de la conexión a la base de datos, evitando múltiples conexiones innecesarias que podrían agotar los recursos del servidor.
+Asegura que solo se cree una instancia de la conexión a la base de datos, evitando múltiples conexiones innecesarias que podrían agotar los recursos del servidor.
 
 #### Ventajas
 
@@ -1873,23 +1897,25 @@ La idea central del patrón Command es que, en lugar de ejecutar una acción dir
 #### Ventajas
 
 1. **Desacoplamiento**:
-Permite desacoplar el objeto que invoca la operación del objeto que la realiza. Esto facilita la extensión del sistema, ya que puedes agregar nuevos comandos sin modificar las clases existentes.
+   Permite desacoplar el objeto que invoca la operación del objeto que la realiza. Esto facilita la extensión del sistema, ya que puedes agregar nuevos comandos sin modificar las clases existentes.
 
 2. **Deshacer/Rehacer**:
-Implementar la funcionalidad de deshacer/rehacer es más fácil. Como los comandos son objetos, puedes almacenarlos y ejecutarlos en un orden inverso para deshacer las acciones.
+   Implementar la funcionalidad de deshacer/rehacer es más fácil. Como los comandos son objetos, puedes almacenarlos y ejecutarlos en un orden inverso para deshacer las acciones.
 
 3. **Simplicidad en la ejecución**:
-Puede transformar un conjunto de acciones complejas en una simple interfaz que permite que se ejecuten acciones con solo hacer una llamada de función.
+   Puede transformar un conjunto de acciones complejas en una simple interfaz que permite que se ejecuten acciones con solo hacer una llamada de función.
 
 4. **Registro y secuenciación de acciones**:
-Puedes almacenar y ejecutar una secuencia de comandos. También puedes hacer una cola de comandos y ejecutarlos de forma asíncrona.
+   Puedes almacenar y ejecutar una secuencia de comandos. También puedes hacer una cola de comandos y ejecutarlos de forma asíncrona.
 
 Dado todo lo anterior, hemos optado por este patron de diseño ya que nos será de mucha utilidad para la ejecución de las operaciones transaccionales del sistema como retiros, pagos, depósitos, etc. Incluso nos puede ser de gran ayuda con el manejo de solicitudes de clientes, como lo son las solicitudes de cancelación de servicios, la solicitudes de tarjetas, solicitudes de restablecimiento de contraseña, etc.
 
 ### 5. FACTORY PATTERN
-El Patrón Factory  Pattern, es un patron de diseño creacional que perite instanciar objetos sin exponer su lógica  de cracion. Para u sistema bancario, su implementación aporta beneficios clave en términos de escalabilida, flexibiliad y mantenimiento.
+
+El Patrón Factory Pattern, es un patron de diseño creacional que perite instanciar objetos sin exponer su lógica de cracion. Para u sistema bancario, su implementación aporta beneficios clave en términos de escalabilida, flexibiliad y mantenimiento.
 
 Características:
+
 - Centraliza la creación de objetos en una clase dedicada (la fábrica).
 
 - Oculta la lógica de creación al resto del sistema.
@@ -1897,12 +1923,14 @@ Características:
 - Facilita la configuración y validación de objetos al momento de su creación.
 
 ### Implementación
+
 - Define una clase o método estático encargado de crear instancias.
 - Utiliza parámetros para determinar el tipo de objeto a crear.
 - Opcionalmente, integra validaciones específicas según el tipo de objeto.
 - Devuelve instancias de una clase base o una interfaz común.
 
 ### Ventajas
+
 - Centraliza la lógica de creación, facilitando actualizaciones y modificaciones.
 - Permite agregar nuevos tipos de objetos sin modificar el código existente.
 - Simplifica la creación de objetos complejos con múltiples configuraciones.
