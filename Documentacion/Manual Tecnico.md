@@ -31,42 +31,64 @@
 
 ### Rol Atención al Cliente
 
-#### RF-01. Creacion de Cuenta Bancaria Normal y en Dólares
-El empleado del banco encargado de la atención al cliente debe tener un módulo específico para crear nuevas cuentas bancarias en el sistema. Las cuentas pueden ser de dos tipos distintos:
-* Con tipo de moneda de cambio local.
-* Con tipo de moneda de cambio en dólares.
+#### RF-11. Creación de Cuenta Bancaria Normal y en Dólares
 
-Debe ingresarse los datos del cliente vinculado, seleccionar si la cuenta es monetaria o de ahorro y el monto inicial. Debe de hacerse una validación de identidad para completar el proceso.
+- El empleado del banco encargado de la atención al cliente debe tener un módulo específico para crear nuevas cuentas bancarias en el sistema.
+- Las cuentas pueden ser de dos tipos distintos:
+  - Con tipo de moneda de cambio local.
+  - Con tipo de moneda de cambio en dólares.
+- Debe ingresarse los datos del cliente vinculado, seleccionar si la cuenta es monetaria o de ahorro y el monto inicial.
+- Debe hacerse una validación de identidad para completar el proceso.
 
-#### RF-02. Actualización de Datos del Cliente
-Debe haber un módulo para el encargado de atención al cliente para actualizar datos de los clientes. Debe de verificarse la identidad del cliente respondiendo la pregunta de seguridad registrada durante la creación de la cuenta bancaria. Al completar el proceso debe de guardarse en el historial los cambios realizados incluyendo la fecha y hora.
+#### RF-12. Actualización de Datos del Cliente
 
-#### RF-03. Creación de Tarjetas de Crédito o Débito
-Debe ser posible para el encargado de atención al cliente poder crear nuevas targetas de crédito o débito. Para completar el proceso debe de enviarse la solicitud con estado pendiente al supervisor para que pueda aprobarla o rechazarla. Antes de enviar la solicitud debe de realizarse una verificación de identidad.
+- Debe haber un módulo para el encargado de atención al cliente para actualizar datos de los clientes.
+- Debe verificarse la identidad del cliente respondiendo la pregunta de seguridad registrada durante la creación de la cuenta bancaria.
+- Al completar el proceso debe guardarse en el historial los cambios realizados incluyendo la fecha y hora.
 
-#### RF-04. Bloqueo de Tarjetas de Crédito o Débito
-Debe existir un módulo para que el encargado de atención al cliente pueda realizar bloqueos a tarjetas de crédito o débito por cualquiera de los motivos siguientes:
-* Robo
-* Pérdida
-* Fraude
+#### RF-13. Creación de Tarjetas de Crédito o Débito
 
-Para completar el proceso debe de notificarse al titular de la tarjeta del bloqueo exitoso y generar un reporte al equipo correspondiente para el análisis de fraude, en caso de ser necesario.
+- Debe ser posible para el encargado de atención al cliente crear nuevas tarjetas de crédito o débito.
+- Para completar el proceso debe enviarse la solicitud con estado pendiente al supervisor para que pueda aprobarla o rechazarla.
+- Antes de enviar la solicitud debe realizarse una verificación de identidad.
 
-#### RF-05. Solicitud de Cancelación de Cuenta o Tarjeta
-El empleado encargado de atención al cliente debe de poder emitir solicitudes de cancelación de cuentas o tarjetas de crédito o débito. Debe de enviarse la solicitud con estado pendiente al supervisor para que pueda aprobarla o rechazarla. Para completar el proceso es necesario que el supervisor examine el perfil del cliente para tomar la decisión de la solicitud.
+#### RF-14. Bloqueo de Tarjetas de Crédito o Débito
 
-#### RF-06. Encuesta de Satisfacción
-Los clientes pueden evaluar la atención al cliente, servicios, productos, etc., mediante una encuesta. Al finalizar la encuesta se debe de puntuar el área evaluada. Completada la encuesta, los datos se guardan para posteriormente realizar análisis.
+- Debe existir un módulo para que el encargado de atención al cliente pueda realizar bloqueos a tarjetas de crédito o débito por cualquiera de los motivos siguientes:
+  - Robo.
+  - Pérdida.
+  - Fraude.
+- Para completar el proceso debe notificarse al titular de la tarjeta del bloqueo exitoso y generar un reporte al equipo correspondiente para el análisis de fraude, en caso de ser necesario.
 
-#### RF-07. Solicitud de Préstamo
-El sistema debe tener un módulo de solicitud de préstamos que permite a los encargados de atención al cliente gestionar préstamos para los clientes. Es necesario ingresar datos como número de cuenta y monto solicitado. También se debe seleccionar el tipo de préstamo y el plazo en que se pagará el préstamo. Los clientes deberán cargar documentación requerida en PDF, y la autorización final recae en el supervisor.  
-El sistema debe realizar un análisis automático de la capacidad de pago del cliente, verificando si no tiene alguna deuda actual.  
-Deben establecerse tasas de interés dinámicas basadas en el historial crediticio del cliente y el tipo de préstamo.  
-Las solicitudes rechazadas deben incluir una justificación clara y recomendaciones para el cliente.  
-El Encargado de dar autorización de los prestamos es el supervisor.
+#### RF-15. Solicitud de Cancelación de Cuenta o Tarjeta
 
-#### RF-08. Registro de Quejas
-Debe de permitirse registrar quejas hechas por los clientes. Debe registrarse los detalles de la queja, los datos importantes del cliente como su número de cuenta, etc. y el servicio del que se va a presentar la queja. Al completarse el registro de la queja se envía automáticamente un correo electrónico al supervisor para notificar sobre el incidente.
+- El empleado encargado de atención al cliente debe poder emitir solicitudes de cancelación de cuentas o tarjetas de crédito o débito.
+- Debe enviarse la solicitud con estado pendiente al supervisor para que pueda aprobarla o rechazarla.
+- Para completar el proceso es necesario que el supervisor examine el perfil del cliente para tomar la decisión de la solicitud.
+
+#### RF-16. Encuesta de Satisfacción
+
+- Los clientes pueden evaluar la atención al cliente, servicios, productos, etc., mediante una encuesta.
+- Al finalizar la encuesta se debe puntuar el área evaluada.
+- Completada la encuesta, los datos se guardan para posteriormente realizar análisis.
+
+#### RF-17. Solicitud de Préstamo
+
+- El sistema debe tener un módulo de solicitud de préstamos que permite a los encargados de atención al cliente gestionar préstamos para los clientes.
+- Es necesario ingresar datos como número de cuenta y monto solicitado.
+- También se debe seleccionar el tipo de préstamo y el plazo en que se pagará el préstamo.
+- Los clientes deberán cargar documentación requerida en PDF, y la autorización final recae en el supervisor.
+- El sistema debe realizar un análisis automático de la capacidad de pago del cliente, verificando si no tiene alguna deuda actual.
+- Deben establecerse tasas de interés dinámicas basadas en el historial crediticio del cliente y el tipo de préstamo.
+- Las solicitudes rechazadas deben incluir una justificación clara y recomendaciones para el cliente.
+
+#### RF-18. Registro de Quejas
+
+- Debe permitirse registrar quejas hechas por los clientes.
+- Debe registrarse los detalles de la queja, los datos importantes del cliente como su número de cuenta, etc., y el servicio del que se va a presentar la queja.
+- Al completarse el registro de la queja se envía automáticamente un correo electrónico al supervisor para notificar sobre el incidente.
+
+---
 
 ## Requerimientos No Funcionales
 
@@ -93,14 +115,14 @@ El sistema debe cumplir con las normativas locales e internacionales aplicables,
 
 ## CDU Expandidos
 
-### Módulo de Atención al Cliente
+### ROL Atención al Cliente
 
-#### CDU-01. Creacion de Cuenta Bancaria Normal y en Dólares
-**ID:** CDU-01  
-**Nombre:** Creacion de Cuenta Bancaria Normal y en Dólares  
-**Actor Principal:** Empleado de Atención al Cliente  
-**Propósito:** Abrir una nueva cuenta monetaria o de ahorro con toda la información necesaria y garantizar su validación y seguridad.  
-**Resumen:** El encargado de atención al cliente podrá completa un formulario con datos personales del cliente, selecciona el tipo de cuenta y proporciona un monto inicial. El sistema valida la información, genera un número de cuenta único y almacena los datos en la base de datos.  
+#### CDU-11: Creación de Cuenta Bancaria Normal y en Dólares
+*ID:* CDU-11  
+*Nombre:* Creación de Cuenta Bancaria Normal y en Dólares  
+*Actor Principal:* Empleado de Atención al Cliente  
+*Propósito:* Abrir una nueva cuenta monetaria o de ahorro con toda la información necesaria y garantizar su validación y seguridad.  
+*Resumen:* El encargado de atención al cliente podrá completar un formulario con datos personales del cliente, seleccionar el tipo de cuenta y proporcionar un monto inicial. El sistema valida la información, genera un número de cuenta único y almacena los datos en la base de datos.  
 
 ##### Flujo Principal
 1. El empleado accede al módulo de creación de cuentas.
@@ -115,12 +137,14 @@ El sistema debe cumplir con las normativas locales e internacionales aplicables,
 ##### Flujo Alternativo
 - Si algún dato ingresado no cumple con las validaciones, el sistema muestra un mensaje de error, y el empleado debe corregir los datos del cliente para proceder.
 
-#### CDU-02. Actualización de Datos del Cliente
-**ID:** CDU-02  
-**Nombre:** Actualización de Datos del Cliente  
-**Actor Principal:** Empleado de Atención al Cliente  
-**Propósito:** Modificar datos personales del cliente manteniendo la seguridad y un historial de cambios.  
-**Resumen:** El empleado selecciona los datos que el cliente desea actualizar, verifica su identidad mediante una pregunta de seguridad y el sistema actualiza la información manteniendo un registro en el historial.    
+---
+
+#### CDU-12: Actualización de Datos del Cliente
+*ID:* CDU-12  
+*Nombre:* Actualización de Datos del Cliente  
+*Actor Principal:* Empleado de Atención al Cliente  
+*Propósito:* Modificar datos personales del cliente manteniendo la seguridad y un historial de cambios.  
+*Resumen:* El empleado selecciona los datos que el cliente desea actualizar, verifica su identidad mediante una pregunta de seguridad y el sistema actualiza la información manteniendo un registro en el historial.    
 
 ##### Flujo Principal
 1. El empleado accede al módulo de actualización de datos de clientes.
@@ -132,12 +156,14 @@ El sistema debe cumplir con las normativas locales e internacionales aplicables,
 ##### Flujo Alternativo
 - Si la verificación de identidad falla, el sistema niega el acceso y notifica al cliente.
 
-#### CDU-03. Creación de Tarjetas de Crédito o Débito
-**ID:** CDU-03  
-**Nombre:** Creación de Tarjetas de Crédito o Débito  
-**Actor Principal:** Empleado de Atención al Cliente  
-**Propósito:** Facilitar la solicitud de nuevas tarjetas de crédito o débito de manera segura.  
-**Resumen:** El cliente solicita una tarjeta, el sistema valida la identidad y la información proporcionada, y la solicitud pasa a revisión por parte del supervisor para su aprobación.  
+---
+
+#### CDU-13: Creación de Tarjetas de Crédito o Débito
+*ID:* CDU-13  
+*Nombre:* Creación de Tarjetas de Crédito o Débito  
+*Actor Principal:* Empleado de Atención al Cliente  
+*Propósito:* Facilitar la solicitud de nuevas tarjetas de crédito o débito de manera segura.  
+*Resumen:* El cliente solicita una tarjeta, el sistema valida la identidad y la información proporcionada, y la solicitud pasa a revisión por parte del supervisor para su aprobación.  
 
 ##### Flujo Principal
 1. El empleado accede al módulo de solicitud de tarjetas.
@@ -150,12 +176,14 @@ El sistema debe cumplir con las normativas locales e internacionales aplicables,
 ##### Flujo Alternativo
 - Si el cliente no cumple con los requisitos, el sistema rechaza la solicitud con una justificación.
 
-#### CDU-04. Bloqueo de Tarjetas de Crédito o Débito
-**ID:** CDU-04  
-**Nombre:** Bloqueo de Tarjetas de Crédito o Débito  
-**Actor Principal:** Empleado de Atención al Cliente  
-**Propósito:** Permitir a los clientes bloquear sus tarjetas de manera inmediata en caso de pérdida, robo o fraude.  
-**Resumen:** El cliente solicita el bloqueo de su tarjeta indicando el motivo y verifica su identidad. El sistema bloquea la tarjeta, notifica al cliente y genera un reporte al equipo de fraude.  
+---
+
+#### CDU-14: Bloqueo de Tarjetas de Crédito o Débito
+*ID:* CDU-14  
+*Nombre:* Bloqueo de Tarjetas de Crédito o Débito  
+*Actor Principal:* Empleado de Atención al Cliente  
+*Propósito:* Permitir a los clientes bloquear sus tarjetas de manera inmediata en caso de pérdida, robo o fraude.  
+*Resumen:* El cliente solicita el bloqueo de su tarjeta indicando el motivo y verifica su identidad. El sistema bloquea la tarjeta, notifica al cliente y genera un reporte al equipo de fraude.  
 
 ##### Flujo Principal
 1. El empleado accede al módulo de bloqueo de tarjetas.
@@ -168,12 +196,14 @@ El sistema debe cumplir con las normativas locales e internacionales aplicables,
 ##### Flujo Alternativo
 - Si la verificación de identidad falla, el sistema no realiza el bloqueo y notifica al cliente.
 
-#### CDU-05. Solicitud de Cancelación de Cuenta o Tarjeta
-**ID:** CDU-05  
-**Nombre:** Solicitud de Cancelación de Cuenta o Tarjeta  
-**Actor Principal:** Empleado de Atención al Cliente  
-**Propósito:** Permitir a los clientes solicitar la cancelación de servicios o productos financieros de forma controlada.  
-**Resumen:** El cliente solicita la cancelación de un servicio proporcionando su identificación y motivo. El supervisor revisa la solicitud y confirma la cancelación después de verificar los requisitos.  
+---
+
+#### CDU-15: Solicitud de Cancelación de Cuenta o Tarjeta
+*ID:* CDU-15  
+*Nombre:* Solicitud de Cancelación de Cuenta o Tarjeta  
+*Actor Principal:* Empleado de Atención al Cliente  
+*Propósito:* Permitir a los clientes solicitar la cancelación de servicios o productos financieros de forma controlada.  
+*Resumen:* El cliente solicita la cancelación de un servicio proporcionando su identificación y motivo. El supervisor revisa la solicitud y confirma la cancelación después de verificar los requisitos.  
 
 ##### Flujo Principal
 1. El empleado accede al módulo de cancelación de servicios.
@@ -186,12 +216,14 @@ El sistema debe cumplir con las normativas locales e internacionales aplicables,
 ##### Flujo Alternativo
 - Si el cliente tiene saldos pendientes, el sistema rechaza la solicitud y notifica al cliente con las razones.
 
-#### CDU-06. Encuesta de Satisfacción
-**ID:** CDU-06  
-**Nombre:** Encuesta de Satisfacción  
-**Actor Principal:** Empleado de Atención al Cliente  
-**Propósito:** Evaluar la calidad de los servicios del banco y recolectar datos para análisis estadísticos y retroalimentación.  
-**Resumen:** Permite a los clientes calificar los servicios del banco en categorías como atención al cliente, productos y servicios. Incluye un sistema de puntuación y comentarios opcionales. Las encuestas serán realizadas por el personal de atención al cliente.  
+---
+
+#### CDU-16: Encuesta de Satisfacción
+*ID:* CDU-16  
+*Nombre:* Encuesta de Satisfacción  
+*Actor Principal:* Empleado de Atención al Cliente  
+*Propósito:* Evaluar la calidad de los servicios del banco y recolectar datos para análisis estadísticos y retroalimentación.  
+*Resumen:* Permite a los clientes calificar los servicios del banco en categorías como atención al cliente, productos y servicios. Incluye un sistema de puntuación y comentarios opcionales. Las encuestas serán realizadas por el personal de atención al cliente.  
 
 ##### Flujo Principal
 1. El cliente es invitado a completar la encuesta por el personal de atención al cliente.
@@ -204,12 +236,14 @@ El sistema debe cumplir con las normativas locales e internacionales aplicables,
 ##### Flujo Alternativo
 - Si el cliente no desea proporcionar su número de cliente o identificación, la encuesta puede completarse de forma anónima.
 
-#### CDU-07. Solicitud de Préstamo
-**ID:** CDU-07  
-**Nombre:** Solicitud de Préstamo  
-**Actor Principal:** Empleado de Atención al Cliente  
-**Propósito:** Permitir a los clientes solicitar préstamos personales, hipotecarios, vehiculares u otros de forma transparente y segura.  
-**Resumen:** Este módulo recopila información necesaria para que los clientes soliciten préstamos. Incluye validaciones, análisis de capacidad de pago y procesos de autorización supervisados.  
+---
+
+#### CDU-17: Solicitud de Préstamo
+*ID:* CDU-17  
+*Nombre:* Solicitud de Préstamo  
+*Actor Principal:* Empleado de Atención al Cliente  
+*Propósito:* Permitir a los clientes solicitar préstamos personales, hipotecarios, vehiculares u otros de forma transparente y segura.  
+*Resumen:* Este módulo recopila información necesaria para que los clientes soliciten préstamos. Incluye validaciones, análisis de capacidad de pago y procesos de autorización supervisados.  
 
 ##### Flujo Principal
 1. El empleado accede al módulo y proporciona el número de cuenta o identificación del cliente.
@@ -226,12 +260,14 @@ El sistema debe cumplir con las normativas locales e internacionales aplicables,
 - El sistema notifica al cliente para que suba los documentos faltantes antes de continuar.
 - Si el análisis automático determina que el cliente no puede asumir el préstamo, la solicitud se rechaza automáticamente con una notificación clara al cliente.
 
-#### CDU-08. Registro de Quejas
-**ID:** CDU-08  
-**Nombre:** Registro de Quejas  
-**Actor Principal:** Empleado de Atención al Cliente  
-**Propósito:** Permitir a los clientes registrar quejas relacionadas con los servicios del banco, para su atención y resolución priorizada.  
-**Resumen:** Los clientes pueden registrar quejas clasificadas por tipo y detallar su problema. El sistema almacena la información y notifica al supervisor para su seguimiento.  
+---
+
+#### CDU-18: Registro de Quejas
+*ID:* CDU-18  
+*Nombre:* Registro de Quejas  
+*Actor Principal:* Empleado de Atención al Cliente  
+*Propósito:* Permitir a los clientes registrar quejas relacionadas con los servicios del banco, para su atención y resolución priorizada.  
+*Resumen:* Los clientes pueden registrar quejas clasificadas por tipo y detallar su problema. El sistema almacena la información y notifica al supervisor para su seguimiento.  
 
 ##### Flujo Principal
 1. El empleado accede al módulo y proporciona el número de cuenta o identificación del cliente.
