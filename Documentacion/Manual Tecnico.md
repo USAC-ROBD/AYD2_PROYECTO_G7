@@ -482,30 +482,48 @@
 
 **Postcondición:** El pago de la tarjeta queda registrado correctamente en el sistema.  
 
-
 ---
 
 ## MATRICES DE TRAZABILIDAD
 
 ### a. Stakeholders vs Requerimientos
 
-| **Requerimientos / Stakeholders** | **Clientes** | **Directivos y gerentes** | **Agentes de Servicio al cliente** | **Cajeros** | **Administradores de sistemas** | **Socios comerciales** | **Entidades regulatorias** |
-|------------------------------------|--------------|----------------------------|-------------------------------------|-------------|---------------------------------|-------------------------|----------------------------|
-| **RF-01. Gestión de Acceso**       |Medio            |Medio                          |Medio                                   | Alto           | Alto                               | Bajo                       | Alto                          |
-| **RF-02. Pago de Servicios**       | Alto            |Medio                          |Medio                                   | Alto           |Medio                               | Alto                       |Medio                          |
-| **RF-03. Pago de Préstamos**       | Alto            |Medio                          |Medio                                   | Alto           |Medio                               | Alto                       |Medio                          |
-| **RF-04. Búsqueda de Clientes**    | Alto            |Medio                          | Alto                                   |Medio           |Medio                               |Medio                       | Bajo                          |
-| **RF-05. Consulta de Saldo**       | Alto            |Medio                          | Alto                                   | Alto           |Medio                               |Medio                       | Bajo                          |
-| **RF-06. Cambio deMediooneda**        | Alto            |Medio                          | Bajo                                   |Medio           |Medio                               | Alto                       |Medio                          |
-| **RF-07. Generación de Comprobantes** |Medio         | Alto                          |Medio                                   | Alto           | Alto                               | Alto                       | Alto                          |
-| **RF-08. Retiro de Dinero**        | Alto            |Medio                          | Bajo                                   | Alto           | Alto                               | Bajo                       | Alto                          |
-| **RF-09. Depósito de Dinero**      | Alto            |Medio                          | Bajo                                   | Alto           | Alto                               | Bajo                       | Alto                          |
-| **RF-10. Pago de Tarjetas de Crédito** | Alto         | Alto                          | Bajo                                   | Alto           | Alto                               | Bajo                       | Alto                          |
-
+| **Stakeholders / Requerimientos** | **RF-01** | **RF-02** | **RF-03** | **RF-04** | **RF-05** | **RF-06** | **RF-07** | **RF-08** | **RF-09** | **RF-10** |
+|------------------------------------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|
+| **Clientes**                      |           | X         | X         |           | X         | X         | X         | X         | X         | X         |
+| **Directivos y gerentes**         |           |           |           |           |           |           | X         |           |           | X         |
+| **Agentes de Servicio al Cliente**|           | X         | X         | X         | X         |           |           |           |           |           |
+| **Cajeros**                       | X         | X         | X         | X         | X         | X         | X         | X         | X         | X         |
+| **Administradores de sistemas**   | X         |           |           |           |           |           | X         | X         | X         | X         |
+| **Socios comerciales**            |           | X         | X         |           |           | X         | X         |           |           |           |
+| **Entidades regulatorias**        | X         |           |           |           |           |           | X         | X         | X         | X         |
 
 ### b. Stakeholders vs CDU
 
+| **Stakeholders / CDU**            | **CDU-01** | **CDU-02** | **CDU-03** | **CDU-04** | **CDU-05** | **CDU-06** | **CDU-07** | **CDU-08** | **CDU-09** | **CDU-10** |
+|------------------------------------|------------|------------|------------|------------|------------|------------|------------|------------|------------|------------|
+| **Clientes**                      |            | X          | X          |            | X          | X          | X          | X          | X          | X          |
+| **Directivos y gerentes**         |            |            |            |            |            |            | X          |            |            | X          |
+| **Agentes de Servicio al Cliente**|            | X          | X          | X          | X          |            |            |            |            |            |
+| **Cajeros**                       | X          | X          | X          | X          | X          | X          | X          | X          | X          | X          |
+| **Administradores de sistemas**   | X          |            |            |            |            |            | X          | X          | X          | X          |
+| **Socios comerciales**            |            | X          | X          |            |            | X          | X          |            |            |            |
+| **Entidades regulatorias**        | X          |            |            |            |            |            | X          | X          | X          | X          |
+
 ### c. Requerimientos vs CDU
+
+| **CDU / Requerimientos**          | **RF-01** | **RF-02** | **RF-03** | **RF-04** | **RF-05** | **RF-06** | **RF-07** | **RF-08** | **RF-09** | **RF-10** |
+|------------------------------------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|
+| **CDU-01: Gestión de Acceso**      | X         |           |           |           |           |           |           |           |           |           |
+| **CDU-02: Pago de Servicios**      |           | X         |           |           |           |           | X         |           |           |           |
+| **CDU-03: Pago de Préstamos**      |           |           | X         |           |           |           | X         |           |           |           |
+| **CDU-04: Búsqueda de Clientes**   |           |           |           | X         |           |           |           |           |           |           |
+| **CDU-05: Consulta de Saldo**      |           |           |           |           | X         |           |           |           |           |           |
+| **CDU-06: Cambio de Moneda**       |           |           |           |           |           | X         | X         |           |           |           |
+| **CDU-07: Generación de Comprobantes** |       | X         | X         |           | X         | X         | X         | X         | X         | X         |
+| **CDU-08: Retiro de Dinero**       |           |           |           |           |           |           | X         | X         |           |           |
+| **CDU-09: Depósito de Dinero**     |           |           |           |           |           |           | X         |           | X         |           |
+| **CDU-10: Pago de Tarjetas de Crédito** |       |           |           |           |           |           | X         |           |           | X         |
 
 ## ESTILOS ARQUITECTONICOS
 
