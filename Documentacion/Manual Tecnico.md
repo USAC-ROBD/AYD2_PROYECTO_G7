@@ -19,25 +19,6 @@
 
     La institución se rige por valores fundamentales como la innovación, la accesibilidad y la confianza, que se reflejan en cada aspecto de sus operaciones. Money Bin Bank no solo busca cumplir con las expectativas de sus clientes, sino también superar sus necesidades, fortaleciendo su posición como un líder inclusivo e innovador en el sector.
 
-
-
-1. Antecedentes
-Los antecedentes son una sección que proporciona el contexto histórico y situacional previo de una empresa, proyecto o iniciativa. Incluyen detalles como:
-
-Historia del proyecto o empresa: Origen, hitos importantes y eventos significativos.
-Motivación: Razón por la cual el proyecto o negocio existe.
-Estado actual: Descripción del punto de partida antes de iniciar el proyecto.
-Problemas identificados: Contexto sobre los desafíos que el proyecto busca abordar.
-Ejemplo de antecedentes: En el documento, los antecedentes de Money Bin Bank podrían incluir información sobre cómo y por qué se busca desarrollar una plataforma financiera innovadora para promover la inclusión financiera.
-
-2. Core del negocio
-El core del negocio (o núcleo del negocio) se refiere a las actividades principales y fundamentales de una empresa que generan valor y sustentan su existencia. Incluye:
-
-Misión y visión: Propósito central y objetivos a largo plazo.
-Propuesta de valor: Qué ofrece la empresa que la hace única o valiosa.
-Procesos clave: Operaciones esenciales para cumplir su misión (e.g., desarrollo de software, servicios financieros, etc.).
-Ejemplo del core del negocio: En el caso de Money Bin Bank, el core del negocio podría describirse como "ofrecer soluciones financieras seguras y personalizadas, con enfoque en inclusión financiera y crecimiento económico de clientes a través de servicios innovadores."
-
 ### Beneficios Estratégicos
 
 1. **Ampliación del alcance y la inclusión financiera**
@@ -133,7 +114,7 @@ Ejemplo del core del negocio: En el caso de Money Bin Bank, el core del negocio 
     * Monitoreo de actividad: Se realiza un seguimiento en tiempo real de las actividades de todos los usuarios del sistema, generando alertas automáticas ante actividades sospechosas o incumplimientos de políticas internas.
 
 
-## Arquitectura Seleccionada (Capas)
+## 6. Estilo Arquitectonico (Capas)
 
 1. Organización y Mantenimiento:
     La arquitectura en capas divide el sistema en módulos independientes con responsabilidades bien definidas (como capa de presentación, lógica de negocio y acceso a datos). Esto facilita:
@@ -168,6 +149,19 @@ Ejemplo del core del negocio: En el caso de Money Bin Bank, el core del negocio 
 
     * Pruebas independientes: Cada capa puede ser probada de forma separada, garantizando calidad y reduciendo errores.
     * Reutilización de componentes: Por ejemplo, el módulo de autenticación puede ser usado por todos los roles sin duplicar código.
+
+
+## 7. Diagramas
+
+### Diagrama de Componentes
+
+![DIAGRAMA DE COMPONENTES](./assets/Diagramas/Diagrama%20de%20Componentes.drawio.png)
+
+### Diagrama de Despliegue
+
+![DIAGRAMA DE DESPLIGUE](./assets/Diagramas/Diagrama%20de%20Despligue.drawio.png)
+
+## 8. Diagrama de Entidad Relacion
 
 
 ### 5. Factory Pattern

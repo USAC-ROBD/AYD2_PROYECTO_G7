@@ -1,7 +1,0 @@
-<?xml version = '1.0' encoding = 'UTF-8'?>
-<ProcessModel class="oracle.dbtools.crest.model.design.process.ProcessModel" name="Process Model" id="73BF6504-8460-80F2-3052-27044D16836E">
-<createdBy>juanp</createdBy>
-<createdTime>2024-12-13 04:24:57 UTC</createdTime>
-<ownerDesignName>DIAGRAMA ER</ownerDesignName>
-<shouldBeOpen>false</shouldBeOpen>
-</ProcessModel>
