@@ -1741,6 +1741,38 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 
 ### 2. ATENCIÓN AL CLIENTE
 
+##### PTPO-2.1 Creacion de Cuenta Bancaria Normal y en Dólares
+
+![PTPO-2.1](./assets/atencion_al_cliente/prototipos/CrearCuenta.png)
+
+##### PTPO-2.2 Actualización de Datos del Cliente
+
+![PTPO-2.2](./assets/atencion_al_cliente/prototipos/ActualizarCuenta.png)
+
+##### PTPO-2.3 Creación de Tarjetas de Crédito o Débito
+
+![PTPO-2.3](./assets/atencion_al_cliente/prototipos/CrearTarjeta.png)
+
+##### PTPO-2.4 Bloqueo de Tarjetas de Crédito o Débito
+
+![PTPO-2.4](./assets/atencion_al_cliente/prototipos/BloquearTarjeta.png)
+
+##### PTPO-2.5 Solicitud de Cancelación de Cuenta o Tarjeta
+
+![PTPO-2.5](./assets/atencion_al_cliente/prototipos/CancelacionServicios.png)
+
+##### PTPO-2.6 Encuesta de Satisfacción
+
+![PTPO-2.6](./assets/atencion_al_cliente/prototipos/Encuesta.png)
+
+##### PTPO-2.7 Solicitud de Préstamo
+
+![PTPO-2.7](./assets/atencion_al_cliente/prototipos/Prestamo.png)
+
+##### PTPO-2.8 Registro de Quejas
+
+![PTPO-2.8](./assets/atencion_al_cliente/prototipos/Quejas.png)
+
 ### 3. ADMINISTRADOR DE SISTEMAS
 
 ### 4. SUPERVISOR
