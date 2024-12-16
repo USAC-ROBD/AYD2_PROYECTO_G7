@@ -65,3 +65,15 @@ Casos de uso expandidos
   - Las copias de seguridad deben almacenarse en la nube y estar disponibles ante cualquier eventualidad
 
 ### Requerimientos no funcionales
+
+#### RN-01. Escalabilidad
+
+- El sistema debe tener la capacidad de aumentar el espacio en la nube, según necesidad de almacenamiento.
+
+#### RN-02. Disponibilidad
+
+- El sistema debe estar disponible 24/7.
+
+#### RN-03. Seguridad
+
+- El sistema debe encriptar partes de la base de datos que contengan información sensible, tales como: nombre de usuario y contraseña.
