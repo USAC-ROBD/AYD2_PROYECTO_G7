@@ -2,11 +2,120 @@
 
 ## ANTECEDENTES
 
+"Money Bin Bank", una institución financiera con enfoque en soluciones innovadoras, se ha establecido como un banco moderno, ágil y accesible. A lo largo del tiempo, ha demostrado un compromiso constante con la promoción de linclusión financiera, brindando oportunidades a individuos y empresas para acceder a productos y servicios que impulsen su crecimiento económico.
+
+Una de las claves del éxito de Money Bin Bank ha sido la innovación tecnológica, que se ha consolidado como uno de sus pilares estratégicos. Esto ha permitido garantizar enfoques modernos hacia la seguridad, promoviendo solucioneágiles que generan valor, confianza y lealtad en sus clientes. El CEO ha expresado su satisfacción con los resultados obtenidos hasta ahora, destacando la capacidad del equipo para cumplir con los objetivos establecidos y entregaresultados dentro del plazo previsto.
+
+El desarrollo de esta plataforma digital representa un paso más en la evolución de su propuesta de valor y en su misión de promover una inclusión financiera efectiva.
+
 ## CORE DEL NEGOCIO
 
-### DESCRIPCIÓM
+### DESCRIPCIÓN
+
+  Money Bin Bank se posiciona como una institución financiera moderna, ágil y accesible, enfocada en ofrecer soluciones innovadoras y personalizadas tanto para individuos como para empresas. Su propósito central es facilitar el acceso a servicios financieros de manera segura, promoviendo la inclusión y el crecimiento económico de sus clientes.
+  
+  Con un fuerte compromiso con la innovación tecnológica, el banco busca anticiparse a las necesidades de un entorno financiero cambiante y altamente regulado. Money Bin Bank trabaja para generar confianza en sus clientes a través de experiencias excepcionales que combinan personalización y seguridad.
+  
+  Su misión está orientada a promover la inclusión financiera, rompiendo barreras para que más personas y empresas puedan acceder a productos y servicios financieros que antes eran inaccesibles. Su visión estratégica se centra en convertirse en un referente en la industria financiera, liderando con un enfoque en la adaptabilidad y la implementación de tecnologías avanzadas que respondan tanto a las expectativas actuales como a las futuras.
+  
+  La institución se rige por valores fundamentales como la innovación, la accesibilidad y la confianza, que se reflejan en cada aspecto de sus operaciones. Money Bin Bank no solo busca cumplir con las expectativas de sus clientes, sino también superar sus necesidades, fortaleciendo su posición como un líder inclusivo e innovador en el sector.
+### Beneficios Estratégicos
+
+1. **Ampliación del alcance y la inclusión financiera**
+    * Aumenta el acceso a servicios financieros para individuos y empresas excluidos del sistema.
+    * Facilita la expansión de la base de clientes.
+
+2. **Fortalecimiento de la confianza y la lealtad del cliente**
+    * Mejora la seguridad y personalización de los servicios financieros.
+    * Proporciona una experiencia de usuario superior y simplificada.
+
+3. **Innovación tecnológica y adaptabilidad**
+    * Integra tecnologías avanzadas para escalar y responder a cambios en el mercado.
+    * Garantiza una operación eficiente, moderna y competitiva.
+
+4. **Optimización operativa y reducción de costos**
+    * Automatiza procesos clave para mejorar la eficiencia.
+    * Reduce costos operativos relacionados con operaciones manuales.
+
+5. **Posicionamiento como líder del sector**
+    * Refuerza la imagen de Money Bin Bank como una institución innovadora y accesible.
+    * Incrementa ingresos mediante la creación de nuevos productos y servicios adaptados a las necesidades de los usuarios.
+
+### Procesos Principales
+1. Transacciones Bancarias Básicas
+
+    El sistema permite realizar las transacciones financieras fundamentales, tales como:
+
+    * Pagos de servicios: Liquidación de servicios como agua, luz, teléfono e internet en nombre de los clientes.
+    * Pagos de préstamos: Realización de abonos parciales o totales a préstamos personales del cliente.
+    * Depósitos: Transferencia de dinero a cuentas propias o de terceros.
+    * Retiros: Extracción de fondos directamente en el establecimiento afiliado, garantizando la seguridad y la eficiencia.
+
+2. Consulta y Manejo de Información del Cliente
+
+    El sistema proporciona acceso a información relevante para el cliente y empleados, mejorando la gestión de datos:
+
+    * Búsqueda de cuentas: Localización de cuentas por número de cuenta o CUI.
+    * Consulta de saldos: Visualización en tiempo real del saldo disponible.
+    * Historial de transacciones: Acceso a movimientos recientes de las cuentas, permitiendo un seguimiento completo de las actividades bancarias.
+
+3. Generación de Comprobantes de Transacción
+
+    Para cada operación realizada, el sistema genera comprobantes digitales y físicos, asegurando que el cliente reciba un registro confiable y verificable.
+
+    * Genera registros digitales y físicos de cada operación realizada.
+    * Proporciona al cliente comprobantes seguros y verificables.
+    * Almacena los registros en una base de datos centralizada para auditorías y seguimiento.
+
+4. Gestión de Seguridad y Validaciones
+
+    Se implementan diversas medidas de seguridad para proteger las cuentas de los clientes y garantizar la autenticidad de las transacciones:
+
+    * Validación de identidad: Mediante CUI y otros mecanismos de autenticación.
+    * Límites transaccionales: Establecimiento de límites diarios y mensuales para prevenir fraudes.
+    * Bloqueo de tarjetas: Permite bloquear tarjetas de crédito o débito en caso de pérdida, robo o sospecha de fraude, con notificaciones automáticas a los clientes y al equipo de fraude.
+
+5. Gestion de Cuentas y Servicios Financieros
+
+    El sistema permite la creación y administración de cuentas bancarias, tanto en quetzales como en dólares, y otros productos financieros:
+
+    * Apertura de cuentas: Los clientes pueden abrir cuentas de ahorro o monetarias, con validaciones y asignación de un número de cuenta único.
+    * Actualización de datos: Los clientes pueden actualizar su información personal, como teléfono, dirección y correo electrónico, con verificación de identidad.
+    * Solicitudes de nuevos servicios: Los clientes pueden solicitar nuevas tarjetas de crédito o débito, así como préstamos, con análisis automático de capacidad de pago.
+
+6. Gestión de Préstamos y Créditos
+
+    Permite a los clientes solicitar y gestionar diferentes tipos de préstamos, como personales, hipotecarios o vehiculares:
+
+    * Solicitud de préstamos: Los clientes pueden solicitar préstamos con validación automática de su capacidad de pago.
+    * Gestión de pagos: Facilita el pago de préstamos con opciones de pago parcial o total, garantizando una correcta aplicación de los pagos a los saldos correspondientes.
+    * Generación de reportes: El sistema permite a los supervisores generar reportes detallados de los préstamos y la actividad financiera del cliente.
+
+7. Atención al Cliente y Feedback
+    
+    El banco valora la retroalimentación de los clientes para mejorar continuamente sus servicios:
+
+    * Encuestas de satisfacción: Permite a los clientes evaluar la calidad de los servicios, facilitando la identificación de áreas de mejora.
+    * Registro de quejas: Los clientes pueden registrar quejas sobre productos o servicios, las cuales son gestionadas y respondidas por el equipo de atención al cliente.
+
+8. Gestión Administrativa Interna
+
+    Los administradores y supervisores gestionan y supervisan las operaciones internas del banco para garantizar la eficiencia y seguridad de los procesos:
+
+    * Asignación de roles: Los administradores asignan y actualizan los roles de los empleados según sus responsabilidades.
+    * Monitoreo en tiempo real: Los supervisores pueden monitorear las actividades de los empleados, como retiros de dinero, solicitudes de préstamos, bloqueos de tarjetas y más, para asegurar el cumplimiento de políticas.
+    * Gestión de inventarios bancarios: Control y supervisión del efectivo disponible en las sucursales, con registros detallados de entradas y salidas.
+
+9. Seguridad de la Información y Gestión de Copias de Seguridad
+    
+    La seguridad de la información y la integridad del sistema son prioridades para el banco:
+
+    * Copia de seguridad: Los administradores generan copias de seguridad periódicas de la base de datos del banco, que se almacenan de manera segura en la nube.
+    * Monitoreo de actividad: Se realiza un seguimiento en tiempo real de las actividades de todos los usuarios del sistema, generando alertas automáticas ante actividades sospechosas o incumplimientos de políticas internas.
 
 ### CDU ALTO NIVEL
+
+
 
 #### Primera Descomposición
 
@@ -49,54 +158,94 @@
 ![DCDU-1.9](./assets/cajero/pago-tarjeta.png)
 
 #### 2. ROL SERVICIO AL CLIENTE
+
 ##### DCDU-2.1 Creacion de Cuenta Bancaria Normal y en Dólares
+
 ![DCDU-2.1](./assets/atencion_al_cliente/CreacionCuentaNormalDolares.jpg)
 
 ##### DCDU-2.2 Actualización de Datos del Cliente
+
 ![DCDU-2.2](./assets/atencion_al_cliente/ActualizacionCliente.jpg)
 
 ##### DCDU-2.3 Creación de Tarjetas de Crédito o Débito
+
 ![DCDU-2.3](./assets/atencion_al_cliente/CrecionTarjeta.jpg)
 
 ##### DCDU-2.4 Bloqueo de Tarjetas de Crédito o Débito
+
 ![DCDU-2.4](./assets/atencion_al_cliente/BloqueoTarjeta.jpg)
 
 ##### DCDU-2.5 Solicitud de Cancelación de Cuenta o Tarjeta
+
 ![DCDU-2.5](./assets/atencion_al_cliente/SolicitudCancelacion.jpg)
 
 ##### DCDU-2.6 Encuesta de Satisfacción
+
 ![DCDU-2.6](./assets/atencion_al_cliente/EncuestaSatisfaccion.jpg)
 
 ##### DCDU-2.7 Solicitud de Préstamo
+
 ![DCDU-2.7](./assets/atencion_al_cliente/SolicitudPrestamo.jpg)
 
 ##### DCDU-2.8 Registro de Quejas
+
 ![DCDU-2.8](./assets/atencion_al_cliente/RegistroQuejas.jpg)
+
+#### 3. ROL ADMINISTRADOR DE SISTEMAS
+
+##### DCDU-3.1 Login
+
+![DCDU-3.1](./assets/administrador/login-administrador.jpg)
+
+##### DCDU-3.2 Registrar empleado
+
+![DCDU-3.2](./assets/administrador/creacion-empleado.jpg)
+
+##### DCDU-3.3 Asignación de roles
+
+![DCDU-3.3](./assets/administrador/asignar-rol.jpg)
+
+##### DCDU-3.4 Eliminar empleados
+
+![DCDU-3.4](./assets/administrador/eliminacion-empleado.jpg)
+
+##### DCDU-3.5 Cambio de contraseña de empleado
+
+![DCDU-3.5](./assets/administrador/cambio-password.jpg)
+
+##### DCDU-3.6 Gestión de copias de seguridad
+
+![DCDU-3.6](./assets/administrador/copia-seguridad.jpg)
 
 #### 4. ROL SUPERVISOR
 
 ### DCDU-4.1 - Login del supervisor
+
 ![DCDU-4.1](./cdu/DCDU-4.1.png)
 
 ### DCDU-4.2 - Modificación de información del empleado
+
 ![DCDU-4.2](./cdu/DCDU-4.2.png)
 
 ### DCDU-4.3 - Aceptar o rechazar prestamo
+
 ![DCDU-4.3](./cdu/DCDU-4.3.png)
 
 ### DCDU-4.4 - Revisar encuestas de satisfacción y registros de quejas
+
 ![DCDU-4.4](./cdu/DCDU-4.4.png)
 
 ### DCDU-4.5 - Registro y modificación de administradores del sistema
+
 ![DCDU-4.5](./cdu/DCDU-4.5.png)
 
 ### DCDU-4.6 - Gestión de inventarios, monitoreo en tiempo real y reportes
+
 ![DCDU-4.6](./cdu/DCDU-4.6.png)
 
 ### DCDU-4.7 - Aprobar tarjetas y cancelación de servicios
-![DCDU-4.7](./cdu/DCDU-4.7.png)
 
-#### ROL ADMON SISTEMAS
+![DCDU-4.7](./cdu/DCDU-4.7.png)
 
 ## REQUERIMIENTOS FUNCIONALES
 
@@ -248,42 +397,84 @@
 - Debe registrarse los detalles de la queja, los datos importantes del cliente como su número de cuenta, etc., y el servicio del que se va a presentar la queja.
 - Al completarse el registro de la queja se envía automáticamente un correo electrónico al supervisor para notificar sobre el incidente.
 
-### 4. Módulo Supervisor
+### 3. MÓDULO ADMINISTRADOR DE SISTEMAS
+
+#### RF-3.1. Inicio de sesión de administrador de sistema
+
+- El sistema debe permitir que el administador de sistemas inicie sesión por medio de correo electrónico y contraseña
+
+#### RF-3.2. Creación de nuevo empleado
+
+- El sistema debe permitir que un usuario administrador cree nuevos empleados.
+
+#### RF-3.3. Asignación de roles
+
+- El sistema debe permitir agregar o cambiar el rol de un empleado
+
+#### RF-3.4. Eliminar empleados
+
+- El sistema debe permitir que un usuario administrador elimine empleados
+  - Un usuario supervisor debe autorizar la eliminación del usuario
+- El sistema debe permitir que el administrador adjunte la autorización de eliminación en un archivo PDF
+
+#### RF-3.5. Cambio de contraseña de empleado
+
+- El sistema debe permitir que un usuario administrador cambie la contraseña de un empleado
+  - Un usuario supervisor debe autorizar el cambio de contraseña
+
+#### RF-3.6. Gestión de copias de seguridad
+
+- El sistema debe permitir que un usuario administrador cree copias de seguridad de la base de datos
+  - Las copias de seguridad deben almacenarse en la nube y estar disponibles ante cualquier eventualidad
+
+### 4. MÓDULO SUPERVISOR
 
 #### RF-4.1 - Login de Supervisor
+
 El supervisor del sistema debe poder hacer login al sistema y posteriormente validar su identidad por medio de una clave tipo `.pem`.
 
 #### RF-4.2 - Modificar información del empleado
+
 El supervisor debe poder actualizar la información del empleados en caso de ser requerido. De igual forma, si el empleado requiere un cambio de contraseña, el administrador puede enviar una notificación con una nueva, siempre y cuando el empleado no haya solicitado una contraseña mas de 3 veces, de otra forma, el empleado será despedido.
 
 #### RF-4.3 - Aceptar Prestamo
+
 El supervisor debe poder aceptar o rechazar las solicitudes de prestamos de los clientes, simpre y cuando el sistema valide que el cliente no tiene ninguna solicitud o prestamos pendiente.
 
 #### RF-4.4 - Revisar encuestas de satisfacción
+
 El supervisor deberá poder revisar las encuestas de satisfacción que los clientes hubiesen respondido, para poder encontrar puntos de mejora.
 
 #### RF-4.5 - Ver registros de quejas
+
 El supervisor deberá poder revisar todas la quejas que los usuarios hubiesen presentado sobre los servicios y así poder evaluar puntos de mejora.
 
 #### RF-4.6 - Registro de administradores
+
 El supervisor deberá poder crear los usuarios de los administradores del sistemas, para dicha acción deberá poder completar y cargar toda la información necesaria. Posteriormente el sistema debe enviar al administrador un usuario de confirmación con su nuevo usuario y su contraseña, además el sistema debe implementar una autenticación de 2 factores para el usuario administrador.
 
 #### RF-4.7 - Ver información de los administradores del sistema
+
 El supervisor deberá poder ver, editar o eliminar cualquier información de los usuarios administradores del sistema. De igual forma, el sistema debe notificar al usuario administrador sobre cualquier cambio realizado sobre su perfil.
 
 #### RF-4.8 - Monitoreo de actividad en tiempo real
+
 El administrador deberá poder revisar en tiempo real ciertas activdades del sistema como por ejemplo, retiros, solicitudes de préstamos, bloque y activación de tarjetas, actividades realizadas por los administradores (registros de empleados, asignación de roles, eliminación de empleados, cambios de contraseñas de empleados). El supervisor deberá poder contar con filtros para los datos en tiempo real, además, el sistema deberá poder alertar al supervisor sobre posibles actividades anormales.
 
 #### RF-4.9 - Gestión de inventarios bancarios
+
 El administrador deberá poder realizar gestiones sobre el efectivo y otros recursos de la sucursal. Además deberá poder visualizar las entradas y salidas de dinero en tiempo real. De igual forma, deberá poder ver reportes del dinero que posee el banco (dolares y quetzales), salidas y entrada de dinero con filtros, ganancias o pérdidas a lo largo del tiempo.
 
 #### RF-4.10 - Aprobación de tarjetas
+
 El supervisor deberá poder aprobar o rechazar las solicitudes de tarjetas (credito, o debito) de los clientes. Par poder tomar la decisión deberá poder visualizar toda la información y record financiero del cliente.
 
 #### RF-4.11 - Aprobación de solicitudes de cancelación de servicios
+
 El supervisor será el encargado de aprobar o rechazar las solicitudes de cancelación de servicios de los clientes. Previo a esto, debe validar que todo este en orden para proceder con la cancelación, de igual forma, si el sistema verifica que hay inconvenientes no debe permitir realizar la cancelación del servicio.
 
 #### RF-4.12 - Reportes
+
 El supervisor deberá poder visualizar una serie de reportes que le facilitarán la toma de decisiones respecto al banco y sus actividades.
 
 ---
@@ -325,15 +516,19 @@ El supervisor deberá poder visualizar una serie de reportes que le facilitarán
 - El sistema debe cumplir con las regulaciones locales e internacionales aplicables al manejo de datos bancarios y transacciones financieras.
 
 ### RN-09. Auditoría y Registro
+
 Todas las acciones realizadas en el sistema deben registrarse en un historial con detalles como fecha, hora, usuario y acción realizada.
 
 ### RN-10 - Seguridad de la autenticación del supervisor
+
 El sistema debe proveer los métodos de seguridad necesarios para minimizar el riesgo a un posible ingreso no deseado al perfil del supervisor del sistema.
 
 ### RN-11 - Versatilidad en los reportes del supervisor
+
 El sistema debe asegurar que el supervisor pueda tener versatilidad a la hora de ver sus reportes, logrando esto por medio de filtros y buenos tiempos de respuesta que aseguren una mejor toma de decisiones.
 
 ### RN-12 - Disponibilidad en los reportes del supervisor
+
 El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real del supervisor, inclusive en los momentos de alta demanda del sistema.
 
 ## CDU EXPANDIDOS
@@ -642,6 +837,7 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 ### 2. MÓDULO SERVICIO AL CLIENTE
 
 ##### CDU-2.1: Creación de Cuenta Bancaria Normal y en Dólares
+
 *ID:* CDU-2.1  
 *Nombre:* Creación de Cuenta Bancaria Normal y en Dólares  
 *Actor Principal:* Empleado de Atención al Cliente  
@@ -649,6 +845,7 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 *Resumen:* El encargado de atención al cliente podrá completar un formulario con datos personales del cliente, seleccionar el tipo de cuenta y proporcionar un monto inicial. El sistema valida la información, genera un número de cuenta único y almacena los datos en la base de datos.  
 
 ##### Flujo Principal
+
 1. El empleado accede al módulo de creación de cuentas.
 2. Completa el formulario con la información requerida (nombre, apellido, CUI, etc.).
 3. Selecciona el tipo de cuenta (Monetaria o Ahorro).
@@ -659,18 +856,21 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 8. El cliente recibe la confirmación de la creación de la cuenta junto con el número generado.
 
 ##### Flujo Alternativo
+
 - Si algún dato ingresado no cumple con las validaciones, el sistema muestra un mensaje de error, y el empleado debe corregir los datos del cliente para proceder.
 
 ---
 
 ##### CDU-2.2: Actualización de Datos del Cliente
+
 *ID:* CDU-2.2  
 *Nombre:* Actualización de Datos del Cliente  
 *Actor Principal:* Empleado de Atención al Cliente  
 *Propósito:* Modificar datos personales del cliente manteniendo la seguridad y un historial de cambios.  
-*Resumen:* El empleado selecciona los datos que el cliente desea actualizar, verifica su identidad mediante una pregunta de seguridad y el sistema actualiza la información manteniendo un registro en el historial.    
+*Resumen:* El empleado selecciona los datos que el cliente desea actualizar, verifica su identidad mediante una pregunta de seguridad y el sistema actualiza la información manteniendo un registro en el historial.
 
 ##### Flujo Principal
+
 1. El empleado accede al módulo de actualización de datos de clientes.
 2. Ingresa el número de cuenta y selecciona los datos que desea actualizar.
 3. Responde la pregunta de seguridad para verificar la identidad.
@@ -678,11 +878,13 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 5. El sistema guarda los cambios en el historial y confirma la actualización al cliente.
 
 ##### Flujo Alternativo
+
 - Si la verificación de identidad falla, el sistema niega el acceso y notifica al cliente.
 
 ---
 
 ##### CDU-2.3: Creación de Tarjetas de Crédito o Débito
+
 *ID:* CDU-2.3  
 *Nombre:* Creación de Tarjetas de Crédito o Débito  
 *Actor Principal:* Empleado de Atención al Cliente  
@@ -690,6 +892,7 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 *Resumen:* El cliente solicita una tarjeta, el sistema valida la identidad y la información proporcionada, y la solicitud pasa a revisión por parte del supervisor para su aprobación.  
 
 ##### Flujo Principal
+
 1. El empleado accede al módulo de solicitud de tarjetas.
 2. Selecciona el tipo de tarjeta (Crédito o Débito).
 3. Proporciona el número de cuenta del cliente, límite de crédito (si aplica), y datos del titular.
@@ -698,11 +901,13 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 6. El cliente recibe una notificación del estado de la solicitud.
 
 ##### Flujo Alternativo
+
 - Si el cliente no cumple con los requisitos, el sistema rechaza la solicitud con una justificación.
 
 ---
 
 ##### CDU-2.4: Bloqueo de Tarjetas de Crédito o Débito
+
 *ID:* CDU-2.4  
 *Nombre:* Bloqueo de Tarjetas de Crédito o Débito  
 *Actor Principal:* Empleado de Atención al Cliente  
@@ -710,6 +915,7 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 *Resumen:* El cliente solicita el bloqueo de su tarjeta indicando el motivo y verifica su identidad. El sistema bloquea la tarjeta, notifica al cliente y genera un reporte al equipo de fraude.  
 
 ##### Flujo Principal
+
 1. El empleado accede al módulo de bloqueo de tarjetas.
 2. Selecciona el tipo de tarjeta (Crédito o Débito) e ingresa el número de tarjeta.
 3. Indica el motivo del bloqueo.
@@ -718,11 +924,13 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 6. Se genera un reporte automático para el equipo de fraude.
 
 ##### Flujo Alternativo
+
 - Si la verificación de identidad falla, el sistema no realiza el bloqueo y notifica al cliente.
 
 ---
 
 ##### CDU-2.5: Solicitud de Cancelación de Cuenta o Tarjeta
+
 *ID:* CDU-2.5  
 *Nombre:* Solicitud de Cancelación de Cuenta o Tarjeta  
 *Actor Principal:* Empleado de Atención al Cliente  
@@ -730,6 +938,7 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 *Resumen:* El cliente solicita la cancelación de un servicio proporcionando su identificación y motivo. El supervisor revisa la solicitud y confirma la cancelación después de verificar los requisitos.  
 
 ##### Flujo Principal
+
 1. El empleado accede al módulo de cancelación de servicios.
 2. Proporciona el número de cuenta o identificación del cliente.
 3. Selecciona el servicio a cancelar e indica el motivo.
@@ -738,11 +947,13 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 6. El cliente recibe la notificación del estado de la solicitud.
 
 ##### Flujo Alternativo
+
 - Si el cliente tiene saldos pendientes, el sistema rechaza la solicitud y notifica al cliente con las razones.
 
 ---
 
 ##### CDU-2.6: Encuesta de Satisfacción
+
 *ID:* CDU-2.6  
 *Nombre:* Encuesta de Satisfacción  
 *Actor Principal:* Empleado de Atención al Cliente  
@@ -750,6 +961,7 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 *Resumen:* Permite a los clientes calificar los servicios del banco en categorías como atención al cliente, productos y servicios. Incluye un sistema de puntuación y comentarios opcionales. Las encuestas serán realizadas por el personal de atención al cliente.  
 
 ##### Flujo Principal
+
 1. El cliente es invitado a completar la encuesta por el personal de atención al cliente.
 2. Se registra el número de cliente o identificación (opcional).
 3. El cliente elige la categoría a evaluar (Atención al Cliente, Servicios, Productos, etc.).
@@ -758,11 +970,13 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 6. El sistema almacena los datos en la base de datos para análisis posterior.
 
 ##### Flujo Alternativo
+
 - Si el cliente no desea proporcionar su número de cliente o identificación, la encuesta puede completarse de forma anónima.
 
 ---
 
 ##### CDU-2.7: Solicitud de Préstamo
+
 *ID:* CDU-2.7  
 *Nombre:* Solicitud de Préstamo  
 *Actor Principal:* Empleado de Atención al Cliente  
@@ -770,6 +984,7 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 *Resumen:* Este módulo recopila información necesaria para que los clientes soliciten préstamos. Incluye validaciones, análisis de capacidad de pago y procesos de autorización supervisados.  
 
 ##### Flujo Principal
+
 1. El empleado accede al módulo y proporciona el número de cuenta o identificación del cliente.
 2. Selecciona el tipo de préstamo (Personal, Hipotecario, Vehicular, Educativo, etc.).
 3. Indica el monto solicitado y el plazo del préstamo.
@@ -781,12 +996,14 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 9. Si la solicitud es rechazada, el cliente recibe una justificación con recomendaciones.
 
 ##### Flujo Alternativo
+
 - El sistema notifica al cliente para que suba los documentos faltantes antes de continuar.
 - Si el análisis automático determina que el cliente no puede asumir el préstamo, la solicitud se rechaza automáticamente con una notificación clara al cliente.
 
 ---
 
 ##### CDU-2.8: Registro de Quejas
+
 *ID:* CDU-2.8  
 *Nombre:* Registro de Quejas  
 *Actor Principal:* Empleado de Atención al Cliente  
@@ -794,6 +1011,7 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 *Resumen:* Los clientes pueden registrar quejas clasificadas por tipo y detallar su problema. El sistema almacena la información y notifica al supervisor para su seguimiento.  
 
 ##### Flujo Principal
+
 1. El empleado accede al módulo y proporciona el número de cuenta o identificación del cliente.
 2. Selecciona el tipo de queja (Servicio, Producto, Atención al Cliente, etc.).
 3. Describe los detalles de la queja.
@@ -802,13 +1020,180 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 6. La queja es categorizada y priorizada para su atención.
 
 ##### Flujo Alternativo
+
 - Si el cliente no proporciona su número de cuenta o identificación, la queja puede ser registrada de forma anónima, pero será más difícil darle seguimiento.
+
+---
+
+### 3. MÓDULO ADMINISTRADOR DE SISTEMAS
+
+#### CDU-3.1: Inicio de sesión (Login)
+
+**ID:** CDU-01  
+**Nombre:** Inicio de sesión
+**Actor Principal:** Administrador de sistemas
+**Propósito:** Permite a un administrador de sistemas acceder al sistema por medio de sus credenciales
+**Resumen:** El administrador podrá iniciar sesión al sistema por medio de las credenciales que le han sido otorgadas.
+
+#### Flujo Principal
+
+1. El administrador de sistemas abre la pantalla de inicio de sesión.
+2. El sistema muestra los campos para ingresar:
+   - Correo y contraseña.
+3. El administrador de sistemas ingresa las credenciales.
+4. El sistema valida las credenciales.
+5. Si las credenciales son válidas, el administrador de sistemas accede a la plataforma.
+6. El sistema muestra el menú principal con las opciones que el administrador de sistemas tiene activas.
+
+#### Flujo Alternativo
+
+- **Credenciales inválidas:**
+  1. El sistema muestra un mensaje de error.
+  2. El administrador de sistemas tiene la opción de reintentar.
+
+**Postcondición:** El administrador accede al sistema o recibe un mensaje indicando que sus credenciales son incorrectas.
+
+---
+
+#### CDU-3.2: Registrar empleado
+
+**ID:** CDU-02
+**Nombre:** Registrar empleado
+**Actor Principal:** Administrador de sistemas
+**Propósito:** Permite a un administrador de sistemas crear nuevos usuarios en el sistema
+**Resumen:** El adminisrador accede a la vista de creación de empleados y completa los datos requeridos.
+
+#### Flujo Principal
+
+1. El administrador de sistemas abre el módulo de empleados > registro de empleados
+2. El sistema muestra los campos para ingresar:
+   - Nombre completo
+   - Número de teléfono
+   - Edad
+   - Numero de DPI
+   - Correo electrónico
+   - Papelería completa (PDF)
+   - Fotografía
+   - Genero
+   - Estado Civil
+3. El sistema valida la información ingresada
+4. Si la información es correcta, el sistema crea el nuevo usuario
+5. El sistema envía las credenciales al nuevo empleado por correo electrónico
+
+#### Flujo Alternativo
+
+- **Información incorrecta o usuario existente:**
+  1. El sistema muestra un mensaje de error.
+  2. El administrador de sistemas tiene la opción de reintentar.
+
+**Postcondición:** Se crea el usuario o el administrador de sistemas recibe un mensaje indicando que sus credenciales son incorrectas.
+
+---
+
+#### CDU-3.3: Asignación de roles
+
+**ID:** CDU-03
+**Nombre:** Asignación de roles
+**Actor Principal:** Administrador de sistemas
+**Propósito:** Permite a un administrador de sistemas asignar roles a los empleados
+**Resumen:** El adminisrador accede a la vista de asignación de roles y selecciona los roles que que un empleado debe tener, según sus funciones
+
+#### Flujo Principal
+
+1. El administrador de sistemas abre el módulo de empleados > asignación de roles
+2. El sistema permite buscar a un empleado
+3. El administrador de sistemas elige el usuario al que desea modificarle el rol
+4. El sistema permite seleccionar o quitar la selección de los roles disponibles
+5. El sistema asigna al rol y notifica que la asignación fue exitosa
+
+#### Flujo Alternativo
+
+- **Usuario no existente:**
+  1. El sistema muestra un mensaje de usuario/empleado no encontrado.
+  2. El administrador de sistemas tiene la opción de modificar la búsqueda.
+
+**Postcondición:** Se asignan los roles al empleado o el administrador de sistemas recibe un mensaje indicando que el usuario que busca no existe.
+
+---
+
+#### CDU-3.4: Eliminar empleados
+
+**ID:** CDU-04
+**Nombre:** Eliminar empleados
+**Actor Principal:** Administrador de sistemas
+**Propósito:** Permite a un administrador de sistemas eliminar empleados del sistema
+**Resumen:** El adminisrador accede a la vista de eliminación de empleados, busca y elimina el usuario deseado. Un supervisor debe autorizar esta acción
+
+#### Flujo Principal
+
+1. Un supervisor autoriza la eliminación de un empleado
+2. El administrador de sistemas abre el módulo de empleados > eliminación
+3. El sistema permite buscar a un empleado
+4. El administrador de sistemas elige el usuario que debe eliminar
+5. El sistema pregunta si el administrador de sistemas desea eliminar al usuario
+6. El administrador de sistemas seleccióna si está seguro de eliminar al usuario
+7. Si el administrador de sistemas confirma la eliminación del usuario, el sistema elimina el usuario.
+
+#### Flujo Alternativo
+
+- **Administrador de sistemas no confirma la eliminación:**
+  1. El administrador de sistemas selecciona que no está seguro de eliminar al usuario
+  2. El sistema cancela la transacción y regresa a la pantalla principal del módulo de empleados.
+
+**Postcondición:** Se elimina al usuario existente o se reresa a a la pantalla principal del módulo de empleados.
+
+---
+
+#### CDU-3.5: Cambio de contraseña de empleado
+
+**ID:** CDU-05
+**Nombre:** Cambio de contraseña de empleado
+**Actor Principal:** Administrador de sistemas
+**Propósito:** Permite a un administrador de sistemas cambiar la contraseña de un empleado
+**Resumen:** El adminisrador accede a la vista de cambio de contraseña y realiza el cambio, siempre y cuando un supervisor haya autorizado el cambio
+
+#### Flujo Principal
+
+1. Un supervisor autoriza el cambio de contraseña
+2. El administrador de sistemas abre el módulo de empleados > cambio de contraseña
+3. El sistema permite buscar a un empleado
+4. El administrador de sistemas elige el usuario al que debe cambiarle la contraseña
+5. El administrador de sistemas cambia la contraseña del empleado
+6. El sistema guarda la nueva contraseña y envía un correo electrónico al usuario con la nueva contraseña
+
+#### Flujo Alternativo
+
+- **El usuario no existe:**
+  1. El usuario buscado por el administrador de sistemas no existe
+  2. El sistema muestra un mensaje de error
+
+**Postcondición:** Se cambia la contraseña del usuario o se permite modificar la búsqueda
+
+---
+
+#### CDU-3.6: Gestión de copias de seguridad
+
+**ID:** CDU-06
+**Nombre:** Gestión de copias de seguridad
+**Actor Principal:** Administrador de sistemas
+**Propósito:** Permite a un administrador de sistemas crear copias de seguridad
+**Resumen:** El adminisrador accede a la vista de copias de seguridad y realiza una nueva copia de seguridad
+
+#### Flujo Principal
+
+1. El administrador de sistemas ingresa al módulo de copias de seguridad
+2. El sistema permite crear una nueva copia
+3. El administrador de sistemas elige crear una nueva copia de seguiridad de la base de datos
+4. El sistema realiza la copia de seguridad y la sube a la nube
+
+**Postcondición:** Se realiza una copia de seguridad y se sube a la nube.
 
 ---
 
 ### 4. MÓDULO SUPERVISOR
 
 ### CDU-4.1: Login
+
 **ID:** CDU-4.1
 **Nombre:** Login
 **Actor Principal:** Supervisor
@@ -816,6 +1201,7 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 **Resumen:** El supervisor podrá iniciar sesión utilizando sus credenciales registradas en el sistema.  
 
 #### Flujo Principal
+
 1. El supervisor abre la pantalla de inicio de sesión.
 2. El sistema muestra los campos para ingresar:
    - Correo y contraseña, o
@@ -825,14 +1211,17 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 5. Si las credenciales son válidas, el supervisor sigue al CDU-4.2.
 
 #### Flujo Alternativo
+
 - **Credenciales inválidas:**
   1. El sistema muestra un mensaje de error.
   2. El supervisor tiene la opción de reintentar.
 
 - **Postcondición:** El supervisor accede al sistema o recibe un mensaje indicando que sus credenciales son incorrectas.  
+
 ---
 
 ### CDU-4.2: Verificar clave
+
 **ID:** CDU-4.2
 **Nombre:** Verificar clave
 **Actor Principal:** Supervisor
@@ -840,20 +1229,24 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 **Resumen:** El supervisor podra cargar su archivo de claves `.ayd` para confirmar su identidad y tener mayor seguridad de su perfil.  
 
 #### Flujo Principal
+
 1. El supervisor cargar el archivo de claves `.ayd` en el espacio destinado.
 2. El supervisor confirma la carga de archivos.
 3. El sistema valida las credenciales.
 5. Si las credenciales son válidas, el supervisor accede al sistema.
 
 #### Flujo Alternativo
+
 - **Credenciales inválidas:**
   1. El sistema muestra un mensaje de error.
   2. El supervisor tiene la opción de reintentar.
 
 - **Postcondición:** El supervisor accede al sistema o recibe un mensaje indicando que sus credenciales son incorrectas.  
+
 ---
 
 ### CDU-4.3: Modificar información del empleado
+
 **ID:** CDU-4.3
 **Nombre:** Modificar información del empleado
 **Actor Principal:** Supervisor
@@ -861,26 +1254,31 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 **Resumen:** El supervisor podrá modificar, eliminar o agregar información de los empleados registrados en el sistema.  
 
 #### Flujo Principal
+
 1. El supervisor ingresa a la opción de 'Empleados'.
 2. El supervisor identifica al empleado por medio del CUI y presiona el botón 'Editar'.
 3. El supervisor podrá modificar el nombre, teléfono, correo, fotografía, genero y estado civil siempre y cuando estos datos contengan información.
 5. El supervisor dará click en el botón 'Guardar'.
 
 #### Flujo Alternativo
+
 - **Reiniciar contraseña:**
     1. El supervisor ingresa a la opción de 'Empleados'.
     2. El supervisor identifica al empleado por medio del CUI y presiona el botón 'Editar'.
     3. El supervisor dará click en la opción 'Solicitar nueva contraseña'.
 
 #### Excepciones
+
 - **Datos incorrectos:**
     1. El sistema valida existen datos incorrectos.
     2. El sistema notifica al supervisor que debe corregir los datos incorrectos.
 
 - **Postcondición:** En caso de realizar el flujo alterno de 'Reiniciar contraseña' se debe continuar con el CDU-4.4.  
+
 ---
 
 ### CDU-4.4: Reinicia contraseña de empleado
+
 **ID:** CDU-4.4
 **Nombre:** Reinicia contraseña de empleado
 **Actor Principal:** Supervisor
@@ -890,19 +1288,23 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 - **Precondición:** Haber realizado el flujo alterno del CDU-4.3.  
 
 #### Flujo Principal
+
 1. El sistema solicitará al supervisor una confirmación del reinicio de contraseña para el empleado.
 2. El supervisor confirma el reinicio.
 
 #### Flujo Alternativo
+
 - **Cancelar:**
     1. El sistema solicitará al supervisor una confirmación del reinicio de contraseña para el empleado.
     2. El supervisor cancela el reinicio.
     3. El sistema redirigirá al supervisor a la pantalla de modificación de empleado.
 
 - **Postcondición:** Realizar CDU-4.5.  
+
 ---
 
 ### CDU-4.5: Bloqueo de acceso a empleado
+
 **ID:** CDU-4.5
 **Nombre:** Bloqueo de acceso a empleado
 **Actor Principal:** Sistema
@@ -912,16 +1314,20 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 - **Precondición:** Haber realizado el flujo principal del CDU-4.4.  
 
 #### Flujo Principal
+
 1. El sistema verifica que el empleado ha realizado mas de 3 solicitudes de reinicio de contraseña.
 2. El sistema bloquea el acceso del empleado.
 
 #### Flujo Alternativo
+
 - **Envío de solicitud al administrador:**
     1. El sistema verifica que el empleado no ha realizado mas de 3 solicitudes de reinicio de contraseña.
     2. El sistema envía una solicitud de reinicio de contraseña del empleado al administrador.
+
 ---
 
 ### CDU-4.6: Aceptar o rechazar prestamo
+
 **ID:** CDU-4.6
 **Nombre:** Aceptar o rechazar prestamo
 **Actor Principal:** Supervisor
@@ -931,20 +1337,24 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 - **Precondición:** Haber realizado el CDU-4.7.  
 
 #### Flujo Principal
+
 1. El supervisor se dirige a la opción de 'Solicitudes de Préstamos'.
 2. El supervisor identifica la solicitud de préstamo y selecciona la opción 'Ver información'
 3. El sistema muestra la información relacionada a la solicitud de préstamo.
 4. El supervisor selecciona la opción 'Aceptar'.
 
 #### Flujo Alternativo
+
 - **Rechazo de solicitud:**
     1. El supervisor se dirige a la opción de 'Solicitudes de Préstamos'.
     2. El supervisor identifica la solicitud de préstamo y selecciona la opción 'Ver información'
     3. El sistema muestra la información relacionada a la solicitud de préstamo.
     4. El supervisor selecciona la opción 'Rechazar'.
+
 ---
 
 ### CDU-4.7: Validar préstamo existente
+
 **ID:** CDU-4.7
 **Nombre:** Validar préstamo existente
 **Actor Principal:** Sistema
@@ -952,16 +1362,20 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 **Resumen:** El sistema validará que el usuario no cuente con préstamos existentes.
 
 #### Flujo Principal
+
 1. El sistema valida que el usuario cuenta con préstamos existentes.
 2. El sistema cancela la solicitud de préstamo e informa al usuario.
 
 #### Flujo Alternativo
+
 - **Ingreso de solicitud:**
     1. El sistema valida que el usuario no cuenta con préstamos existentes.
     2. El sistema registra la solicitud para revisión del supervisor.
+
 ---
 
 ### CDU-4.8: Revisión de encuestas de satisfacción
+
 **ID:** CDU-4.8
 **Nombre:** Revisión de encuestas de satisfacción
 **Actor Principal:** Supervisor
@@ -969,11 +1383,14 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 **Resumen:** El sistema permitirá al supervisor poder visualizar los resultados de las encuentras respondidas por los clientes.
 
 #### Flujo Principal
+
 1. El supervisor del sistema ingresa a la opción 'Encuestas de satisfacción'.
 2. El sistema muestra al supervisor los resultados de las encuestas de satisfacción de los servicios.
+
 ---
 
 ### CDU-4.9: Ver registro de quejas
+
 **ID:** CDU-4.9
 **Nombre:** Ver registro de quejas
 **Actor Principal:** Supervisor
@@ -981,11 +1398,14 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 **Resumen:** El sistema permitirá al supervisor poder ver los registros de quejas ingresadas por los clientes.
 
 #### Flujo Principal
+
 1. El supervisor del sistema ingresa a la opción 'Registro de quejas'.
 2. El sistema muestra al supervisor los resultados de los registros de quejas proporcionadas por los clientes.
+
 ---
 
 ### CDU-4.10: Registro de administrador del sistema
+
 **ID:** CDU-4.10
 **Nombre:** Registro de administrador del sistema
 **Actor Principal:** Supervisor
@@ -993,6 +1413,7 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 **Resumen:** El supervisor podrá registrar nuevos usuarios administradores del sistema.  
 
 #### Flujo Principal
+
 1. El supervisor ingresa a la opción de 'Administradores'
 2. El supervisor dará click en el botón 'Registrar'.
 3. El sistema mostrará el formulario de información solicitada para el nuevo administrador.
@@ -1002,12 +1423,15 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 7. El sistema habilita la autenticación de 2 factores para el nuevo usuario administrador.
 
 #### Excepciones
+
 - **Datos incorrectos:**
     1. El sistema valida existen datos incorrectos.
     2. El sistema notifica al supervisor que debe corregir los datos incorrectos.
+
 ---
 
 ### CDU-4.11: Modificación de administrador del sistema
+
 **ID:** CDU-4.11
 **Nombre:** Modificación de administrador del sistema
 **Actor Principal:** Supervisor
@@ -1015,6 +1439,7 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 **Resumen:** El supervisor podrá modificar la información de los administradores del sistema.  
 
 #### Flujo Principal
+
 1. El supervisor ingresa a la opción de 'Administradores'
 2. El supervisor identificará al administrador y dará click en la opción 'Editar'
 3. El sistema mostrará la información del administrador.
@@ -1023,6 +1448,7 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 6. El sistema notifica por medio de correo electrónico al administrador los cambios realizados en su información.
 
 #### Flujo Alternativo
+
 - **Ver información:**
     1. El supervisor ingresa a la opción de 'Administradores'
     2. El supervisor identificará al administrador y dará click en la opción 'Ver'
@@ -1030,12 +1456,15 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
     5. El supervisor debe dar click en la opción 'Cerrar'.
 
 #### Excepciones
+
 - **Datos incorrectos:**
     1. El sistema valida existen datos incorrectos.
     2. El sistema notifica al supervisor que debe corregir los datos incorrectos.
+
 ---
 
 ### CDU-4.12: Monitoreo en tiempo real
+
 **ID:** CDU-4.12
 **Nombre:** Monitoreo en tiempo real
 **Actor Principal:** Supervisor
@@ -1043,11 +1472,14 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 **Resumen:** El supervisor podrá monitorear en tiempo real las actividades que se estén realizando dentro del sistema.  
 
 #### Flujo Principal
+
 1. El supervisor ingresa a la opción de 'Monitoreo'.
 2. El sistema mostrará un dashboard con los datos en tiempo real del sistema como transacciones, usuarios, empleados, cuentas, etc.
+
 ---
 
 ### CDU-4.13: Vista de Reportes
+
 **ID:** CDU-4.13
 **Nombre:** Vista de Reportes
 **Actor Principal:** Supervisor
@@ -1055,14 +1487,17 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 **Resumen:** El supervisor podrá visualizar los reportes del sistema.  
 
 #### Flujo Principal
+
 1. El supervisor ingresa a la opción de 'Reportes'.
 2. El sistema mostrará los reportes disponibles del sistema.
 3. El supervisor identificara el reporte requerido y dara click en la opción 'Generar'
 4. El supervisor debe ingresar los parámetros requeridos en caso de haberlo.
 5. El sistema mostrará el reporte solicitado por el usuario.
+
 ---
 
 ### CDU-4.14: Gestión de inventarios bancarios
+
 **ID:** CDU-4.14
 **Nombre:** Gestión de inventarios bancarios
 **Actor Principal:** Supervisor
@@ -1070,24 +1505,29 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 **Resumen:** El supervisor podrá gestionar el efectivo y otros recursos de la sucursal.  
 
 #### Flujo Principal
+
 1. El supervisor ingresa a la opción de 'Gestión de Inventario Bancario'
 2. El sistema le mostrará al usuario la información actual de los recursos de la sucursal.
 3. El supervisor puede modificar los recursos de la sucursal.
 4. El supervisor debe seleccionar el botón 'Guardar'.
 
 #### Flujo Alternativo
+
 - **Ver información:**
     1. El supervisor ingresa a la opción de 'Gestión de Inventario Bancario'
     2. El sistema le mostrará al usuario la información actual de los recursos de la sucursal.
     4. El supervisor debe seleccionar el botón 'Cerrar'.
 
 #### Excepciones
+
 - **Datos incorrectos:**
     1. El sistema valida existen datos incorrectos.
     2. El sistema notifica al supervisor que debe corregir los datos incorrectos.
+
 ---
 
 ### CDU-4.15: Aprobar o rechazar tarjeta
+
 **ID:** CDU-4.15
 **Nombre:** Aprobar o rechazar tarjeta
 **Actor Principal:** Supervisor
@@ -1095,6 +1535,7 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 **Resumen:** El supervisor podrá aprobar o rechazar las solicitudes de tarjetas ingresadas por los clientes.  
 
 #### Flujo Principal
+
 1. El supervisor ingresa a la opción de 'Solicitudes de Tarjetas'.
 2. El sistema mostrará las solicitudes en el sistema.
 3. El supervisor identificará la solicitud y seleccionará la opción 'Revisar'.
@@ -1103,15 +1544,18 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 6. El sistema registrará la información de la nueva tarjeta.
 
 #### Flujo Alternativo
+
 - **Rechazar solicitud:**
     1. El supervisor ingresa a la opción de 'Solicitudes de Tarjetas'.
     2. El sistema mostrará las solicitudes en el sistema.
     3. El supervisor identificará la solicitud y seleccionará la opción 'Revisar'.
     4. El sistema mostrará al supervisor toda la información relacionada a la solicitud.
     5. El supervisor seleccionará el botón 'Rechazar'.
+
 ---
 
 ### CDU-4.16: Cancelar servicio
+
 **ID:** CDU-4.16
 **Nombre:** Cancelar servicio
 **Actor Principal:** Supervisor
@@ -1119,6 +1563,7 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 **Resumen:** El supervisor podrá aprobar o rechazar las solicitudes de cancelación de servicios ingresadas por los clientes.  
 
 #### Flujo Principal
+
 1. El supervisor ingresa a la opción de 'Cancelación de Servicios'.
 2. El sistema mostrará las solicitudes en el sistema.
 3. El supervisor identificará la solicitud y seleccionará la opción 'Revisar'.
@@ -1126,6 +1571,7 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 5. El supervisor seleccionará el botón 'Aceptar'.
 
 #### Flujo Alternativo
+
 - **Rechazar solicitud:**
     1. El supervisor ingresa a la opción de 'Cancelación de servicios'.
     2. El sistema mostrará las solicitudes en el sistema.
@@ -1134,9 +1580,11 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
     5. El supervisor seleccionará el botón 'Rechazar'.
 
 - **Postcondición:** En caso de realizar el flujo principal, continuar con el CDU-4.17
+
 ---
 
 ### CDU-4.17: Verificar inconvenientes del servicio
+
 **ID:** CDU-4.17
 **Nombre:** Verificar inconvenientes del servicio
 **Actor Principal:** Sistema
@@ -1147,10 +1595,12 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 - **Precondición:** Haber realizado el flujo principal del CDU-4.16
 
 #### Flujo Principal
+
 1. El sistema verificará que el servicio no cuenta con inconvenientes.
 2. El sistema cancelará el servicio en cuestión.
 
 #### Flujo Alternativo
+
 - **Servicio con inconvenientes:**
     1. El sistema verificará que el servicio cuenta con inconvenientes.
     2. El sistema notificará al supervisor de que el servicio no puede ser cancelado y mostrará los inconvenientes relacionados.
@@ -1198,9 +1648,47 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 
 ## ESTILOS ARQUITECTONICOS
 
+1. Organización y Mantenimiento:
+    La arquitectura en capas divide el sistema en módulos independientes con responsabilidades bien definidas (como capa de presentación, lógica de negocio y acceso a datos). Esto facilita:
+
+    * Mantenimiento: Al estar el sistema dividido, cualquier modificación en una capa (como cambiar la base de datos o ajustar la interfaz de usuario) no afecta las otras capas, siempre y cuando se respeten las interfaces.
+    * Escalabilidad: Agregar nuevas funcionalidades, como un nuevo módulo de pago o gestión de clientes, puede hacerse extendiendo o modificando las capas necesarias sin romper el sistema existente.
+2. Separación de Responsabilidades:
+    Cada módulo (como Pago de Servicios, Gestión de Cuentas, o Registro de Quejas) se puede asignar a una capa específica:
+
+    * Capa de presentación: Maneja la interfaz para los usuarios (cajeros, atención al cliente, administradores, etc.), garantizando una experiencia intuitiva y clara.
+    * Capa de lógica de negocio: Contiene las reglas de validación, cálculos y procesos como la validación del límite de cambios de moneda o cálculo de intereses en tarjetas de crédito.
+    * Capa de acceso a datos: Se encarga de interactuar con la base de datos para almacenar o recuperar información, como el historial de transacciones o los datos de las cuentas.
+3. Escalabilidad y Flexibilidad:
+    La arquitectura de capas es especialmente útil para un sistema bancario como este debido a:
+
+    * Ampliaciones futuras: Si más adelante se desean añadir nuevas funcionalidades (como pagos internacionales o integración con billeteras digitales), estas pueden integrarse fácilmente en la capa de lógica de negocio.
+    * Flexibilidad tecnológica: Cambiar la base de datos o el frontend puede hacerse con mínimas repercusiones, ya que las capas están desacopladas.
+4. Seguridad:
+    La seguridad es crucial en un entorno bancario. Una arquitectura de capas permite:
+
+    * Control en cada nivel: Validaciones como autenticación en la capa de presentación y encriptación en la capa de datos aseguran que cada interacción con el sistema esté protegida.
+    * Protección de datos sensibles: Al restringir el acceso a la capa de datos mediante una capa intermedia de lógica de negocio, se reduce la posibilidad de que datos sensibles sean expuestos.
+5. Modularidad por Roles:
+    Cada rol (cajero, atención al cliente, administrador) tiene funcionalidades específicas, que pueden asignarse a módulos dentro de las capas:
+
+    * El rol de cajero tiene acceso a funciones como pagos y consultas, pero no puede acceder a la gestión de empleados, lo cual queda en la capa de lógica de negocio y control de acceso.
+    * El rol de atención al cliente tiene capacidades como actualizar datos y gestionar quejas, integrando validaciones desde la capa de negocio para verificar permisos.
+    * El rol de administrador de sistemas realiza tareas sensibles como registro y eliminación de empleados, lo cual se aísla en módulos específicos.
+
+6. Cumplimiento de Buenas Prácticas de Desarrollo:
+    Esta arquitectura favorece:
+
+    * Pruebas independientes: Cada capa puede ser probada de forma separada, garantizando calidad y reduciendo errores.
+    * Reutilización de componentes: Por ejemplo, el módulo de autenticación puede ser usado por todos los roles sin duplicar código.
+
 ## DIAGRAMA DE DESPLIEGUE
 
+![DIAGRAMA DE DESPLIGUE](./assets/Diagramas/Diagrama%20de%20Despligue.drawio.png)
+
 ## DIAGRAMA DE COMPONENTES
+
+![DIAGRAMA DE COMPONENTES](./assets/Diagramas/Diagrama%20de%20Componentes.drawio.png)
 
 ## DIAGRAMA ENTIDAD RELACION
 
@@ -1250,26 +1738,36 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 
 ### 2. ATENCIÓN AL CLIENTE
 
+### 3. ADMINISTRADOR DE SISTEMAS
+
 ### 4. SUPERVISOR
+
 ### PTPO-4.1 - Login
+
 ![PTPO-4.1](./assets/ptpo-login.png)
 
 ### PTPO-4.2 - Validar Clave
+
 ![PTPO-4.2](./assets/ptpo-aydkey.png)
 
 ### PTPO-4.3 - Menú Supervisor
+
 ![PTPO-4.3](./assets/ptpo-supervisor.png)
 
 ### PTPO-4.4 - Catálogos
+
 ![PTPO-4.4](./assets/ptpo-listas.png)
 
 ### PTPO-4.5 - Formularios
+
 ![PTPO-4.5](./assets/ptpo-formulario.png)
 
 ### PTPO-4.6 - Monitor
+
 ![PTPO-4.6](./assets/ptpo-monitor.png)
 
 ### PTPO-4.7 - Reportes
+
 ![PTPO-4.7](./assets/ptpo-reportes.png)
 
 ---
@@ -1300,6 +1798,7 @@ Caractersticas:
 - Proporciona un punto de acceso global en la aplicación para que sea facil de usar.
 
 ### 2. PROXY
+
 El patrón Proxy actúa como un intermediario o representante para otro objeto, permitiendo controlar el acceso a él. El objetivo principal es ofrecer una capa adicional de control antes de interactuar con el objeto real, ya sea para verificar permisos, optimizar recursos, o agregar funcionalidades sin modificar la implementación original.
 
 Caractersticas:
@@ -1309,38 +1808,102 @@ Caractersticas:
 - **Desacoplamiento**: Separa la lógica del cliente y del objeto real, manteniendo el sistema modular.
 
 #### Implementación
+
 - Validación de identidad en operaciones sensibles:
-    - Para Actualización de datos, bloqueo de tarjetas, y cancelación de servicios.
-    - Un Protection Proxy verifica que el cliente esté autorizado para realizar la operación (por ejemplo, usando una pregunta de seguridad).
+  - Para Actualización de datos, bloqueo de tarjetas, y cancelación de servicios.
+  - Un Protection Proxy verifica que el cliente esté autorizado para realizar la operación (por ejemplo, usando una pregunta de seguridad).
 - Optimización en la creación de recursos:
-    - Para Creación de cuentas o tarjetas.
-    - Un Virtual Proxy asegura que el número de cuenta o tarjeta solo se genere tras completar validaciones previas.
+  - Para Creación de cuentas o tarjetas.
+  - Un Virtual Proxy asegura que el número de cuenta o tarjeta solo se genere tras completar validaciones previas.
 
 #### Ventajas
+
 - Protege recursos críticos mediante validaciones antes de otorgar acceso.
 - Facilita la extensión o modificación de funcionalidades sin afectar directamente al objeto real.
 - Proporciona un punto de acceso global en la aplicación para que sea facil de usar.
 - Mantiene el código del objeto real más limpio y enfocado en sus funciones principales.
 
+### 3. CONTAINER-PRESENTATIONAL
+
+El Container-Presentational Pattern es un patrón de diseño popular en el desarrollo de interfaces de usuario, especialmente en aplicaciones con React. Divide los componentes en dos tipos principales: Container Components y Presentational Components, con responsabilidades claramente separadas.
+
+**Características**
+
+Container Components:
+
+- Manejan la lógica de la aplicación, como acceder al estado global, realizar llamadas a APIs o manejar eventos complejos.
+- Deciden qué datos pasar a los Presentational Components.
+- Pueden conectarse con bibliotecas de gestión de estado como Redux o Context API.
+
+Presentational Components:
+
+- Son responsables de la presentación y renderizado de la interfaz de usuario.
+- Reciben datos y funciones como propiedades (props).
+- No contienen lógica de negocio, solo lógica visual (cómo mostrar los datos).
+
+#### Ventajas
+
+Separación de responsabilidades:
+Facilita mantener y escalar la aplicación al separar lógica de negocio de la interfaz visual.
+Reutilización:
+Los Presentational Components son reutilizables en diferentes partes de la aplicación, ya que no dependen del estado global o la lógica de negocio.
+Facilita pruebas unitarias:
+Los Presentational Components son más fáciles de probar debido a su naturaleza pura (sin dependencias externas).
+Claridad:
+Facilita entender el propósito de cada componente, mejorando la legibilidad del código.
+
+#### Desventajas
+
+Sobrecarga inicial:
+Puede ser más complejo estructurar la aplicación en pequeños componentes si el equipo no está familiarizado con el patrón.
+Mayor número de componentes:
+Aumenta el número total de archivos y componentes, lo que podría ser innecesario para aplicaciones pequeñas.
+Dependencia de bibliotecas:
+Los Container Components a menudo dependen de herramientas como Redux o Context API, lo que puede aumentar la complejidad.
+
 ### 4. COMMAND
+
 El Patrón de Diseño Command es uno de los patrones de comportamiento que permite encapsular una solicitud como un objeto, lo que te permite parametrizar a los clientes con diferentes solicitudes, hacer cola o registrar las solicitudes, y soportar la deshacer operaciones. Es útil para desacoplar los emisores de las solicitudes de los objetos que las ejecutan.
 
 La idea central del patrón Command es que, en lugar de ejecutar una acción directamente, se crea un objeto de comando que encapsula toda la información necesaria para llevar a cabo una acción o invocar un método específico en un objeto receptor. Este patrón es muy útil cuando las operaciones o solicitudes que un sistema debe realizar son complejas, deben ser deshechas o incluso almacenadas para ser ejecutadas más tarde.
 
 #### Ventajas
- 
-1. **Desacoplamiento**: 
+
+1. **Desacoplamiento**:
 Permite desacoplar el objeto que invoca la operación del objeto que la realiza. Esto facilita la extensión del sistema, ya que puedes agregar nuevos comandos sin modificar las clases existentes.
 
-2. **Deshacer/Rehacer**: 
+2. **Deshacer/Rehacer**:
 Implementar la funcionalidad de deshacer/rehacer es más fácil. Como los comandos son objetos, puedes almacenarlos y ejecutarlos en un orden inverso para deshacer las acciones.
 
-3. **Simplicidad en la ejecución**: 
+3. **Simplicidad en la ejecución**:
 Puede transformar un conjunto de acciones complejas en una simple interfaz que permite que se ejecuten acciones con solo hacer una llamada de función.
 
-4. **Registro y secuenciación de acciones**: 
+4. **Registro y secuenciación de acciones**:
 Puedes almacenar y ejecutar una secuencia de comandos. También puedes hacer una cola de comandos y ejecutarlos de forma asíncrona.
 
 Dado todo lo anterior, hemos optado por este patron de diseño ya que nos será de mucha utilidad para la ejecución de las operaciones transaccionales del sistema como retiros, pagos, depósitos, etc. Incluso nos puede ser de gran ayuda con el manejo de solicitudes de clientes, como lo son las solicitudes de cancelación de servicios, la solicitudes de tarjetas, solicitudes de restablecimiento de contraseña, etc.
+
+### 5. FACTORY PATTERN
+El Patrón Factory  Pattern, es un patron de diseño creacional que perite instanciar objetos sin exponer su lógica  de cracion. Para u sistema bancario, su implementación aporta beneficios clave en términos de escalabilida, flexibiliad y mantenimiento.
+
+Características:
+- Centraliza la creación de objetos en una clase dedicada (la fábrica).
+
+- Oculta la lógica de creación al resto del sistema.
+- Crea objetos basados en clases abstractas o interfaces.
+- Facilita la configuración y validación de objetos al momento de su creación.
+
+### Implementación
+- Define una clase o método estático encargado de crear instancias.
+- Utiliza parámetros para determinar el tipo de objeto a crear.
+- Opcionalmente, integra validaciones específicas según el tipo de objeto.
+- Devuelve instancias de una clase base o una interfaz común.
+
+### Ventajas
+- Centraliza la lógica de creación, facilitando actualizaciones y modificaciones.
+- Permite agregar nuevos tipos de objetos sin modificar el código existente.
+- Simplifica la creación de objetos complejos con múltiples configuraciones.
+- Garantiza que todos los objetos relacionados se creen de manera uniforme.
+- Favorece la separación de responsabilidades y el principio abierto/cerrado.
 
 ## TABLERO KANBAN
