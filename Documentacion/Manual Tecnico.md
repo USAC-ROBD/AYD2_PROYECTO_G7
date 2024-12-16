@@ -58,14 +58,14 @@
 
 ### ROL CAJERO  
 
-#### 1. Gestión de Acceso: Login
+#### RF-01. Gestión de Acceso: Login
 
 - El sistema debe permitir al cajero iniciar sesión utilizando:
   - Correo y contraseña registrados.
   - Nombre de usuario autoasignado.
 - Validación de credenciales para garantizar la seguridad del acceso.
 
-#### 2. Pago de Servicios
+#### RF-02. Pago de Servicios
 
 - El sistema debe permitir al cajero registrar pagos de servicios básicos como agua, luz, teléfono e internet.
 - **Para pagos en efectivo**, debe solicitar:
@@ -80,7 +80,7 @@
   - DPI del titular de la cuenta.
 - Validar que la persona que realiza el pago sea el titular de la cuenta bancaria.
 
-#### 3. Pago de Préstamos
+#### RF-03. Pago de Préstamos
 
 - Registrar pagos parciales o totales de préstamos adquiridos.
 - Solicitar:
@@ -90,7 +90,7 @@
   - Fecha del pago.
 - Actualizar el saldo del préstamo correspondiente.
 
-#### 4. Búsqueda de Clientes
+#### RF-04. Búsqueda de Clientes
 
 - Permitir la búsqueda de clientes por número de cuenta o CUI.
 - Mostrar:
@@ -98,18 +98,18 @@
   - Detalles de contacto.
   - Historial de transacciones.
 
-#### 5. Consulta de Saldo
+#### RF-05. Consulta de Saldo
 
 - Mostrar el saldo actual disponible de una cuenta.
 - Incluir la fecha y hora de la última actualización.
 
-#### 6. Cambio de Moneda
+#### RF-06. Cambio de Moneda
 
 - Permitir el cambio de quetzales a dólares bajo las siguientes restricciones:
   - Límite de Q 10,000.00 por día.
   - Solo puede realizarse una vez al mes.
 
-#### 7. Generación de Comprobantes
+#### RF-07. Generación de Comprobantes
 
 - Generar un comprobante en PDF para cada transacción con la siguiente información:
   - Número de cuenta (si aplica).
@@ -118,7 +118,7 @@
   - Monto.
   - Nombre y firma digital del cajero autorizado.
 
-#### 8. Retiro de Dinero
+#### RF-08. Retiro de Dinero
 
 - Registrar retiros de efectivo desde cuentas bancarias.
 - Solicitar:
@@ -129,7 +129,7 @@
   - Moneda del retiro (quetzales o dólares).
 - Implementar límites de retiro y validaciones de identidad.
 
-#### 9. Depósito de Dinero
+#### RF-09. Depósito de Dinero
 
 - Registrar depósitos en cuentas bancarias.
 - Solicitar:
@@ -140,7 +140,7 @@
   - Moneda del depósito (quetzales o dólares).
 - Validar que el módulo de depósitos en dólares esté activado.
 
-#### 10. Pago de Tarjetas de Crédito
+#### RF-10. Pago de Tarjetas de Crédito
 
 - Registrar pagos de tarjetas de crédito.
 - Calcular los cargos mensuales de Q 75.00 y los intereses simples del 5% en caso de atrasos.
@@ -149,37 +149,37 @@
 
 ## REQUERIMIENTOS NO FUNCIONALES
 
-### 1. Rendimiento
+### RN-01. Rendimiento
 
 - El sistema debe procesar transacciones en tiempo real con un tiempo de respuesta máximo de 2 segundos por operación.
 
-### 2. Seguridad
+### RN-02. Seguridad
 
 - Todas las transacciones deben estar cifradas.
 - Validación estricta de identidad para prevenir fraudes en retiros, pagos y depósitos.
 
-### 3. Disponibilidad
+### RN-03. Disponibilidad
 
 - El sistema debe estar disponible al 99.9% del tiempo para garantizar la continuidad operativa en horario laboral.
 
-### 4. Usabilidad
+### RN-04. Usabilidad
 
 - La interfaz debe ser intuitiva y permitir la navegación rápida entre módulos.
 - Proporcionar mensajes claros de error y confirmación para cada operación.
 
-### 5. Escalabilidad
+### RN-05. Escalabilidad
 
 - El sistema debe ser capaz de manejar un crecimiento en el número de usuarios y transacciones sin afectar el rendimiento.
 
-### 6. Compatibilidad
+### RN-06. Compatibilidad
 
 - El sistema debe ser compatible con los navegadores modernos y dispositivos utilizados por los cajeros.
 
-### 7. Mantenibilidad
+### RN-07. Mantenibilidad
 
 - El sistema debe estar diseñado con una arquitectura modular que facilite futuras actualizaciones y mantenimiento.
 
-### 8. Conformidad Legal
+### RN-08. Conformidad Legal
 
 - El sistema debe cumplir con las regulaciones locales e internacionales aplicables al manejo de datos bancarios y transacciones financieras.
 
@@ -486,6 +486,26 @@
 ---
 
 ## MATRICES DE TRAZABILIDAD
+
+### a. Stakeholders vs Requerimientos
+
+| **Requerimientos / Stakeholders** | **Clientes** | **Directivos y gerentes** | **Agentes de Servicio al cliente** | **Cajeros** | **Administradores de sistemas** | **Socios comerciales** | **Entidades regulatorias** |
+|------------------------------------|--------------|----------------------------|-------------------------------------|-------------|---------------------------------|-------------------------|----------------------------|
+| **RF-01. Gestión de Acceso**       |Medio            |Medio                          |Medio                                   | Alto           | Alto                               | Bajo                       | Alto                          |
+| **RF-02. Pago de Servicios**       | Alto            |Medio                          |Medio                                   | Alto           |Medio                               | Alto                       |Medio                          |
+| **RF-03. Pago de Préstamos**       | Alto            |Medio                          |Medio                                   | Alto           |Medio                               | Alto                       |Medio                          |
+| **RF-04. Búsqueda de Clientes**    | Alto            |Medio                          | Alto                                   |Medio           |Medio                               |Medio                       | Bajo                          |
+| **RF-05. Consulta de Saldo**       | Alto            |Medio                          | Alto                                   | Alto           |Medio                               |Medio                       | Bajo                          |
+| **RF-06. Cambio deMediooneda**        | Alto            |Medio                          | Bajo                                   |Medio           |Medio                               | Alto                       |Medio                          |
+| **RF-07. Generación de Comprobantes** |Medio         | Alto                          |Medio                                   | Alto           | Alto                               | Alto                       | Alto                          |
+| **RF-08. Retiro de Dinero**        | Alto            |Medio                          | Bajo                                   | Alto           | Alto                               | Bajo                       | Alto                          |
+| **RF-09. Depósito de Dinero**      | Alto            |Medio                          | Bajo                                   | Alto           | Alto                               | Bajo                       | Alto                          |
+| **RF-10. Pago de Tarjetas de Crédito** | Alto         | Alto                          | Bajo                                   | Alto           | Alto                               | Bajo                       | Alto                          |
+
+
+### b. Stakeholders vs CDU
+
+### c. Requerimientos vs CDU
 
 ## ESTILOS ARQUITECTONICOS
 
