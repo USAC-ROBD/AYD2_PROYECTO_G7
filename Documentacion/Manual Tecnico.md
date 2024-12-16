@@ -449,7 +449,48 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 ## 8. Diagrama Entidad Relación
 
 ## 9. Prototipos
+### 4. Módulo Supervisor
+### PTPO-4.1 - Login
+![PTPO-4.1](./assets/ptpo-login.png)
+
+### PTPO-4.2 - Validar Clave
+![PTPO-4.2](./assets/ptpo-aydkey.png)
+
+### PTPO-4.3 - Menú Supervisor
+![PTPO-4.3](./assets/ptpo-supervisor.png)
+
+### PTPO-4.4 - Catálogos
+![PTPO-4.4](./assets/ptpo-listas.png)
+
+### PTPO-4.5 - Formularios
+![PTPO-4.5](./assets/ptpo-formulario.png)
+
+### PTPO-4.6 - Monitor
+![PTPO-4.6](./assets/ptpo-monitor.png)
+
+### PTPO-4.7 - Reportes
+![PTPO-4.7](./assets/ptpo-reportes.png)
 
 ## 10. Patrones de Diseño
+### Patron de Diseño Command
+El Patrón de Diseño Command es uno de los patrones de comportamiento que permite encapsular una solicitud como un objeto, lo que te permite parametrizar a los clientes con diferentes solicitudes, hacer cola o registrar las solicitudes, y soportar la deshacer operaciones. Es útil para desacoplar los emisores de las solicitudes de los objetos que las ejecutan.
+
+La idea central del patrón Command es que, en lugar de ejecutar una acción directamente, se crea un objeto de comando que encapsula toda la información necesaria para llevar a cabo una acción o invocar un método específico en un objeto receptor. Este patrón es muy útil cuando las operaciones o solicitudes que un sistema debe realizar son complejas, deben ser deshechas o incluso almacenadas para ser ejecutadas más tarde.
+
+#### Ventajas del Patrón Command
+ 
+1. **Desacoplamiento**: 
+Permite desacoplar el objeto que invoca la operación del objeto que la realiza. Esto facilita la extensión del sistema, ya que puedes agregar nuevos comandos sin modificar las clases existentes.
+
+2. **Deshacer/Rehacer**: 
+Implementar la funcionalidad de deshacer/rehacer es más fácil. Como los comandos son objetos, puedes almacenarlos y ejecutarlos en un orden inverso para deshacer las acciones.
+
+3. **Simplicidad en la ejecución**: 
+Puede transformar un conjunto de acciones complejas en una simple interfaz que permite que se ejecuten acciones con solo hacer una llamada de función.
+
+4. **Registro y secuenciación de acciones**: 
+Puedes almacenar y ejecutar una secuencia de comandos. También puedes hacer una cola de comandos y ejecutarlos de forma asíncrona.
+
+Dado todo lo anterior, hemos optado por este patron de diseño ya que nos será de mucha utilidad para la ejecución de las operaciones transaccionales del sistema como retiros, pagos, depósitos, etc. Incluso nos puede ser de gran ayuda con el manejo de solicitudes de clientes, como lo son las solicitudes de cancelación de servicios, la solicitudes de tarjetas, solicitudes de restablecimiento de contraseña, etc.
 
 ## 11. Tablero Kanban
