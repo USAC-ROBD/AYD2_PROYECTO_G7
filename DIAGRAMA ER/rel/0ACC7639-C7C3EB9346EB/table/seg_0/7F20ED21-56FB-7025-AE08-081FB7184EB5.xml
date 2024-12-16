@@ -1,0 +1,62 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="7F20ED21-56FB-7025-AE08-081FB7184EB5" name="CUENTA">
+<createdBy>juanp</createdBy>
+<createdTime>2024-12-16 02:05:40 UTC</createdTime>
+<generatorID>0D48F726-8A7D-AAF4-3BBE-8C7AA6A86352</generatorID>
+<ownerDesignName>DIAGRAMA ER</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CUENTA_ID" id="03688F76-2FB6-3D72-8A8C-3E364316C861">
+<createdBy>juanp</createdBy>
+<createdTime>2024-12-16 02:05:40 UTC</createdTime>
+<ownerDesignName>DIAGRAMA ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<isSurrogateColumn>true</isSurrogateColumn>
+</Column>
+<Column name="CLIENTE_CLIENTE_ID" id="1D6B5E43-05B4-FA0A-8D76-06E1D5027D5D">
+<createdBy>juanp</createdBy>
+<createdTime>2024-12-16 02:05:40 UTC</createdTime>
+<ownerDesignName>DIAGRAMA ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6D45F5FB-CB8F-715B-27BA-51EB6E1F18FB" referredColumn="6FAAA82B-AC25-6FAD-4D1A-4AE1AA6CCC7E"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="1BC8E429-58AE-10AE-E8A1-B13FE2C390EC" name="CUENTA_PK">
+<createdBy>juanp</createdBy>
+<createdTime>2024-12-16 02:05:40 UTC</createdTime>
+<ownerDesignName>DIAGRAMA ER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<indexColumnUsage>
+<colUsage columnID="03688F76-2FB6-3D72-8A8C-3E364316C861"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="13477818-7F0B-BF7D-EAF0-22D55E6F504F" name="CUENTA_CLIENTE_FK">
+<createdBy>juanp</createdBy>
+<createdTime>2024-12-16 02:05:40 UTC</createdTime>
+<generatorID>1153B390-6643-B48B-F971-7138C916029D</generatorID>
+<ownerDesignName>DIAGRAMA ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1D6B5E43-05B4-FA0A-8D76-06E1D5027D5D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

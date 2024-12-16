@@ -1,0 +1,62 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A1101F31-35D2-7140-E7EB-0C8ABA22AB5D" name="PRESTAMO">
+<createdBy>juanp</createdBy>
+<createdTime>2024-12-16 02:05:40 UTC</createdTime>
+<generatorID>F8C25597-32E9-944F-E7ED-3030E51AE8E6</generatorID>
+<ownerDesignName>DIAGRAMA ER</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="PRESTAMO_ID" id="7D68ED99-8A35-040B-DB5F-686A15C5399D">
+<createdBy>juanp</createdBy>
+<createdTime>2024-12-16 02:05:40 UTC</createdTime>
+<ownerDesignName>DIAGRAMA ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<isSurrogateColumn>true</isSurrogateColumn>
+</Column>
+<Column name="CLIENTE_CLIENTE_ID" id="615FF408-2DE7-2F9B-CCE3-3BFB37147E18">
+<createdBy>juanp</createdBy>
+<createdTime>2024-12-16 02:05:40 UTC</createdTime>
+<ownerDesignName>DIAGRAMA ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="781B97B2-FB36-2245-7CF2-74F9331B6107" referredColumn="6FAAA82B-AC25-6FAD-4D1A-4AE1AA6CCC7E"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A930D116-BA06-B897-8E02-7E717FEE24A7" name="PRESTAMO_PK">
+<createdBy>juanp</createdBy>
+<createdTime>2024-12-16 02:05:40 UTC</createdTime>
+<ownerDesignName>DIAGRAMA ER</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<indexColumnUsage>
+<colUsage columnID="7D68ED99-8A35-040B-DB5F-686A15C5399D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="957E5DCC-FF2B-26BB-771E-F82025391352" name="PRESTAMO_CLIENTE_FK">
+<createdBy>juanp</createdBy>
+<createdTime>2024-12-16 02:05:40 UTC</createdTime>
+<generatorID>DD79C5E7-3267-1823-924D-6BCC87D0D3AC</generatorID>
+<ownerDesignName>DIAGRAMA ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="615FF408-2DE7-2F9B-CCE3-3BFB37147E18"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

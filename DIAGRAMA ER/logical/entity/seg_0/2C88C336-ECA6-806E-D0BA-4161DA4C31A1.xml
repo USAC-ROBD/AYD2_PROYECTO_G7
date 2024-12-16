@@ -14,4 +14,88 @@
 <maxVolumes>9999999</maxVolumes>
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ID_RETIRO" id="538FA3B9-A9E6-D93D-AF94-6EE322C6570D">
+<createdBy>juanp</createdBy>
+<createdTime>2024-12-16 03:09:47 UTC</createdTime>
+<ownerDesignName>DIAGRAMA ER</ownerDesignName>
+<engineerTo>
+<item key="0ACC7639-F9B0-273D-0527-C7C3EB9346EB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ID_CUENTA" id="2895311C-837B-8ADE-B59C-7EBDECC85298">
+<createdBy>juanp</createdBy>
+<createdTime>2024-12-16 03:00:30 UTC</createdTime>
+<generatorID>44692542-01D0-7FE6-07AE-639259FE4F15</generatorID>
+<ownerDesignName>DIAGRAMA ER</ownerDesignName>
+<engineerTo>
+<item key="0ACC7639-F9B0-273D-0527-C7C3EB9346EB" value="true"/>
+</engineerTo>
+<referedAttribute>3874ED60-3E8B-5227-0C54-B9C6DB3CBCC1</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="MONTO" id="69AD0024-0CB2-FA9D-8A3C-C8A0F5012452">
+<createdBy>juanp</createdBy>
+<createdTime>2024-12-16 03:10:12 UTC</createdTime>
+<ownerDesignName>DIAGRAMA ER</ownerDesignName>
+<engineerTo>
+<item key="0ACC7639-F9B0-273D-0527-C7C3EB9346EB" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>15</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,15,2</ownDataTypeParameters>
+</Attribute>
+<Attribute name="CREACION" id="4A934FEE-4C57-E30C-ED39-04580331F78A">
+<createdBy>juanp</createdBy>
+<createdTime>2024-12-16 03:15:51 UTC</createdTime>
+<ownerDesignName>DIAGRAMA ER</ownerDesignName>
+<engineerTo>
+<item key="0ACC7639-F9B0-273D-0527-C7C3EB9346EB" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="MONEDA" id="F3EACE39-0B3E-4976-B1A0-F15525807E1E">
+<createdBy>juanp</createdBy>
+<createdTime>2024-12-16 03:16:51 UTC</createdTime>
+<ownerDesignName>DIAGRAMA ER</ownerDesignName>
+<engineerTo>
+<item key="0ACC7639-F9B0-273D-0527-C7C3EB9346EB" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>3 CHAR</dataTypeSize>
+<ownDataTypeParameters>3 CHAR,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="501CA10E-0A26-F510-5089-51F6FE3ED3B0" name="RETIRO PK">
+<createdBy>juanp</createdBy>
+<createdTime>2024-12-16 03:10:05 UTC</createdTime>
+<ownerDesignName>DIAGRAMA ER</ownerDesignName>
+<engineerTo>
+<item key="0ACC7639-F9B0-273D-0527-C7C3EB9346EB" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>538FA3B9-A9E6-D93D-AF94-6EE322C6570D</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
 </Entity>

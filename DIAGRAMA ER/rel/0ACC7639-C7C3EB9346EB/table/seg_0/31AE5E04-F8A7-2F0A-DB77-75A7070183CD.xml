@@ -1,0 +1,64 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="31AE5E04-F8A7-2F0A-DB77-75A7070183CD" name="TARJETA">
+<createdBy>juanp</createdBy>
+<createdTime>2024-12-16 02:05:40 UTC</createdTime>
+<generatorID>09DBC871-4092-B828-A087-92F7A341A772</generatorID>
+<ownerDesignName>DIAGRAMA ER</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="TIPO_DE_TARJETA_TIPO_DE_TARJETA_ID" id="3F73C462-A0EF-3174-A76A-C194F74C894A">
+<createdBy>juanp</createdBy>
+<createdTime>2024-12-16 02:05:40 UTC</createdTime>
+<ownerDesignName>DIAGRAMA ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C9AFDC55-5319-7A65-70BD-455153AED849" referredColumn="EBB47AE6-85F4-76F8-27D4-56711D3666E5"/>
+</associations>
+</Column>
+<Column name="CLIENTE_CLIENTE_ID" id="CD16C9AB-23A5-4B80-61A9-4273F7365186">
+<createdBy>juanp</createdBy>
+<createdTime>2024-12-16 02:05:40 UTC</createdTime>
+<ownerDesignName>DIAGRAMA ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3FE62D33-1549-26E7-44C3-A59439AE670D" referredColumn="6FAAA82B-AC25-6FAD-4D1A-4AE1AA6CCC7E"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="EAB70771-C080-F3B6-122D-44B5CCE51064" name="TARJETA_TIPO_DE_TARJETA_FK">
+<createdBy>juanp</createdBy>
+<createdTime>2024-12-16 02:05:40 UTC</createdTime>
+<generatorID>89D824E0-AE0F-CF9C-89E9-2D71D025DFDD</generatorID>
+<ownerDesignName>DIAGRAMA ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3F73C462-A0EF-3174-A76A-C194F74C894A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CD94A5D5-3D09-751D-51F5-71C74D9C9117" name="TARJETA_CLIENTE_FK">
+<createdBy>juanp</createdBy>
+<createdTime>2024-12-16 02:05:40 UTC</createdTime>
+<generatorID>B6D2D9B6-251D-FF1F-525E-6032FE16D18F</generatorID>
+<ownerDesignName>DIAGRAMA ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CD16C9AB-23A5-4B80-61A9-4273F7365186"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

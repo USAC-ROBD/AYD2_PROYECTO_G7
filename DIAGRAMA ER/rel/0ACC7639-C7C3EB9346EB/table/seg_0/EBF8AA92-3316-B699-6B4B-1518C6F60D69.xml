@@ -1,0 +1,39 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="EBF8AA92-3316-B699-6B4B-1518C6F60D69" name="FEEDBACK">
+<createdBy>juanp</createdBy>
+<createdTime>2024-12-16 02:05:40 UTC</createdTime>
+<generatorID>06606712-E8AC-89E2-499E-C0A4D8E07414</generatorID>
+<ownerDesignName>DIAGRAMA ER</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CLIENTE_CLIENTE_ID" id="98B4DADD-32FA-C381-28E6-94249E78FE3F">
+<createdBy>juanp</createdBy>
+<createdTime>2024-12-16 02:05:40 UTC</createdTime>
+<ownerDesignName>DIAGRAMA ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="67E723F0-D270-AC66-60A9-BE8B98B8A1AA" referredColumn="6FAAA82B-AC25-6FAD-4D1A-4AE1AA6CCC7E"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="83C28364-61E1-341E-1BF9-926E81E3C835" name="FEEDBACK_CLIENTE_FK">
+<createdBy>juanp</createdBy>
+<createdTime>2024-12-16 02:05:40 UTC</createdTime>
+<generatorID>8190D049-2F33-9E41-337F-6DBE1C2E3C7E</generatorID>
+<ownerDesignName>DIAGRAMA ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="98B4DADD-32FA-C381-28E6-94249E78FE3F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

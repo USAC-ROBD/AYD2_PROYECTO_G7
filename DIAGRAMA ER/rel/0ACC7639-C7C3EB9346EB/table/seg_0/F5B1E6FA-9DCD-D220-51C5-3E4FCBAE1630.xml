@@ -1,0 +1,39 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F5B1E6FA-9DCD-D220-51C5-3E4FCBAE1630" name="EMPLEADO">
+<createdBy>juanp</createdBy>
+<createdTime>2024-12-16 02:05:40 UTC</createdTime>
+<generatorID>7C8E3673-4725-2091-10CF-22B82BA301C8</generatorID>
+<ownerDesignName>DIAGRAMA ER</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ROLES_ROLES_ID" id="0CFDBA37-7DC3-DFEB-880F-0D90C63B5C51">
+<createdBy>juanp</createdBy>
+<createdTime>2024-12-16 02:05:40 UTC</createdTime>
+<ownerDesignName>DIAGRAMA ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1A6860DA-0828-EFB2-56E9-3F59E2FA22CE" referredColumn="9A3F75CB-66C8-8141-6A7E-DF65856223EF"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="F44B6FD0-285D-9655-73C6-B60876463524" name="EMPLEADO_ROLES_FK">
+<createdBy>juanp</createdBy>
+<createdTime>2024-12-16 02:05:40 UTC</createdTime>
+<generatorID>AB88A2AF-1258-D205-D348-D3437BA3030E</generatorID>
+<ownerDesignName>DIAGRAMA ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0CFDBA37-7DC3-DFEB-880F-0D90C63B5C51"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

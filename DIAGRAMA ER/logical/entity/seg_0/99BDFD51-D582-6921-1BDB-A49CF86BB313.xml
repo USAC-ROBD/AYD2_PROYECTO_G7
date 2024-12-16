@@ -14,4 +14,20 @@
 <maxVolumes>9999999</maxVolumes>
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ID_CUENTA" id="C20F54E8-6323-394A-810E-53A5E1AF6800">
+<createdBy>juanp</createdBy>
+<createdTime>2024-12-16 03:00:30 UTC</createdTime>
+<generatorID>19EEE629-9667-C255-1493-933DBF8D62DD</generatorID>
+<ownerDesignName>DIAGRAMA ER</ownerDesignName>
+<engineerTo>
+<item key="0ACC7639-F9B0-273D-0527-C7C3EB9346EB" value="true"/>
+</engineerTo>
+<referedAttribute>3874ED60-3E8B-5227-0C54-B9C6DB3CBCC1</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
 </Entity>

@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="17CEB484-C5C8-FC86-E7D4-B09EE368D43A" containerWithKeyObject="D8B892C3-5244-7699-9EED-716BD3F7D89D" localFKIndex="E1028B7E-77E5-0C8B-AFF2-6DB63A3412FD" name="TRANSACCIONES_CUENTA_FK">
+<createdBy>juanp</createdBy>
+<createdTime>2024-12-16 02:05:40 UTC</createdTime>
+<generatorID>82836D87-188B-E1F7-DDAA-D7D97DB4D245</generatorID>
+<ownerDesignName>DIAGRAMA ER</ownerDesignName>
+<referredTableLongName>CUENTA</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>7F20ED21-56FB-7025-AE08-081FB7184EB5</referredTableID>
+<keyObject>1BC8E429-58AE-10AE-E8A1-B13FE2C390EC</keyObject>
+<referredKeyID>1BC8E429-58AE-10AE-E8A1-B13FE2C390EC</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>CUENTA_ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

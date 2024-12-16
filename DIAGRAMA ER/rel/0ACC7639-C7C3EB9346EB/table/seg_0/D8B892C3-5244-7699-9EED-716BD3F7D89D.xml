@@ -1,0 +1,64 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D8B892C3-5244-7699-9EED-716BD3F7D89D" name="TRANSACCIONES">
+<createdBy>juanp</createdBy>
+<createdTime>2024-12-16 02:05:40 UTC</createdTime>
+<generatorID>0815575C-53EB-B094-4A67-B98148556685</generatorID>
+<ownerDesignName>DIAGRAMA ER</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CUENTA_CUENTA_ID" id="97B3E3AA-A2F5-BBEA-CA59-93F6388A1A24">
+<createdBy>juanp</createdBy>
+<createdTime>2024-12-16 02:05:40 UTC</createdTime>
+<ownerDesignName>DIAGRAMA ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="17CEB484-C5C8-FC86-E7D4-B09EE368D43A" referredColumn="03688F76-2FB6-3D72-8A8C-3E364316C861"/>
+</associations>
+</Column>
+<Column name="TIPO_TRANSACCION_TIPO_TRANSACCION_ID" id="5E4F0E02-6B42-4C89-A61F-80E6B43523FD">
+<createdBy>juanp</createdBy>
+<createdTime>2024-12-16 02:05:40 UTC</createdTime>
+<ownerDesignName>DIAGRAMA ER</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="451EA059-77C4-A9D0-D076-F6E90AD79E1A" referredColumn="83F50F58-67D2-FD44-0243-E42449FB84E5"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="E1028B7E-77E5-0C8B-AFF2-6DB63A3412FD" name="TRANSACCIONES_CUENTA_FK">
+<createdBy>juanp</createdBy>
+<createdTime>2024-12-16 02:05:40 UTC</createdTime>
+<generatorID>82836D87-188B-E1F7-DDAA-D7D97DB4D245</generatorID>
+<ownerDesignName>DIAGRAMA ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="97B3E3AA-A2F5-BBEA-CA59-93F6388A1A24"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A5D92DA0-37FA-69FD-3DF4-ADF7EC8724F5" name="TRANSACCIONES_TIPO_TRANSACCION_FK">
+<createdBy>juanp</createdBy>
+<createdTime>2024-12-16 02:05:40 UTC</createdTime>
+<generatorID>5498938D-77A9-F7C2-3642-BEF7CFC0FA2C</generatorID>
+<ownerDesignName>DIAGRAMA ER</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5E4F0E02-6B42-4C89-A61F-80E6B43523FD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

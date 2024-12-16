@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="F8C25597-32E9-944F-E7ED-3030E51AE8E6" name="PRESTAMO">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="C73FED28-058F-82D9-19A1-72BE079AFBAA" name="Empleado_Cuenta">
 <createdBy>juanp</createdBy>
-<createdTime>2024-12-13 04:27:46 UTC</createdTime>
+<createdTime>2024-12-16 02:13:19 UTC</createdTime>
 <ownerDesignName>DIAGRAMA ER</ownerDesignName>
 <engineerTo>
 <item key="0ACC7639-F9B0-273D-0527-C7C3EB9346EB" value="true"/>

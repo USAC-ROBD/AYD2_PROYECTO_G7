@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="B14568E8-5142-2CBF-3C6F-E3E7B34FAE0C" name="PAGO">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="0815575C-53EB-B094-4A67-B98148556685" name="TRANSACCIONES">
 <createdBy>juanp</createdBy>
-<createdTime>2024-12-13 04:28:07 UTC</createdTime>
+<createdTime>2024-12-16 01:17:05 UTC</createdTime>
 <ownerDesignName>DIAGRAMA ER</ownerDesignName>
 <engineerTo>
 <item key="0ACC7639-F9B0-273D-0527-C7C3EB9346EB" value="true"/>
@@ -15,10 +15,10 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="ID_CUENTA" id="20720DAF-327F-15E8-C8C7-D74A5DA0CAB6">
+<Attribute name="ID_CUENTA" id="B9AEAEB0-1F89-2C3A-5487-9B182B6E2054">
 <createdBy>juanp</createdBy>
 <createdTime>2024-12-16 03:00:30 UTC</createdTime>
-<generatorID>CB8C96F1-A339-A89D-F09A-CE8BED31BBF5</generatorID>
+<generatorID>82836D87-188B-E1F7-DDAA-D7D97DB4D245</generatorID>
 <ownerDesignName>DIAGRAMA ER</ownerDesignName>
 <engineerTo>
 <item key="0ACC7639-F9B0-273D-0527-C7C3EB9346EB" value="true"/>
