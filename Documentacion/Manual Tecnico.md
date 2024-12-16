@@ -1692,6 +1692,9 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 
 ## DIAGRAMA ENTIDAD RELACION
 
+![DIAGRAMA ER](./assets/Diagramas/Relational.jpg)
+
+
 ## PROTOTIPOS
 
 ### CAJERO
