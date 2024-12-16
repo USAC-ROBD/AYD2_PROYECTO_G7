@@ -115,9 +115,13 @@ El desarrollo de esta plataforma digital representa un paso más en la evolució
 
 ### CDU ALTO NIVEL
 
-
+![cdu alto nivel](./assets/cajero/general-corregido.png)
 
 #### Primera Descomposición
+
+![cdu alto nivel](./assets/cajero/general.png)
+
+### Diagramas de CDUs
 
 #### 1. ROL CAJERO
 
