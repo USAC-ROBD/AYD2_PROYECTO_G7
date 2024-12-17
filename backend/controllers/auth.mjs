@@ -22,12 +22,12 @@ const login = async (req, res) => {
     
     const token = jwt.sign({ username, rol: user.rol }, configurations.secret_key_jwt, { expiresIn: '1h' });
 
-    res.cookie('token', token, { 
-        httpOnly: true, 
-        secure: false,
+    res.cookie('token', token, {
+        httpOnly: false,
+        secure: false,   // Asegúrate de tener HTTPS en producción
         maxAge: 3600000, // 1 hora
-        sameSite: 'strict'
-    });
+        sameSite: 'strict', // Permitir el acceso desde diferentes dominios
+      });
     
     return res.json({ "status": 200, "message": "Login exitoso"});
 }

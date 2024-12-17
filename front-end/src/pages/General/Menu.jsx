@@ -23,20 +23,18 @@ function Menu() {
     );
 
     // Si el token existe, decodificamos la información
-    console.log("entro a menu");
     if (token) {
       try {
-        console.log(token);
         const decodedToken = jwtDecode(token); // Decodificamos el JWT
         setUser(decodedToken.username); // Asumimos que el username está en el token
         setRol(decodedToken.rol); // Asumimos que el rol está en el token
       } catch (error) {
         console.error("Token inválido o expirado");
-        //navigate("/");  // Redirigir al login si el token no es válido
+        navigate("/");  // Redirigir al login si el token no es válido
       }
     } else {
       console.error("No hay token");
-      //navigate("/");  // Redirigir al login si no hay token
+      navigate("/");  // Redirigir al login si no hay token
     }
   }, [navigate]);
 
@@ -58,6 +56,7 @@ function Menu() {
       <img src={Logo} style={{ width: "65%" }} alt="logo" />
       <h1>Menú Principal</h1>
       <h4>Bienvenido, {user}</h4>
+      <h5>Rol: {rol}</h5>
       <Row
         className="mt-4"
         style={{
