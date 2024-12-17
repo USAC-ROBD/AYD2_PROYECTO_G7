@@ -24,7 +24,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/menu" element={<Menu />} />
-        <Route path="/modulo-pagos" element={<HomePagos />} />
         <Route path="/pago-servicios" element={<PagoServicios />} />
         <Route path="/pago-prestamos" element={<PagoPrestamos />} />
         <Route path="/metodo-pago" element={<MetodoPago />} />

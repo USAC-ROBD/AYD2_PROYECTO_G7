@@ -1,45 +1,20 @@
 import { Row, Col, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { jwtDecode } from 'jwt-decode';  // Importamos la librería para decodificar el JWT
+import { BiArrowFromRight } from "react-icons/bi";
 import ServiceIcon from "../../assets/service-icon.png";
 import LoanIcon from "../../assets/prestamos-icon.png";
 import Logo from "../../assets/logo.png";
-import { BiArrowFromRight } from "react-icons/bi";
 import DepositoIcon from "../../assets/deposito.png";
 import RetiroIcon from "../../assets/retiro.png";
 import SaldoIcon from "../../assets/consultar-saldo.png";
+import useAuth from "../../hook/useAuth";  // Importamos el hook personalizado
 
 function Menu() {
   const navigate = useNavigate();
-  const [user, setUser] = useState(null);  // State para almacenar el usuario
-  const [rol, setRol] = useState(null);  // State para almacenar el rol del usuario
+  const { user, rol } = useAuth();  // Usamos el hook personalizado para obtener el usuario y rol
 
-  useEffect(() => {
-    // Intentamos obtener el token desde las cookies (o desde el localStorage si lo prefieres)
-    const token = document.cookie.replace(
-      /(?:(?:^|.*;\s*)token\s*=\s*([^;]*).*$)|^.*$/,
-      "$1"  // Extraemos el token de las cookies
-    );
-
-    // Si el token existe, decodificamos la información
-    if (token) {
-      try {
-        const decodedToken = jwtDecode(token); // Decodificamos el JWT
-        setUser(decodedToken.username); // Asumimos que el username está en el token
-        setRol(decodedToken.rol); // Asumimos que el rol está en el token
-      } catch (error) {
-        console.error("Token inválido o expirado");
-        navigate("/");  // Redirigir al login si el token no es válido
-      }
-    } else {
-      console.error("No hay token");
-      navigate("/");  // Redirigir al login si no hay token
-    }
-  }, [navigate]);
-
-  if (!user) {
-    return <div>Loading...</div>;  // Muestra un cargando mientras se decodifica el token
+  if (!user || !rol) {
+    return <div>Loading...</div>;  // Muestra un cargando mientras se obtiene el usuario
   }
 
   return (
@@ -72,7 +47,7 @@ function Menu() {
             size="lg"
             className="w-100"
             onClick={() =>
-              navigate("/pago-servicios", { state: { user } })
+              navigate("/pago-servicios")
             }
             style={{
               display: "flex",
@@ -156,26 +131,6 @@ function Menu() {
               style={{ width: "50%", height: "50%" }}
             />
             Retiros
-          </Button>
-        </Col>
-        <Col xs={12} sm={6} md={4} className="mb-3">
-          <Button
-            variant="outline-success"
-            size="lg"
-            className="w-100"
-            onClick={() => navigate("/modulo-consultas", { state: { user } })}
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
-          >
-            <img
-              src={SaldoIcon}
-              alt="services-icon"
-              style={{ width: "50%", height: "50%" }}
-            />
-            Consulta de saldo y comprobantes
           </Button>
         </Col>
         <Col xs={12} sm={6} md={4} className="mb-3">
