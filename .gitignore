@@ -5,3 +5,9 @@
 **/*DIAGRAMAER
 
 Documentacion/assets/cajero/general.vsdx
+
+backend/node_modules/
+backend/.env
+front-end/.env
+
+Frontend/
