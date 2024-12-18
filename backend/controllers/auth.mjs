@@ -24,7 +24,7 @@ const login = async (req, res) => {
 
     res.cookie('token', token, {
         httpOnly: false,
-        secure: false,   // Asegúrate de tener HTTPS en producción
+        secure: false,
         maxAge: 3600000, // 1 hora
         sameSite: 'strict', // Permitir el acceso desde diferentes dominios
       });
