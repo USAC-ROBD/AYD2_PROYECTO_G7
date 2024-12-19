@@ -16,7 +16,7 @@ function Login() {
     try {
       // Hacemos la solicitud POST al backend para obtener el JWT
       const response = await axios.post(
-        "http://localhost:4000/login",
+        `${import.meta.env.VITE_API_HOST}/login`,
         { username, password },
         {
           withCredentials: true,  // Permite el envío de cookies con la solicitud
