@@ -32,13 +32,13 @@ const login = async (req, res) => {
 
     // Generar el token JWT
     const token = jwt.sign(
-      { id: user.ID_USUARIO, username: user.USUARIO, role: user.ID_ROL },
+      { id: user.ID_USUARIO, username: user.USUARIO, role: user.ID_ROL }, // roles: 1: Admin, 2: Cajero, 3: Supervisor
       configurations.secret_key_jwt,
       { expiresIn: '1h' }
     );
 
     res.cookie('token', token, {
-      httpOnly: true,
+      httpOnly: false,
       secure: false,
       maxAge: 3600000, // 1 hora
       sameSite: 'strict',
