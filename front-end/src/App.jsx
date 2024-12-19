@@ -17,6 +17,7 @@ import MetodoDeposito from './pages/Depositos/MetodoDeposito';
 import FormDeposito from './pages/Depositos/FormDeposito';
 import FormRetiro from './pages/Retiros/FormRetiro'
 import MetodoRetiro from './pages/Retiros/MetodoRetiro'
+import HomeAdmin from './pages/Adminitrador_de_Sistemas/Home/Home'
 
 function App() {
   return (
@@ -53,6 +54,9 @@ function App() {
       </Routes>
       <Routes>
         <Route path="/metodo-retiro" element={<MetodoRetiro/>} />
+      </Routes>
+      <Routes>
+        <Route path="/home/admin" element={<HomeAdmin/>}/>
       </Routes>
     </Router>
   );
