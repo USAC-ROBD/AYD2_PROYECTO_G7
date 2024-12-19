@@ -1,25 +1,21 @@
 import { Row, Col, Button } from "react-bootstrap";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { BiArrowFromRight } from "react-icons/bi";
 import ServiceIcon from "../../assets/service-icon.png";
 import LoanIcon from "../../assets/prestamos-icon.png";
 import Logo from "../../assets/logo.png";
-import { BiArrowFromRight } from "react-icons/bi";
 import DepositoIcon from "../../assets/deposito.png";
 import RetiroIcon from "../../assets/retiro.png";
 import SaldoIcon from "../../assets/consultar-saldo.png";
-import { useEffect } from "react";
+import useAuth from "../../hook/useAuth";  // Importamos el hook personalizado
 
 function Menu() {
   const navigate = useNavigate();
-  const location = useLocation();
-  const { user } = location.state || {};
+  const { user, rol } = useAuth();  // Usamos el hook personalizado para obtener el usuario y rol
 
-  useEffect(() => {
-    if (!user) {
-      navigate("/");
-    }
+  if (!user || !rol) {
+    return <div>Loading...</div>;  // Muestra un cargando mientras se obtiene el usuario
   }
-  , [user, navigate]);
 
   return (
     <div
@@ -35,6 +31,7 @@ function Menu() {
       <img src={Logo} style={{ width: "65%" }} alt="logo" />
       <h1>Menú Principal</h1>
       <h4>Bienvenido, {user}</h4>
+      <h5>Rol: {rol}</h5>
       <Row
         className="mt-4"
         style={{
@@ -50,7 +47,7 @@ function Menu() {
             size="lg"
             className="w-100"
             onClick={() =>
-              navigate("/pago-servicios", { state: { user } })
+              navigate("/pago-servicios")
             }
             style={{
               display: "flex",
@@ -138,30 +135,13 @@ function Menu() {
         </Col>
         <Col xs={12} sm={6} md={4} className="mb-3">
           <Button
-            variant="outline-success"
-            size="lg"
-            className="w-100"
-            onClick={() => navigate("/modulo-consultas", { state: { user } })}
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
-          >
-            <img
-              src={SaldoIcon}
-              alt="services-icon"
-              style={{ width: "50%", height: "50%" }}
-            />
-            Consulta de saldo y comprobantes
-          </Button>
-        </Col>
-        <Col xs={12} sm={6} md={4} className="mb-3">
-          <Button
             variant="outline-danger"
             size="lg"
             className="w-100"
-            onClick={() => navigate("/")}
+            onClick={() => {
+              document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";  // Eliminar el token
+              navigate("/");  // Redirigir al login
+            }}
             style={{
               display: "flex",
               flexDirection: "column",
