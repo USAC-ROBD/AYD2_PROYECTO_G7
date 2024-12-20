@@ -30,7 +30,7 @@ function MetodoPago({handleSelectTipoPago}) { // Recibimos la función handleSel
             variant="outline-success"
             size="lg"
             className="w-100"
-            onClick={() => handleSelectTipoPago('Cuenta Bancaria')}
+            onClick={() => handleSelectTipoPago('Transferencia')}
             style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
           >
             <GrMoney style={{ width: '50%', height: '50%' }} />
