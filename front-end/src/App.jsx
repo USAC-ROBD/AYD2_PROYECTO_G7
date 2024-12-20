@@ -14,6 +14,10 @@ import FormDeposito from './pages/Depositos/FormDeposito';
 import FormRetiro from './pages/Retiros/FormRetiro'
 import MetodoRetiro from './pages/Retiros/MetodoRetiro'
 
+// Supervisor
+import Empleados from "./pages/Supervisor/Empleados";
+import Quejas from "./pages/Supervisor/Quejas";
+
 function App() {
   return (
     <Router>
@@ -42,6 +46,12 @@ function App() {
       </Routes>
       <Routes>
         <Route path="/metodo-retiro" element={<MetodoRetiro/>} />
+      </Routes>
+
+      {/* Supervisor */}
+      <Routes>
+        <Route path="/empleados" element={<Empleados />} />
+        <Route path="/quejas" element={<Quejas />} />
       </Routes>
     </Router>
   );
