@@ -18,6 +18,13 @@ import MetodoRetiro from './pages/Retiros/MetodoRetiro'
 import Empleados from "./pages/Supervisor/Empleados";
 import Quejas from "./pages/Supervisor/Quejas";
 import Prestamos from "./pages/Supervisor/Prestamos";
+import Encuestas from "./pages/Supervisor/Encuestas";
+import Administradores from "./pages/Supervisor/Administradores";
+import Monitoreo from "./pages/Supervisor/Monitoreo";
+import Reportes from "./pages/Supervisor/Reportes";
+import GestionInventario from "./pages/Supervisor/GestionInventario";
+import Tarjetas from "./pages/Supervisor/Tarjetas";
+import Cancelaciones from "./pages/Supervisor/Cancelaciones";
 
 function App() {
   return (
@@ -54,6 +61,13 @@ function App() {
         <Route path="/empleados" element={<Empleados />} />
         <Route path="/quejas" element={<Quejas />} />
         <Route path="/prestamos" element={<Prestamos />} />
+        <Route path="/encuestas" element={<Encuestas />} />
+        <Route path="/administradores" element={<Administradores />} />
+        <Route path="/monitoreo" element={<Monitoreo />} />
+        <Route path="/reportes" element={<Reportes />} />
+        <Route path="/gestion-inventario" element={<GestionInventario />} />
+        <Route path="/tarjetas" element={<Tarjetas />} />
+        <Route path="/cancelaciones" element={<Cancelaciones />} />
       </Routes>
     </Router>
   );
