@@ -5,6 +5,7 @@ import configurations from "../utils/configurations.mjs";
 import db from "../utils/db_connection.mjs";
 
 const login = async (req, res) => {
+  console.log('login entra');
   const { username, password } = req.body;
 
   if (!username || !password) {
