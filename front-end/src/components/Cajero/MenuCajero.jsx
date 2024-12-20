@@ -17,7 +17,7 @@ function MenuCajero({ user, rol }) {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        minWidth: "100vw",
+        minWidth: "80vw",
         minHeight: "100vh",
       }}
     >
@@ -32,6 +32,7 @@ function MenuCajero({ user, rol }) {
           flexDirection: "row",
           alignItems: "center",
           justifyContent: "center",
+          width: "80%",
         }}
       >
         <Col xs={12} sm={6} md={4} className="mb-3">
@@ -81,7 +82,7 @@ function MenuCajero({ user, rol }) {
             variant="outline-success"
             size="lg"
             className="w-100"
-            onClick={() => navigate('/metodo-deposito',{state:{typeMov:'Deposito'}})}
+            onClick={() => navigate('/metodo-deposito', { state: { typeMov: 'Deposito' } })}
             style={{
               display: "flex",
               flexDirection: "column",
@@ -96,16 +97,6 @@ function MenuCajero({ user, rol }) {
             Depósitos
           </Button>
         </Col>
-      </Row>
-      <Row
-        className="mt-4"
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
         <Col xs={12} sm={6} md={4} className="mb-3">
           <Button
             variant="outline-success"

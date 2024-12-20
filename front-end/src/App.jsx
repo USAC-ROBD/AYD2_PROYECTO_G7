@@ -1,9 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import HomePagos from "./pages/Pagos/HomePagos";
-import PagoServicios from "./pages/Pagos/PagoServicios";
+import PagoServicios from "./pages/Cajero/PagoServicios";
 import PagoPrestamos from "./pages/Pagos/Prestamos/PagoPrestamos";
-import MetodoPago from "./pages/Pagos/MetodoPago";
-import FormPagoServicios from "./pages/Pagos/FormPagoServicios";
 import Menu from "./pages/General/Menu";
 import Login from "./pages/General/Login";
 import HomeConsultas from "./pages/Consultas/HomeConsultas";
@@ -26,8 +23,6 @@ function App() {
         <Route path="/menu" element={<Menu />} />
         <Route path="/pago-servicios" element={<PagoServicios />} />
         <Route path="/pago-prestamos" element={<PagoPrestamos />} />
-        <Route path="/metodo-pago" element={<MetodoPago />} />
-        <Route path="/form-pago-servicios" element={<FormPagoServicios />} />
         <Route path="/modulo-consultas" element={<HomeConsultas />} />
         <Route path="/form-consulta" element={<FormConsulta />} />
         <Route
