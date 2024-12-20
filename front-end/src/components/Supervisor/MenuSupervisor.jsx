@@ -1,7 +1,7 @@
 import { Row, Col, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { BiArrowFromRight } from "react-icons/bi";
-import ServiceIcon from "../../assets/service-icon.png";
+import EmpleadoIcon from "../../assets/empleado-icon.png";
 import LoanIcon from "../../assets/prestamos-icon.png";
 import Logo from "../../assets/logo.png";
 import DepositoIcon from "../../assets/deposito.png";
@@ -41,7 +41,7 @@ function MenuSupervisor({ user, rol }) {
             size="lg"
             className="w-100"
             onClick={() =>
-              navigate("/pago-servicios")
+              navigate("/empleados")
             }
             style={{
               display: "flex",
@@ -50,11 +50,11 @@ function MenuSupervisor({ user, rol }) {
             }}
           >
             <img
-              src={ServiceIcon}
+              src={EmpleadoIcon}
               alt="services-icon"
               style={{ width: "50%", height: "50%" }}
             />
-            Pago de Servicios
+            Empleados
           </Button>
         </Col>
         <Col xs={12} sm={6} md={4} className="mb-3">
