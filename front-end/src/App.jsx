@@ -5,7 +5,6 @@ import Menu from "./pages/General/Menu";
 import Login from "./pages/General/Login";
 import HomeConsultas from "./pages/Consultas/HomeConsultas";
 import FormConsulta from "./pages/Consultas/FormConsulta";
-import ConfirmacionPagoPrestamos from "./pages/Pagos/Prestamos/ConfirmacionPago";
 import HomeDeposito from './pages/Depositos/HomeDeposito'
 import MetodoDeposito from './pages/Depositos/MetodoDeposito';
 import FormDeposito from './pages/Depositos/FormDeposito';
