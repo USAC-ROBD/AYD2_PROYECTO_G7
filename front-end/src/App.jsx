@@ -7,7 +7,6 @@ import HomeConsultas from "./pages/Consultas/HomeConsultas";
 import FormConsulta from "./pages/Consultas/FormConsulta";
 import MetodoPagoPrestamos from "./pages/Pagos/Prestamos/MetodoPagoPrestamos";
 import FormPagoPrestamos from "./pages/Pagos/Prestamos/FormPagoPrestamos";
-import ConfirmacionPagoServicios from "./pages/Pagos/ConfirmacionPago";
 import ConfirmacionPagoPrestamos from "./pages/Pagos/Prestamos/ConfirmacionPago";
 import HomeDeposito from './pages/Depositos/HomeDeposito'
 import MetodoDeposito from './pages/Depositos/MetodoDeposito';
@@ -34,10 +33,6 @@ function App() {
           element={<MetodoPagoPrestamos />}
         />
         <Route path="/form-pago-prestamos" element={<FormPagoPrestamos />} />
-        <Route
-          path="/confirmacion-pago-servicios"
-          element={<ConfirmacionPagoServicios />}
-        />
         <Route
           path="/confirmacion-pago-prestamos"
           element={<ConfirmacionPagoPrestamos />}

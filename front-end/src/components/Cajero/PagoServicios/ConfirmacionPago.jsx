@@ -1,34 +1,25 @@
 import React, { useEffect } from "react";
 import { Container, Row, Col, Card, Table } from "react-bootstrap";
-import Logo from '../../assets/logo.png';
-import Firma from '../../assets/Firma.png';
-import { useLocation, useNavigate } from "react-router-dom";
+import Logo from '../../../assets/logo.png';
+import Firma from '../../../assets/Firma.png';
+import { useNavigate } from "react-router-dom";
 import jsPDF from 'jspdf';
 
-function ConfirmacionPagoServicios() {
+function ConfirmacionPagoServicios({dataPago}) {
     const navigate = useNavigate();
-    const location = useLocation();
-    const service = location.state?.service;  //tipo de pago luz, agua, internet
-    const paymentMethod = location.state?.paymentMethod; //metodo de pago, efectivo, transferencia
-    const codigo = location.state?.codigo; //codigo del servicio
-    const monto = location.state?.monto; //monto del servicio
-    const dueno = location.state?.dueno; //dueno del servicio
-    const encargado = location.state?.encargado; //encargado del pago
-    const proveedor = location.state?.proveedor; //proveedor del servicio
-    const cuenta = location.state?.cuenta; //cuenta del cliente que paga por transferencia unicamente
+    const idPago = dataPago?.pagoId; //id del pago
+    const service = dataPago?.service; //servicio a pagar
+    const paymentMethod = dataPago?.paymentMethod; //metodo de pago
+    const codigo = dataPago?.codigo; //codigo del servicio
+    const monto = dataPago?.monto; //monto a pagar
+    const dueno = dataPago?.dueno; //dueño del servicio
+    const encargado = dataPago?.encargado; //encargado del pago
+    const proveedor = dataPago?.proveedor; //proveedor del servicio
+    const cuenta = dataPago?.cuenta; //cuenta a la que se hará la transferencia
     
     const date = new Date();
     const fecha = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
     const hora = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
-
-    useEffect(() => {
-        if (!service || !paymentMethod || !codigo || !monto || !dueno || !encargado || !proveedor) {
-            console.log(service, paymentMethod, codigo, monto, dueno, encargado, proveedor);
-            console.log("Faltan datos");
-            navigate("/menu");
-        }
-    }, [service, paymentMethod, codigo, monto, dueno, encargado, proveedor, navigate]); // Solo se ejecuta si alguno de estos valores cambia
-
 
     const handleGeneratePDF = () => {
         const doc = new jsPDF();
@@ -44,6 +35,7 @@ function ConfirmacionPagoServicios() {
 
         // Información del Pago
         doc.setFontSize(12);
+        doc.text(`ID del Pago: ${idPago}`, 10, 40);
         doc.text(`Codigo del Servicio: ${codigo}`, 10, 50);
         doc.text(`Dueño del Servicio: ${dueno}`, 10, 60);
         doc.text(`Método de Pago: ${paymentMethod}`, 10, 70);
@@ -69,8 +61,6 @@ function ConfirmacionPagoServicios() {
 
     return (
         <Container className="mt-5" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minWidth: '100vw', minHeight: '100vh' }}>
-            <img src={Logo} style={{ width: '65%' }} alt="logo" />
-
             <Row className="justify-content-center" style={{ width: '100%', paddingLeft: '15%', paddingRight: '15%' }}>
                 <Col md={8}>
                     <Card>
@@ -86,6 +76,10 @@ function ConfirmacionPagoServicios() {
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <tr>
+                                        <td>ID del Pago</td>
+                                        <td>{idPago}</td>
+                                    </tr>
                                     <tr>
                                         <td>Servicio</td>
                                         <td>{service}</td>
@@ -107,7 +101,7 @@ function ConfirmacionPagoServicios() {
                                         <td>{dueno}</td>
                                     </tr>
                                     <tr>
-                                        <td>Encargado</td>
+                                        <td>Cajero</td>
                                         <td>{encargado}</td>
                                     </tr>
                                     <tr>
@@ -136,7 +130,7 @@ function ConfirmacionPagoServicios() {
                                 </button>
                                 <button
                                     className="btn btn-danger"
-                                    onClick={() => navigate("/menu", { state: { user: encargado } })}
+                                    onClick={() => navigate("/menu")}
                                 >
                                     Finalizar
                                 </button>

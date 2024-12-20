@@ -5,6 +5,7 @@ import useAuth from '../../hook/useAuth';
 import TipoServicio from '../../components/Cajero/PagoServicios/TipoServicio';
 import MetodoPago from '../../components/Cajero/PagoServicios/MetodoPago';
 import FormPagoServicios from '../../components/Cajero/PagoServicios/FormPagoServicios';
+import ConfirmacionPagoServicios from '../../components/Cajero/PagoServicios/ConfirmacionPago';
 
 function PagoServicios() {
     const navigate = useNavigate();
@@ -59,7 +60,9 @@ function PagoServicios() {
             )}
 
             {/* Mostramos el componente ConfirmacionPago */}
-            
+            {showComponent == "ConfirmacionPago" && (
+                <ConfirmacionPagoServicios dataPago={dataPago} />   
+            )}
 
         </div>
     );
