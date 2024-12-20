@@ -17,6 +17,7 @@ import MetodoRetiro from './pages/Retiros/MetodoRetiro'
 
 // Supervisor
 import Empleados from "./pages/Supervisor/Empleados";
+import Quejas from "./pages/Supervisor/Quejas";
 
 function App() {
   return (
@@ -55,6 +56,7 @@ function App() {
       {/* Supervisor */}
       <Routes>
         <Route path="/empleados" element={<Empleados />} />
+        <Route path="/quejas" element={<Quejas />} />
       </Routes>
     </Router>
   );

@@ -1,11 +1,9 @@
 import { Row, Col, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { BiArrowFromRight } from "react-icons/bi";
-import EmpleadoIcon from "../../assets/empleado-icon.png";
-import LoanIcon from "../../assets/prestamos-icon.png";
 import Logo from "../../assets/logo.png";
-import DepositoIcon from "../../assets/deposito.png";
-import RetiroIcon from "../../assets/retiro.png";
+import QuejaIcon from "../../assets/queja-icon.png";
+import EmpleadoIcon from "../../assets/empleado-icon.png";
 
 function MenuSupervisor({ user, rol }) {
   const navigate = useNavigate();
@@ -17,7 +15,7 @@ function MenuSupervisor({ user, rol }) {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        minWidth: "80vw",
+        minWidth: "100vw",
         minHeight: "100vh",
       }}
     >
@@ -62,7 +60,7 @@ function MenuSupervisor({ user, rol }) {
             variant="outline-success"
             size="lg"
             className="w-100"
-            onClick={() => navigate("/pago-prestamos", { state: { user } })}
+            onClick={() => navigate("/quejas")}
             style={{
               display: "flex",
               flexDirection: "column",
@@ -70,51 +68,11 @@ function MenuSupervisor({ user, rol }) {
             }}
           >
             <img
-              src={LoanIcon}
+              src={QuejaIcon}
               alt="services-icon"
               style={{ width: "50%", height: "50%" }}
             />
-            Pago de Préstamos
-          </Button>
-        </Col>
-        <Col xs={12} sm={6} md={4} className="mb-3">
-          <Button
-            variant="outline-success"
-            size="lg"
-            className="w-100"
-            onClick={() => navigate('/metodo-deposito', { state: { typeMov: 'Deposito' } })}
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
-          >
-            <img
-              src={DepositoIcon}
-              alt="depositos-icon"
-              style={{ width: "50%", height: "50%" }}
-            />
-            Depósitos
-          </Button>
-        </Col>
-        <Col xs={12} sm={6} md={4} className="mb-3">
-          <Button
-            variant="outline-success"
-            size="lg"
-            className="w-100"
-            onClick={() => navigate("/metodo-retiro")}
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
-          >
-            <img
-              src={RetiroIcon}
-              alt="services-icon"
-              style={{ width: "50%", height: "50%" }}
-            />
-            Retiros
+            Quejas
           </Button>
         </Col>
         <Col xs={12} sm={6} md={4} className="mb-3">
