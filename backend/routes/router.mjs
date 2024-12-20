@@ -3,6 +3,7 @@ import { test } from '../controllers/ejemplo.mjs';
 import { Consultas } from '../controllers/Consultas.mjs';
 import { pagoServicios } from '../controllers/pagoServicios.mjs';
 import { pagoPrestamos } from '../controllers/pagoPrestamos.mjs';
+import { auth } from '../controllers/auth.mjs';
 
 const router = Router();
 //rutas de la api
@@ -12,6 +13,9 @@ router.get('/', test.ejemplo);
 
 /******Test de la base de datos*********/
 router.get('/test_db', test.test_db);
+
+/*******Autenticación *************/
+router.post('/login', auth.login);
 
 router.get('/buscarcuenta', Consultas.buscarcuenta)
 router.post('/deposito_efectivo', test.deposito_efectivo);

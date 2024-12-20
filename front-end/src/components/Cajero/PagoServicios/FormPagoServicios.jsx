@@ -1,28 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Container, Row, Col, Card, Form, Button } from "react-bootstrap";
-import Logo from '../../assets/logo.png';
-import { useLocation, useNavigate } from "react-router-dom";
+import {useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2';
 
-
-function FormPagoServicios() {
+function FormPagoServicios({handleConfirmacionPago, user, service, paymentMethod}) { //Recibe el usuario, el tipo de servicio y el metodo de pago. 
+    // Se recibe la funcion handleConfirmacionPago para cambiar al componente de confirmacion de pago en el componente padre en caso de que el pago sea exitoso
     const [duenoServicio, setDuenoServicio] = useState("");
     const [montoPagar, setMontoPagar] = useState("");
     const [codigoServicio, setCodigoServicio] = useState("");
     const [proveedor, setProveedor] = useState("");
     const [cuenta, setCuenta] = useState(""); //Cuenta del usuario
     const navigate = useNavigate();
-    const location = useLocation();
-    const service = location.state?.service;  //tipo de servicio, luz, agua, telefono, internet
-    const paymentMethod = location.state?.paymentMethod; //metodo de pago, efectivo, transferencia
-    const user = location.state?.user; //usuario del encargado de la tienda
-
-    useEffect(() => {
-        if (!service || !paymentMethod) {
-            navigate("/menu", { state: { user } });
-        }
-    }, [service, paymentMethod, navigate]); // Solo se ejecuta si alguno de estos valores cambia
-
 
     // Maneja los cambios en los inputs
     const handleChangeCode = (e) => {
@@ -32,8 +20,6 @@ function FormPagoServicios() {
     const handleChangeCuenta = (e) => {
         setCuenta(e.target.value);
     };
-
-
 
     // Maneja el envío del formulario
     const handleSubmit = (e) => {
@@ -134,7 +120,7 @@ function FormPagoServicios() {
                                 showConfirmButton: false,
                                 timer: 3000
                             });
-                            navigate('/confirmacion-pago-servicios', { state: { service: service, paymentMethod: paymentMethod, codigo: codigoServicio, monto: montoPagar, dueno: duenoServicio, encargado: user, proveedor: proveedor, cuenta: cuenta } });
+                            handleConfirmacionPago(data= { service: service, paymentMethod: paymentMethod, codigo: codigoServicio, monto: montoPagar, dueno: duenoServicio, encargado: user, proveedor: proveedor, cuenta: cuenta });
                         })
                         .catch((error) => {
                             console.error("Error:", error);
@@ -190,7 +176,7 @@ function FormPagoServicios() {
                                 showConfirmButton: false,
                                 timer: 3000
                             });
-                            navigate('/confirmacion-pago-servicios', { state: { service: service, paymentMethod: paymentMethod, codigo: codigoServicio, monto: montoPagar, dueno: duenoServicio, encargado: user, proveedor: proveedor } });
+                            handleConfirmacionPago(data= { service: service, paymentMethod: paymentMethod, codigo: codigoServicio, monto: montoPagar, dueno: duenoServicio, encargado: user, proveedor: proveedor });
                         })
                         .catch((error) => {
                             console.error("Error:", error);
@@ -287,13 +273,13 @@ function FormPagoServicios() {
 
     return (
         <Container className="mt-5" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minWidth: '100vw', minHeight: '100vh' }}>
-            <img src={Logo} style={{ width: '65%' }} alt="logo" />
 
             <Row className="justify-content-center" style={{ width: '100%', paddingLeft: '15%', paddingRight: '15%' }}>
                 <Col md={8}>
                     <Card>
                         <Card.Header className="bg-primary text-white text-center">
                             <h4>Pago de Servicio de {service}</h4>
+                            <h5>Metodo de Pago:{paymentMethod}</h5>
                         </Card.Header>
                         <Card.Body>
                             <Form>
@@ -398,7 +384,7 @@ function FormPagoServicios() {
                                 <div className="d-grid mt-4">
                                     <Button variant="danger"
                                         type="button"
-                                        onClick={() => navigate('/menu', { state: { user } })}
+                                        onClick={() => navigate('/menu')}
                                     >
                                         Cancelar
                                     </Button>
