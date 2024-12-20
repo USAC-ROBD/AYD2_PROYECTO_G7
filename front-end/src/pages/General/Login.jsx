@@ -24,7 +24,7 @@ function Login() {
       );
 
       // Si la autenticación es exitosa, redirigimos al usuario
-      navigate("/menu", { state: { user: username } });
+      navigate("/menu");
     } catch (err) {
       setError("Invalid username or password.");
     }

@@ -21,11 +21,10 @@ const useAuth = () => {
                 const decodedToken = jwtDecode(token);
                 const currentTime = Date.now() / 1000;  // Hora actual en segundos
 
-                console.log("Token decodificado:", decodedToken);
                 // Verificar si el token ha expirado
                 if (decodedToken.exp > currentTime) {
                     setUser(decodedToken.username); 
-                    setRol(decodedToken.role); // 1: Admin, 2: Cajero, 3: Supervisor
+                    setRol(decodedToken.role); // 1: Admin, 2: Cajero, 3: Supervisor, 4: Agente Call Center
                 } else {
                     navigate("/");  // Redirigir al login si el token ha expirado
                 }
