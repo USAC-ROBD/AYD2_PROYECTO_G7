@@ -4,6 +4,7 @@ import { BiArrowFromRight } from "react-icons/bi";
 import Logo from "../../assets/logo.png";
 import QuejaIcon from "../../assets/queja-icon.png";
 import EmpleadoIcon from "../../assets/empleado-icon.png";
+import PrestamosIcon from "../../assets/prestamos-icon.png";
 
 function MenuSupervisor({ user, rol }) {
   const navigate = useNavigate();
@@ -75,6 +76,39 @@ function MenuSupervisor({ user, rol }) {
             Quejas
           </Button>
         </Col>
+        <Col xs={12} sm={6} md={4} className="mb-3">
+          <Button
+            variant="outline-success"
+            size="lg"
+            className="w-100"
+            onClick={() =>
+              navigate("/prestamos")
+            }
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            <img
+              src={PrestamosIcon}
+              alt="services-icon"
+              style={{ width: "50%", height: "50%" }}
+            />
+            Prestamos
+          </Button>
+        </Col>
+      </Row>
+      <Row
+        className="mt-4"
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
+          justifyContent: "center",
+          width: "80%",
+        }}
+      >
         <Col xs={12} sm={6} md={4} className="mb-3">
           <Button
             variant="outline-danger"

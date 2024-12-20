@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import {useState} from 'react';
 import Logo from '../../assets/logo.png';
 import useAuth from '../../hook/useAuth';
-import { Container, Table, Button} from 'react-bootstrap';
+import { Container, Table, Button, Alert} from 'react-bootstrap';
 
 function Empleados() {
     const empleados = [
@@ -24,34 +24,43 @@ function Empleados() {
     }
 
     return (
-        <Container style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minWidth: '100vw', minHeight: '100vh' }}>
+        // <Container style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minWidth: '100vw', minHeight: '100vh' }}>
 
+        //     <Button size="lg" variant="primary" onClick={() => navigate('/menu')} style={{ position: 'absolute', top: '10px', left: '10px' }}>
+        //         Inicio
+        //     </Button>
+
+        //     <img src={Logo} style={{ width: '65%' }} alt="logo" />
+        //     <h1>Empleados</h1>
+        //     <Table className='mt-5' style={{ width: '80%' }} striped bordered hover>
+        //         <thead>
+        //             <tr>
+        //                 <th>Nombre</th>
+        //                 <th>Apellido</th>
+        //                 <th>Email</th>
+        //                 <th>Teléfono</th>
+        //             </tr>
+        //         </thead>
+        //         <tbody>
+        //             {empleados.map((empleado) => (
+        //                 <tr key={empleado.id}>
+        //                     <td>{empleado.nombre}</td>
+        //                     <td>{empleado.apellido}</td>
+        //                     <td>{empleado.email}</td>
+        //                     <td>{empleado.telefono}</td>
+        //                 </tr>
+        //             ))}
+        //         </tbody>
+        //     </Table>
+        // </Container>
+        <Container style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minWidth: '100vw', minHeight: '100vh' }}>
+            <Alert variant='danger' style={{ width: '50%', textAlign: 'center' }}>
+                <Alert.Heading>¡Lo sentimos!</Alert.Heading>
+                Funcionalidad en desarrollo
+            </Alert>
             <Button size="lg" variant="primary" onClick={() => navigate('/menu')} style={{ position: 'absolute', top: '10px', left: '10px' }}>
                 Inicio
             </Button>
-
-            <img src={Logo} style={{ width: '65%' }} alt="logo" />
-            <h1>Empleados</h1>
-            <Table className='mt-5' style={{ width: '80%' }} striped bordered hover>
-                <thead>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Apellido</th>
-                        <th>Email</th>
-                        <th>Teléfono</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {empleados.map((empleado) => (
-                        <tr key={empleado.id}>
-                            <td>{empleado.nombre}</td>
-                            <td>{empleado.apellido}</td>
-                            <td>{empleado.email}</td>
-                            <td>{empleado.telefono}</td>
-                        </tr>
-                    ))}
-                </tbody>
-            </Table>
         </Container>
     );
 }
