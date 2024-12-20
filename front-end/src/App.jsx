@@ -1,12 +1,10 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import PagoServicios from "./pages/Cajero/PagoServicios";
-import PagoPrestamos from "./pages/Pagos/Prestamos/PagoPrestamos";
+import PagoPrestamos from "./pages/Cajero/PagoPrestamos";
 import Menu from "./pages/General/Menu";
 import Login from "./pages/General/Login";
 import HomeConsultas from "./pages/Consultas/HomeConsultas";
 import FormConsulta from "./pages/Consultas/FormConsulta";
-import MetodoPagoPrestamos from "./pages/Pagos/Prestamos/MetodoPagoPrestamos";
-import FormPagoPrestamos from "./pages/Pagos/Prestamos/FormPagoPrestamos";
 import ConfirmacionPagoPrestamos from "./pages/Pagos/Prestamos/ConfirmacionPago";
 import HomeDeposito from './pages/Depositos/HomeDeposito'
 import MetodoDeposito from './pages/Depositos/MetodoDeposito';
@@ -28,15 +26,6 @@ function App() {
         <Route path="/pago-prestamos" element={<PagoPrestamos />} />
         <Route path="/modulo-consultas" element={<HomeConsultas />} />
         <Route path="/form-consulta" element={<FormConsulta />} />
-        <Route
-          path="/metodo-pago-prestamos"
-          element={<MetodoPagoPrestamos />}
-        />
-        <Route path="/form-pago-prestamos" element={<FormPagoPrestamos />} />
-        <Route
-          path="/confirmacion-pago-prestamos"
-          element={<ConfirmacionPagoPrestamos />}
-        />
       </Routes>
       <Routes>
         <Route path="/modulo-depositos" element={<HomeDeposito/>} />
