@@ -1,4 +1,5 @@
 // Propósito: Controlador con metodos para el pago de prestamos
+import { parse } from "path";
 import configurations from "../utils/configurations.mjs";
 import db from "../utils/db_connection.mjs";
 
@@ -68,35 +69,118 @@ const realizarPagoEfectivo = async (req, res) => {
 }
 
 const realizarPagoTransferencia = async (req, res) => {
-    try{
+    const connection = await db.getConnection(); // Obtener una conexión del pool
+    try {
         const { codigo, monto, cuenta, encargado } = req.body;
 
-        if(!codigo || !monto || !encargado || !cuenta){
+        if (!codigo || !monto || !encargado || !cuenta) {
             return res.status(400).json({ "status": 400, "message": "Faltan Datos" });
         }
 
-        const [rows, fields] = await db.query(`SELECT ID_PRESTAMO FROM PRESTAMO WHERE ID_PRESTAMO = ?`, [codigo]);
+        // Iniciar una transacción
+        await connection.beginTransaction();
 
-        if(rows.length === 0){
-            return res.status(404).json({ "status": 404, "message": "Servicio no encontrado" });
+        // Verificar si el préstamo existe y obtener su saldo actual
+        const [prestamoRows] = await connection.query(
+            `SELECT ID_PRESTAMO, SALDO FROM PRESTAMO WHERE ID_PRESTAMO = ?`,
+            [codigo]
+        );
+
+        if (prestamoRows.length === 0) {
+            await connection.rollback(); // Revertir cambios si el préstamo no existe
+            return res.status(404).json({ "status": 404, "message": "Préstamo no encontrado" });
         }
 
-        const [rows2, fields2] = await db.query(`SELECT ID_CUENTA FROM CUENTA WHERE NUMERO = ?`, [cuenta]);
+        const prestamoData = prestamoRows[0];
 
+        // Verificar si la cuenta existe y obtener su información
+        const [cuentaRows] = await connection.query(
+            `SELECT ID_CUENTA, SALDO, MONEDA FROM CUENTA WHERE NUMERO = ?`,
+            [cuenta]
+        );
 
-        if(rows2.length === 0){
+        if (cuentaRows.length === 0) {
+            await connection.rollback(); // Revertir cambios si la cuenta no existe
             return res.status(404).json({ "status": 404, "message": "Cuenta no encontrada" });
         }
 
-        await db.query(`INSERT INTO PAGO (ID_PRESTAMO, MONTO, MODALIDAD, CREA, TIPO, ID_CUENTA) VALUES (?, ?, ?, ?, ?, ?)`, [codigo, monto, 'T', encargado, 'P', rows2[0].ID_CUENTA]);
+        const cuentaData = cuentaRows[0];
+        let montoADescontar = parseFloat(monto);
 
-        return res.status(200).json({ "status": 200, "message": "Pago realizado con exito" });
-    }catch(error){
-        console.log(error);
+        // Si la cuenta está en dólares, convertir el monto a dólares
+        if (cuentaData.MONEDA === 'D') {
+            const [divisaRows] = await connection.query(
+                `SELECT VALOR_VENTA FROM DIVISA WHERE SIMBOLO = 'USD'`
+            );
+
+            if (divisaRows.length === 0) {
+                await connection.rollback(); // Revertir cambios si no hay información de divisas
+                return res.status(500).json({
+                    "status": 500,
+                    "message": "No se encontró el precio de venta del dólar"
+                });
+            }
+
+            const precioVentaDolar = parseFloat(divisaRows[0].VALOR_VENTA);
+            montoADescontar = parseFloat(monto) / precioVentaDolar; // Convertir de quetzales a dólares
+        }
+
+        // Verificar si hay suficiente saldo en la cuenta para realizar el pago
+        if (cuentaData.SALDO < montoADescontar) {
+            await connection.rollback(); // Revertir cambios si no hay saldo suficiente
+            return res.status(400).json({
+                "status": 400,
+                "message": "Saldo insuficiente en la cuenta para realizar el pago"
+            });
+        }
+
+        // Verificar si el monto a pagar no excede el saldo del préstamo
+        if (prestamoData.SALDO < parseFloat(monto)) {
+            await connection.rollback(); // Revertir cambios si el monto excede el saldo del préstamo
+            return res.status(400).json({
+                "status": 400,
+                "message": "El monto a pagar excede el saldo del préstamo"
+            });
+        }
+
+        // Actualizar el saldo de la cuenta
+        await connection.query(
+            `UPDATE CUENTA SET SALDO = SALDO - ? WHERE ID_CUENTA = ?`,
+            [montoADescontar, cuentaData.ID_CUENTA]
+        );
+
+        // Actualizar el saldo del préstamo
+        await connection.query(
+            `UPDATE PRESTAMO SET SALDO = SALDO - ? WHERE ID_PRESTAMO = ?`,
+            [monto, codigo]
+        );
+
+        // Insertar el pago en la tabla PAGO
+        const [result] = await connection.query(
+            `INSERT INTO PAGO (ID_PRESTAMO, MONTO, MODALIDAD, CREA, TIPO, ID_CUENTA) VALUES (?, ?, ?, ?, ?, ?)`,
+            [codigo, monto, 'T', encargado, 'P', cuentaData.ID_CUENTA]
+        );
+
+        // Confirmar la transacción
+        await connection.commit();
+
+        // Obtener el ID del pago insertado
+        const pagoId = result.insertId;
+
+        return res.status(200).json({
+            "status": 200,
+            "message": "Pago realizado con éxito",
+            "pagoId": pagoId
+        });
+    } catch (error) {
+        if (connection) await connection.rollback(); // Revertir transacción en caso de error
+        console.error(error);
         return res.status(500).json({ "status": 500, "message": error.message });
+    } finally {
+        if (connection) connection.release(); // Liberar la conexión de vuelta al pool
     }
-}
-    
+};
+
 
 
 
