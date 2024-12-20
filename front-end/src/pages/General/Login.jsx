@@ -1,25 +1,33 @@
 import React, { useState } from "react";
 import { Row, Col, Button, Form } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import ServiceIcon from "../../assets/service-icon.png";
-import LoanIcon from "../../assets/prestamos-icon.png";
+import axios from "axios"; // Asegúrate de tener axios instalado
 import Logo from "../../assets/logo.png";
-import { BiArrowFromRight } from "react-icons/bi";
-import DepositoIcon from "../../assets/deposito.png";
-import RetiroIcon from "../../assets/retiro.png";
-import SaldoIcon from "../../assets/consultar-saldo.png";
 
 function Login() {
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Aquí puedes manejar el envío del formulario
-    console.log("Username:", username);
-    console.log("Password:", password);
-    navigate("/menu", { state: { user: username } });
+
+    try {
+      // Hacemos la solicitud POST al backend para obtener el JWT
+      const response = await axios.post(
+        `${import.meta.env.VITE_API_HOST}/login`,
+        { username, password },
+        {
+          withCredentials: true,  // Permite el envío de cookies con la solicitud
+        }
+      );
+
+      // Si la autenticación es exitosa, redirigimos al usuario
+      navigate("/menu");
+    } catch (err) {
+      setError("Invalid username or password.");
+    }
   };
 
   return (
@@ -48,6 +56,7 @@ function Login() {
         <Col xs={12} sm={6} md={4} className="mb-3">
           <div>
             <h1>Login</h1>
+            {error && <div style={{ color: "red" }}>{error}</div>}
             <Form onSubmit={handleSubmit}>
               <Form.Group controlId="formUsername" className="mb-3">
                 <Form.Label>Username</Form.Label>
