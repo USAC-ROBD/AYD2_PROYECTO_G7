@@ -3,8 +3,7 @@ import PagoServicios from "./pages/Cajero/PagoServicios";
 import PagoPrestamos from "./pages/Cajero/PagoPrestamos";
 import Menu from "./pages/General/Menu";
 import Login from "./pages/General/Login";
-import HomeConsultas from "./pages/Consultas/HomeConsultas";
-import FormConsulta from "./pages/Consultas/FormConsulta";
+import HomeConsultas from "./pages/Cajero/Consultas";
 import HomeDeposito from './pages/Depositos/HomeDeposito'
 import MetodoDeposito from './pages/Depositos/MetodoDeposito';
 import FormDeposito from './pages/Depositos/FormDeposito';
@@ -24,7 +23,6 @@ function App() {
         <Route path="/pago-servicios" element={<PagoServicios />} />
         <Route path="/pago-prestamos" element={<PagoPrestamos />} />
         <Route path="/modulo-consultas" element={<HomeConsultas />} />
-        <Route path="/form-consulta" element={<FormConsulta />} />
       </Routes>
       <Routes>
         <Route path="/modulo-depositos" element={<HomeDeposito/>} />

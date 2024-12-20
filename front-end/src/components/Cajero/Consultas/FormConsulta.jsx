@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Card, Form, Button, Table } from "react-bootstrap";
-import Logo from '../../assets/logo.png';
-import { useLocation, useNavigate } from "react-router-dom";
-import Firma from '../../assets/Firma.png';
+import Logo from '../../../assets/logo.png';
+import { useNavigate } from "react-router-dom";
+import Firma from '../../../assets/firma.png';
 import jsPDF from 'jspdf';
 
-export default function FormConsulta() {
+export default function FormConsulta({ query }) {
     const [encontrado1, setEncontrado1] = useState(false)
     const [encontrado2, setEncontrado2] = useState(false)
     const [cuiNumCuenta, setCuiNumCuenta] = useState("");
@@ -23,17 +23,7 @@ export default function FormConsulta() {
     const [saldo, setSaldo] = useState('');
     const [actualizacion, setActualizacion] = useState('');
     const navigate = useNavigate();
-    const location = useLocation();
-    const query = location.state?.query;
-    const user = location.state?.user;
     const [mensajeError, setMensajeError] = useState(query === 'Busqueda Cliente' ? '¡Sin información de cliente!' : '¡Sin información de cuenta!')
-
-    useEffect(() => {
-        if (!query) {
-            navigate("/modulo-consultas", { state: { user } });
-        }
-    }, [query, navigate]);
-
 
     // Maneja los cambios en los inputs
     const handleChangeCuiNumCuenta = (e) => {
@@ -227,7 +217,7 @@ export default function FormConsulta() {
                                                                     <tr key={index}>
                                                                         <td style={{ verticalAlign: 'middle', textAlign: 'center' }}>{index + 1}</td>
                                                                         <td style={{ verticalAlign: 'middle', textAlign: 'center' }}>{item.operacion}</td>
-                                                                        <td style={{ verticalAlign: 'middle', textAlign: 'center' }}>{item.modalidad === 'T' ? 'Transferencia' : 'Efectivo'}</td>
+                                                                        <td style={{ verticalAlign: 'middle', textAlign: 'center' }}>{item.tipo === 'T' ? 'Transferencia' : 'Efectivo'}</td>
                                                                         <td style={{ verticalAlign: 'middle', textAlign: 'center' }}>{item.monto}</td>
                                                                         <td style={{ verticalAlign: 'middle', textAlign: 'center' }}>{item.creacion}</td>
                                                                         <td>
@@ -264,7 +254,7 @@ export default function FormConsulta() {
                                                         onChange={handleChangeNumCuenta}
                                                         required
                                                     >
-                                                        <option value="" disabled>Seleccionar tipo de servicio</option>
+                                                        <option value="" disabled>Seleccionar cuenta</option>
                                                         {cuentas.map((opcion, index) => (
                                                             <option key={index} value={opcion}>
                                                                 {opcion}
@@ -317,7 +307,7 @@ export default function FormConsulta() {
                                 <div className="d-grid mt-4">
                                     <Button variant="danger"
                                         type="button"
-                                        onClick={() => navigate('/modulo-consultas', { state: { user } })}
+                                        onClick={() => navigate('/menu')}
                                     >
                                         Cancelar
                                     </Button>
