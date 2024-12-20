@@ -48,6 +48,9 @@ function App() {
       <Routes>
         <Route path="/metodo-retiro" element={<MetodoRetiro/>} />
       </Routes>
+      <Routes>
+        <Route path="/" />
+      </Routes>
     </Router>
   );
 }
