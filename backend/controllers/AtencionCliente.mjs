@@ -4,7 +4,6 @@ const obtenerCliente = async (req, res) => {
     try {
         const { cui } = req.query
         const [ rows ] = await db.query(`SELECT * FROM CLIENTE WHERE CUI = ?`, [ cui ])
-        console.log(rows)
         if(rows.length > 0) {
             return res.status(200).json({ status: 200, message: "cliente encontrado", encontrado: true, cliente: rows[0] });
         }
