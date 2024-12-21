@@ -5,8 +5,7 @@ import Menu from "./pages/General/Menu";
 import Login from "./pages/General/Login";
 import HomeConsultas from "./pages/Cajero/Consultas";
 import Depositos from './pages/Cajero/Depositos';
-import FormRetiro from './pages/Retiros/FormRetiro'
-import MetodoRetiro from './pages/Retiros/MetodoRetiro'
+import Retiros from "./pages/Cajero/Retiros";
 
 // Supervisor
 import Empleados from "./pages/Supervisor/Empleados";
@@ -36,10 +35,7 @@ function App() {
       </Routes>
       <Routes>
         <Route path="/modulo-depositos" element={<Depositos/>} />
-        <Route path="/form-retiro" element={<FormRetiro/>}/>
-      </Routes>
-      <Routes>
-        <Route path="/metodo-retiro" element={<MetodoRetiro/>} />
+        <Route path="/modulo-retiro" element={<Retiros />} />
       </Routes>
       <Routes>
         <Route path="/creacion-cuenta" element={<FormCreacion/>} />

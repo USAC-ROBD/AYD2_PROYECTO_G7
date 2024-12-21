@@ -216,7 +216,7 @@ function FormDeposito({ handleConfirmacionDeposito, user }) {
                             <div className="d-grid mt-3">
                                 <Button variant="danger"
                                     type="button"
-                                    onClick={() => navigate('/metodo-deposito')}
+                                    onClick={() => navigate('/menu')}
                                 >
                                     Cancelar
                                 </Button>
