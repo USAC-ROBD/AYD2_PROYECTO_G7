@@ -1,21 +1,24 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Card, Form, Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import Logo from '../../../assets/logo.png';
+import Swal from 'sweetalert2';
 
 export default function FormCreacion() {
+    const navigate = useNavigate();
+    const [isDisabled, setIsDisabled] = useState(false)
     const [formData, setFormData] = useState({
         nombre: '',
         apellido: '',
         cui: '',
         telefono: '',
         email: '',
-        edad: '',
-        genero: '',
-        fotografia: null,
+        direccion: '',
         tipoCuenta: '',
         preguntaSeguridad: '',
         respuestaSeguridad: '',
         monto: '',
+        existente: false,
     });
 
     const handleChange = (e) => {
@@ -33,26 +36,95 @@ export default function FormCreacion() {
         }
     };
 
-    const handleCancel = () => {
+    const handleLimpiar = () => {
         setFormData({
             nombre: '',
             apellido: '',
             cui: '',
             telefono: '',
+            direccion: '',
             email: '',
-            edad: '',
-            genero: '',
-            fotografia: null,
             tipoCuenta: '',
             preguntaSeguridad: '',
             respuestaSeguridad: '',
             monto: '',
+            existente: false,
         });
     };
 
-    const handleSubmit = (e) => {
+    const handleCancelar = () => {
+        handleLimpiar()
+        navigate('/menu')
+    }
+
+    const handleOut = async (e) => {
+        const { value } = e.target
+        const response = await fetch(`${import.meta.env.VITE_API_HOST}/obtener_cliente?cui=${value}`)
+        if(response.ok) {
+            const data = await response.json()
+            console.log(data)
+            setIsDisabled(data.encontrado)
+            if(data.encontrado) {
+                const { CUI, NOMBRE, APELLIDO, TELEFONO, EMAIL, DIRECCION, PREGUNTA, RESPUESTA } = data.cliente
+                setFormData({
+                    ...formData,
+                    nombre: NOMBRE,
+                    apellido: APELLIDO,
+                    cui: CUI,
+                    telefono: TELEFONO,
+                    email: EMAIL,
+                    direccion: DIRECCION,
+                    preguntaSeguridad: PREGUNTA,
+                    respuestaSeguridad: RESPUESTA,
+                    existente: true,
+                });
+            }
+        }
+    }
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(formData);
+
+        const result = await Swal.fire({
+            title: "¿Confirmar envío?",
+            text: "¡Por favor, verifica los datos antes de enviar la solicitud!",
+            icon: "warning",
+            showCancelButton: true, // Activa el botón de cancelar
+            confirmButtonText: "Confirmar", // Texto del botón de confirmar
+            cancelButtonText: "Cancelar",  // Texto del botón de cancelar
+            dangerMode: true,
+        });
+    
+        if (!result.isConfirmed) return;
+
+        const response = await fetch(`${import.meta.env.VITE_API_HOST}/solicitar_crear_cuenta`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData),
+        });
+
+        if(response.ok) {
+            Swal.fire({
+                icon: 'success',
+                title: "¡Cuenta Creada!",
+                showConfirmButton: false,
+                timer: 2000,
+            });
+
+            handleCancelar()
+            return;
+        }
+
+        handleLimpiar()
+
+        Swal.fire({
+            icon: 'error',
+            title: "¡Error al crear la cuenta!",
+            showConfirmButton: false,
+            timer: 2000,
+        });
     };
 
     return (
@@ -69,6 +141,20 @@ export default function FormCreacion() {
                             <Form onSubmit={handleSubmit}>
                                 <Row>
                                     <Col md={4}>
+                                        <Form.Group controlId="formCui" className="mb-3">
+                                            <Form.Label>CUI</Form.Label>
+                                            <Form.Control
+                                                type="number"
+                                                placeholder="Ingrese su CUI"
+                                                name="cui"
+                                                value={formData.cui}
+                                                onChange={handleChange}
+                                                onBlur={handleOut}
+                                                required
+                                            />
+                                        </Form.Group>
+                                    </Col>
+                                    <Col md={4}>
                                         <Form.Group controlId="formNombre" className="mb-3">
                                             <Form.Label>Nombre</Form.Label>
                                             <Form.Control
@@ -77,6 +163,7 @@ export default function FormCreacion() {
                                                 name="nombre"
                                                 value={formData.nombre}
                                                 onChange={handleChange}
+                                                disabled={isDisabled}
                                                 required
                                             />
                                         </Form.Group>
@@ -90,19 +177,7 @@ export default function FormCreacion() {
                                                 name="apellido"
                                                 value={formData.apellido}
                                                 onChange={handleChange}
-                                                required
-                                            />
-                                        </Form.Group>
-                                    </Col>
-                                    <Col md={4}>
-                                        <Form.Group controlId="formCui" className="mb-3">
-                                            <Form.Label>CUI</Form.Label>
-                                            <Form.Control
-                                                type="number"
-                                                placeholder="Ingrese su CUI"
-                                                name="cui"
-                                                value={formData.cui}
-                                                onChange={handleChange}
+                                                disabled={isDisabled}
                                                 required
                                             />
                                         </Form.Group>
@@ -118,6 +193,7 @@ export default function FormCreacion() {
                                                 name="telefono"
                                                 value={formData.telefono}
                                                 onChange={handleChange}
+                                                disabled={isDisabled}
                                                 required
                                             />
                                         </Form.Group>
@@ -131,72 +207,27 @@ export default function FormCreacion() {
                                                 name="email"
                                                 value={formData.email}
                                                 onChange={handleChange}
+                                                disabled={isDisabled}
                                                 required
                                             />
                                         </Form.Group>
                                     </Col>
                                     <Col md={4}>
-                                        <Form.Group controlId="formEdad" className="mb-3">
-                                            <Form.Label>Edad</Form.Label>
+                                        <Form.Group controlId="formEmail" className="mb-3">
+                                            <Form.Label>Dirección</Form.Label>
                                             <Form.Control
-                                                type="number"
-                                                placeholder="Ingrese su edad"
-                                                name="edad"
-                                                value={formData.edad}
+                                                type="text"
+                                                placeholder="Ingrese su domicilio"
+                                                name="direccion"
+                                                value={formData.direccion}
                                                 onChange={handleChange}
+                                                disabled={isDisabled}
                                                 required
                                             />
                                         </Form.Group>
                                     </Col>
                                 </Row>
                                 <Row>
-                                    <Col md={4}>
-                                        <Form.Group controlId="formGenero" className="mb-3">
-                                            <Form.Label>Género</Form.Label>
-                                            <Form.Control
-                                                as="select"
-                                                name="genero"
-                                                value={formData.genero}
-                                                onChange={handleChange}
-                                                required
-                                            >
-                                                <option value="">Seleccione su género</option>
-                                                <option value="Masculino">Masculino</option>
-                                                <option value="Femenino">Femenino</option>
-                                            </Form.Control>
-                                        </Form.Group>
-                                    </Col>
-                                    <Col md={4}>
-                                        <Form.Group controlId="formTipoCuenta" className="mb-3">
-                                            <Form.Label>Tipo de cuenta</Form.Label>
-                                            <Form.Control
-                                                as="select"
-                                                name="tipoCuenta"
-                                                value={formData.tipoCuenta}
-                                                onChange={handleChange}
-                                                required
-                                            >
-                                                <option value="">Seleccione el tipo de cuenta</option>
-                                                <option value="Monetario">Monetario</option>
-                                                <option value="Ahorro">Ahorro</option>
-                                            </Form.Control>
-                                        </Form.Group>
-                                    </Col>
-                                </Row>
-                                <Row>
-                                    <Col md={4}>
-                                        <Form.Group controlId="formMonto" className="mb-3">
-                                            <Form.Label>Monto Inicial</Form.Label>
-                                            <Form.Control
-                                                type="number"
-                                                placeholder="Ingrese el monto"
-                                                name="monto"
-                                                value={formData.monto}
-                                                onChange={handleChange}
-                                                required
-                                            />
-                                        </Form.Group>
-                                    </Col>
                                     <Col md={4}>
                                         <Form.Group controlId="formPreguntaSeguridad" className="mb-3">
                                             <Form.Label>Pregunta de seguridad</Form.Label>
@@ -206,6 +237,7 @@ export default function FormCreacion() {
                                                 name="preguntaSeguridad"
                                                 value={formData.preguntaSeguridad}
                                                 onChange={handleChange}
+                                                disabled={isDisabled}
                                                 required
                                             />
                                         </Form.Group>
@@ -219,6 +251,38 @@ export default function FormCreacion() {
                                                 name="respuestaSeguridad"
                                                 value={formData.respuestaSeguridad}
                                                 onChange={handleChange}
+                                                disabled={isDisabled}
+                                                required
+                                            />
+                                        </Form.Group>
+                                    </Col>
+                                </Row>
+                                <Row>
+                                    <Col md={4}>
+                                        <Form.Group controlId="formTipoCuenta" className="mb-3">
+                                            <Form.Label>Tipo de cuenta</Form.Label>
+                                            <Form.Control
+                                                as="select"
+                                                name="tipoCuenta"
+                                                value={formData.tipoCuenta}
+                                                onChange={handleChange}
+                                                required
+                                            >
+                                                <option value="">Seleccione el tipo de cuenta</option>
+                                                <option value="M">Monetario</option>
+                                                <option value="A">Ahorro</option>
+                                            </Form.Control>
+                                        </Form.Group>
+                                    </Col>
+                                    <Col md={4}>
+                                        <Form.Group controlId="formMonto" className="mb-3">
+                                            <Form.Label>Monto Inicial (Q.)</Form.Label>
+                                            <Form.Control
+                                                type="number"
+                                                placeholder="Ingrese el monto"
+                                                name="monto"
+                                                value={formData.monto}
+                                                onChange={handleChange}
                                                 required
                                             />
                                         </Form.Group>
@@ -226,11 +290,11 @@ export default function FormCreacion() {
                                 </Row>
                                 <div className="d-grid mt-4">
                                     <Button variant="primary" type="submit" block>
-                                        Enviar Solicitud
+                                        Finalizar Proceso
                                     </Button>
                                 </div>
                                 <div className="d-grid mt-4">
-                                    <Button variant="danger" onClick={handleCancel} block>
+                                    <Button variant="danger" onClick={handleCancelar} block>
                                         Cancelar
                                     </Button>
                                 </div>
