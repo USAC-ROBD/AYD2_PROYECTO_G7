@@ -7,6 +7,7 @@ import { auth } from '../controllers/auth.mjs';
 import { depositos } from '../controllers/depositos.mjs';
 import { retiros } from '../controllers/retiros.mjs';
 import { atencionCliente } from '../controllers/AtencionCliente.mjs'
+import { cambioMoneda } from '../controllers/cambioMoneda.mjs';
 
 const router = Router();
 //rutas de la api
@@ -47,6 +48,11 @@ router.post('/deposito', depositos.deposito_efectivo);
 /*****Retiros***********/
 router.post('/retiros/consultar_cuenta', retiros.consultarCuenta);
 router.post('/retiro', retiros.retiro_efectivo);
+
+
+/******Cambio de Moneda ******/
+router.get('/divisa/venta-usd', cambioMoneda.precioVenta);
+router.post('/cambio', cambioMoneda.realizarCambioMoneda);
 
 
 /*********Atención al cliente*********/
