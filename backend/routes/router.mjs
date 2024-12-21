@@ -4,6 +4,7 @@ import { Consultas } from '../controllers/Consultas.mjs';
 import { pagoServicios } from '../controllers/pagoServicios.mjs';
 import { pagoPrestamos } from '../controllers/pagoPrestamos.mjs';
 import { auth } from '../controllers/auth.mjs';
+import { depositos } from '../controllers/depositos.mjs';
 import { atencionCliente } from '../controllers/AtencionCliente.mjs'
 
 const router = Router();
@@ -19,7 +20,7 @@ router.get('/test_db', test.test_db);
 router.post('/login', auth.login);
 
 router.get('/buscarcuenta', Consultas.buscarcuenta)
-router.post('/deposito_efectivo', test.deposito_efectivo);
+router.post('/deposito', depositos.deposito_efectivo);
 
 /******Consultas*********/
 router.get('/buscarcuenta', Consultas.buscarcuenta)
@@ -37,6 +38,9 @@ router.post('/realizar_pago_transferencia', pagoServicios.realizarPagoTransferen
 router.post('/consultar_prestamo', pagoPrestamos.consultarPrestamo);
 router.post('/realizar_pago_prestamo_efectivo', pagoPrestamos.realizarPagoEfectivo);
 router.post('/realizar_pago_prestamo_transferencia', pagoPrestamos.realizarPagoTransferencia);
+
+/******Depositos*********/
+router.post('/depositos/consultar_cuenta', depositos.consultarCuenta);
 
 /*********Atención al cliente*********/
 router.get('/obtener_cliente', atencionCliente.obtenerCliente)
