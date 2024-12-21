@@ -1,155 +1,157 @@
-import React, { useState } from "react";
-import { Container, Row, Col, Card, Form, Button } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
+import { Container, Row, Col, Card, Form, Button, Alert } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import Logo from '../../../assets/logo.png';
 import Swal from 'sweetalert2';
 
-export default function FormCreacion() {
+export default function FormActualizarInfo() {
     const navigate = useNavigate();
-    const [isDisabled, setIsDisabled] = useState(false)
+    const [clientes, setClientes] = useState([])
+    const [isDisabled, setIsDisabled] = useState(true)
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch(`${import.meta.env.VITE_API_HOST}/obtener_cliente_cui`);
+                const data = await response.json();
+                setClientes(data.clientes);
+            } catch (error) {
+                setClientes([])
+            }
+        };
+        fetchData();
+    }, []);
+
     const [formData, setFormData] = useState({
+        cui: '',
         nombre: '',
         apellido: '',
-        cui: '',
         telefono: '',
-        email: '',
         direccion: '',
-        tipoCuenta: '',
+        email: '',
         preguntaSeguridad: '',
         respuestaSeguridad: '',
-        monto: '',
-        existente: false,
     });
 
+    const [actuales, setActuales] = useState({
+        telefono: '',
+        direccion: '',
+        email: '',
+        preguntaSeguridad: '',
+        respuestaSeguridad: '',
+    })
+
+    const handleChangeSelect = async (e) => {
+        const { value } = e.target;
+        const response = await fetch(`${import.meta.env.VITE_API_HOST}/obtener_cliente?cui=${value}`);
+        const data = await response.json();
+        const { CUI, NOMBRE, APELLIDO, DIRECCION, TELEFONO, EMAIL, PREGUNTA, RESPUESTA } = data.cliente
+        setActuales({
+            telefono: TELEFONO,
+            direccion: DIRECCION,
+            email: EMAIL,
+            preguntaSeguridad: PREGUNTA,
+            respuestaSeguridad: RESPUESTA,
+        })
+        setFormData({
+            cui: CUI,
+            nombre: NOMBRE,
+            apellido: APELLIDO,
+            telefono: TELEFONO,
+            direccion: DIRECCION,
+            email: EMAIL,
+            preguntaSeguridad: PREGUNTA,
+            respuestaSeguridad: RESPUESTA,
+        })
+        setIsDisabled(false)
+    };
+
     const handleChange = (e) => {
-        const { name, value, type, files } = e.target;
-        if (type === 'file') {
-            setFormData({
-                ...formData,
-                [name]: files[0]
+        const { name, value } = e.target;
+        setFormData({
+            ...formData,
+            [name]: value
+        });
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const response = await fetch(`${import.meta.env.VITE_API_HOST}/actualizar_cliente`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({formData, actuales}),
+        });
+
+        if(response.ok) {
+            Swal.fire({
+                icon: 'success',
+                title: "¡Cliente Actualizado!",
+                showConfirmButton: false,
+                timer: 2000,
             });
-        } else {
-            setFormData({
-                ...formData,
-                [name]: value
-            });
+            handleCancelar();
+            return;
         }
+
+        handleLimpiar();
+        Swal.fire({
+            icon: 'error',
+            title: "¡Error al actualizar cliente!",
+            showConfirmButton: false,
+            timer: 2000,
+        });
     };
 
     const handleLimpiar = () => {
         setFormData({
             nombre: '',
             apellido: '',
-            cui: '',
             telefono: '',
             direccion: '',
             email: '',
-            tipoCuenta: '',
             preguntaSeguridad: '',
             respuestaSeguridad: '',
-            monto: '',
-            existente: false,
-        });
-    };
+        })
+    }
 
     const handleCancelar = () => {
         handleLimpiar()
         navigate('/menu')
     }
 
-    const handleOut = async (e) => {
-        const { value } = e.target
-        const response = await fetch(`${import.meta.env.VITE_API_HOST}/obtener_cliente?cui=${value}`)
-        if(response.ok) {
-            const data = await response.json()
-            console.log(data)
-            setIsDisabled(data.encontrado)
-            if(data.encontrado) {
-                const { CUI, NOMBRE, APELLIDO, TELEFONO, EMAIL, DIRECCION, PREGUNTA, RESPUESTA } = data.cliente
-                setFormData({
-                    ...formData,
-                    nombre: NOMBRE,
-                    apellido: APELLIDO,
-                    cui: CUI,
-                    telefono: TELEFONO,
-                    email: EMAIL,
-                    direccion: DIRECCION,
-                    preguntaSeguridad: PREGUNTA,
-                    respuestaSeguridad: RESPUESTA,
-                    existente: true,
-                });
-            }
-        }
-    }
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-
-        const result = await Swal.fire({
-            title: "¿Confirmar envío?",
-            text: "¡Por favor, verifica los datos antes de enviar la solicitud!",
-            icon: "warning",
-            showCancelButton: true, // Activa el botón de cancelar
-            confirmButtonText: "Confirmar", // Texto del botón de confirmar
-            cancelButtonText: "Cancelar",  // Texto del botón de cancelar
-            dangerMode: true,
-        });
-    
-        if (!result.isConfirmed) return;
-
-        const response = await fetch(`${import.meta.env.VITE_API_HOST}/solicitar_crear_cuenta`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(formData),
-        });
-
-        if(response.ok) {
-            Swal.fire({
-                icon: 'success',
-                title: "¡Cuenta Creada!",
-                showConfirmButton: false,
-                timer: 2000,
-            });
-            handleCancelar()
-            return;
-        }
-
-        Swal.fire({
-            icon: 'error',
-            title: "¡Error al crear la cuenta!",
-            showConfirmButton: false,
-            timer: 2000,
-        });
-        handleLimpiar()
-    };
-
     return (
         <Container className="mt-5" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minWidth: '100vw', minHeight: '100vh' }}>
             <img src={Logo} style={{ width: '65%' }} alt="logo" />
-
             <Row className="justify-content-center" style={{ width: '100%', paddingLeft: '15%', paddingRight: '15%' }}>
                 <Col md={10}>
                     <Card>
                         <Card.Header className="bg-primary text-white text-center">
-                            <h4>Solicitud de Nueva Cuenta</h4>
+                            <h4>Actualización Cliente</h4>
                         </Card.Header>
                         <Card.Body>
                             <Form onSubmit={handleSubmit}>
                                 <Row>
                                     <Col md={4}>
-                                        <Form.Group controlId="formCui" className="mb-3">
-                                            <Form.Label>CUI</Form.Label>
+                                        <Form.Group controlId="formCliente" className="mb-3">
+                                            <Form.Label>Tipo de cuenta</Form.Label>
                                             <Form.Control
-                                                type="number"
-                                                placeholder="Ingrese su CUI"
-                                                name="cui"
-                                                value={formData.cui}
-                                                onChange={handleChange}
-                                                onBlur={handleOut}
+                                                as="select"
+                                                name="cliente"
+                                                value={formData.tipoCuenta}
+                                                onChange={handleChangeSelect}
                                                 required
-                                            />
+                                            >
+                                                <option value="">Seleccione un cliente</option>
+                                                {clientes.length > 0 ? (
+                                                    clientes.map((cliente, index) => (
+                                                        <option key={index} value={cliente.CUI}>{cliente.CUI} - {cliente.NOMBRE}</option>
+                                                    ))
+                                                ) : (
+                                                    <option value="">No hay datos disponibles</option>
+                                                )}
+                                            </Form.Control>
                                         </Form.Group>
                                     </Col>
                                     <Col md={4}>
@@ -157,11 +159,10 @@ export default function FormCreacion() {
                                             <Form.Label>Nombre</Form.Label>
                                             <Form.Control
                                                 type="text"
-                                                placeholder="Ingrese su nombre"
                                                 name="nombre"
                                                 value={formData.nombre}
                                                 onChange={handleChange}
-                                                disabled={isDisabled}
+                                                disabled
                                                 required
                                             />
                                         </Form.Group>
@@ -171,11 +172,10 @@ export default function FormCreacion() {
                                             <Form.Label>Apellido</Form.Label>
                                             <Form.Control
                                                 type="text"
-                                                placeholder="Ingrese su apellido"
                                                 name="apellido"
                                                 value={formData.apellido}
                                                 onChange={handleChange}
-                                                disabled={isDisabled}
+                                                disabled
                                                 required
                                             />
                                         </Form.Group>
@@ -187,7 +187,6 @@ export default function FormCreacion() {
                                             <Form.Label>Teléfono</Form.Label>
                                             <Form.Control
                                                 type="number"
-                                                placeholder="Ingrese su teléfono"
                                                 name="telefono"
                                                 value={formData.telefono}
                                                 onChange={handleChange}
@@ -201,7 +200,6 @@ export default function FormCreacion() {
                                             <Form.Label>Correo electrónico</Form.Label>
                                             <Form.Control
                                                 type="email"
-                                                placeholder="Ingrese su correo electrónico"
                                                 name="email"
                                                 value={formData.email}
                                                 onChange={handleChange}
@@ -215,7 +213,6 @@ export default function FormCreacion() {
                                             <Form.Label>Dirección</Form.Label>
                                             <Form.Control
                                                 type="text"
-                                                placeholder="Ingrese su domicilio"
                                                 name="direccion"
                                                 value={formData.direccion}
                                                 onChange={handleChange}
@@ -231,7 +228,6 @@ export default function FormCreacion() {
                                             <Form.Label>Pregunta de seguridad</Form.Label>
                                             <Form.Control
                                                 type="text"
-                                                placeholder="Ingrese su pregunta de seguridad"
                                                 name="preguntaSeguridad"
                                                 value={formData.preguntaSeguridad}
                                                 onChange={handleChange}
@@ -245,42 +241,10 @@ export default function FormCreacion() {
                                             <Form.Label>Respuesta de seguridad</Form.Label>
                                             <Form.Control
                                                 type="text"
-                                                placeholder="Ingrese su respuesta"
                                                 name="respuestaSeguridad"
                                                 value={formData.respuestaSeguridad}
                                                 onChange={handleChange}
                                                 disabled={isDisabled}
-                                                required
-                                            />
-                                        </Form.Group>
-                                    </Col>
-                                </Row>
-                                <Row>
-                                    <Col md={4}>
-                                        <Form.Group controlId="formTipoCuenta" className="mb-3">
-                                            <Form.Label>Tipo de cuenta</Form.Label>
-                                            <Form.Control
-                                                as="select"
-                                                name="tipoCuenta"
-                                                value={formData.tipoCuenta}
-                                                onChange={handleChange}
-                                                required
-                                            >
-                                                <option value="">Seleccione el tipo de cuenta</option>
-                                                <option value="M">Monetario</option>
-                                                <option value="A">Ahorro</option>
-                                            </Form.Control>
-                                        </Form.Group>
-                                    </Col>
-                                    <Col md={4}>
-                                        <Form.Group controlId="formMonto" className="mb-3">
-                                            <Form.Label>Monto Inicial (Q.)</Form.Label>
-                                            <Form.Control
-                                                type="number"
-                                                placeholder="Ingrese el monto"
-                                                name="monto"
-                                                value={formData.monto}
-                                                onChange={handleChange}
                                                 required
                                             />
                                         </Form.Group>
