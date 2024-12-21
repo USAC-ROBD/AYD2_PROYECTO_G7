@@ -28,9 +28,55 @@ const solicitarCrearCuenta = async (req, res) => {
         )
         return res.status(200).json({ status: 200, message: "cuenta creada" });
     } catch (error) {
-        console.log(error)
         return res.status(500).json({ status: 500, message: "consulta erronea" });
     }
 }
 
-export const atencionCliente = { obtenerCliente, solicitarCrearCuenta };
+const obtenerClienteCui = async (_, res) => {
+    try {
+        const [ rows ] = await db.query(`SELECT CUI, CONCAT(NOMBRE, ' ', APELLIDO) NOMBRE FROM CLIENTE;`)
+        return res.status(200).json({ status: 200, message: "clientes encontrados", clientes: rows });
+    } catch (error) {
+        return res.status(500).json({ status: 500, message: "consulta erronea" });
+    }
+}
+
+const actualizarCliente = async (req, res) => {
+    try {
+        const { formData, actuales } = req.body
+        var query = ''
+        var values = []
+
+        if(formData.telefono != actuales.telefono) {
+            query = 'TELEFONO = ?'
+            values.push(formData.telefono)
+        }
+        if(formData.direccion != actuales.direccion) {
+            query += (query != '' ? ', ': '') + 'DIRECCION = ?'
+            values.push(formData.direccion)
+        }
+        if(formData.email != actuales.email) {
+            query += (query != '' ? ', ': '') + 'EMAIL = ?'
+            values.push(formData.email)
+        }
+        if(formData.preguntaSeguridad != actuales.preguntaSeguridad) {
+            query += (query != '' ? ', ': '') + 'PREGUNTA = ?'
+            values.push(formData.preguntaSeguridad)
+        }
+        if(formData.respuestaSeguridad != actuales.respuestaSeguridad) {
+            query += (query != '' ? ', ': '') + 'RESPUESTA = ?'
+            values.push(formData.respuestaSeguridad)
+        }
+
+        if(values.length > 0) {
+            values.push(formData.cui)
+            await db.query(`UPDATE CLIENTE SET ${query} WHERE CUI = ?;`, values)
+        }
+
+        return res.status(200).json({ status: 200, message: "cliente actualizado" });
+    } catch (error) {
+        return res.status(500).json({ status: 500, message: "consulta erronea" });
+    }
+}
+
+export const atencionCliente = { obtenerCliente, solicitarCrearCuenta, obtenerClienteCui, actualizarCliente };

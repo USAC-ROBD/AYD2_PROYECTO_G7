@@ -41,6 +41,8 @@ router.post('/realizar_pago_prestamo_transferencia', pagoPrestamos.realizarPagoT
 /*********Atención al cliente*********/
 router.get('/obtener_cliente', atencionCliente.obtenerCliente)
 router.post('/solicitar_crear_cuenta', atencionCliente.solicitarCrearCuenta)
+router.get('/obtener_cliente_cui', atencionCliente.obtenerClienteCui)
+router.post('/actualizar_cliente', atencionCliente.actualizarCliente)
 
 router.post('/retirar_dinero', test.retirar_dinero);
 

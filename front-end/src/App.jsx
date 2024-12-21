@@ -21,7 +21,10 @@ import Reportes from "./pages/Supervisor/Reportes";
 import GestionInventario from "./pages/Supervisor/GestionInventario";
 import Tarjetas from "./pages/Supervisor/Tarjetas";
 import Cancelaciones from "./pages/Supervisor/Cancelaciones";
+
+// Atencion al cliente
 import FormCreacion from "./components/AtencionCliente/Cuentas/Creacion";
+import FormActualizarInfo from "./components/AtencionCliente/Cuentas/Actualizacion";
 
 function App() {
   return (
@@ -44,6 +47,7 @@ function App() {
       </Routes>
       <Routes>
         <Route path="/creacion-cuenta" element={<FormCreacion/>} />
+        <Route path="/actualizacion-cliente" element={<FormActualizarInfo/>} />
       </Routes>
       <Routes>
         <Route path="/empleados" element={<Empleados />} />
