@@ -33,6 +33,7 @@ function FormRetiro({ handleConfirmacionRetiro, user }) {
                 headers: {
                     "Content-Type": "application/json",
                 },
+                credentials: 'include',
                 body: JSON.stringify(data),
             });
             const result = await response.json();
@@ -86,6 +87,7 @@ function FormRetiro({ handleConfirmacionRetiro, user }) {
                 headers: {
                     "Content-Type": "application/json",
                 },
+                credentials: 'include',
                 body: JSON.stringify(data),
             });
             const result = await response.json();

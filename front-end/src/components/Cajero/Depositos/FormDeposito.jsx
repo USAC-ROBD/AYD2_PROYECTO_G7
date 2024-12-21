@@ -35,6 +35,7 @@ function FormDeposito({ handleConfirmacionDeposito, user }) {
                 headers: {
                     "Content-Type": "application/json",
                 },
+                credentials: "include",
                 body: JSON.stringify(data),
             })
                 .then((response) => response.json())
@@ -79,6 +80,7 @@ function FormDeposito({ handleConfirmacionDeposito, user }) {
                 headers: {
                     "Content-Type": "application/json",
                 },
+                credentials: "include",
                 body: JSON.stringify(data),
             })
                 .then((response) => response.json())

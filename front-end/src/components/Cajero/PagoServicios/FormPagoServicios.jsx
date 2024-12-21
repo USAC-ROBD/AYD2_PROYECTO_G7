@@ -117,6 +117,7 @@ function FormPagoServicios({handleConfirmacionPago, user, service, paymentMethod
                         headers: {
                             "Content-Type": "application/json",
                         },
+                        credentials: 'include',
                         body: JSON.stringify(data),
                     })
                         .then((response) => response.json())
@@ -173,6 +174,7 @@ function FormPagoServicios({handleConfirmacionPago, user, service, paymentMethod
                         headers: {
                             "Content-Type": "application/json",
                         },
+                        credentials: 'include',
                         body: JSON.stringify(data),
                     })
                         .then((response) => response.json())
@@ -253,6 +255,7 @@ function FormPagoServicios({handleConfirmacionPago, user, service, paymentMethod
             headers: {
                 "Content-Type": "application/json",
             },
+            credentials: 'include',
             body: JSON.stringify(data),
         })
             .then((response) => response.json())
