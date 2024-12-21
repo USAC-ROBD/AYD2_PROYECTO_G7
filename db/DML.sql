@@ -60,3 +60,10 @@ insert into CUENTA (CUI, NUMERO, TIPO, MONEDA, SALDO, LIMITE_RETIRO) values (301
 
 -- Insertar datos en la tabla DIVISA
 INSERT INTO DIVISA (NOMBRE, SIMBOLO, VALOR_COMPRA, VALOR_VENTA) VALUES ('Dolar', 'USD', 7.75, 7.85), ('Euro', 'EUR', 8.75, 8.85), ('Libra', 'GBP', 10.75, 10.85);
+
+-- Insertar datos en la tabla Prestamo
+insert into PRESTAMO (CUI, MONTO, SALDO) values (5261956868514, 10000, 10000);
+insert into PRESTAMO (CUI, MONTO, SALDO) values (5035286411254, 20000, 20000);
+insert into PRESTAMO (CUI, MONTO, SALDO) values (8552509080031, 30000, 30000);
+insert into PRESTAMO (CUI, MONTO, SALDO) values (2350670655803, 40000, 40000);
+insert into PRESTAMO (CUI, MONTO, SALDO) values (1337396730153, 50000, 50000);

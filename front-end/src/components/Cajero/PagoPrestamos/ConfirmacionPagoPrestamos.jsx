@@ -2,32 +2,24 @@ import React, { useEffect } from "react";
 import { Container, Row, Col, Card, Table } from "react-bootstrap";
 import Logo from '../../../assets/logo.png';
 import Firma from '../../../assets/Firma.png';
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import jsPDF from 'jspdf';
 
-function ConfirmacionPagoPrestamos() {
+function ConfirmacionPagoPrestamos({ dataPago }) {
     const navigate = useNavigate();
-    const location = useLocation();
-    const tipoPago = location.state?.tipoPago;  //tipo de pago total o parcial
-    const paymentMethod = location.state?.paymentMethod; //metodo de pago, efectivo, transferencia
-    const codigo = location.state?.codigo; //codigo del prestamo
-    const monto = location.state?.monto; //monto del pago
-    const montoSaldo = location.state?.montoSaldo; //monto del saldo total que se adeuda
-    const dueno = location.state?.dueno; //cui del dueno del prestamo
-    const encargado = location.state?.encargado; //encargado del pago
-    const cuenta = location.state?.cuenta; //cuenta del cliente que paga por transferencia unicamente
+    const idPago = dataPago?.pagoId; //id del pago
+    const tipoPago = dataPago?.tipoPago; //tipo de pago, total o parcial
+    const paymentMethod = "Transferencia"; //metodo de pago
+    const codigo = dataPago?.codigo; //codigo del prestamo
+    const monto = dataPago?.monto; //monto a pagar
+    const montoSaldo = dataPago?.montoSaldo; //saldo del prestamo
+    const dueno = dataPago?.dueno; //dueño del prestamo
+    const encargado = dataPago?.encargado; //cajero que realiza el pago
+    const cuenta = dataPago?.cuenta; //cuenta a la que se hará la transferencia
 
     const date = new Date();
     const fecha = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
     const hora = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
-
-    useEffect(() => {
-        if (!tipoPago || !paymentMethod || !codigo || !monto || !dueno || !encargado) {
-            console.log(tipoPago, paymentMethod, codigo, monto, dueno, encargado);
-            console.log("Faltan datos");
-            navigate("/menu", { state: { user: encargado } });
-        }
-    }, [tipoPago, paymentMethod, codigo, monto, dueno, encargado, navigate]); // Solo se ejecuta si alguno de estos valores cambia
 
     const handleGeneratePDF = () => {
         const doc = new jsPDF();
@@ -43,6 +35,7 @@ function ConfirmacionPagoPrestamos() {
 
         // Información del Pago
         doc.setFontSize(12);
+        doc.text(`ID del Pago: ${idPago}`, 10, 40);
         doc.text(`Codigo del Prestamo: ${codigo}`, 10, 50);
         doc.text(`Dueño del Prestamo: ${dueno}`, 10, 60);
         doc.text(`Método de Pago: ${paymentMethod}`, 10, 70);
@@ -51,9 +44,7 @@ function ConfirmacionPagoPrestamos() {
         doc.text(`Monto Pagado: Q.${monto}`, 10, 100);
         doc.text(`Nuevo Saldo: Q.${montoSaldo - monto}`, 10, 110);
         doc.text(`Fecha: ${fecha}` + `  ${hora}`, 10, 120);
-        if (paymentMethod === "Transferencia") {
-            doc.text(`Cuenta: ${cuenta}`, 10, 130);
-        }
+        doc.text(`Cuenta: ${cuenta}`, 10, 130);
 
         doc.text(`Encargado del Pago: ${encargado}`, 10, 150);
 
@@ -89,6 +80,10 @@ function ConfirmacionPagoPrestamos() {
                                 </thead>
                                 <tbody>
                                     <tr>
+                                        <td>ID del Pago</td>
+                                        <td>{idPago}</td>
+                                    </tr>
+                                    <tr>
                                         <td>Prestamo</td>
                                         <td>{codigo}</td>
                                     </tr>
@@ -120,12 +115,10 @@ function ConfirmacionPagoPrestamos() {
                                         <td>Fecha</td>
                                         <td>{fecha} {hora}</td>
                                     </tr>
-                                    {paymentMethod === "Transferencia" && (
-                                        <tr>
-                                            <td>Cuenta</td>
-                                            <td>{cuenta}</td>
-                                        </tr>
-                                    )}
+                                    <tr>
+                                        <td>Cuenta</td>
+                                        <td>{cuenta}</td>
+                                    </tr>
                                 </tbody>
                             </Table>
                             <div className="d-grid ">
@@ -138,7 +131,7 @@ function ConfirmacionPagoPrestamos() {
                                 </button>
                                 <button
                                     className="btn btn-danger"
-                                    onClick={() => navigate("/menu", { state: { user: encargado } })}
+                                    onClick={() => navigate("/menu")}
                                 >
                                     Finalizar
                                 </button>

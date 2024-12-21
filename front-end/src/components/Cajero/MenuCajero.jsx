@@ -6,6 +6,8 @@ import LoanIcon from "../../assets/prestamos-icon.png";
 import Logo from "../../assets/logo.png";
 import DepositoIcon from "../../assets/deposito.png";
 import RetiroIcon from "../../assets/retiro.png";
+import ConsultasIcon from "../../assets/consultar-saldo.png";
+import { FaSearch } from 'react-icons/fa';
 
 function MenuCajero({ user, rol }) {
   const navigate = useNavigate();
@@ -115,6 +117,26 @@ function MenuCajero({ user, rol }) {
               style={{ width: "50%", height: "50%" }}
             />
             Retiros
+          </Button>
+        </Col>
+        <Col xs={12} sm={6} md={4} className="mb-3">
+          <Button
+            variant="outline-success"
+            size="lg"
+            className="w-100"
+            onClick={() => navigate("/modulo-consultas")}
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            <img
+              src={ConsultasIcon}
+              alt="services-icon"
+              style={{ width: "50%", height: "50%" }}
+            />
+            Consultas
           </Button>
         </Col>
         <Col xs={12} sm={6} md={4} className="mb-3">
