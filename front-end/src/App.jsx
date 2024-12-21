@@ -11,6 +11,18 @@ import MetodoRetiro from './pages/Retiros/MetodoRetiro'
 // Supervisor
 import Empleados from "./pages/Supervisor/Empleados";
 import Quejas from "./pages/Supervisor/Quejas";
+import Prestamos from "./pages/Supervisor/Prestamos";
+import Encuestas from "./pages/Supervisor/Encuestas";
+import Administradores from "./pages/Supervisor/Administradores";
+import Monitoreo from "./pages/Supervisor/Monitoreo";
+import Reportes from "./pages/Supervisor/Reportes";
+import GestionInventario from "./pages/Supervisor/GestionInventario";
+import Tarjetas from "./pages/Supervisor/Tarjetas";
+import Cancelaciones from "./pages/Supervisor/Cancelaciones";
+
+// Atencion al cliente
+import FormCreacion from "./components/AtencionCliente/Cuentas/Creacion";
+import FormActualizarInfo from "./components/AtencionCliente/Cuentas/Actualizacion";
 
 function App() {
   return (
@@ -29,11 +41,21 @@ function App() {
       <Routes>
         <Route path="/metodo-retiro" element={<MetodoRetiro/>} />
       </Routes>
-
-      {/* Supervisor */}
+      <Routes>
+        <Route path="/creacion-cuenta" element={<FormCreacion/>} />
+        <Route path="/actualizacion-cliente" element={<FormActualizarInfo/>} />
+      </Routes>
       <Routes>
         <Route path="/empleados" element={<Empleados />} />
         <Route path="/quejas" element={<Quejas />} />
+        <Route path="/prestamos" element={<Prestamos />} />
+        <Route path="/encuestas" element={<Encuestas />} />
+        <Route path="/administradores" element={<Administradores />} />
+        <Route path="/monitoreo" element={<Monitoreo />} />
+        <Route path="/reportes" element={<Reportes />} />
+        <Route path="/gestion-inventario" element={<GestionInventario />} />
+        <Route path="/tarjetas" element={<Tarjetas />} />
+        <Route path="/cancelaciones" element={<Cancelaciones />} />
       </Routes>
     </Router>
   );

@@ -5,6 +5,7 @@ import { pagoServicios } from '../controllers/pagoServicios.mjs';
 import { pagoPrestamos } from '../controllers/pagoPrestamos.mjs';
 import { auth } from '../controllers/auth.mjs';
 import { depositos } from '../controllers/depositos.mjs';
+import { atencionCliente } from '../controllers/AtencionCliente.mjs'
 
 const router = Router();
 //rutas de la api
@@ -40,6 +41,13 @@ router.post('/realizar_pago_prestamo_transferencia', pagoPrestamos.realizarPagoT
 
 /******Depositos*********/
 router.post('/depositos/consultar_cuenta', depositos.consultarCuenta);
+
+/*********Atención al cliente*********/
+router.get('/obtener_cliente', atencionCliente.obtenerCliente)
+router.post('/solicitar_crear_cuenta', atencionCliente.solicitarCrearCuenta)
+router.get('/obtener_cliente_cui', atencionCliente.obtenerClienteCui)
+router.post('/actualizar_cliente', atencionCliente.actualizarCliente)
+
 router.post('/retirar_dinero', test.retirar_dinero);
 
 router.post('/generar_token', test.generar_token);
