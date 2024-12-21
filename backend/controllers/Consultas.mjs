@@ -1,7 +1,8 @@
 // Propósito: Controlador de ejemplo para mostrar el funcionamiento de la API
 import db from "../utils/db_connection.mjs";
+import { auth } from "../controllers/auth.mjs";
 
-const buscarcuenta = async (req, res) => {
+const buscarcuenta = [auth.verifyToken, async (req, res) => {
     try {
         const [ rows1 ] = await db.query(`SELECT 
             C.cui,
@@ -43,9 +44,9 @@ const buscarcuenta = async (req, res) => {
     } catch(e) {
         return res.status(500).json({ status: 500, message: "consulta erronea" });
     }
-}
+}];
 
-const obtenercuentas = async (req, res) => {
+const obtenercuentas = [auth.verifyToken, async (req, res) => {
     try {
         const [ rows ] = await db.query(`SELECT CU.numero FROM MONEY_BIN.CUENTA CU WHERE CU.CUI = ${req.query.cui} ;`)
         if(rows.length) {
@@ -55,9 +56,9 @@ const obtenercuentas = async (req, res) => {
     } catch (error) {
         return res.status(500).json({ status: 500, message: "consulta erronea" })
     }
-}
+}];
 
-const mostrarsaldo = async (req, res) => {
+const mostrarsaldo = [auth.verifyToken, async (req, res) => {
     try {
         const [ rows ] = await db.query(`SELECT CU.numero, CONCAT(CL.NOMBRE, ' ', CL.APELLIDO) titular, CU.saldo, CU.actualizacion
         FROM MONEY_BIN.CUENTA CU
@@ -67,6 +68,6 @@ const mostrarsaldo = async (req, res) => {
     } catch (error) {
         return res.status(500).json({ status: 500, message: "consulta erronea" })
     }
-}
+}];
 
 export const Consultas = { buscarcuenta, obtenercuentas, mostrarsaldo };
