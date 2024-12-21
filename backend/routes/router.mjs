@@ -51,7 +51,7 @@ router.post('/retiro', retiros.retiro_efectivo);
 
 /*********Atención al cliente*********/
 router.get('/obtener_cliente', atencionCliente.obtenerCliente)
-router.post('/solicitar_crear_cuenta', atencionCliente.solicitarCrearCuenta)
+router.post('/crear_cuenta_cliente', atencionCliente.crearCuentaCliente)
 router.get('/obtener_cliente_cui', atencionCliente.obtenerClienteCui)
 router.post('/actualizar_cliente', atencionCliente.actualizarCliente)
 

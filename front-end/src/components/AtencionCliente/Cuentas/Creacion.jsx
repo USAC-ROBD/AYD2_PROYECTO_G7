@@ -97,7 +97,7 @@ export default function FormCreacion() {
     
         if (!result.isConfirmed) return;
 
-        const response = await fetch(`${import.meta.env.VITE_API_HOST}/solicitar_crear_cuenta`, {
+        const response = await fetch(`${import.meta.env.VITE_API_HOST}/crear_cuenta_cliente`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
