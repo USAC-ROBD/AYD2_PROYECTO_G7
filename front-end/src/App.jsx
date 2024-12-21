@@ -21,6 +21,7 @@ import Reportes from "./pages/Supervisor/Reportes";
 import GestionInventario from "./pages/Supervisor/GestionInventario";
 import Tarjetas from "./pages/Supervisor/Tarjetas";
 import Cancelaciones from "./pages/Supervisor/Cancelaciones";
+import FormCreacion from "./components/AtencionCliente/Cuentas/Creacion";
 
 function App() {
   return (
@@ -41,8 +42,9 @@ function App() {
       <Routes>
         <Route path="/metodo-retiro" element={<MetodoRetiro/>} />
       </Routes>
-
-      {/* Supervisor */}
+      <Routes>
+        <Route path="/creacion-cuenta" element={<FormCreacion/>} />
+      </Routes>
       <Routes>
         <Route path="/empleados" element={<Empleados />} />
         <Route path="/quejas" element={<Quejas />} />
