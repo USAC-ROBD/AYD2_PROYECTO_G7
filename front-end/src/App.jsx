@@ -14,6 +14,7 @@ import MetodoDeposito from './pages/Depositos/MetodoDeposito';
 import FormDeposito from './pages/Depositos/FormDeposito';
 import FormRetiro from './pages/Retiros/FormRetiro'
 import MetodoRetiro from './pages/Retiros/MetodoRetiro'
+import FormCreacion from "./components/AtencionCliente/Cuentas/Creacion";
 
 function App() {
   return (
@@ -49,7 +50,7 @@ function App() {
         <Route path="/metodo-retiro" element={<MetodoRetiro/>} />
       </Routes>
       <Routes>
-        <Route path="/" />
+        <Route path="/creacion-cuenta" element={<FormCreacion/>} />
       </Routes>
     </Router>
   );

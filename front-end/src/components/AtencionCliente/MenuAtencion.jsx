@@ -50,7 +50,7 @@ function MenuCajero({ user, rol }) {
                                 variant="outline-success"
                                 size="lg"
                                 className="w-100"
-                                // onClick={() => navigate('/form-consulta')}
+                                onClick={() => navigate('/creacion-cuenta')}
                                 style={{ display: 'flex', flexDirection: 'column', alignItems: 'center'}}
                             >
                                 <FaUserPlus style={{ width: '40%', height: '40%' }} />
