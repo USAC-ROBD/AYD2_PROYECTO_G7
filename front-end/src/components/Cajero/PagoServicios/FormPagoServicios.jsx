@@ -10,6 +10,7 @@ function FormPagoServicios({handleConfirmacionPago, user, service, paymentMethod
     const [codigoServicio, setCodigoServicio] = useState("");
     const [proveedor, setProveedor] = useState("");
     const [cuenta, setCuenta] = useState(""); //Cuenta del usuario
+    const [dpi, setDpi] = useState(""); //DPI del usuario
     const navigate = useNavigate();
 
     // Maneja los cambios en los inputs
@@ -19,6 +20,10 @@ function FormPagoServicios({handleConfirmacionPago, user, service, paymentMethod
 
     const handleChangeCuenta = (e) => {
         setCuenta(e.target.value);
+    };
+
+    const handleChangeDpi = (e) => {
+        setDpi(e.target.value);
     };
 
     // Maneja el envío del formulario
@@ -75,13 +80,24 @@ function FormPagoServicios({handleConfirmacionPago, user, service, paymentMethod
             return;
         }
 
+        if (paymentMethod === "Transferencia" && dpi === "") {
+            Swal.fire({
+                icon: 'error',
+                title: "Debe ingresar el DPI",
+                showConfirmButton: false,
+                timer: 2000
+            });
+            return;
+        }
+
         const data = {};
 
         if (paymentMethod === "Transferencia") {
             data.codigo = codigoServicio;
             data.monto = montoPagar;
             data.cuenta = cuenta;
-            data.encargado = "Chino de la tienda";  //Nombre del encargado quemado por el momento
+            data.dpi = dpi;
+            data.encargado = user; //Nombre del cajero logueado
 
             //realizar pago con transferencia
             //mostramos una alerta para confirmar el pago
@@ -120,7 +136,7 @@ function FormPagoServicios({handleConfirmacionPago, user, service, paymentMethod
                                 showConfirmButton: false,
                                 timer: 3000
                             });
-                            handleConfirmacionPago(data= { service: service, paymentMethod: paymentMethod, codigo: codigoServicio, monto: montoPagar, dueno: duenoServicio, encargado: user, proveedor: proveedor, cuenta: cuenta });
+                            handleConfirmacionPago(data= {pagoId:data.pagoId, service: service, paymentMethod: paymentMethod, codigo: codigoServicio, monto: montoPagar, dueno: duenoServicio, encargado: user, proveedor: proveedor, cuenta: cuenta });
                         })
                         .catch((error) => {
                             console.error("Error:", error);
@@ -137,7 +153,7 @@ function FormPagoServicios({handleConfirmacionPago, user, service, paymentMethod
         else if (paymentMethod === "Efectivo") {
             data.codigo = codigoServicio;
             data.monto = montoPagar;
-            data.encargado = "Chino de la tienda";  //Nombre del encargado quemado por el momento
+            data.encargado = user; //Nombre del cajero logueado
 
             //realizar pago con efectivo
             //mostramos una alerta para confirmar el pago
@@ -176,7 +192,7 @@ function FormPagoServicios({handleConfirmacionPago, user, service, paymentMethod
                                 showConfirmButton: false,
                                 timer: 3000
                             });
-                            handleConfirmacionPago(data= { service: service, paymentMethod: paymentMethod, codigo: codigoServicio, monto: montoPagar, dueno: duenoServicio, encargado: user, proveedor: proveedor });
+                            handleConfirmacionPago(data= {pagoId:data.pagoId, service: service, paymentMethod: paymentMethod, codigo: codigoServicio, monto: montoPagar, dueno: duenoServicio, encargado: user, proveedor: proveedor });
                         })
                         .catch((error) => {
                             console.error("Error:", error);
@@ -363,6 +379,23 @@ function FormPagoServicios({handleConfirmacionPago, user, service, paymentMethod
                                                         name="cuenta"
                                                         value={cuenta}
                                                         onChange={handleChangeCuenta}
+                                                        autoComplete="off"
+                                                        required
+                                                    />
+                                                </Form.Group>
+                                            )
+                                        }
+
+                                        {
+                                            paymentMethod === "Transferencia" && (
+                                                <Form.Group className="mb-3" controlId="dpi">
+                                                    <Form.Label>DPI</Form.Label>
+                                                    <Form.Control
+                                                        type="number"
+                                                        placeholder="Ingrese el DPI"
+                                                        name="dpi"
+                                                        value={dpi}
+                                                        onChange={handleChangeDpi}
                                                         autoComplete="off"
                                                         required
                                                     />

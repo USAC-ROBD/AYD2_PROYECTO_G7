@@ -1,4 +1,5 @@
 // Propósito: Controlador con metodos para el pago de servicios
+import { parse } from "path";
 import configurations from "../utils/configurations.mjs";
 import db from "../utils/db_connection.mjs";
 
@@ -135,60 +136,130 @@ const consultarServicio = async (req, res) => {
 }
 
 const realizarPagoEfectivo = async (req, res) => {
-    try{
+    try {
         const { codigo, monto, encargado } = req.body;
 
-        if(!codigo || !monto || !encargado){
+        if (!codigo || !monto || !encargado) {
             return res.status(400).json({ "status": 400, "message": "Faltan Datos" });
         }
 
+        // Verificar si el servicio existe
         const [rows, fields] = await db.query(`SELECT ID_SERVICIO FROM SERVICIO WHERE ID_SERVICIO = ?`, [codigo]);
 
-        if(rows.length === 0){
+        if (rows.length === 0) {
             return res.status(404).json({ "status": 404, "message": "Servicio no encontrado" });
         }
 
-        await db.query(`INSERT INTO PAGO (ID_SERVICIO, MONTO, MODALIDAD, CREA, TIPO) VALUES (?, ?, ?, ?, ?)`, [codigo, monto, 'E', encargado, 'S']);
+        // Realizar la inserción en la tabla PAGO
+        const [result] = await db.query(
+            `INSERT INTO PAGO (ID_SERVICIO, MONTO, MODALIDAD, CREA, TIPO) VALUES (?, ?, ?, ?, ?)`,
+            [codigo, monto, 'E', encargado, 'S']
+        );
 
-        return res.status(200).json({ "status": 200, "message": "Pago realizado con exito" });
+        // Obtener el ID del pago insertado
+        const pagoId = result.insertId;
 
-        
-    }catch(error){
-        console.log(error);
+        return res.status(200).json({
+            "status": 200,
+            "message": "Pago realizado con éxito",
+            "pagoId": pagoId  // Retornamos el ID del pago
+        });
+    } catch (error) {
+        console.error(error);
         return res.status(500).json({ "status": 500, "message": error.message });
     }
-}
+};
+
 
 
 const realizarPagoTransferencia = async (req, res) => {
-    try{
-        const { codigo, monto, cuenta, encargado } = req.body;
+    try {
+        const { codigo, monto, cuenta, dpi, encargado } = req.body;
 
-        if(!codigo || !monto || !encargado || !cuenta){
+        if (!codigo || !monto || !encargado || !cuenta || !dpi) {
             return res.status(400).json({ "status": 400, "message": "Faltan Datos" });
         }
 
-        const [rows, fields] = await db.query(`SELECT ID_SERVICIO FROM SERVICIO WHERE ID_SERVICIO = ?`, [codigo]);
+        // Verificar si el servicio existe
+        const [rows] = await db.query(`SELECT ID_SERVICIO FROM SERVICIO WHERE ID_SERVICIO = ?`, [codigo]);
 
-        if(rows.length === 0){
+        if (rows.length === 0) {
             return res.status(404).json({ "status": 404, "message": "Servicio no encontrado" });
         }
 
-        const [rows2, fields2] = await db.query(`SELECT ID_CUENTA FROM CUENTA WHERE NUMERO = ?`, [cuenta]);
+        // Verificar si la cuenta existe y obtener el saldo actual y la moneda
+        const [rows2] = await db.query(
+            `SELECT ID_CUENTA, SALDO, MONEDA, CUI FROM CUENTA WHERE NUMERO = ?`,
+            [cuenta]
+        );
 
-
-        if(rows2.length === 0){
+        // Verificar si la cuenta existe
+        if (rows2.length === 0) {
             return res.status(404).json({ "status": 404, "message": "Cuenta no encontrada" });
         }
 
-        await db.query(`INSERT INTO PAGO (ID_SERVICIO, MONTO, MODALIDAD, CREA, TIPO, ID_CUENTA) VALUES (?, ?, ?, ?, ?, ?)`, [codigo, monto, 'T', encargado, 'S', rows2[0].ID_CUENTA]);
+        const cuentaData = rows2[0];
 
-        return res.status(200).json({ "status": 200, "message": "Pago realizado con exito" });
-    }catch(error){
-        console.log(error);
+        // Verificar si el DPI del propietario de la cuenta es correcto
+        if (cuentaData.CUI !== dpi) {
+            return res.status(400).json({ "status": 400, "message": "El DPI no coincide con el propietario de la cuenta" });
+        }
+
+        let montoADescontar = parseFloat(monto);
+
+        // Si la cuenta es en dólares, convertir el monto a dólares
+        if (cuentaData.MONEDA == 'D') {
+            const [divisa] = await db.query(
+                `SELECT VALOR_VENTA FROM DIVISA WHERE SIMBOLO = 'USD'`
+            );
+
+            if (divisa.length === 0) {
+                return res.status(500).json({ 
+                    "status": 500, 
+                    "message": "No se encontró el precio de venta del dólar" 
+                });
+            }
+
+            const precioVentaDolar = divisa[0].VALOR_VENTA;
+            montoADescontar = monto / precioVentaDolar; // Convertir a dólares
+        }
+        console.log(montoADescontar);
+        console.log(cuentaData.SALDO);
+        console.log(montoADescontar > cuentaData.SALDO);
+        // Verificar si hay suficiente saldo para realizar el pago
+        if (cuentaData.SALDO < montoADescontar) {
+            return res.status(400).json({ 
+                "status": 400, 
+                "message": "Saldo insuficiente para realizar el pago" 
+            });
+        }
+
+        // Actualizar el saldo de la cuenta
+        await db.query(
+            `UPDATE CUENTA SET SALDO = SALDO - ? WHERE ID_CUENTA = ?`,
+            [montoADescontar, cuentaData.ID_CUENTA]
+        );
+
+        // Insertar el pago en la tabla PAGO
+        const [result] = await db.query(
+            `INSERT INTO PAGO (ID_SERVICIO, MONTO, MODALIDAD, CREA, TIPO, ID_CUENTA) VALUES (?, ?, ?, ?, ?, ?)`,
+            [codigo, monto, 'T', encargado, 'S', cuentaData.ID_CUENTA]
+        );
+
+        // Obtener el ID del pago insertado
+        const pagoId = result.insertId;
+
+        return res.status(200).json({
+            "status": 200,
+            "message": "Pago realizado con éxito",
+            "pagoId": pagoId
+        });
+    } catch (error) {
+        console.error(error);
         return res.status(500).json({ "status": 500, "message": error.message });
     }
-}
+};
+
     
     
 export const pagoServicios = {  consultarServicio, 

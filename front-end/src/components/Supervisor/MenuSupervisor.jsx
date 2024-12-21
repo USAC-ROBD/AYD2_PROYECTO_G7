@@ -1,15 +1,11 @@
 import { Row, Col, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { BiArrowFromRight } from "react-icons/bi";
-import ServiceIcon from "../../assets/service-icon.png";
-import LoanIcon from "../../assets/prestamos-icon.png";
 import Logo from "../../assets/logo.png";
-import DepositoIcon from "../../assets/deposito.png";
-import RetiroIcon from "../../assets/retiro.png";
-import ConsultasIcon from "../../assets/consultar-saldo.png";
-import { FaSearch } from 'react-icons/fa';
+import QuejaIcon from "../../assets/queja-icon.png";
+import EmpleadoIcon from "../../assets/empleado-icon.png";
 
-function MenuCajero({ user, rol }) {
+function MenuSupervisor({ user, rol }) {
   const navigate = useNavigate();
 
   return (
@@ -19,7 +15,7 @@ function MenuCajero({ user, rol }) {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        minWidth: "80vw",
+        minWidth: "100vw",
         minHeight: "100vh",
       }}
     >
@@ -43,7 +39,7 @@ function MenuCajero({ user, rol }) {
             size="lg"
             className="w-100"
             onClick={() =>
-              navigate("/pago-servicios")
+              navigate("/empleados")
             }
             style={{
               display: "flex",
@@ -52,11 +48,11 @@ function MenuCajero({ user, rol }) {
             }}
           >
             <img
-              src={ServiceIcon}
+              src={EmpleadoIcon}
               alt="services-icon"
               style={{ width: "50%", height: "50%" }}
             />
-            Pago de Servicios
+            Empleados
           </Button>
         </Col>
         <Col xs={12} sm={6} md={4} className="mb-3">
@@ -64,7 +60,7 @@ function MenuCajero({ user, rol }) {
             variant="outline-success"
             size="lg"
             className="w-100"
-            onClick={() => navigate("/pago-prestamos", { state: { user } })}
+            onClick={() => navigate("/quejas")}
             style={{
               display: "flex",
               flexDirection: "column",
@@ -72,71 +68,11 @@ function MenuCajero({ user, rol }) {
             }}
           >
             <img
-              src={LoanIcon}
+              src={QuejaIcon}
               alt="services-icon"
               style={{ width: "50%", height: "50%" }}
             />
-            Pago de Préstamos
-          </Button>
-        </Col>
-        <Col xs={12} sm={6} md={4} className="mb-3">
-          <Button
-            variant="outline-success"
-            size="lg"
-            className="w-100"
-            onClick={() => navigate('/metodo-deposito', { state: { typeMov: 'Deposito' } })}
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
-          >
-            <img
-              src={DepositoIcon}
-              alt="depositos-icon"
-              style={{ width: "50%", height: "50%" }}
-            />
-            Depósitos
-          </Button>
-        </Col>
-        <Col xs={12} sm={6} md={4} className="mb-3">
-          <Button
-            variant="outline-success"
-            size="lg"
-            className="w-100"
-            onClick={() => navigate("/metodo-retiro")}
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
-          >
-            <img
-              src={RetiroIcon}
-              alt="services-icon"
-              style={{ width: "50%", height: "50%" }}
-            />
-            Retiros
-          </Button>
-        </Col>
-        <Col xs={12} sm={6} md={4} className="mb-3">
-          <Button
-            variant="outline-success"
-            size="lg"
-            className="w-100"
-            onClick={() => navigate("/modulo-consultas")}
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
-          >
-            <img
-              src={ConsultasIcon}
-              alt="services-icon"
-              style={{ width: "50%", height: "50%" }}
-            />
-            Consultas
+            Quejas
           </Button>
         </Col>
         <Col xs={12} sm={6} md={4} className="mb-3">
@@ -163,4 +99,4 @@ function MenuCajero({ user, rol }) {
   );
 }
 
-export default MenuCajero;
+export default MenuSupervisor;
