@@ -104,7 +104,7 @@ function MenuCajero({ user, rol }) {
             variant="outline-success"
             size="lg"
             className="w-100"
-            onClick={() => navigate("/metodo-retiro")}
+            onClick={() => navigate("/modulo-retiro")}
             style={{
               display: "flex",
               flexDirection: "column",
