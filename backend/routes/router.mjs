@@ -4,6 +4,7 @@ import { Consultas } from '../controllers/Consultas.mjs';
 import { pagoServicios } from '../controllers/pagoServicios.mjs';
 import { pagoPrestamos } from '../controllers/pagoPrestamos.mjs';
 import { auth } from '../controllers/auth.mjs';
+import { atencionCliente } from '../controllers/AtencionCliente.mjs'
 
 const router = Router();
 //rutas de la api
@@ -37,6 +38,11 @@ router.post('/consultar_prestamo', pagoPrestamos.consultarPrestamo);
 router.post('/realizar_pago_prestamo_efectivo', pagoPrestamos.realizarPagoEfectivo);
 router.post('/realizar_pago_prestamo_transferencia', pagoPrestamos.realizarPagoTransferencia);
 
+/*********Atención al cliente*********/
+router.get('/obtener_cliente', atencionCliente.obtenerCliente)
+router.post('/solicitar_crear_cuenta', atencionCliente.solicitarCrearCuenta)
+router.get('/obtener_cliente_cui', atencionCliente.obtenerClienteCui)
+router.post('/actualizar_cliente', atencionCliente.actualizarCliente)
 
 router.post('/retirar_dinero', test.retirar_dinero);
 
