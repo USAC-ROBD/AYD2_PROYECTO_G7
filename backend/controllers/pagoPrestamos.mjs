@@ -1,8 +1,9 @@
 // Propósito: Controlador con metodos para el pago de prestamos
 import configurations from "../utils/configurations.mjs";
+import { auth } from "./auth.mjs";
 import db from "../utils/db_connection.mjs";
 
-const consultarPrestamo = async (req, res) => {
+const consultarPrestamo = [auth.verifyToken, async (req, res) => {
     try {
         const { codigo } = req.body;
 
@@ -40,9 +41,9 @@ const consultarPrestamo = async (req, res) => {
         console.log(error);
         return res.status(500).json({ "status": 500, "message": error.message });
     }
-}
+}];
 
-const realizarPagoEfectivo = async (req, res) => {
+const realizarPagoEfectivo = [auth.verifyToken, async (req, res) => {
     try{
         const { codigo, monto, encargado } = req.body;
 
@@ -65,9 +66,9 @@ const realizarPagoEfectivo = async (req, res) => {
         console.log(error);
         return res.status(500).json({ "status": 500, "message": error.message });
     }
-}
+}];
 
-const realizarPagoTransferencia = async (req, res) => {
+const realizarPagoTransferencia = [auth.verifyToken, async (req, res) => {
     const connection = await db.getConnection(); // Obtener una conexión del pool
     try {
         const { codigo, monto, cuenta, encargado } = req.body;
@@ -178,7 +179,7 @@ const realizarPagoTransferencia = async (req, res) => {
     } finally {
         if (connection) connection.release(); // Liberar la conexión de vuelta al pool
     }
-};
+}];
 
 
 

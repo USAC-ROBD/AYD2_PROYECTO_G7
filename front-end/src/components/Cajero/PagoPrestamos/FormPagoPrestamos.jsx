@@ -87,6 +87,7 @@ function FormPagoPrestamos({ handleConfirmacionPago, user, tipoPago }) {
                     headers: {
                         "Content-Type": "application/json",
                     },
+                    credentials: 'include',
                     body: JSON.stringify(data),
                 })
                     .then((response) => response.json())
@@ -146,6 +147,7 @@ function FormPagoPrestamos({ handleConfirmacionPago, user, tipoPago }) {
             headers: {
                 "Content-Type": "application/json",
             },
+            credentials: 'include',
             body: JSON.stringify(data),
         })
             .then((response) => response.json())
