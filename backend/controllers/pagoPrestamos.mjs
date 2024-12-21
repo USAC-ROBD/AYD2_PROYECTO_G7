@@ -1,5 +1,4 @@
 // Propósito: Controlador con metodos para el pago de prestamos
-import { parse } from "path";
 import configurations from "../utils/configurations.mjs";
 import db from "../utils/db_connection.mjs";
 

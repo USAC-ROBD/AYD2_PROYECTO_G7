@@ -4,9 +4,7 @@ import PagoPrestamos from "./pages/Cajero/PagoPrestamos";
 import Menu from "./pages/General/Menu";
 import Login from "./pages/General/Login";
 import HomeConsultas from "./pages/Cajero/Consultas";
-import HomeDeposito from './pages/Depositos/HomeDeposito'
-import MetodoDeposito from './pages/Depositos/MetodoDeposito';
-import FormDeposito from './pages/Depositos/FormDeposito';
+import Depositos from './pages/Cajero/Depositos';
 import FormRetiro from './pages/Retiros/FormRetiro'
 import MetodoRetiro from './pages/Retiros/MetodoRetiro'
 
@@ -25,9 +23,7 @@ function App() {
         <Route path="/modulo-consultas" element={<HomeConsultas />} />
       </Routes>
       <Routes>
-        <Route path="/modulo-depositos" element={<HomeDeposito/>} />
-        <Route path="/metodo-deposito" element={<MetodoDeposito/>} />
-        <Route path="/form-deposito" element={<FormDeposito/>}/>
+        <Route path="/modulo-depositos" element={<Depositos/>} />
         <Route path="/form-retiro" element={<FormRetiro/>}/>
       </Routes>
       <Routes>
