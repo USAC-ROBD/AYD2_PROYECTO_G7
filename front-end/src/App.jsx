@@ -7,6 +7,7 @@ import HomeConsultas from "./pages/Cajero/Consultas";
 import Depositos from './pages/Cajero/Depositos';
 import Retiros from "./pages/Cajero/Retiros";
 import CambioMoneda from "./pages/Cajero/CambioMoneda";
+import PagoTarjeta from "./pages/Cajero/PagoTarjeta";
 
 // Supervisor
 import Empleados from "./pages/Supervisor/Empleados";
@@ -32,6 +33,7 @@ function App() {
         <Route path="/menu" element={<Menu />} />
         <Route path="/pago-servicios" element={<PagoServicios />} />
         <Route path="/pago-prestamos" element={<PagoPrestamos />} />
+        <Route path="/pago-tarjeta" element={<PagoTarjeta />} />
         <Route path="/modulo-consultas" element={<HomeConsultas />} />
         <Route path="/cambio-moneda" element={<CambioMoneda />} />
       </Routes>
