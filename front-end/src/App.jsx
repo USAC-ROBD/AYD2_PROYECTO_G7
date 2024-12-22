@@ -3,6 +3,7 @@ import PagoServicios from "./pages/Cajero/PagoServicios";
 import PagoPrestamos from "./pages/Cajero/PagoPrestamos";
 import Menu from "./pages/General/Menu";
 import Login from "./pages/General/Login";
+import Confirmacion from "./pages/General/ConfirmarCuenta";
 import HomeConsultas from "./pages/Cajero/Consultas";
 import Depositos from './pages/Cajero/Depositos';
 import Retiros from "./pages/Cajero/Retiros";
@@ -30,6 +31,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Login />} />
+        <Route path="/confirmar-cuenta/:id" element={<Confirmacion />} />
         <Route path="/menu" element={<Menu />} />
         <Route path="/pago-servicios" element={<PagoServicios />} />
         <Route path="/pago-prestamos" element={<PagoPrestamos />} />

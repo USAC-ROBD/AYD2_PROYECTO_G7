@@ -1,26 +1,59 @@
 import { useNavigate } from 'react-router-dom';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import Logo from '../../assets/logo.png';
 import useAuth from '../../hook/useAuth';
-import { Container, Table, Button, Modal, Form, Row, Col } from 'react-bootstrap';
+import { Container, Button, Modal, Form, Row, Col } from 'react-bootstrap';
+import DTable from '../../components/General/DTable';
 
 function Administradores() {
-    const administradores = [
-        { id: 1, nombre: 'Juan', apellido: 'Pérez', email: 'jperez@example.com', telefono: '1234567890' },
-        { id: 2, nombre: 'María', apellido: 'López', email: 'mlopez@example.com', telefono: '0987654321' },
-        { id: 3, nombre: 'Carlos', apellido: 'Gómez', email: 'cgomez@example.com', telefono: '1122334455' },
-    ];
+    const [administradores, setAdministradores] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
 
     const navigate = useNavigate();
     const { user, rol } = useAuth();  // Usamos el hook personalizado para obtener el usuario y rol
     const [show, setShow] = useState(false);
     const [isNew, setIsNew] = useState(false);
-    const [admin, setAdmin] = useState({nombre: '', apellido: '', telefono: '', email: '', edad: '', dpi: '', genero: 'M', estadoCivil: 'S', papeleria: '', foto: ''});
+    const [admin, setAdmin] = useState({nombre: '', apellido: '', telefono: '', email: '', edad: '', cui: '', genero: 'M', estadoCivil: 'S', papeleria: '', foto: ''});
+
+    useEffect(() => {
+        if (!user || !rol) {
+            return;
+        }
+
+        // Si el rol no es supervisor, redirigimos al menu principal
+        if (rol !== 3) { // 3 es el ID del rol supervisor
+            navigate('/menu');
+        } else {
+            setIsLoading(false);
+        }
+    }, [user, rol, navigate]);
+
+    useEffect(() => {
+        if(!isLoading) {
+            fetchData();
+        }
+    }, [isLoading]);
+
+
+    const fetchData = async () => {
+        try {
+            const response = await fetch(`${import.meta.env.VITE_API_HOST}/obtener_administradores`, {
+                method: 'GET',
+                credentials: 'include',
+            });
+            const result = await response.json();
+            setAdministradores(result.data);
+        } catch (error) {
+            setAdministradores([])
+        }
+    };
 
     const handleClose = () => setShow(false);
-    const handleShow = (isNew) => {
+    const handleShow = (isNew, admin) => {
         if (isNew) {
-            setAdmin({nombre: '', apellido: '', telefono: '', email: '', edad: '', dpi: '', genero: 'M', estadoCivil: 'S', papeleria: '', foto: ''});
+            setAdmin({nombre: '', apellido: '', telefono: '', email: '', edad: '', cui: '', genero: 'M', estadoCivil: 'S', papeleria: '', foto: ''});
+        } else {
+            setAdmin(admin);
         }
         setIsNew(isNew);
         setShow(true);
@@ -36,7 +69,7 @@ function Administradores() {
     };
 
     const validateForm = () => {
-        return admin.nombre && admin.apellido && admin.telefono && admin.email && admin.edad && admin.dpi && admin.genero && admin.estadoCivil && admin.papeleria && admin.foto;
+        return admin.nombre && admin.apellido && admin.telefono && admin.email && admin.edad && admin.cui && admin.genero && admin.estadoCivil && admin.papeleria instanceof File && admin.foto instanceof File;
     };
 
     const handleSubmit = (e) => {
@@ -55,12 +88,42 @@ function Administradores() {
         handleClose();
     };
 
-    const handleRegister = () => {
-        console.log('Registrar', admin);
+    const handleRegister = async () => {
+        try {
+            const formData = new FormData();
+            formData.append('nombre', admin.nombre);
+            formData.append('apellido', admin.apellido);
+            formData.append('telefono', admin.telefono);
+            formData.append('email', admin.email);
+            formData.append('edad', admin.edad);
+            formData.append('cui', admin.cui);
+            formData.append('genero', admin.genero);
+            formData.append('estado_civil', admin.estadoCivil);
+            formData.append('papeleria', admin.papeleria, 'papeleria.pdf');
+            formData.append('foto', admin.foto, 'foto.jpg');
+
+            const response = await fetch(`${import.meta.env.VITE_API_HOST}/registrar_administrador`, {
+                method: 'POST',
+                credentials: 'include',
+                body: formData,
+            });
+            const result = await response.json();
+            alert(result.message);
+            fetchData();
+        } catch (error) {
+            console.error('Error en handleRegister:', error);
+            alert('Ocurrió un error al registrar el administrador');
+        }
     };
 
     const handleUpdate = () => {
         console.log('Editar', admin);
+        fetchData();
+    };
+
+    const handleDelete = () => {
+        console.log('Eliminar', admin);
+        fetchData();
     };
 
     if (!user || !rol) {
@@ -85,26 +148,19 @@ function Administradores() {
                     <h1 className='me-3'>Administradores</h1>
                     <Button className='ms-3' variant='success' size='lg' onClick={() => handleShow(true)}>Registrar</Button>
                 </Container>
-                <Table className='mt-5' style={{ width: '80%' }} striped bordered hover>
-                    <thead>
-                        <tr>
-                            <th>Nombre</th>
-                            <th>Apellido</th>
-                            <th>Email</th>
-                            <th>Teléfono</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {administradores.map((empleado) => (
-                            <tr key={empleado.id}>
-                                <td>{empleado.nombre}</td>
-                                <td>{empleado.apellido}</td>
-                                <td>{empleado.email}</td>
-                                <td>{empleado.telefono}</td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </Table>
+                <DTable 
+                    columns={[
+                        {name: 'Usuario', selector: row => row.usuario, sortable: true},
+                        {name: 'CUI', selector: row => row.cui, sortable: true},
+                        {name: 'Nombre', selector: row => `${row.nombre} ${row.apellido}`, sortable: true},
+                        {name: 'Correo', selector: row => row.correo, sortable: true},
+                        {name: 'Teléfono', selector: row => row.telefono, sortable: true},
+                        {name: 'Estado', selector: row => row.estado, sortable: true},
+                        {name: 'Acciones', cell: row => <Button variant='primary' onClick={() => handleShow(false, row)}>Editar</Button>}
+                    ]}
+                    data={administradores}
+                    onRowClicked={(row) => handleShow(false, row)}
+                />
             </Container>
 
             <Modal show={show} onHide={handleClose} size="lg" aria-labelledby="contained-modal-title-vcenter" centered>
@@ -149,9 +205,9 @@ function Administradores() {
                                 </Form.Group>
                             </Col>
                             <Col>
-                                <Form.Group className="mb-3" controlId="formBasicDPI">
-                                    <Form.Label>DPI</Form.Label>
-                                    <Form.Control type="text" name="dpi" value={admin.dpi} onChange={handleInputChange} placeholder="Ingrese el DPI" required />
+                                <Form.Group className="mb-3" controlId="formBasicCUI">
+                                    <Form.Label>CUI</Form.Label>
+                                    <Form.Control type="text" name="cui" value={admin.cui} onChange={handleInputChange} placeholder="Ingrese el número de DPI" required />
                                 </Form.Group>
                             </Col>
                         </Row>
@@ -195,6 +251,12 @@ function Administradores() {
                             <Button variant="secondary" onClick={handleClose} className="me-3">
                                 Cancelar
                             </Button>
+                            {
+                                isNew ? null : 
+                                    <Button variant="danger" className="me-3" onClick={handleDelete}>
+                                    Eliminar
+                                    </Button>
+                            }
                             <Button variant="primary" type="submit">
                                 {isNew ? 'Registrar' : 'Editar'}
                             </Button>

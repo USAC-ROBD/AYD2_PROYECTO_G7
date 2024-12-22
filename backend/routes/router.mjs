@@ -19,8 +19,12 @@ router.get('/', test.ejemplo);
 /******Test de la base de datos*********/
 router.get('/test_db', test.test_db);
 
-/*******Autenticación *************/
+/*******Autenticación*************/
 router.post('/login', auth.login);
+
+/*********Registro*********/
+router.post('/registrar_administrador', supervisor.registrarAdministrador);
+router.get('/confirmar_cuenta', auth.confirmation);
 
 router.get('/buscarcuenta', Consultas.buscarcuenta)
 
@@ -71,6 +75,7 @@ router.post('/generar_token', test.generar_token);
 
 /******Supervisor*********/
 router.get('/obtener_quejas', supervisor.obtenerQuejas);
+router.get('/obtener_administradores', supervisor.obtenerAdministradores);
 
 
 export default router;
