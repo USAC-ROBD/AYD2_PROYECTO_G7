@@ -7,6 +7,7 @@ import Logo from "../../assets/logo.png";
 import DepositoIcon from "../../assets/deposito.png";
 import RetiroIcon from "../../assets/retiro.png";
 import ConsultasIcon from "../../assets/consultar-saldo.png";
+import DivisaIcon from "../../assets/divisa.png";
 import { FaSearch } from 'react-icons/fa';
 
 function MenuCajero({ user, rol }) {
@@ -84,7 +85,7 @@ function MenuCajero({ user, rol }) {
             variant="outline-success"
             size="lg"
             className="w-100"
-            onClick={() => navigate('/metodo-deposito', { state: { typeMov: 'Deposito' } })}
+            onClick={() => navigate('/modulo-depositos')}
             style={{
               display: "flex",
               flexDirection: "column",
@@ -104,7 +105,7 @@ function MenuCajero({ user, rol }) {
             variant="outline-success"
             size="lg"
             className="w-100"
-            onClick={() => navigate("/metodo-retiro")}
+            onClick={() => navigate("/modulo-retiro")}
             style={{
               display: "flex",
               flexDirection: "column",
@@ -137,6 +138,26 @@ function MenuCajero({ user, rol }) {
               style={{ width: "50%", height: "50%" }}
             />
             Consultas
+          </Button>
+        </Col>
+        <Col xs={12} sm={6} md={4} className="mb-3">
+          <Button
+            variant="outline-success"
+            size="lg"
+            className="w-100"
+            onClick={() => navigate("/cambio-moneda")}
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            <img
+              src={DivisaIcon}
+              alt="services-icon"
+              style={{ width: "50%", height: "50%" }}
+            />
+            Cambio de moneda
           </Button>
         </Col>
         <Col xs={12} sm={6} md={4} className="mb-3">

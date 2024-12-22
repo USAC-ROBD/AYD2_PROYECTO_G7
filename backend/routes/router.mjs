@@ -4,7 +4,10 @@ import { Consultas } from '../controllers/Consultas.mjs';
 import { pagoServicios } from '../controllers/pagoServicios.mjs';
 import { pagoPrestamos } from '../controllers/pagoPrestamos.mjs';
 import { auth } from '../controllers/auth.mjs';
+import { depositos } from '../controllers/depositos.mjs';
+import { retiros } from '../controllers/retiros.mjs';
 import { atencionCliente } from '../controllers/AtencionCliente.mjs'
+import { cambioMoneda } from '../controllers/cambioMoneda.mjs';
 
 const router = Router();
 //rutas de la api
@@ -19,7 +22,7 @@ router.get('/test_db', test.test_db);
 router.post('/login', auth.login);
 
 router.get('/buscarcuenta', Consultas.buscarcuenta)
-router.post('/deposito_efectivo', test.deposito_efectivo);
+
 
 /******Consultas*********/
 router.get('/buscarcuenta', Consultas.buscarcuenta)
@@ -38,11 +41,27 @@ router.post('/consultar_prestamo', pagoPrestamos.consultarPrestamo);
 router.post('/realizar_pago_prestamo_efectivo', pagoPrestamos.realizarPagoEfectivo);
 router.post('/realizar_pago_prestamo_transferencia', pagoPrestamos.realizarPagoTransferencia);
 
+/******Depositos*********/
+router.post('/depositos/consultar_cuenta', depositos.consultarCuenta);
+router.post('/deposito', depositos.deposito_efectivo);
+
+/*****Retiros***********/
+router.post('/retiros/consultar_cuenta', retiros.consultarCuenta);
+router.post('/retiro', retiros.retiro_efectivo);
+
+
+/******Cambio de Moneda ******/
+router.get('/divisa/venta-usd', cambioMoneda.precioVenta);
+router.post('/cambio', cambioMoneda.realizarCambioMoneda);
+
+
 /*********Atención al cliente*********/
 router.get('/obtener_cliente', atencionCliente.obtenerCliente)
-router.post('/solicitar_crear_cuenta', atencionCliente.solicitarCrearCuenta)
+router.post('/crear_cuenta_cliente', atencionCliente.crearCuentaCliente)
 router.get('/obtener_cliente_cui', atencionCliente.obtenerClienteCui)
 router.post('/actualizar_cliente', atencionCliente.actualizarCliente)
+router.get('/obtener_cliente_cuenta', atencionCliente.obtenerClienteCuenta)
+router.post('/enviar_solicitud_tarjeta', atencionCliente.enviarSolicitudTarjeta)
 
 router.post('/retirar_dinero', test.retirar_dinero);
 

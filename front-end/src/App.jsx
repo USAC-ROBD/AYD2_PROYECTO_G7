@@ -4,11 +4,9 @@ import PagoPrestamos from "./pages/Cajero/PagoPrestamos";
 import Menu from "./pages/General/Menu";
 import Login from "./pages/General/Login";
 import HomeConsultas from "./pages/Cajero/Consultas";
-import HomeDeposito from './pages/Depositos/HomeDeposito'
-import MetodoDeposito from './pages/Depositos/MetodoDeposito';
-import FormDeposito from './pages/Depositos/FormDeposito';
-import FormRetiro from './pages/Retiros/FormRetiro'
-import MetodoRetiro from './pages/Retiros/MetodoRetiro'
+import Depositos from './pages/Cajero/Depositos';
+import Retiros from "./pages/Cajero/Retiros";
+import CambioMoneda from "./pages/Cajero/CambioMoneda";
 
 // Supervisor
 import Empleados from "./pages/Supervisor/Empleados";
@@ -25,6 +23,7 @@ import Cancelaciones from "./pages/Supervisor/Cancelaciones";
 // Atencion al cliente
 import FormCreacion from "./components/AtencionCliente/Cuentas/Creacion";
 import FormActualizarInfo from "./components/AtencionCliente/Cuentas/Actualizacion";
+import FormCrearTarjeta from "./components/AtencionCliente/Tarjetas/Creacion";
 
 function App() {
   return (
@@ -35,19 +34,16 @@ function App() {
         <Route path="/pago-servicios" element={<PagoServicios />} />
         <Route path="/pago-prestamos" element={<PagoPrestamos />} />
         <Route path="/modulo-consultas" element={<HomeConsultas />} />
+        <Route path="/cambio-moneda" element={<CambioMoneda />} />
       </Routes>
       <Routes>
-        <Route path="/modulo-depositos" element={<HomeDeposito/>} />
-        <Route path="/metodo-deposito" element={<MetodoDeposito/>} />
-        <Route path="/form-deposito" element={<FormDeposito/>}/>
-        <Route path="/form-retiro" element={<FormRetiro/>}/>
-      </Routes>
-      <Routes>
-        <Route path="/metodo-retiro" element={<MetodoRetiro/>} />
+        <Route path="/modulo-depositos" element={<Depositos/>} />
+        <Route path="/modulo-retiro" element={<Retiros />} />
       </Routes>
       <Routes>
         <Route path="/creacion-cuenta" element={<FormCreacion/>} />
         <Route path="/actualizacion-cliente" element={<FormActualizarInfo/>} />
+        <Route path="/creacion-tarjeta" element={<FormCrearTarjeta/>} />
       </Routes>
       <Routes>
         <Route path="/empleados" element={<Empleados />} />

@@ -70,7 +70,13 @@ export default function FormConsulta({ query }) {
         setEncontrado2(false)
         if(cuiNumCuenta !== '') {
             if(query === 'Busqueda Cliente') {
-                const response = await fetch(`${import.meta.env.VITE_API_HOST}/buscarcuenta?numcuenta_cui=${cuiNumCuenta}`)
+                const response = await fetch(`${import.meta.env.VITE_API_HOST}/buscarcuenta?numcuenta_cui=${cuiNumCuenta}`, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    credentials: 'include'
+                })
                 if(response.ok) {
                     const data = await response.json()
                     if(data.message === 'cliente encontrado') {
@@ -94,7 +100,13 @@ export default function FormConsulta({ query }) {
                 setMensajeError('¡Error al consultar cliente!')
                 return
             }
-            const response = await fetch(`${import.meta.env.VITE_API_HOST}/obtenercuentas?cui=${cuiNumCuenta}`)
+            const response = await fetch(`${import.meta.env.VITE_API_HOST}/obtenercuentas?cui=${cuiNumCuenta}`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                credentials: 'include'
+            })
             if(response.ok) {
                 const data = await response.json()
                 if(data.message === 'cuentas encontradas') {
@@ -115,7 +127,13 @@ export default function FormConsulta({ query }) {
 
     const handleConsultar2 = async (e) => {
         e.preventDefault();
-        const response = await fetch(`http://localhost:4000/mostrarsaldo?numcuenta=${numCuenta}`)
+        const response = await fetch(`${import.meta.env.VITE_API_HOST}/mostrarsaldo?numcuenta=${numCuenta}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            credentials: 'include'
+        })
         if(response.ok) {
             const data = await response.json()
             setCuiNumCuenta('')

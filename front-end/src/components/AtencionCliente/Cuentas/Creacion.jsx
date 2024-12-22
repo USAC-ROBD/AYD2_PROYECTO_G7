@@ -62,7 +62,6 @@ export default function FormCreacion() {
         const response = await fetch(`${import.meta.env.VITE_API_HOST}/obtener_cliente?cui=${value}`)
         if(response.ok) {
             const data = await response.json()
-            console.log(data)
             setIsDisabled(data.encontrado)
             if(data.encontrado) {
                 const { CUI, NOMBRE, APELLIDO, TELEFONO, EMAIL, DIRECCION, PREGUNTA, RESPUESTA } = data.cliente
@@ -89,15 +88,15 @@ export default function FormCreacion() {
             title: "¿Confirmar envío?",
             text: "¡Por favor, verifica los datos antes de enviar la solicitud!",
             icon: "warning",
-            showCancelButton: true, // Activa el botón de cancelar
-            confirmButtonText: "Confirmar", // Texto del botón de confirmar
-            cancelButtonText: "Cancelar",  // Texto del botón de cancelar
+            showCancelButton: true,
+            confirmButtonText: "Confirmar",
+            cancelButtonText: "Cancelar",
             dangerMode: true,
         });
     
         if (!result.isConfirmed) return;
 
-        const response = await fetch(`${import.meta.env.VITE_API_HOST}/solicitar_crear_cuenta`, {
+        const response = await fetch(`${import.meta.env.VITE_API_HOST}/crear_cuenta_cliente`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -112,7 +111,7 @@ export default function FormCreacion() {
                 showConfirmButton: false,
                 timer: 2000,
             });
-            handleCancelar()
+            handleCancelar();
             return;
         }
 
@@ -122,7 +121,7 @@ export default function FormCreacion() {
             showConfirmButton: false,
             timer: 2000,
         });
-        handleLimpiar()
+        handleLimpiar();
     };
 
     return (
