@@ -6,13 +6,35 @@ VALUES
 ('Supervisor', 'Acceso a modulo supervisor', 'admin', 'admin'),
 ('Servicio al Cliente', 'Acceso a modulo callcenter', 'admin', 'admin');
 
+
 -- Insertar datos en la tabla USUARIO
-INSERT INTO USUARIO (USUARIO, CONTRASENA, NOMBRE, APELLIDO, CORREO, ESTADO, ID_ROL, CREA, ACTUALIZA)
-VALUES 
-('admin', '$2a$10$sLiWO.iG/Qlyjk4hLGWsYuygk9u2VqcVrI6p6Z74sCKfP8B1gqW3e', 'John', 'Doe', 'jdoe@example.com', 'A', 1, 'admin', 'admin'),
-('tiky', '$2a$10$sLiWO.iG/Qlyjk4hLGWsYuygk9u2VqcVrI6p6Z74sCKfP8B1gqW3e', 'Alice', 'Smith', 'asmith@example.com', 'A', 2, 'admin', 'admin'),
-('bcarter', '$2a$10$sLiWO.iG/Qlyjk4hLGWsYuygk9u2VqcVrI6p6Z74sCKfP8B1gqW3e', 'Bob', 'Carter', 'bcarter@example.com', 'I', 3, 'admin', 'admin'),
-('patricks', '$2a$10$sLiWO.iG/Qlyjk4hLGWsYuygk9u2VqcVrI6p6Z74sCKfP8B1gqW3e', 'Patrick', 'Star', 'ptrckstr@example.com', 'A', 4, 'admin', 'admin');
+INSERT INTO USUARIO (
+    USUARIO, 
+    CONTRASENA, 
+    NOMBRE, 
+    APELLIDO, 
+    CORREO, 
+    TELEFONO, 
+    EDAD, 
+    CUI, 
+    GENERO, 
+    ESTADO_CIVIL, 
+    PAPELERIA, 
+    FOTO, 
+    ESTADO, 
+    ID_ROL, 
+    CREA, 
+    ACTUALIZA
+) 
+VALUES
+('admin', '$2a$10$sLiWO.iG/Qlyjk4hLGWsYuygk9u2VqcVrI6p6Z74sCKfP8B1gqW3e', 'John', 'Doe', 'jdoe@example.com', '12345678', 35, '3026416610103', 'M', 'S', NULL, NULL, 'A', 1, 'admin', 'admin'),
+('tiky', '$2a$10$sLiWO.iG/Qlyjk4hLGWsYuygk9u2VqcVrI6p6Z74sCKfP8B1gqW3e', 'Alice', 'Smith', 'asmith@example.com', '98765432', 28, '1234567890123', 'F', 'C', NULL, NULL, 'A', 2, 'admin', 'admin'),
+('bcarter', '$2a$10$sLiWO.iG/Qlyjk4hLGWsYuygk9u2VqcVrI6p6Z74sCKfP8B1gqW3e', 'Bob', 'Carter', 'bcarter@example.com', '56789012', 40, '9876543210987', 'M', 'D', NULL, NULL, 'I', 3, 'admin', 'admin'),
+('ptrick', '$2a$10$sLiWO.iG/Qlyjk4hLGWsYuygk9u2VqcVrI6p6Z74sCKfP8B1gqW3e', 'Patrick', 'Star', 'ptrickstar@example.com', '87654321', 50, '3210987654321', 'M', 'V', NULL, NULL, 'A', 4, 'admin', 'admin'),
+('janed', '$2a$10$sLiWO.iG/Qlyjk4hLGWsYuygk9u2VqcVrI6p6Z74sCKfP8B1gqW3e', 'Jane', 'Doe', 'janed@example.com', '45612378', 27, '1112223334445', 'F', 'S', NULL, NULL, 'P', 2, 'admin', 'admin'),
+('mwill', '$2a$10$sLiWO.iG/Qlyjk4hLGWsYuygk9u2VqcVrI6p6Z74sCKfP8B1gqW3e', 'Michael', 'Williams', 'mwill@example.com', '32165487', 38, '5556667778889', 'M', 'C', NULL, NULL, 'A', 3, 'admin', 'admin'),
+('lisat', '$2a$10$sLiWO.iG/Qlyjk4hLGWsYuygk9u2VqcVrI6p6Z74sCKfP8B1gqW3e', 'Lisa', 'Taylor', 'ltaylor@example.com', '78945612', 31, '4445556667778', 'F', 'S', NULL, NULL, 'A', 1, 'admin', 'admin'),
+('samj', '$2a$10$sLiWO.iG/Qlyjk4hLGWsYuygk9u2VqcVrI6p6Z74sCKfP8B1gqW3e', 'Sam', 'Johnson', 'sjohnson@example.com', '65498732', 45, '7778889990001', 'M', 'D', NULL, NULL, 'A', 4, 'admin', 'admin');
 
 -- Insertar datos en la tabla SERVICIO
 insert into SERVICIO (NOMBRE, PROVEEDOR, MONTO, TIPO) values ('Steven Gonzalez', 'Empresa de Agua de Guatemala', 250.00, '1');
