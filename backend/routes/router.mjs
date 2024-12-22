@@ -4,6 +4,7 @@ import { Consultas } from '../controllers/Consultas.mjs';
 import { pagoServicios } from '../controllers/pagoServicios.mjs';
 import { pagoPrestamos } from '../controllers/pagoPrestamos.mjs';
 import { auth } from '../controllers/auth.mjs';
+import { administrador } from '../controllers/administrador.mjs'
 
 const router = Router();
 //rutas de la api
@@ -41,6 +42,18 @@ router.post('/realizar_pago_prestamo_transferencia', pagoPrestamos.realizarPagoT
 router.post('/retirar_dinero', test.retirar_dinero);
 
 router.post('/generar_token', test.generar_token);
+
+/***********Adminitrador************/
+router.get('/rol-empleado', administrador.obtener_usuario_rol);
+
+router.post('/rol-empleado-actualizar', administrador.actualizar_usuario_rol);
+
+router.get('/empleado', administrador.obtener_usuario);
+
+router.post('/eliminar-empleado', administrador.eliminar_usuario);
+
+router.post('/cambiar-contrasena',administrador.cambiar_contrasena)
+
 
 
 

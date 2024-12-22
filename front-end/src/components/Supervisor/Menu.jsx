@@ -1,8 +1,12 @@
 import { Row, Col, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import { RiSurveyFill } from "react-icons/ri";
+import { MdViewTimeline } from "react-icons/md";
 import { BiArrowFromRight } from "react-icons/bi";
-import { BsPersonSquare } from "react-icons/bs";
-import { IoIosCloudUpload } from "react-icons/io";
+import { GrUserManager } from "react-icons/gr";
+import { FiInfo } from "react-icons/fi";
+import { SiQuicklook } from "react-icons/si";
+import { IoDocumentAttach } from "react-icons/io5";
 import Logo from "../../assets/logo.png";
 
 function MenuSupervisor({ user, rol }) {
@@ -45,8 +49,8 @@ function MenuSupervisor({ user, rol }) {
               alignItems: "center",
             }}
           >
-            <BsPersonSquare style={{width:"50%", height:"50%"}}/>
-            Empleados
+            <RiSurveyFill style={{width:"50%", height:"50%"}}/>
+            Encuestas de Satisfacción
           </Button>
         </Col>
         <Col xs={12} sm={6} md={4} className="mb-3">
@@ -61,8 +65,72 @@ function MenuSupervisor({ user, rol }) {
               alignItems: "center",
             }}
           >
-            <IoIosCloudUpload style={{width:"50%" , height:"50%"}}/>
-            Copias de seguridad
+            <MdViewTimeline style={{width:"50%" , height:"50%"}}/>
+            Ver Quejas
+          </Button>
+        </Col>
+        <Col xs={12} sm={6} md={4} className="mb-3">
+          <Button
+            variant="outline-success"
+            size="lg"
+            className="w-100"
+            onClick={() => navigate("", { state: { user } })}
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            <GrUserManager style={{width:"50%" , height:"50%"}}/>
+            Registrar Administrador de Sistemas
+          </Button>
+        </Col>
+        <Col xs={12} sm={6} md={4} className="mb-3">
+          <Button
+            variant="outline-success"
+            size="lg"
+            className="w-100"
+            onClick={() => navigate("", { state: { user } })}
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            <FiInfo style={{width:"50%" , height:"50%"}}/>
+            Información de Administrador de Sistemas
+          </Button>
+        </Col>
+        <Col xs={12} sm={6} md={4} className="mb-3">
+          <Button
+            variant="outline-success"
+            size="lg"
+            className="w-100"
+            onClick={() => navigate("", { state: { user } })}
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            <SiQuicklook style={{width:"50%" , height:"50%"}}/>
+            Monitoreo de Actividad en Tiempo Real
+          </Button>
+        </Col>
+        <Col xs={12} sm={6} md={4} className="mb-3">
+          <Button
+            variant="outline-success"
+            size="lg"
+            className="w-100"
+            onClick={() => navigate("", { state: { user } })}
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            <IoDocumentAttach style={{width:"50%" , height:"50%"}}/>
+            Gestin de inventarios bancarios
           </Button>
         </Col>
         <Col xs={12} sm={6} md={4} className="mb-3">
@@ -90,3 +158,5 @@ function MenuSupervisor({ user, rol }) {
 }
 
 export default MenuSupervisor;
+
+// sn5LLxj8GcIJLEIt
