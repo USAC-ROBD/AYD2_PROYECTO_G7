@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Card, Form, Button, Table } from "react-bootstrap";
 import Logo from '../../../assets/logo.png';
 import { useNavigate } from "react-router-dom";
-import Firma from '../../../assets/firma.png';
+import Firma from '../../../assets/Firma.png';
 import jsPDF from 'jspdf';
 
 export default function FormConsulta({ query }) {
