@@ -68,11 +68,11 @@ function Quejas() {
             <h1>Quejas</h1>
             <DTable
                 columns={[
-                    { name: 'ID', selector: row => row.id, sortable: true },
-                    { name: 'CUI', selector: row => row.cui, sortable: true },
-                    { name: 'Cliente', selector: row => row.cliente, sortable: true },
-                    { name: 'Categoría', selector: row => row.categoria, sortable: true },
-                    { name: 'Descripción', selector: row => row.descripcion, sortable: true },
+                    { name: 'ID', selector: row => row.id, sortable: true, width: '80px' },
+                    { name: 'CUI', selector: row => row.cui, sortable: true, width: '200px' },
+                    { name: 'Cliente', selector: row => row.cliente, sortable: true, width: '300px' },
+                    { name: 'Categoría', selector: row => row.categoria, sortable: true, width: '200px' },
+                    { name: 'Descripción', selector: row => row.descripcion, sortable: true, width: '500px' },
                     { name: 'Fecha', selector: row => formatDate(row.creado), sortable: true },
                 ]}
                 data={quejas}
