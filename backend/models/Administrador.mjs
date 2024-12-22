@@ -2,7 +2,9 @@ import bcrypt from "bcrypt";
 import db from "../utils/db_connection.mjs";
 
 class Administrador {
-    constructor(nombre, apellido, telefono, correo, cui, edad, genero, estado_civil, papeleria, foto) {
+    constructor(id_usuario, usuario, nombre, apellido, telefono, correo, cui, edad, genero, estado_civil, papeleria, foto) {
+        this.id_usuario = id_usuario;
+        this.usuario = usuario;
         this.nombre = nombre;
         this.apellido = apellido;
         this.telefono = telefono;
@@ -13,8 +15,6 @@ class Administrador {
         this.estado_civil = estado_civil;
         this.papeleria = papeleria;
         this.foto = foto;
-        this.id_usuario = null;
-        this.usuario = null;
         this.contrasena = null;
         this.estado = null;
         this.creacion = null;
@@ -61,6 +61,49 @@ class Administrador {
             return this.id_usuario;
         } catch (error) {
             console.error("Error en registrarAdministrador:", error.message);
+            return null;
+        }
+    }
+
+    async actualizar() {
+        //Verificar correo
+        const [rows] = await db.query(
+            `SELECT ID_USUARIO FROM USUARIO WHERE CORREO = ? AND ID_USUARIO != ?`,
+            [this.correo, this.id_usuario]
+        );
+
+        if (rows.length > 0) {
+            throw new Error("El correo ya está registrado");
+        }
+
+        //Actualizar usuario
+        try {
+            let query = `UPDATE USUARIO SET NOMBRE = ?, APELLIDO = ?, TELEFONO = ?, CORREO = ?, EDAD = ?, CUI = ?, GENERO = ?, ESTADO_CIVIL = ?`;
+            let params = [this.nombre, this.apellido, this.telefono, this.correo, this.edad, this.cui, this.genero, this.estado_civil];
+            this.foto ? (query += `, FOTO = ?`, params.push(this.foto)) : null;
+            this.papeleria ? (query += `, PAPELERIA = ?`, params.push(this.papeleria)) : null;
+            query += ` WHERE ID_USUARIO = ?`;
+            params.push(this.id_usuario);
+
+            const [result] = await db.query(query, params);
+
+            return result;
+        } catch (error) {
+            console.error("Error en actualizarAdministrador:", error.message);
+            return null;
+        }
+    }
+
+    async eliminar() {
+        try {
+            const [result] = await db.query(
+                `DELETE FROM USUARIO WHERE ID_USUARIO = ?`,
+                [this.id_usuario]
+            );
+
+            return result
+        } catch (error) {
+            console.error("Error en eliminarAdministrador:", error.message);
             return null;
         }
     }
