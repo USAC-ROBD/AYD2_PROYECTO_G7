@@ -23,6 +23,7 @@ import Cancelaciones from "./pages/Supervisor/Cancelaciones";
 // Atencion al cliente
 import FormCreacion from "./components/AtencionCliente/Cuentas/Creacion";
 import FormActualizarInfo from "./components/AtencionCliente/Cuentas/Actualizacion";
+import FormCrearTarjeta from "./components/AtencionCliente/Tarjetas/Creacion";
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
       <Routes>
         <Route path="/creacion-cuenta" element={<FormCreacion/>} />
         <Route path="/actualizacion-cliente" element={<FormActualizarInfo/>} />
+        <Route path="/creacion-tarjeta" element={<FormCrearTarjeta/>} />
       </Routes>
       <Routes>
         <Route path="/empleados" element={<Empleados />} />
