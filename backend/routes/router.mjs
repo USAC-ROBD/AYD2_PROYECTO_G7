@@ -24,7 +24,6 @@ router.get('/test_db', test.test_db);
 router.post('/login', auth.login);
 
 /*********Registro*********/
-router.post('/registrar_administrador', supervisor.registrarAdministrador);
 router.get('/confirmar_cuenta', auth.confirmation);
 
 router.get('/buscarcuenta', Consultas.buscarcuenta)
@@ -84,6 +83,9 @@ router.post('/generar_token', test.generar_token);
 /******Supervisor*********/
 router.get('/obtener_quejas', supervisor.obtenerQuejas);
 router.get('/obtener_administradores', supervisor.obtenerAdministradores);
+router.post('/registrar_administrador', supervisor.registrarAdministrador);
+router.post('/actualizar_administrador', supervisor.actualizarAdministrador);
+router.post('/eliminar_administrador', supervisor.eliminarAdministrador);
 
 
 export default router;
