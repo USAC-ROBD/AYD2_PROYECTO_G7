@@ -2,6 +2,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import PagoServicios from "./pages/Cajero/PagoServicios";
 import PagoPrestamos from "./pages/Pagos/Prestamos/PagoPrestamos";
 import Menu from "./pages/General/Menu";
+import AdminEmpleado from "./pages/Adminitrador_de_Sistemas/AdminEmpleado"
+import AccionAdmin from "./pages/Adminitrador_de_Sistemas/AdminAccion"
 import Login from "./pages/General/Login";
 import HomeConsultas from "./pages/Consultas/HomeConsultas";
 import FormConsulta from "./pages/Consultas/FormConsulta";
@@ -14,7 +16,6 @@ import MetodoDeposito from './pages/Depositos/MetodoDeposito';
 import FormDeposito from './pages/Depositos/FormDeposito';
 import FormRetiro from './pages/Retiros/FormRetiro'
 import MetodoRetiro from './pages/Retiros/MetodoRetiro'
-import HomeAdmin from './pages/Adminitrador_de_Sistemas/Home/Home'
 
 function App() {
   return (
@@ -50,7 +51,8 @@ function App() {
         <Route path="/metodo-retiro" element={<MetodoRetiro/>} />
       </Routes>
       <Routes>
-        <Route path="/home/admin" element={<HomeAdmin/>}/>
+        <Route path="/menu-admin-empleado" element={<AdminEmpleado/>}/>
+        <Route path="/accion-admin" element={<AccionAdmin/>}/>
       </Routes>
     </Router>
   );

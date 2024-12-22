@@ -3,7 +3,7 @@ INSERT INTO ROL (NOMBRE, DESCRIPCION, CREA, ACTUALIZA)
 VALUES 
 ('Administrador', 'Acceso a modulo Admin', 'admin', 'admin'),
 ('Cajero', 'Acceso a modulo cajero', 'admin', 'admin'),
-('Supervisor', 'Acceso a modulo supervisor', 'admin', 'admin');
+('Supervisor', 'Acceso a modulo supervisor', 'admin', 'admin'),
 ('Agente Servicio al Cliente', 'Acceso a modulo supervisor', 'admin', 'admin');
 
 -- Insertar datos en la tabla USUARIO
