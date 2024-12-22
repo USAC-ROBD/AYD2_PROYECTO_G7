@@ -66,6 +66,18 @@ export default function FormCrearTarjeta() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        const result = await Swal.fire({
+            title: "¿Confirmar envío?",
+            text: "¡Por favor, verifica los datos antes de enviar la solicitud!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonText: "Confirmar",
+            cancelButtonText: "Cancelar",
+            dangerMode: true,
+        });
+        if (!result.isConfirmed) return;
+
         const response = await fetch(`${import.meta.env.VITE_API_HOST}/enviar_solicitud_tarjeta`, {
             method: "POST",
             headers: {

@@ -93,7 +93,6 @@ export default function FormCreacion() {
             cancelButtonText: "Cancelar",
             dangerMode: true,
         });
-    
         if (!result.isConfirmed) return;
 
         const response = await fetch(`${import.meta.env.VITE_API_HOST}/crear_cuenta_cliente`, {
