@@ -1,8 +1,11 @@
-// Propósito: Controlador con metodos para realizar los depositos
+// Propósito: Controlador con metodos para realizar los retiros
 import configurations from "../utils/configurations.mjs";
 import db from "../utils/db_connection.mjs";
 
-const consultarCuenta = async (req, res) => {
+//importamos el middleware de autenticación
+import { auth } from "./auth.mjs";
+
+const consultarCuenta = [auth.verifyToken, async (req, res) => {
     try {
         const { cuenta } = req.body;
 
@@ -54,10 +57,10 @@ const consultarCuenta = async (req, res) => {
         console.error("Error al consultar la cuenta:", error);
         return res.status(500).json({ "status": 500, "message": error.message });
     }
-};
+}];
 
 
-const retiro_efectivo = async (req, res) => {
+const retiro_efectivo = [auth.verifyToken,async (req, res) => {
     const connection = await db.getConnection(); // Obtener una conexión del pool
 
     try {
@@ -149,7 +152,7 @@ const retiro_efectivo = async (req, res) => {
     } finally {
         if (connection) connection.release(); // Liberar la conexión de vuelta al pool
     }
-};
+}];
 
 
 export const retiros = {

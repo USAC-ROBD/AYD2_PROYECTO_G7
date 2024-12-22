@@ -1,8 +1,9 @@
 // Propósito: Controlador con metodos para realizar los depositos
 import configurations from "../utils/configurations.mjs";
+import { auth } from "./auth.mjs";
 import db from "../utils/db_connection.mjs";
 
-const consultarCuenta = async (req, res) => {
+const consultarCuenta = [auth.verifyToken, async (req, res) => {
 
     try {
         const { cuenta } = req.body;
@@ -50,9 +51,9 @@ const consultarCuenta = async (req, res) => {
         console.log(error);
         return res.status(500).json({ "status": 500, "message": error.message });
     }
-}
+}];
 
-const deposito_efectivo = async (req, res) => {
+const deposito_efectivo = [auth.verifyToken, async (req, res) => {
     const connection = await db.getConnection(); // Obtener una conexión del pool
     try {
         const { destinoCuenta, montoDepositar, moneda, crea } = req.body;
@@ -138,7 +139,7 @@ const deposito_efectivo = async (req, res) => {
     } finally {
         if (connection) connection.release(); // Liberar la conexión de vuelta al pool
     }
-};
+}];
 
 
 export const depositos = {

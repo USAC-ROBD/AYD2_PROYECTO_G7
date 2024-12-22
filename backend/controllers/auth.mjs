@@ -51,19 +51,35 @@ const login = async (req, res) => {
   }
 };
 
-// Middleware para verificar el token JWT
+// Middleware para verificar el token
 const verifyToken = (req, res, next) => {
-  const token = req.header('Authorization')?.split(' ')[1];
-  if (!token) return res.status(403).send('Access denied');
+  console.log(req.cookies);
+  const token = req.cookies.token;
 
-  jwt.verify(token, configurations.secret_key_jwt, (err, decoded) => {
-    if (err) return res.status(400).send('Invalid token');
-    req.user = decoded;
-    next();
-  });
+  if (!token) {
+    return res.status(403).json({ status: 403, message: 'Acceso denegado. Vuelva a Iniciar Sesión' });
+  }
+
+  try {
+    const decoded = jwt.verify(token, configurations.secret_key_jwt); // Decodificar el token
+
+    // Validar si el token ha expirado
+    const currentTime = Math.floor(Date.now() / 1000); // Tiempo actual en segundos
+    if (decoded.exp && decoded.exp < currentTime) {
+      return res.status(401).json({ status: 401, message: 'La Sesión ha expirado.' });
+    }
+
+    req.user = decoded; // Adjuntar la información del usuario decodificado al objeto req
+    console.log(decoded);
+    next(); // Continuar con la siguiente función de middleware
+  } catch (err) {
+    return res.status(401).json({ status: 401, message: 'Sesión inválido.' });
+  }
 };
+
 
 export const auth = {
   login,
   verifyToken,
 };
+
