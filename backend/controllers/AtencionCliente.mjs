@@ -26,7 +26,7 @@ const crearCliente = async (req, res, next) => {
             );
             next();
         } catch (error) {
-            return res.status(500).json({ status: 500, message: "Error al crear cliente" });
+            return res.status(500).json({ status: 500, message: "consulta erronea" });
         }
     } else {
         next();
@@ -41,9 +41,9 @@ const crearCuenta = async (req, res) => {
             `INSERT INTO CUENTA(CUI, TIPO, MONEDA, SALDO, LIMITE_RETIRO) VALUES(?, ?, ?, ?, ?)`,
             [cui, tipoCuenta, "Q", monto, "1000"]
         );
-        return res.status(200).json({ status: 200, message: "Cuenta creada" });
+        return res.status(200).json({ status: 200, message: "cuenta creada" });
     } catch (error) {
-        return res.status(500).json({ status: 500, message: "Error al crear cuenta" });
+        return res.status(500).json({ status: 500, message: "consulta erronea" });
     }
 };
 
@@ -112,12 +112,10 @@ const ejecutarActualizarCliente = async (req, res) => {
     try {
         if (values && values.length > 0) {
             await db.query(`UPDATE CLIENTE SET ${query} WHERE CUI = ?;`, values);
-            return res.status(200).json({ status: 200, message: "Cliente actualizado" });
-        } else {
-            return res.status(400).json({ status: 400, message: "No hay cambios que realizar" });
         }
+        return res.status(200).json({ status: 200, message: "cliente actualizado" });
     } catch (error) {
-        return res.status(500).json({ status: 500, message: "Error al actualizar cliente" });
+        return res.status(500).json({ status: 500, message: "consulta erronea" });
     }
 };
 
@@ -127,4 +125,65 @@ const actualizarCliente = [
     ejecutarActualizarCliente
 ];
 
-export const atencionCliente = { obtenerCliente, crearCuentaCliente, obtenerClienteCui, actualizarCliente };
+// Obtener Cliente por Cuenta
+const obtenerClienteCuenta = async (req, res) => {
+    try {
+        const [ rows ] = await db.query(
+            `SELECT CL.CUI, CONCAT(CL.NOMBRE, ' ', CL.APELLIDO) NOMBRE, CU.MONEDA, CU.ID_CUENTA
+            FROM MONEY_BIN.CLIENTE CL
+            INNER JOIN MONEY_BIN.CUENTA CU ON CU.CUI = CL.CUI
+            WHERE CU.NUMERO = ?;`,
+            [ req.query.cuenta ]
+        )
+        if(rows.length > 0) {
+            return res.status(200).json({ status: 200, message: "cuenta encontrada", encontrado: true, cliente: rows[0] });
+        }
+        return res.status(200).json({ status: 200, message: "cuenta no encontrada", encontrado: false });
+    } catch (error) {
+        return res.status(500).json({ status: 500, message: "consulta erronea" });
+    }
+}
+
+// Enviar Solicitud de Tarjeta
+const enviarSolicitudTarjeta = async (req, res) => {
+    try {
+        const { numeroCuenta, tipoTarjeta, limiteCredito, cui, moneda, idCuenta } = req.body
+        const [ rows ] = await db.query(
+            `SELECT 1
+            FROM MONEY_BIN.TARJETA TA
+            LEFT JOIN MONEY_BIN.CUENTA CU ON TA.ID_CUENTA = CU.ID_CUENTA
+            LEFT JOIN MONEY_BIN.CLIENTE CL ON TA.CUI = CL.CUI
+            WHERE (CU.NUMERO = ? OR CL.CUI = ?) AND TA.ESTADO = 'I';`,
+            [ numeroCuenta, cui ]
+        )
+        if(rows.length === 0) {
+            if(tipoTarjeta === 'D') {
+                await db.query(
+                    `INSERT INTO TARJETA(CUI, ID_CUENTA, ESTADO, TIPO, MONEDA, LIMITE, VENCIMIENTO)
+                    VALUES(?, ?, ?, ?, ?, ?, DATE_ADD(CURDATE(), INTERVAL 5 YEAR));`,
+                    [ cui, idCuenta, 'I', tipoTarjeta, moneda, 0 ]
+                )
+            } else {
+                await db.query(
+                    `INSERT INTO TARJETA(CUI, ESTADO, TIPO, MONEDA, LIMITE, VENCIMIENTO)
+                    VALUES(?, ?, ?, ?, ?, DATE_ADD(CURDATE(), INTERVAL 5 YEAR));`,
+                    [ cui, 'I', tipoTarjeta, 'Q', limiteCredito ]
+                )
+            }
+            return res.status(200).json({ status: 200, message: "solicitud enviada" });
+        }
+        return res.status(200).json({ status: 200, message: "solicitud vigente" });
+    } catch (error) {
+        console.log(error)
+        return res.status(500).json({ status: 500, message: "consulta erronea" });
+    }
+}
+
+export const atencionCliente = {
+    obtenerCliente,
+    crearCuentaCliente,
+    obtenerClienteCui,
+    actualizarCliente,
+    obtenerClienteCuenta,
+    enviarSolicitudTarjeta,
+};

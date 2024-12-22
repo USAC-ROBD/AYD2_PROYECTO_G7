@@ -54,6 +54,8 @@ router.get('/obtener_cliente', atencionCliente.obtenerCliente)
 router.post('/crear_cuenta_cliente', atencionCliente.crearCuentaCliente)
 router.get('/obtener_cliente_cui', atencionCliente.obtenerClienteCui)
 router.post('/actualizar_cliente', atencionCliente.actualizarCliente)
+router.get('/obtener_cliente_cuenta', atencionCliente.obtenerClienteCuenta)
+router.post('/enviar_solicitud_tarjeta', atencionCliente.enviarSolicitudTarjeta)
 
 router.post('/retirar_dinero', test.retirar_dinero);
 
