@@ -145,39 +145,64 @@ const obtenerClienteCuenta = async (req, res) => {
 }
 
 // Enviar Solicitud de Tarjeta
-const enviarSolicitudTarjeta = async (req, res) => {
+const validarSolicitudExistente = async (req, res, next) => {
+    const { numeroCuenta, cui } = req.body;
+
     try {
-        const { numeroCuenta, tipoTarjeta, limiteCredito, cui, moneda, idCuenta } = req.body
-        const [ rows ] = await db.query(
+        const [rows] = await db.query(
             `SELECT 1
             FROM MONEY_BIN.TARJETA TA
             LEFT JOIN MONEY_BIN.CUENTA CU ON TA.ID_CUENTA = CU.ID_CUENTA
             LEFT JOIN MONEY_BIN.CLIENTE CL ON TA.CUI = CL.CUI
             WHERE (CU.NUMERO = ? OR CL.CUI = ?) AND TA.ESTADO = 'I';`,
-            [ numeroCuenta, cui ]
-        )
-        if(rows.length === 0) {
-            if(tipoTarjeta === 'D') {
-                await db.query(
-                    `INSERT INTO TARJETA(CUI, ID_CUENTA, ESTADO, TIPO, MONEDA, LIMITE, VENCIMIENTO)
-                    VALUES(?, ?, ?, ?, ?, ?, DATE_ADD(CURDATE(), INTERVAL 5 YEAR));`,
-                    [ cui, idCuenta, 'I', tipoTarjeta, moneda, 0 ]
-                )
-            } else {
-                await db.query(
-                    `INSERT INTO TARJETA(CUI, ESTADO, TIPO, MONEDA, LIMITE, VENCIMIENTO)
-                    VALUES(?, ?, ?, ?, ?, DATE_ADD(CURDATE(), INTERVAL 5 YEAR));`,
-                    [ cui, 'I', tipoTarjeta, 'Q', limiteCredito ]
-                )
-            }
-            return res.status(200).json({ status: 200, message: "solicitud enviada" });
+            [numeroCuenta, cui]
+        );
+
+        if (rows.length > 0) {
+            return res.status(200).json({ status: 200, message: "solicitud vigente" });
         }
-        return res.status(200).json({ status: 200, message: "solicitud vigente" });
+
+        next();
     } catch (error) {
-        console.log(error)
-        return res.status(500).json({ status: 500, message: "consulta erronea" });
+        console.error(error);
+        return res.status(500).json({ status: 500, message: "Error al validar solicitud existente" });
     }
-}
+};
+
+const crearSolicitudTarjeta = async (req, res, next) => {
+    const { tipoTarjeta, limiteCredito, cui, moneda, idCuenta } = req.body;
+
+    try {
+        if (tipoTarjeta === "D") {
+            await db.query(
+                `INSERT INTO TARJETA(CUI, ID_CUENTA, ESTADO, TIPO, MONEDA, LIMITE, VENCIMIENTO)
+                VALUES(?, ?, ?, ?, ?, ?, DATE_ADD(CURDATE(), INTERVAL 5 YEAR));`,
+                [cui, idCuenta, "I", tipoTarjeta, moneda, 0]
+            );
+        } else {
+            await db.query(
+                `INSERT INTO TARJETA(CUI, ESTADO, TIPO, MONEDA, LIMITE, VENCIMIENTO)
+                VALUES(?, ?, ?, ?, ?, DATE_ADD(CURDATE(), INTERVAL 5 YEAR));`,
+                [cui, "I", tipoTarjeta, "Q", limiteCredito]
+            );
+        }
+
+        next();
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({ status: 500, message: "Error al crear la solicitud de tarjeta" });
+    }
+};
+
+const enviarRespuesta = (_, res) => {
+    return res.status(200).json({ status: 200, message: "solicitud enviada" });
+};
+
+const enviarSolicitudTarjeta = [
+    validarSolicitudExistente,
+    crearSolicitudTarjeta,
+    enviarRespuesta
+];
 
 export const atencionCliente = {
     obtenerCliente,
