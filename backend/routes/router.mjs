@@ -8,6 +8,8 @@ import { depositos } from '../controllers/depositos.mjs';
 import { retiros } from '../controllers/retiros.mjs';
 import { atencionCliente } from '../controllers/AtencionCliente.mjs'
 import { cambioMoneda } from '../controllers/cambioMoneda.mjs';
+import { pagoTarjeta } from '../controllers/pagoTarjeta.mjs';
+import { supervisor } from '../controllers/supervisor.mjs';
 
 const router = Router();
 //rutas de la api
@@ -18,8 +20,12 @@ router.get('/', test.ejemplo);
 /******Test de la base de datos*********/
 router.get('/test_db', test.test_db);
 
-/*******Autenticación *************/
+/*******Autenticación*************/
 router.post('/login', auth.login);
+
+/*********Registro*********/
+router.post('/registrar_administrador', supervisor.registrarAdministrador);
+router.get('/confirmar_cuenta', auth.confirmation);
 
 router.get('/buscarcuenta', Consultas.buscarcuenta)
 
@@ -55,6 +61,11 @@ router.get('/divisa/venta-usd', cambioMoneda.precioVenta);
 router.post('/cambio', cambioMoneda.realizarCambioMoneda);
 
 
+/******Pago de Tarjeta*********/
+router.post('/tarjetas/buscar', pagoTarjeta.consultarTarjetaCredito);
+router.post('/tarjetas/pagar', pagoTarjeta.registrarPagoTarjeta);
+
+
 /*********Atención al cliente*********/
 router.get('/obtener_cliente', atencionCliente.obtenerCliente)
 router.post('/crear_cuenta_cliente', atencionCliente.crearCuentaCliente)
@@ -62,6 +73,8 @@ router.get('/obtener_cliente_cui', atencionCliente.obtenerClienteCui)
 router.post('/actualizar_cliente', atencionCliente.actualizarCliente)
 router.get('/obtener_cliente_cuenta', atencionCliente.obtenerClienteCuenta)
 router.post('/enviar_solicitud_tarjeta', atencionCliente.enviarSolicitudTarjeta)
+router.get('/obtener_tarjeta', atencionCliente.obtenerTarjeta)
+router.post('/bloquear_tarjeta', atencionCliente.bloquearTarjeta)
 
 router.post('/retirar_dinero', test.retirar_dinero);
 
@@ -72,6 +85,9 @@ router.post('/generar_token', test.generar_token);
 
 
 
+/******Supervisor*********/
+router.get('/obtener_quejas', supervisor.obtenerQuejas);
+router.get('/obtener_administradores', supervisor.obtenerAdministradores);
 
 
 export default router;

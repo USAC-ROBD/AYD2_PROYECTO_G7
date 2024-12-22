@@ -3,10 +3,12 @@ import PagoServicios from "./pages/Cajero/PagoServicios";
 import PagoPrestamos from "./pages/Cajero/PagoPrestamos";
 import Menu from "./pages/General/Menu";
 import Login from "./pages/General/Login";
+import Confirmacion from "./pages/General/ConfirmarCuenta";
 import HomeConsultas from "./pages/Cajero/Consultas";
 import Depositos from './pages/Cajero/Depositos';
 import Retiros from "./pages/Cajero/Retiros";
 import CambioMoneda from "./pages/Cajero/CambioMoneda";
+import PagoTarjeta from "./pages/Cajero/PagoTarjeta";
 
 // Supervisor
 import Empleados from "./pages/Supervisor/Empleados";
@@ -24,15 +26,18 @@ import Cancelaciones from "./pages/Supervisor/Cancelaciones";
 import FormCreacion from "./components/AtencionCliente/Cuentas/Creacion";
 import FormActualizarInfo from "./components/AtencionCliente/Cuentas/Actualizacion";
 import FormCrearTarjeta from "./components/AtencionCliente/Tarjetas/Creacion";
+import FormBloqueoTarjeta from "./components/AtencionCliente/Tarjetas/Bloqueo";
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Login />} />
+        <Route path="/confirmar-cuenta/:id" element={<Confirmacion />} />
         <Route path="/menu" element={<Menu />} />
         <Route path="/pago-servicios" element={<PagoServicios />} />
         <Route path="/pago-prestamos" element={<PagoPrestamos />} />
+        <Route path="/pago-tarjeta" element={<PagoTarjeta />} />
         <Route path="/modulo-consultas" element={<HomeConsultas />} />
         <Route path="/cambio-moneda" element={<CambioMoneda />} />
       </Routes>
@@ -44,6 +49,7 @@ function App() {
         <Route path="/creacion-cuenta" element={<FormCreacion/>} />
         <Route path="/actualizacion-cliente" element={<FormActualizarInfo/>} />
         <Route path="/creacion-tarjeta" element={<FormCrearTarjeta/>} />
+        <Route path="/bloqueo-tarjeta" element={<FormBloqueoTarjeta/>} />
       </Routes>
       <Routes>
         <Route path="/empleados" element={<Empleados />} />

@@ -76,6 +76,18 @@ export default function FormActualizarInfo() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        const result = await Swal.fire({
+            title: "¿Confirmar actualización?",
+            text: "¡Por favor, verifica los datos antes de enviar la solicitud!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonText: "Confirmar",
+            cancelButtonText: "Cancelar",
+            dangerMode: true,
+        });
+        if (!result.isConfirmed) return;
+
         const response = await fetch(`${import.meta.env.VITE_API_HOST}/actualizar_cliente`, {
             method: "POST",
             headers: {

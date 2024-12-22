@@ -64,3 +64,62 @@ insert into PRESTAMO (CUI, MONTO, SALDO) values (5035286411254, 20000, 20000);
 insert into PRESTAMO (CUI, MONTO, SALDO) values (8552509080031, 30000, 30000);
 insert into PRESTAMO (CUI, MONTO, SALDO) values (2350670655803, 40000, 40000);
 insert into PRESTAMO (CUI, MONTO, SALDO) values (1337396730153, 50000, 50000);
+
+
+-- Insertar datos en la tabla Tarjeta
+
+-- Tarjetas de Débito (relacionadas con cuentas existentes)
+INSERT INTO TARJETA (CUI, ID_CUENTA, ESTADO, NUMERO, TIPO, MONEDA, LIMITE, SALDO, VENCIMIENTO, CREA, ACTUALIZA)
+VALUES
+('5315680014795', 1, 'A', '4111111111111111', 'D', 'Q', 0.00, NULL, '2026-12-31', 'SYSTEM', 'SYSTEM'),
+('2350670655803', 2, 'A', '4222222222222222', 'D', 'Q', 0.00, NULL, '2025-06-30', 'SYSTEM', 'SYSTEM'),
+('1337396730153', 3, 'A', '4333333333333333', 'D', 'D', 0.00, NULL, '2027-03-15', 'SYSTEM', 'SYSTEM'),
+('7618410594855', 4, 'A', '4444444444444444', 'D', 'Q', 0.00, NULL, '2025-11-01', 'SYSTEM', 'SYSTEM'),
+('5817716454924', 5, 'A', '4555555555555555', 'D', 'Q', 0.00, NULL, '2026-01-20', 'SYSTEM', 'SYSTEM');
+
+-- Tarjetas de Crédito con saldo adeudado
+INSERT INTO TARJETA (CUI, ID_CUENTA, ESTADO, NUMERO, TIPO, MONEDA, LIMITE, SALDO, VENCIMIENTO, CREA, ACTUALIZA)
+VALUES
+('5315680014795', NULL, 'A', '5111111111111111', 'C', 'Q', 10000.00, 4500.00, '2026-09-30', 'SYSTEM', 'SYSTEM'),
+('2350670655803', NULL, 'A', '5222222222222222', 'C', 'Q', 8000.00, 3000.00, '2025-12-15', 'SYSTEM', 'SYSTEM'),
+('1337396730153', NULL, 'A', '5333333333333333', 'C', 'D', 15000.00, 1200.00, '2026-03-10', 'SYSTEM', 'SYSTEM'),
+('7618410594855', NULL, 'A', '5444444444444444', 'C', 'Q', 20000.00, 10000.00, '2027-07-05', 'SYSTEM', 'SYSTEM'),
+('5817716454924', NULL, 'A', '5555555555555555', 'C', 'Q', 12000.00, 6000.00, '2028-02-20', 'SYSTEM', 'SYSTEM');
+
+-- Tarjetas de Crédito sin saldo adeudado
+INSERT INTO TARJETA (CUI, ID_CUENTA, ESTADO, NUMERO, TIPO, MONEDA, LIMITE, SALDO, VENCIMIENTO, CREA, ACTUALIZA)
+VALUES
+('5315680014795', NULL, 'A', '5666666666666666', 'C', 'Q', 15000.00, 0.00, '2029-01-10', 'SYSTEM', 'SYSTEM'),
+('1337396730153', NULL, 'A', '5777777777777777', 'C', 'D', 20000.00, 0.00, '2027-06-25', 'SYSTEM', 'SYSTEM'),
+('7618410594855', NULL, 'A', '5888888888888888', 'C', 'Q', 10000.00, 0.00, '2025-09-30', 'SYSTEM', 'SYSTEM'),
+('5817716454924', NULL, 'A', '5999999999999999', 'C', 'Q', 12000.00, 0.00, '2027-11-15', 'SYSTEM', 'SYSTEM');
+
+
+-- Insertar datos en la tabla pagos de tarjeta
+
+-- Pagos anteriores con diferentes fechas para simular intereses en tarjetas de crédito
+INSERT INTO PAGO (TIPO, MODALIDAD, ID_TARJETA, MONTO, CREACION, CREA)
+VALUES
+('T', 'E', 6, 4500.00, '2024-12-01 10:30:00', 'SYSTEM'), -- Pago reciente, sin intereses
+('T', 'E', 7, 3000.00, '2024-10-10 14:00:00', 'SYSTEM'), -- Pago retrasado, genera intereses
+('T', 'E', 8, 1200.00, '2024-11-25 11:45:00', 'SYSTEM'), -- Pago reciente, sin intereses
+('T', 'E', 9, 10000.00, '2024-09-15 09:20:00', 'SYSTEM'), -- Pago retrasado, genera intereses
+('T', 'E', 10, 6000.00, '2024-07-20 15:30:00', 'SYSTEM'); -- Pago muy retrasado, genera intereses
+
+-- Otros pagos realizados en diferentes meses para las mismas tarjetas
+INSERT INTO PAGO (TIPO, MODALIDAD, ID_TARJETA, MONTO, CREACION, CREA)
+VALUES
+('T', 'E', 6, 4500.00, '2024-03-15 10:30:00', 'SYSTEM'), -- Pago puntual, sin intereses
+('T', 'E', 7, 3000.00, '2024-02-10 14:00:00', 'SYSTEM'), -- Pago puntual, sin intereses
+('T', 'E', 8, 1200.00, '2024-01-25 11:45:00', 'SYSTEM'), -- Pago puntual, sin intereses
+('T', 'E', 9, 10000.00, '2023-12-15 09:20:00', 'SYSTEM'), -- Pago puntual, sin intereses
+('T', 'E', 10, 6000.00, '2023-11-20 15:30:00', 'SYSTEM'); -- Pago retrasado, genera intereses
+
+
+-- Insertar datos en la tabla Quejas
+insert into QUEJA (CUI, CATEGORIA, DESCRIPCION, CREA) values (5261956868514, 'A', 'La atencion al cliente es pesima', 'admin');
+insert into QUEJA (CUI, CATEGORIA, DESCRIPCION, CREA) values (5035286411254, 'P', 'La tarjeta de crédito tiene cargos no reconocidos', 'admin');
+insert into QUEJA (CUI, CATEGORIA, DESCRIPCION, CREA) values (8552509080031, 'S', 'El cajero automatico no me dio el dinero', 'admin');
+insert into QUEJA (CUI, CATEGORIA, DESCRIPCION, CREA) values (2350670655803, 'A', 'La persona que me atendio no sabia nada', 'admin');
+insert into QUEJA (CUI, CATEGORIA, DESCRIPCION, CREA) values (1337396730153, 'P', 'La cuenta de ahorro no da los intereses prometidos', 'admin');
+insert into QUEJA (CUI, CATEGORIA, DESCRIPCION, CREA) values (7618410594855, 'S', 'El servicio de préstamo es muy caro', 'admin');
