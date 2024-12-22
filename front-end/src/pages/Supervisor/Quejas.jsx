@@ -1,26 +1,60 @@
 import { useNavigate } from 'react-router-dom';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import Logo from '../../assets/logo.png';
 import useAuth from '../../hook/useAuth';
-import { Container, Table, Button} from 'react-bootstrap';
+import { Container, Button} from 'react-bootstrap';
+import DTable from '../../components/General/DTable';
 
 function Quejas() {
-    const quejas = [
-        { id: 1, nombre: 'Juan', apellido: 'Pérez', servicio: 'Préstamo', queja: 'No me dieron el monto solicitado' },
-        { id: 2, nombre: 'María', apellido: 'López', servicio: 'Tarjeta de crédito', queja: 'Cobro de comisión no autorizado' },
-        { id: 3, nombre: 'Carlos', apellido: 'Gómez', servicio: 'Cuenta de ahorros', queja: 'No se refleja el depósito' },
-    ];
+    const [quejas, setQuejas] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
 
     const navigate = useNavigate();
     const { user, rol } = useAuth();  // Usamos el hook personalizado para obtener el usuario y rol
 
-    if (!user || !rol) {
-        return <div>Loading...</div>;  // Muestra un cargando mientras se obtiene el usuario
-    }
+    useEffect(() => {
+        if (!user || !rol) {
+            return;
+        }
 
-    // Si el rol no es supervisor, redirigimos al menu principal
-    if (rol !== 3) { // 3 es el ID del rol supervisor
-        navigate('/menu');
+        // Si el rol no es supervisor, redirigimos al menu principal
+        if (rol !== 3) { // 3 es el ID del rol supervisor
+            navigate('/menu');
+        } else {
+            setIsLoading(false);
+        }
+    }, [user, rol, navigate]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch(`${import.meta.env.VITE_API_HOST}/obtener_quejas`, {
+                    method: 'GET',
+                    credentials: 'include',
+                });
+                const result = await response.json();
+                setQuejas(result.data);
+            } catch (error) {
+                setQuejas([])
+            }
+        };
+
+        if(!isLoading) {
+            fetchData();
+        }
+    }, [isLoading]);
+
+    const formatDate = (date) => {
+        const d = new Date(date);
+        return `${d.getDate()}/${d.getMonth() + 1}/${d.getFullYear()}`;
+    };
+
+    if (isLoading) {
+        return (
+            <Container style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minWidth: '100vw', minHeight: '100vh' }}>
+                <h1>Cargando...</h1>
+            </Container>
+        );
     }
 
     return (
@@ -32,28 +66,17 @@ function Quejas() {
 
             <img src={Logo} style={{ width: '65%' }} alt="logo" />
             <h1>Quejas</h1>
-            <Table className='mt-5' style={{ width: '80%' }} striped bordered hover>
-                <thead>
-                    <tr>
-                        <th>No.</th>
-                        <th>Nombre</th>
-                        <th>Apellido</th>
-                        <th>Servicio</th>
-                        <th>Queja</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {quejas.map((queja) => (
-                        <tr key={queja.id}>
-                            <td>{queja.id}</td>
-                            <td>{queja.nombre}</td>
-                            <td>{queja.apellido}</td>
-                            <td>{queja.servicio}</td>
-                            <td>{queja.queja}</td>
-                        </tr>
-                    ))}
-                </tbody>
-            </Table>
+            <DTable
+                columns={[
+                    { name: 'ID', selector: row => row.id, sortable: true, width: '80px' },
+                    { name: 'CUI', selector: row => row.cui, sortable: true, width: '200px' },
+                    { name: 'Cliente', selector: row => row.cliente, sortable: true, width: '300px' },
+                    { name: 'Categoría', selector: row => row.categoria, sortable: true, width: '200px' },
+                    { name: 'Descripción', selector: row => row.descripcion, sortable: true, width: '500px' },
+                    { name: 'Fecha', selector: row => formatDate(row.creado), sortable: true },
+                ]}
+                data={quejas}
+            />
         </Container>
     );
 }
