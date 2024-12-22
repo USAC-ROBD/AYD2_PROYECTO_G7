@@ -74,7 +74,7 @@ function MenuCajero({ user, rol }) {
                                 variant="outline-success"
                                 size="lg"
                                 className="w-100"
-                                // onClick={() => navigate('/form-consulta')}
+                                onClick={() => navigate('/creacion-tarjeta')}
                                 style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
                             >
                                 <FaCreditCard style={{ width: '40%', height: '40%' }} />
@@ -91,13 +91,12 @@ function MenuCajero({ user, rol }) {
                             width: "100%",
                         }}
                     >
-                        {/* Segundo grupo de botones */}
                         <Col xs={12} sm={6} md={4} className="mb-3">
                             <Button
                                 variant="outline-success"
                                 size="lg"
                                 className="w-100"
-                                // onClick={() => navigate('/form-consulta')}
+                                onClick={() => navigate('/bloqueo-tarjeta')}
                                 style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
                             >
                                 <FaLock style={{ width: '40%', height: '40%' }} />
@@ -138,7 +137,6 @@ function MenuCajero({ user, rol }) {
                             width: "100%",
                         }}
                     >
-                        {/* Tercer grupo de botones */}
                         <Col xs={12} sm={6} md={4} className="mb-3">
                             <Button
                                 variant="outline-success"
