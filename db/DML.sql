@@ -64,3 +64,11 @@ insert into PRESTAMO (CUI, MONTO, SALDO) values (5035286411254, 20000, 20000);
 insert into PRESTAMO (CUI, MONTO, SALDO) values (8552509080031, 30000, 30000);
 insert into PRESTAMO (CUI, MONTO, SALDO) values (2350670655803, 40000, 40000);
 insert into PRESTAMO (CUI, MONTO, SALDO) values (1337396730153, 50000, 50000);
+
+-- Insertar datos en la tabla Quejas
+insert into QUEJA (CUI, CATEGORIA, DESCRIPCION, CREA) values (5261956868514, 'A', 'La atencion al cliente es pesima', 'admin');
+insert into QUEJA (CUI, CATEGORIA, DESCRIPCION, CREA) values (5035286411254, 'P', 'La tarjeta de crédito tiene cargos no reconocidos', 'admin');
+insert into QUEJA (CUI, CATEGORIA, DESCRIPCION, CREA) values (8552509080031, 'S', 'El cajero automatico no me dio el dinero', 'admin');
+insert into QUEJA (CUI, CATEGORIA, DESCRIPCION, CREA) values (2350670655803, 'A', 'La persona que me atendio no sabia nada', 'admin');
+insert into QUEJA (CUI, CATEGORIA, DESCRIPCION, CREA) values (1337396730153, 'P', 'La cuenta de ahorro no da los intereses prometidos', 'admin');
+insert into QUEJA (CUI, CATEGORIA, DESCRIPCION, CREA) values (7618410594855, 'S', 'El servicio de préstamo es muy caro', 'admin');

@@ -8,6 +8,7 @@ import { depositos } from '../controllers/depositos.mjs';
 import { retiros } from '../controllers/retiros.mjs';
 import { atencionCliente } from '../controllers/AtencionCliente.mjs'
 import { cambioMoneda } from '../controllers/cambioMoneda.mjs';
+import { supervisor } from '../controllers/supervisor.mjs';
 
 const router = Router();
 //rutas de la api
@@ -68,6 +69,8 @@ router.post('/retirar_dinero', test.retirar_dinero);
 router.post('/generar_token', test.generar_token);
 
 
+/******Supervisor*********/
+router.get('/obtener_quejas', supervisor.obtenerQuejas);
 
 
 export default router;
