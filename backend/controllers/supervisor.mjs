@@ -182,10 +182,35 @@ const obtenerAdministradores = [auth.verifyToken, async (req, res) => {
     }
 }];
 
+const obtenerActividades = [auth.verifyToken, async (req, res) => {
+    try {
+        const [rows] = await db.query(
+            `SELECT 
+                CREACION as fecha,
+                CREA as empleado,
+                DESCRIPCION as actividad,
+                TIPO as tipo
+            FROM VISTA_ACTIVIDADES`
+        );
+
+        const response = {
+            "status": 200,
+            "message": "Actividades obtenidas correctamente",
+            "data": rows,
+        };
+
+        return res.status(200).json(response);
+    } catch (error) {
+        console.error("Error en obtenerActividades:", error.message);
+        return res.status(500).json({ "status": 500, "message": error.message });
+    }
+}];
+
 export const supervisor = {
     obtenerQuejas,
     registrarAdministrador,
     actualizarAdministrador,
     eliminarAdministrador,
     obtenerAdministradores,
+    obtenerActividades,
 };

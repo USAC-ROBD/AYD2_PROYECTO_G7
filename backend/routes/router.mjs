@@ -86,6 +86,7 @@ router.get('/obtener_administradores', supervisor.obtenerAdministradores);
 router.post('/registrar_administrador', supervisor.registrarAdministrador);
 router.post('/actualizar_administrador', supervisor.actualizarAdministrador);
 router.post('/eliminar_administrador', supervisor.eliminarAdministrador);
+router.get('/obtener_actividades', supervisor.obtenerActividades);
 
 
 export default router;
