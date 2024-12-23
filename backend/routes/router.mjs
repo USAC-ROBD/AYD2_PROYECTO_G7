@@ -80,7 +80,9 @@ router.post('/retirar_dinero', test.retirar_dinero);
 router.post('/generar_token', test.generar_token);
 
 /******Atención al cliente*********/
-
+router.post('/consultar_datos_cuenta', atencionCliente.consultarDatosCuenta)
+router.post('/consultar_datos_tarjeta', atencionCliente.consultarDatosTarjeta)
+router.post('/solicitud_cancelacion', atencionCliente.crearSolicitudCancelacion)
 
 
 
