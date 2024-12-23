@@ -319,3 +319,54 @@ BEGIN
 END //
 
 DELIMITER ;
+
+
+CREATE OR REPLACE VIEW VISTA_ACTIVIDADES AS
+SELECT CREACION, CREA, CONCAT('Se creó/actualizó el Usuario ', USUARIO, ' con ID ', ID_USUARIO) AS DESCRIPCION, 'Usuario' AS TIPO
+FROM USUARIO
+UNION
+SELECT CREACION, CREA, CONCAT('Se creó/actualizó el Cliente ', NOMBRE, ' ', APELLIDO, ' con CUI ', CUI), 'Cliente'
+FROM CLIENTE
+UNION
+SELECT CREACION, CREA, CONCAT('Se creó/actualizó la Cuenta ', CASE WHEN TIPO = 'M' THEN 'Monetaria' ELSE ' de Ahorro' END, ' con número ', NUMERO, ' y saldo ', SALDO), 'Cuenta'
+FROM CUENTA
+UNION
+SELECT CREACION, CREA, CONCAT('Se creó/actualizó la Tarjeta ', CASE WHEN TIPO = 'D' THEN ' de Débito' ELSE ' de Crédito' END, ' con número ', NUMERO, ' y saldo ', SALDO, ' para el cliente con CUI ', CUI), 'Tarjeta'
+FROM TARJETA
+UNION
+SELECT B.CREACION, B.CREA, CONCAT('Se realizó el bloqueo de la Tarjeta con número ', T.NUMERO, ' a nombre del cliente con CUI ', T.CUI, ' por motivo de ', CASE WHEN B.MOTIVO = 'R' THEN 'Robo' WHEN B.MOTIVO = 'P' THEN 'Pérdida' ELSE 'Fraude' END), 'Bloqueo'
+FROM BLOQUEO B
+    INNER JOIN TARJETA T ON B.ID_TARJETA = T.ID_TARJETA
+UNION
+SELECT CREACION, CREA, CONCAT('Se creó/actualizó la Solicitud ', CASE WHEN TIPO = 'C' THEN 'de Cancelación de Servicio' ELSE 'de Solicitud de Servicio' END, ' de tipo ', CASE WHEN TIPO_SERVICIO = 'T' THEN 'Tarjeta' ELSE 'Préstamo' END, ' con estado ', CASE WHEN ESTADO = 'P' THEN 'Pendiente' WHEN ESTADO = 'A' THEN 'Aprobada' ELSE 'Rechazada' END, ' para el cliente con CUI ', CUI), 'Solicitud'
+FROM SOLICITUD
+UNION
+SELECT CREACION, CREA, CONCAT('Se creó/actualizó la Encuesta con calificación ', ' para ', CASE WHEN CATEGORIA = 'A' THEN 'la Atención' WHEN CATEGORIA = 'P' THEN 'los Productos' ELSE 'los Servicios' END, ' del cliente con CUI ', CUI, ' y comentario ', COMENTARIO), 'Encuesta'
+FROM ENCUESTA
+UNION
+SELECT CREACION, CREA, CONCAT('Se creó/actualizó la Queja por ', CASE WHEN CATEGORIA = 'A' THEN 'Atención' WHEN CATEGORIA = 'P' THEN 'Productos' ELSE 'Servicios' END, ' del cliente con CUI ', CUI, ' y descripción ', DESCRIPCION), 'Queja'
+FROM QUEJA
+UNION
+SELECT CREACION, CREA, CONCAT('Se creó/actualizó el Servicio ', NOMBRE, ' de tipo ', CASE WHEN TIPO = '1' THEN 'Agua' WHEN TIPO = '2' THEN 'Electricidad' WHEN TIPO = '3' THEN 'Teléfono' ELSE 'Internet' END, ' con proveedor ', PROVEEDOR, ' y monto ', MONTO), 'Servicio'
+FROM SERVICIO
+UNION
+SELECT CREACION, CREA, CONCAT('Se creó/actualizó el Préstamo por monto ', MONTO, ' y saldo ', SALDO, ' para el cliente con CUI ', CUI), 'Préstamo'
+FROM PRESTAMO
+UNION
+SELECT CREACION, CREA, CONCAT('Se realizó el Pago de tipo ', CASE WHEN TIPO = 'S' THEN 'Servicio' WHEN TIPO = 'P' THEN 'Préstamo' ELSE 'Tarjeta' END, ' por monto ', MONTO, ' en modalidad ', CASE WHEN MODALIDAD = 'E' THEN 'Efectivo' ELSE 'Transferencia' END), 'Pago'
+FROM PAGO
+UNION
+SELECT R.CREACION, R.CREA, CONCAT('Se realizó el Retiro de tipo ', CASE WHEN R.TIPO = 'C' THEN 'Cajero' ELSE 'Ventanilla' END, ' por monto ', R.MONTO, ' en moneda ', CASE WHEN R.MONEDA = 'Q' THEN 'Quetzales' ELSE 'Dólares' END, ' para la cuenta número ', C.NUMERO, ' del cliente con CUI ', C.CUI), 'Retiro'
+FROM RETIRO R
+    INNER JOIN CUENTA C ON R.ID_CUENTA = C.ID_CUENTA
+UNION
+SELECT D.CREACION, D.CREA, CONCAT('Se realizó el Depósito de tipo ', CASE WHEN D.TIPO = 'E' THEN 'Efectivo' ELSE 'Transferencia' END, ' por monto ', D.MONTO, ' en moneda ', CASE WHEN D.MONEDA = 'Q' THEN 'Quetzales' ELSE 'Dólares' END, ' para la cuenta número ', C.NUMERO, ' del cliente con CUI ', C.CUI), 'Depósito'
+FROM DEPOSITO D
+    INNER JOIN CUENTA C ON D.ID_CUENTA = C.ID_CUENTA
+UNION
+SELECT CREACION, CREA, CONCAT('Se creó/actualizó la Divisa ', NOMBRE, ' con símbolo ', SIMBOLO, ' y valor de compra ', VALOR_COMPRA, ' y valor de venta ', VALOR_VENTA), 'Divisa'
+FROM DIVISA
+UNION
+SELECT FECHA_CAMBIO, CREA, CONCAT('Se realizó el Cambio de Moneda por monto ', MONTO, ' de ', MONEDA_ORIGEN, ' a ', MONEDA_DESTINO, ' para el cliente con CUI ', CUI), 'Cambio de Moneda'
+FROM CAMBIO_MONEDA
+ORDER BY CREACION DESC;
