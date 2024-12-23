@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import MenuCajero from "../../components/Cajero/MenuCajero";
 import MenuSupervisor from "../../components/Supervisor/MenuSupervisor";
 import MenuAtencion from "../../components/AtencionCliente/MenuAtencion";
+import MenuAdmin from "../../components/Administrador/Menu";
 import useAuth from "../../hook/useAuth";  // Importamos el hook personalizado
 
 function Menu() {
@@ -15,7 +16,8 @@ function Menu() {
   // Renderiza el menú correspondiente según el rol
   switch (rol) {
     case 1:
-      return <div>Pendiente de Implementar...</div>;
+      // return <MenuCajero user={user} rol="Cajero" />;
+      return <MenuAdmin user={user} rol="Administrador" />;
     case 2:
       return <MenuCajero user={user} rol="Cajero" />;
     case 3:

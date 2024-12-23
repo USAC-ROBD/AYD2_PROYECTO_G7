@@ -14,6 +14,7 @@ export default function FormBloqueoTarjeta() {
         preguntaSeguridad: '',
         cuiCuentaTitular: '',
         titular: '',
+        correo: '',
     });
 
     const handleChange = (e) => {
@@ -39,13 +40,14 @@ export default function FormBloqueoTarjeta() {
         if(response.ok) {
             const data = await response.json()
             if(data.encontrado) {
-                const { NUMERO, NOMBRE, ESTADO, ID_TARJETA } = data.tarjeta
+                const { NUMERO, NOMBRE, ESTADO, ID_TARJETA, EMAIL } = data.tarjeta
                 if(ESTADO === 'A') {
                     setFormData({
                         ...formData,
                         idTarjeta: ID_TARJETA,
                         noTarjeta: NUMERO,
                         titular: NOMBRE,
+                        correo: EMAIL,
                     });
                 } else {
                     Swal.fire({
@@ -67,6 +69,7 @@ export default function FormBloqueoTarjeta() {
             idTarjeta: '',
             noTarjeta: '',
             titular: '',
+            correo: '',
         });
     }
 
@@ -96,7 +99,7 @@ export default function FormBloqueoTarjeta() {
             if(data.bloqueada) {
                 Swal.fire({
                     icon: "success",
-                    title: "¡Tarjeta Bloqueada!",
+                    title: "¡Tarjeta Bloqueada!\n¡Revisa tu correo!",
                     showConfirmButton: false,
                     timer: 2000,
                 });
@@ -126,6 +129,7 @@ export default function FormBloqueoTarjeta() {
         formData.preguntaSeguridad = ''
         formData.cuiCuentaTitular = ''
         formData.titular = ''
+        formData.correo = ''
     }
 
     const handleCancelar = () => {

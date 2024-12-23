@@ -1,10 +1,22 @@
 import { Administrador } from "../models/Administrador.mjs";
+import { Cliente } from "../models/Cliente.mjs";
 
 class UsuarioFactory {
-    static crearUsuario(tipo, id_usuario, usuario, cui, nombre, apellido, telefono, correo, params) {
+    static crearUsuario(tipo, id_usuario, usuario, cui, nombre, apellido, telefono, correo, params, direccion, pregunta, respuesta) {
         switch (tipo) {
-            // case 'cliente':
-            //     return new Cliente();
+            case 'cliente':
+                return new Cliente(
+                    cui,
+                    nombre,
+                    apellido,
+                    direccion,
+                    telefono,
+                    correo,
+                    pregunta,
+                    respuesta,
+                    params.values,
+                    params.query,
+                );
             // case 'supervisor':
             //     return new Supervisor();
             case 'admin':
