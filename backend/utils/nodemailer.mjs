@@ -46,4 +46,19 @@ const updateAccountMail = (usuario) => {
     }
 }
 
-export { transporter, confirmationAccountMail, updateAccountMail }
+const deactiveCard = (usuario, tarjeta) => {
+    return {
+        from: process.env.EMAIL_ORIGIN,
+        to: usuario.correo,
+        subject: 'Bloqueo de tarjeta',
+        html: `<h3>Hola ${usuario.titular},</h3>
+            <p>Se ha bloqueado tu tarjeta ${tarjeta.numero} en nuestra plataforma con el titular:</p>
+            <p>Nombre: ${usuario.titular}</p>
+            <p>Motivo: ${tarjeta.motivo}</p>
+
+
+            <p>Mantente seguro y no compartas tus credenciales con nadie.</p>`
+    }
+}
+
+export { transporter, confirmationAccountMail, updateAccountMail, deactiveCard }
