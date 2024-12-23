@@ -2003,12 +2003,14 @@ Base de Datos
 
 ### 1. SINGLETON
 
+![Singleton](./assets/Diagramas/Singleton.png)
+
 El patrón de diseño Singleton es un patrón creacional que garantiza que una clase tenga una única instancia en toda la aplicación y proporciona un punto de acceso global a esa instancia.
 
 Caractersticas:
 
 - Única instancia: Solo existe un objeto de la clase.
-- Punto de acceso global: Se puede acceder a esa instancia desde cualquier parte del código.
+- Punto de acceso global: Se puede acceder a esa instancia desde cualquier controlador o parte del codigo.
 
 #### Implementación
 
@@ -2025,6 +2027,8 @@ Caractersticas:
 - Proporciona un punto de acceso global en la aplicación para que sea facil de usar.
 
 ### 2. PROXY
+
+![Middleware](./assets/Diagramas/Middleware.png)
 
 El patrón Proxy actúa como un intermediario o representante para otro objeto, permitiendo controlar el acceso a él. El objetivo principal es ofrecer una capa adicional de control antes de interactuar con el objeto real, ya sea para verificar permisos, optimizar recursos, o agregar funcionalidades sin modificar la implementación original.
 
