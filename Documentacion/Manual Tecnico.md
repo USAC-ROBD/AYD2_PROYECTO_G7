@@ -2026,33 +2026,32 @@ Caractersticas:
 
 - Proporciona un punto de acceso global en la aplicación para que sea facil de usar.
 
-### 2. PROXY
+### 2. MIDDLEWARE
 
 ![Middleware](./assets/Diagramas/Middleware.png)
 
-El patrón Proxy actúa como un intermediario o representante para otro objeto, permitiendo controlar el acceso a él. El objetivo principal es ofrecer una capa adicional de control antes de interactuar con el objeto real, ya sea para verificar permisos, optimizar recursos, o agregar funcionalidades sin modificar la implementación original.
+Organiza el procesamiento de solicitudes en una aplicación mediante una cadena de componentes independientes que se ejecutan secuencialmente. Cada middleware realiza una tarea específica, como validación, autenticación o manipulación de datos, y puede decidir si continúa con el siguiente componente o interrumpe el flujo.
 
 Caractersticas:
 
-- **Intermediario**: Proporciona una capa de acceso indirecto al objeto real.
-- **Control de acceso**: Puede restringir o condicionar las operaciones en función de reglas predefinidas.
-- **Desacoplamiento**: Separa la lógica del cliente y del objeto real, manteniendo el sistema modular.
+- **Encadenamiento de funciones**: Los middlewares están diseñados para ejecutarse en secuencia, donde cada componente puede realizar una tarea específica y luego pasar el control al siguiente mediante un mecanismo como next(). Esto permite un flujo de procesamiento flexible y controlado.
+- **Separación de responsabilidades**: Cada middleware se enfoca en una única responsabilidad, como validación, autenticación o registro de datos, lo que facilita la modularidad y el mantenimiento del código al mantener las funciones bien definidas y reutilizables.
+- **Intercepción y control del flujo**: Los middlewares tienen la capacidad de interrumpir o modificar el flujo de ejecución antes de que la solicitud llegue a su destino final. Esto permite manejar errores, realizar verificaciones o cambiar los datos en el camino.
 
 #### Implementación
 
-- Validación de identidad en operaciones sensibles:
-  - Para Actualización de datos, bloqueo de tarjetas, y cancelación de servicios.
-  - Un Protection Proxy verifica que el cliente esté autorizado para realizar la operación (por ejemplo, usando una pregunta de seguridad).
-- Optimización en la creación de recursos:
-  - Para Creación de cuentas o tarjetas.
-  - Un Virtual Proxy asegura que el número de cuenta o tarjeta solo se genere tras completar validaciones previas.
+- Implementación de endpoints con `Express.js`
+- Implementación de rutas con `Express.js`
 
 #### Ventajas
 
-- Protege recursos críticos mediante validaciones antes de otorgar acceso.
-- Facilita la extensión o modificación de funcionalidades sin afectar directamente al objeto real.
-- Proporciona un punto de acceso global en la aplicación para que sea facil de usar.
-- Mantiene el código del objeto real más limpio y enfocado en sus funciones principales.
+- **Modularidad y reutilización**: Cada middleware se implementa como una función independiente con una responsabilidad clara. Esto permite reutilizarlo en diferentes rutas o procesos, reduciendo duplicación y mejorando el mantenimiento.
+
+- **Flexibilidad en el flujo de ejecución**: Los middlewares pueden controlar si una solicitud avanza al siguiente paso, regresan una respuesta inmediata o interrumpen el flujo en caso de errores. Esto facilita el manejo dinámico de solicitudes según las condiciones.
+
+- **Mantenimiento simplificado**: La separación de responsabilidades permite localizar y solucionar errores rápidamente, ya que cada middleware maneja una parte específica del proceso, haciendo el código más legible y fácil de depurar.
+
+- **Extensibilidad y escalabilidad**: Es sencillo agregar nuevas funciones al flujo, como validaciones adicionales, autenticación o registro, simplemente insertando nuevos middlewares en la cadena sin modificar los existentes. Esto permite que la aplicación crezca de manera ordenada.
 
 ### 3. CONTAINER-PRESENTATIONAL
 
@@ -2074,23 +2073,16 @@ Presentational Components:
 
 #### Ventajas
 
-Separación de responsabilidades:
-Facilita mantener y escalar la aplicación al separar lógica de negocio de la interfaz visual.
-Reutilización:
-Los Presentational Components son reutilizables en diferentes partes de la aplicación, ya que no dependen del estado global o la lógica de negocio.
-Facilita pruebas unitarias:
-Los Presentational Components son más fáciles de probar debido a su naturaleza pura (sin dependencias externas).
-Claridad:
-Facilita entender el propósito de cada componente, mejorando la legibilidad del código.
+- **Separación de responsabilidades**: Facilita mantener y escalar la aplicación al separar lógica de negocio de la interfaz visual.
+- **Reutilización**: Los Presentational Components son reutilizables en diferentes partes de la aplicación, ya que no dependen del estado global o la lógica de negocio.
+- **Facilita pruebas unitarias**: Los Presentational Components son más fáciles de probar debido a su naturaleza pura (sin dependencias externas).
+- **Claridad**: Facilita entender el propósito de cada componente, mejorando la legibilidad del código.
 
 #### Desventajas
 
-Sobrecarga inicial:
-Puede ser más complejo estructurar la aplicación en pequeños componentes si el equipo no está familiarizado con el patrón.
-Mayor número de componentes:
-Aumenta el número total de archivos y componentes, lo que podría ser innecesario para aplicaciones pequeñas.
-Dependencia de bibliotecas:
-Los Container Components a menudo dependen de herramientas como Redux o Context API, lo que puede aumentar la complejidad.
+- **Sobrecarga inicial**: Puede ser más complejo estructurar la aplicación en pequeños componentes si el equipo no está familiarizado con el patrón.
+- **Mayor número de componentes**: Aumenta el número total de archivos y componentes, lo que podría ser innecesario para aplicaciones pequeñas.
+- **Dependencia de bibliotecas**: Los Container Components a menudo dependen de herramientas como Redux o Context API, lo que puede aumentar la complejidad.
 
 ### 4. COMMAND
 
