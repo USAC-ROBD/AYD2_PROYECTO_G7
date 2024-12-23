@@ -1,17 +1,16 @@
 import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { Container, Button, Form, Row, Col } from 'react-bootstrap';
-import Logo from '../../assets/logo.png';
 import useAuth from '../../hook/useAuth';
 import DTable from '../../components/General/DTable';
 
 function Monitoreo() {
     const navigate = useNavigate();
     const { user, rol } = useAuth(); // Usamos el hook personalizado para obtener el usuario y rol
+    const [isLoading, setIsLoading] = useState(true);
+    
     const [actividades, setActividades] = useState([]);
     const [tipos, setTipos] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
-
     const [filtros, setFiltros] = useState({ empleado: '', fecha: '', tipo: '' });
 
     useEffect(() => {
@@ -137,17 +136,23 @@ function Monitoreo() {
 
             <Row className="mt-2" style={{ width: '100%' }}>
                 <Col>
-                    <DTable
-                        columns={[
-                            { name: 'Fecha', selector: row => formatDate(row.fecha), sortable: true, width: '200px' },
-                            { name: 'Empleado', selector: row => row.empleado, sortable: true, width: '200px' },
-                            { name: 'Actividad', selector: row => row.actividad, sortable: true, width: '800px' },
-                            { name: 'Tipo', selector: row => row.tipo, sortable: true, width: '200px' },
-                        ]}
-                        data={actividadesFiltradas}
-                        expanded={true}
-                        rowsPerPage={8}
-                    />
+                    {
+                        actividadesFiltradas.length > 0 ? (
+                            <DTable
+                                columns={[
+                                    { name: 'Fecha', selector: row => formatDate(row.fecha), sortable: true, width: '200px' },
+                                    { name: 'Empleado', selector: row => row.empleado, sortable: true, width: '200px' },
+                                    { name: 'Actividad', selector: row => row.actividad, sortable: true, width: '800px' },
+                                    { name: 'Tipo', selector: row => row.tipo, sortable: true, width: '200px' },
+                                ]}
+                                data={actividadesFiltradas}
+                                expanded={true}
+                                rowsPerPage={8}
+                            />
+                        ) : (
+                            <h3 className="text-center mt-3">Buscando actividades...</h3>
+                        )
+                    }
                 </Col>
             </Row>
         </Container>
