@@ -2124,7 +2124,7 @@ Características:
 - Crea objetos basados en clases abstractas o interfaces.
 - Facilita la configuración y validación de objetos al momento de su creación.
 
-![Middleware](./assets/Diagramas/Factory.png)
+![Factory](./assets/Diagramas/Factory.png)
 
 ### Implementación
 - Define una clase o método estático encargado de crear instancias.
