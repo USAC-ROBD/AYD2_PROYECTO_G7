@@ -10,7 +10,7 @@ const app = express();
 // Configuración de CORS
 const corsOptions = {
   origin: (origin, callback) => {
-    const allowedOrigins = ['http://3.86.208.255', 'http://localhost:4000', 'http://localhost:3000'];
+    const allowedOrigins = ['http://3.86.208.255', process.env.FRONT_URL || 'http://localhost:3000'];
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
