@@ -1,8 +1,8 @@
 // Propósito: Controlador de ejemplo para mostrar el funcionamiento de la API
-import configurations from "../utils/configurations.mjs";
 import db from "../utils/db_connection.mjs";
 import nodemailer from 'nodemailer';
 import bcrypt from 'bcrypt';
+import { transporter, credentialsUser, updatePassword} from "../utils/nodemailer.mjs";
 
 const registrar_usuario = async (req, res) => {
     try {
@@ -13,38 +13,22 @@ const registrar_usuario = async (req, res) => {
         const contraseña = Generar_Contraseña()
 
         const hashed_password = bcrypt.hashSync(contraseña, bcrypt.genSaltSync(10))
-
-        console.log(usuario)
         
         // Ejecuta la consulta para registrar el usuario
         const [rows] = await db.query(
-            `INSERT INTO usuario (USUARIO, CONTRASENA, NOMBRE, APELLIDO, CORREO, ESTADO, ID_ROL, CREA, ACTUALIZA, TELEFONO, EDAD, PAPELERIA, FOTO, GENERO, DPI, ESTADO_CIVIL) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+            `INSERT INTO usuario (USUARIO, CONTRASENA, NOMBRE, APELLIDO, CORREO, ESTADO, ID_ROL, CREA, ACTUALIZA, TELEFONO, EDAD, PAPELERIA, FOTO, GENERO, CUI, ESTADO_CIVIL) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
             [usuario,hashed_password,nombre,apellido,correo,'A',rol,'admin','admin',telefono,edad,papeleria,fotografia,genero,dpi,estado_civil]
         );
 
         // Verifica si algún registro fue afectado
         if (rows.affectedRows > 0) {
-            const transporter = nodemailer.createTransport({
-                service: 'gmail',
-                auth: {
-                    user: 'juanpablogonzalez017@gmail.com',
-                    pass: 'xzvu svpw dswo otfw'
-                }
-            });
-        
-            const mailOptions = {
-                from: 'juanpablogonzalez017@gmail.com',
-                to: correo,
-                subject: 'Datos de usuario',
-                text: `Este es su usuario y contraseña para poder ingresar al sistema: \n${usuario} \n${contraseña}`,
-            };
-        
-            // Enviar el correo
-            transporter.sendMail(mailOptions, (error, info) => {
+            const mail = credentialsUser(usuario,correo,contraseña);
+
+            transporter.sendMail(mail, (error, info) => {
                 if (error) {
-                    return res.status(500).json({ "status": 500, "message": "Error con el correo electronico del cliente" });
-                } else {
-                    return res.status(200).json({ "status": 200, "message": "Cuentra creada con correctamente" });
+                    console.error("Error al enviar el correo de actualización:", error.message);
+                }else{
+                    return res.status(200).json({ "status": 200, "message": "Datos para inicio de sesion Usuario" });
                 }
             });
         } else {
@@ -251,20 +235,14 @@ const cambiar_contrasena = async (req, res) => {
         [hashed_password, id_usuario]
     );
 
-    const mailOptions = {
-        from: 'juanpablogonzalez017@gmail.com',
-        to: email,
-        subject: 'Nueva contraseña',
-        text: `Se ha generado una nueva contraseña para su usuario porfabor no la comparta con nadie mas: ${contraseña}`,
-    };
+    const mail = updatePassword(email,contraseña);
 
-    // Enviar el correo
-    transporter.sendMail(mailOptions, (error, info) => {
+    transporter.sendMail(mail, (error, info) => {
         if (error) {
-            return res.status(500).json({ "status": 500, "message": "Error con el correo electronico del cliente" });
-        } else {
-            return res.status(200).json({ "status": 200, "message": "Contrasena enviada al correo del usuario" });
-        }
+            console.error("Error al enviar el correo de actualización:", error.message);
+            }else{
+                return res.status(200).json({ "status": 200, "message": "Contraseña actualizada" });
+            }
     });
 }
 
