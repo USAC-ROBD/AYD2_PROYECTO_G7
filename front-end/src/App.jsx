@@ -2,6 +2,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import PagoServicios from "./pages/Cajero/PagoServicios";
 import PagoPrestamos from "./pages/Cajero/PagoPrestamos";
 import Menu from "./pages/General/Menu";
+import AdminEmpleado from "./pages/Adminitrador_de_Sistemas/AdminEmpleado"
+import AccionAdmin from "./pages/Adminitrador_de_Sistemas/AdminAccion"
 import Login from "./pages/General/Login";
 import Confirmacion from "./pages/General/ConfirmarCuenta";
 import HomeConsultas from "./pages/Cajero/Consultas";
@@ -62,6 +64,10 @@ function App() {
         <Route path="/gestion-inventario" element={<GestionInventario />} />
         <Route path="/tarjetas" element={<Tarjetas />} />
         <Route path="/cancelaciones" element={<Cancelaciones />} />
+      </Routes>
+      <Routes>
+        <Route path="/menu-admin-empleado" element={<AdminEmpleado/>}/>
+        <Route path="/accion-admin" element={<AccionAdmin/>}/>
       </Routes>
     </Router>
   );
