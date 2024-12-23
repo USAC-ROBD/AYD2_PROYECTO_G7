@@ -52,10 +52,8 @@ router.get('/empleado', administrador.obtener_usuario);
 
 router.post('/eliminar-empleado', administrador.eliminar_usuario);
 
-router.post('/cambiar-contrasena',administrador.cambiar_contrasena)
+router.post('/cambiar-contrasena',administrador.cambiar_contrasena);
 
-
-
-
+router.post('/registrar-usuario',administrador.registrar_usuario)
 
 export default router;

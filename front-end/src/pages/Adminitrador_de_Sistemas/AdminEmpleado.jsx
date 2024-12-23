@@ -16,12 +16,12 @@ function AdminEmpleado() {
 
     useEffect(() => {
         if (!user) {
-            console.log("Usuario no proporcionado, redirigir o manejar error.");
+          return navigate('/');
         }
     }, [user]); // useEffect dependerá de `user`
 
     if (!user) {
-        return <div>No se ha proporcionado un usuario.</div>;
+        return navigate('/');
     }
 
     return (
