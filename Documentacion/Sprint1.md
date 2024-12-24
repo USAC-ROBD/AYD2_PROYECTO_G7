@@ -127,7 +127,7 @@ Este enfoque garantizará que los módulos principales estén operativos, permit
 |-------------------------|----------------------------------------------------------------|---------------------------------------------------------|
 | **Steven González**     | BI-01: Implementar JWT para Login                              | Retraso por entrega del caso Zara en la clase magistral |
 | **Robin Buezo**         |                                                                |                                                         |
-| **Danny Tejaxun**       |                                                                |                                                         |
+| **Danny Tejaxun**       | BI-12: Login (validaciones de tipo de usuario) / Home          |                                                         |
 | **Eduardo Llamas**      |                                                                |                                                         |
 | **Juan Pablo González** |                                                                |                                                         |
 
@@ -151,7 +151,7 @@ Este enfoque garantizará que los módulos principales estén operativos, permit
 |-------------------------|----------------------------------------------------------------|------------------------------------|
 | **Steven González**     | BI-02: Pago servicios                                          |                                    |
 | **Robin Buezo**         |                                                                |                                    |
-| **Danny Tejaxun**       |                                                                |                                    |
+| **Danny Tejaxun**       | BI-13: Creación cuentas                                        | Visita al médico                   |
 | **Eduardo Llamas**      |                                                                |                                    |
 | **Juan Pablo González** |                                                                |                                    |
 
@@ -177,7 +177,7 @@ Este enfoque garantizará que los módulos principales estén operativos, permit
 |                         | BI-04 Busqueda clientes                                        |                                    |
 |                         | BI-05 : Consulta Saldos                                        |                                    |
 | **Robin Buezo**         |                                                                |                                    |
-| **Danny Tejaxun**       |                                                                |                                    |
+| **Danny Tejaxun**       | BI-14: Actualización de datos cliente                          | Visita al médico                   |
 | **Eduardo Llamas**      |                                                                |                                    |
 | **Juan Pablo González** |                                                                |                                    |
 
@@ -204,7 +204,7 @@ Este enfoque garantizará que los módulos principales estén operativos, permit
 |                         | BI-08: Retiros                                            |                                    |
 |                         | BI-08: Depositos                                          |                                    |
 | **Robin Buezo**         |                                                           |                                    |
-| **Danny Tejaxun**       |                                                           |                                    |
+| **Danny Tejaxun**       | BI-15: Crear nuevas tarjetas (crédito o débito)           |                                    |
 | **Eduardo Llamas**      |                                                           |                                    |
 | **Juan Pablo González** |                                                           |                                    |
 
@@ -229,7 +229,7 @@ Este enfoque garantizará que los módulos principales estén operativos, permit
 | **Steven González**     | BI-10: Pago de Tarjetas                                        |                                    |
 |                         | BI-11: Dockerización  y Despliegue                             |                                    |
 | **Robin Buezo**         |                                                                |                                    |
-| **Danny Tejaxun**       |                                                                |                                    |
+| **Danny Tejaxun**       | BI-16: Bloqueo de tarjetas                                     |                                    |
 | **Eduardo Llamas**      |                                                                |                                    |
 | **Juan Pablo González** |                                                                |                                    |
 
