@@ -2114,6 +2114,8 @@ Puedes almacenar y ejecutar una secuencia de comandos. También puedes hacer una
 
 Dado todo lo anterior, hemos optado por este patron de diseño ya que nos será de mucha utilidad para la ejecución de las operaciones transaccionales del sistema como retiros, pagos, depósitos, etc. Incluso nos puede ser de gran ayuda con el manejo de solicitudes de clientes, como lo son las solicitudes de cancelación de servicios, la solicitudes de tarjetas, solicitudes de restablecimiento de contraseña, etc.
 
+![Middleware](./assets/Diagramas/command.png)
+
 ### 5. FACTORY PATTERN
 El Patrón Factory  Pattern, es un patron de diseño creacional que perite instanciar objetos sin exponer su lógica  de cracion. Para u sistema bancario, su implementación aporta beneficios clave en términos de escalabilida, flexibiliad y mantenimiento.
 
