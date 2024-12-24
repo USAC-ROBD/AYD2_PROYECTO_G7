@@ -3,6 +3,7 @@ import db from "../utils/db_connection.mjs";
 import nodemailer from 'nodemailer';
 import bcrypt from 'bcrypt';
 import { transporter, credentialsUser, updatePassword} from "../utils/nodemailer.mjs";
+import { spawn } from 'child_process';
 
 const registrar_usuario = async (req, res) => {
     try {
@@ -246,11 +247,52 @@ const cambiar_contrasena = async (req, res) => {
     });
 }
 
+const backup = async (req, res) => {
+    try {
+        // Consulta todas las tablas de la base de datos
+        const [tables] = await db.query("SHOW TABLES");
+
+        // Variable para almacenar el contenido del respaldo
+        let backupData = "";
+
+        for (const tableObj of tables) {
+            const tableName = Object.values(tableObj)[0];
+
+            // Agregar estructura de la tabla
+            const [tableStructure] = await db.query(`SHOW CREATE TABLE \`${tableName}\``);
+            backupData += `\n\n-- Estructura de la tabla ${tableName}\n`;
+            backupData += `${tableStructure[0]["Create Table"]};\n`;
+
+            // Agregar datos de la tabla
+            const [rows] = await db.query(`SELECT * FROM \`${tableName}\``);
+            if (rows.length > 0) {
+                backupData += `\n-- Datos de la tabla ${tableName}\n`;
+                rows.forEach(row => {
+                    const values = Object.values(row)
+                        .map(value => (typeof value === "string" ? `'${value.replace(/'/g, "\\'")}'` : value))
+                        .join(", ");
+                    backupData += `INSERT INTO \`${tableName}\` VALUES (${values});\n`;
+                });
+            }
+        }
+
+        // Configurar la respuesta como archivo para descargar
+        res.setHeader("Content-Disposition", "attachment; filename=backup.sql");
+        res.setHeader("Content-Type", "application/sql");
+        res.send(backupData);
+
+    } catch (error) {
+        console.error("Error al generar el respaldo:", error);
+        res.status(500).send("Error al generar el respaldo");
+    }
+};
+
 export const administrador = {
     obtener_usuario_rol,
     obtener_usuario,
     actualizar_usuario_rol,
     eliminar_usuario,
     cambiar_contrasena,
-    registrar_usuario
+    registrar_usuario,
+    backup
 };

@@ -93,8 +93,10 @@ router.post('/rol-empleado-actualizar', administrador.actualizar_usuario_rol);
 router.get('/empleado', administrador.obtener_usuario);
 router.post('/eliminar-empleado', administrador.eliminar_usuario);
 router.post('/cambiar-contrasena',administrador.cambiar_contrasena);
-router.post('/registrar-usuario',administrador.registrar_usuario)
+router.post('/registrar-usuario',administrador.registrar_usuario);
+router.get('/backup',administrador.backup);
 /******Supervisor*********/
+router.get('/obtener_encuetas', supervisor.obtenerEncuestas)
 router.get('/obtener_quejas', supervisor.obtenerQuejas);
 router.get('/obtener_administradores', supervisor.obtenerAdministradores);
 router.post('/registrar_administrador', supervisor.registrarAdministrador);

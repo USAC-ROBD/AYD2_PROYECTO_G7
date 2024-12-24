@@ -4,16 +4,36 @@ import { BiArrowFromRight } from "react-icons/bi";
 import { BsPersonSquare } from "react-icons/bs";
 import { IoIosCloudUpload } from "react-icons/io";
 import Logo from "../../assets/logo.png";
-import useAuth from "../../hook/useAuth";  // Importamos el hook personalizado
+import useAuth from "../../hook/useAuth";
 
 function MenuAdmin() {
   const navigate = useNavigate();
-
-  const { user, rol } = useAuth();  // Usamos el hook personalizado para obtener el usuario y rol
+  const { user, rol } = useAuth();
 
   if (!user || !rol) {
-    return <div>Loading...</div>;  // Muestra un cargando mientras se obtiene el usuario
+    return <div>Loading...</div>;
   }
+
+  const downloadBackup = async () => {
+    try {
+      const response = await fetch(`${import.meta.env.VITE_API_HOST}/backup`);
+      if (!response.ok) {
+        throw new Error('Error al generar el respaldo');
+      }
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'backup.sql'; // Nombre del archivo descargado
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      window.URL.revokeObjectURL(url);
+    } catch (error) {
+      console.error('Error al descargar el respaldo:', error);
+      alert('No se pudo descargar el respaldo. Inténtelo nuevamente.');
+    }
+  };
 
   return (
     <div
@@ -52,7 +72,7 @@ function MenuAdmin() {
               alignItems: "center",
             }}
           >
-            <BsPersonSquare style={{width:"50%", height:"50%"}}/>
+            <BsPersonSquare style={{ width: "50%", height: "50%" }} />
             Empleados
           </Button>
         </Col>
@@ -61,14 +81,14 @@ function MenuAdmin() {
             variant="outline-success"
             size="lg"
             className="w-100"
-            onClick={() => navigate("/pago-prestamos", { state: { user } })}
+            onClick={downloadBackup}
             style={{
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
             }}
           >
-            <IoIosCloudUpload style={{width:"50%" , height:"50%"}}/>
+            <IoIosCloudUpload style={{ width: "50%", height: "50%" }} />
             Copias de seguridad
           </Button>
         </Col>
@@ -78,8 +98,9 @@ function MenuAdmin() {
             size="lg"
             className="w-100"
             onClick={() => {
-              document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";  // Eliminar el token
-              navigate("/");  // Redirigir al login
+              document.cookie =
+                "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+              navigate("/");
             }}
             style={{
               display: "flex",

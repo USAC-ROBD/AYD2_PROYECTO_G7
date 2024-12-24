@@ -276,7 +276,38 @@ const obtenerDisponibilidadDia = [auth.verifyToken, async (req, res) => {
     }
 }];
 
+const obtenerEncuestas = async (req, res) => {
+    try {
+        const [rows] = await db.query(
+            `SELECT 
+                c.NOMBRE,
+                c.APELLIDO,
+                c.CUI,
+                e.CATEGORIA,
+                e.CALIFICACION,
+                e.COMENTARIO          
+            FROM 
+                encuesta as e
+            INNER JOIN
+                cliente as c
+            ON
+            c.CUI = e.CUI`
+        );
+
+        const response = {
+            "status": 200,
+            "data": rows,
+        };
+
+        return res.status(200).json(response);
+    } catch (error) {
+        console.error("Error en obtenerQuejas:", error.message);
+        return res.status(500).json({ "status": 500, "message": error.message });
+    }
+};
+
 export const supervisor = {
+    obtenerEncuestas,
     obtenerQuejas,
     registrarAdministrador,
     actualizarAdministrador,
