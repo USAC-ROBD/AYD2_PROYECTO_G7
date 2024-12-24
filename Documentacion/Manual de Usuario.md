@@ -226,3 +226,28 @@ Es posible buscar cuentas de usuarios mediante el número de una de sus cuentas 
 ![Inventario](./assets/manual_usuario/supervisor-inventario.png)
 
 ## Modulo Administrador de Sistemas
+
+![Descripción de la imagen](./assets/administrador/Prototipo/Menu%20admin.png)
+* opcion para entrar a gestionar empleado
+* opcion para hacer un backup
+
+![Descripción de la imagen](./assets/administrador/Prototipo/gestion%20para%20empleados.png)
+* Registro de empleado
+* Asignacion de roles
+* Eliminar empleado
+* Cambiar contraseña
+
+![Descripción de la imagen](./assets/administrador/Prototipo/registrar%20empleado.png)
+* Llenar los campos solicitados
+* Al se le enviara un mensaje al empleado su contraseña y usuario
+
+![Descripción de la imagen](./assets/administrador/Prototipo/cambiar%20contrasena.png)
+* boton para cada uno de los empleado y enviarles su nueva contraseña a su correo
+
+![Descripción de la imagen](./assets/administrador/Prototipo/cambio%20rol.png)
+* Por cada usuario seleccionado se mostrar el rol actual que posee
+* Seleccionar el nuevo rol
+
+![Descripción de la imagen](./assets/administrador/Prototipo/eliminar%20empleado.png)
+
+* Un boton que hace que elimine al empleado 
