@@ -233,3 +233,46 @@ Este enfoque garantizará que los módulos principales estén operativos, permit
 | **Eduardo Llamas**      |                                                                |                                    |
 | **Juan Pablo González** |                                                                |                                    |
 
+## Sprint Retrospective - Sprint 1
+
+**Fecha:** [Fecha de la retrospectiva]  
+**Facilitador:** [Nombre del facilitador]  
+**Participantes:**  
+
+1. Steven Gonzalez  
+2. Danny Tejaxun  
+3. Eduardo Llamas  
+4. Robin Buezo  
+5. Pablo Gonzalez
+
+---
+
+## **1. Resumen del Sprint**
+- **Duración:** [Fecha de inicio - Fecha de fin]  
+- **Objetivos principales:**  
+  - [Objetivo 1]  
+  - [Objetivo 2]  
+- **Resultado general:**  
+  - [Breve descripción de lo que se logró]
+
+---
+
+## **2. Qué funcionó bien (Strengths)**
+**Comentarios del equipo:**  
+- **Steven Gonzalez:** [Comentario positivo]  
+- **Danny Tejaxun:** [Comentario positivo]  
+- **Eduardo Llamas:** [Comentario positivo]  
+- **Robin Buezo:** [Comentario positivo]  
+- **Pablo Gonzalez:** [Comentario positivo]
+
+---
+
+## **3. Qué no funcionó (Challenges)**
+**Comentarios del equipo:**  
+- **Steven Gonzalez:** [Desafío identificado]  
+- **Danny Tejaxun:** [Desafío identificado]  
+- **Eduardo Llamas:** [Desafío identificado]  
+- **Robin Buezo:** [Desafío identificado]  
+- **Pablo Gonzalez:** [Desafío identificado]
+
+---
