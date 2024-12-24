@@ -153,6 +153,29 @@ Es posible buscar cuentas de usuarios mediante el número de una de sus cuentas 
 #### Deposito de Dinero
 
 
+1. Presionar el btón "Depositos"
+
+    ![Descripción de la imagen](./assets/manual_usuario/depositos1.png)
+
+2. Ingresar el numero de cuenta
+
+    ![Descripción de la imagen](./assets/manual_usuario/depositos2.png)
+
+3. Verificar los datos e ingresar el monto a depositar
+
+    ![Descripción de la imagen](./assets/manual_usuario/depositos3.png)
+
+    1. Debe cingresar el numero de cuenta proporcionada por el cliente
+    2. Debe confirmar con el cliente la información que se muestra del servicio.
+    3. Se debe ingresar el monto indicado por el cliente.
+    4. Presionar el botón ""Retirar".
+
+4. Ver Confirmación de Deposito
+
+    ![Descripción de la imagen](./assets/manual_usuario/depositos4.png)
+
+        * Se debe generar el comprobante del pago presionando el botón "Generar Comprobante".
+
 ## Módulo Atencion al Cliente
 
 ### Menú
@@ -261,5 +284,50 @@ Es posible buscar cuentas de usuarios mediante el número de una de sus cuentas 
     ![Menu](./assets/atencion_al_cliente/manualusuario/confirma9.png)
 
 ## Modulo Supervisor
+### Menú Principal
+![Menu-Supervisor](./assets/manual_usuario/supervisor-menu.png)
+
+        * Menú y pantalla de bienvenida del usuario Supervisor".
+
+### Registro de Quejas
+1. El supervisor debe hacer click en la opción 'Registro de Quejas'.
+![Menu-Quejas](./assets/manual_usuario/supervisor-menu-quejas.png)
+
+2. El supervisor podrá visualizar la lista de quejas y podrá ordenar las columnas.
+![Quejas](./assets/manual_usuario/supervisor-quejas.png)
+
+### Registrar Administradores del Sistema
+1. El supervisor debe hacer click en la opción 'Administradores'.
+![Menu-Admins](./assets/manual_usuario/supervisor-menu-admins.png)
+
+2. El supervisor podrá visualizar la lista de administradores y podrá ordenar las columnas.
+![Admins](./assets/manual_usuario/supervisor-admins.png)
+
+3. El supervisor deberá dar click en el botón 'Registrar'. El sistema abrirá un modal para el ingreso de los datos del nuevo administrador. El usuario debe llenar los campos y dar click en 'Registrar' o 'Cancelar' para cerrar el modal.
+![Admin](./assets/manual_usuario/supervisor-admin.png)
+
+4. El sistema enviará un correo de confirmación al correo del nuevo Adminstrador.
+![Admin-Correo](./assets/manual_usuario/supervisor-admin-correo.png)
+
+### Información de los Administradores del Sistema
+1. Estando dentro de la opción de 'Administradores' el supervisor deberá identificar al administrador y dar click en el botón 'Editar'. El sistema abrirá un modal con los datos del administrador para que se puedan actualizar o bien eliminar el usuario. El usuario debe actualizar los campos y dar click en 'Editar' para guardar, en el botón 'Cancelar' para cerrar el modal o en el botón 'Eliminar' para eliminar el usuario.
+![Admin](./assets/manual_usuario/supervisor-admin-editar.png)
+
+2. El sistema enviará un correo de notificación al supervisor con los nuevos datos.
+![Admin-Correo](./assets/manual_usuario/supervisor-admin-correo-notifica.png)
+
+### Monitoreo de Actividad en Tiempo Real
+1. El supervisor debe hacer click en la opción 'Registro de Quejas'.
+![Menu-Monitoreo](./assets/manual_usuario/supervisor-menu-monitoreo.png)
+
+2. El supervisor podrá visualizar el monitoreo en tiempo real de las transacciones, ordenar columnas o aplicar filtros en caso de ser necesario.
+![Monitoreo](./assets/manual_usuario/supervisor-monitoreo.png)
+
+### Gestión de Inventarios Bancarios
+1. El supervisor debe hacer click en la opción 'Gestión de Inventario Bancario'.
+![Menu-Inventario](./assets/manual_usuario/supervisor-menu-inventario.png)
+
+2. El supervisor podrá visualizar el inventario actual en cada moneda, las tendencias de ganancias o pérdidas y los movimientos en los cuales podrá ordenar o filtrar.
+![Inventario](./assets/manual_usuario/supervisor-inventario.png)
 
 ## Modulo Administrador de Sistemas
