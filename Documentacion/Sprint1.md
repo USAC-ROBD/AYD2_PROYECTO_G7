@@ -64,12 +64,15 @@
 Durante este sprint, el objetivo principal es desarrollar y desplegar manualmente aproximadamente el 80% del sistema bancario **Money Bin**, logrando una base sólida para las operaciones bancarias fundamentales. Se busca cubrir los siguientes módulos clave:
 
 1. **Módulo Cajero**
+
    - Implementar funcionalidades esenciales como gestión de pagos, retiros, depósitos, y consulta de saldo, garantizando una experiencia de usuario fluida y segura.
 
 2. **Módulo Atención al Cliente**
+
    - Desarrollar herramientas para la creación y gestión de cuentas, soporte al cliente, y administración de tarjetas, priorizando la interacción eficiente con los usuarios.
 
 3. **Módulo Supervisor**
+
    - Incorporar capacidades para monitorear actividades y gestionar encuestas de satisfacción, fortaleciendo el control y supervisión del sistema.
 
 4. **Módulo Administrador de Sistemas**
@@ -103,13 +106,13 @@ Este enfoque garantizará que los módulos principales estén operativos, permit
 
 #### Avances e impedimentos
 
-| Integrante              | Tarea Realizada (Día Anterior)  | Impedimentos                                                   |
-|-------------------------|---------------------------------|----------------------------------------------------------------|
-| **Steven González**     | NA                              | Se priorizó la realización del caso Zara de la clase magistral |
-| **Robin Buezo**         | NA                              | Se priorizó la realización del caso Zara de la clase magistral |
-| **Danny Tejaxun**       | NA                              | Se priorizó la realización del caso Zara de la clase magistral |
-| **Eduardo Llamas**      | NA                              | Se priorizó la realización del caso Zara de la clase magistral |
-| **Juan Pablo González** | NA                              | Se priorizó la realización del caso Zara de la clase magistral |
+| Integrante              | Tarea Realizada (Día Anterior) | Impedimentos                                                   |
+| ----------------------- | ------------------------------ | -------------------------------------------------------------- |
+| **Steven González**     | NA                             | Se priorizó la realización del caso Zara de la clase magistral |
+| **Robin Buezo**         | NA                             | Se priorizó la realización del caso Zara de la clase magistral |
+| **Danny Tejaxun**       | NA                             | Se priorizó la realización del caso Zara de la clase magistral |
+| **Eduardo Llamas**      | NA                             | Se priorizó la realización del caso Zara de la clase magistral |
+| **Juan Pablo González** | NA                             | Se priorizó la realización del caso Zara de la clase magistral |
 
 ---
 
@@ -132,8 +135,8 @@ Este enfoque garantizará que los módulos principales estén operativos, permit
 | **Steven González**     | BI-01: Implementar JWT para Login                              | Retraso por entrega del caso Zara en la clase magistral |
 | **Robin Buezo**         |                                                                |                                                         |
 | **Danny Tejaxun**       | BI-12: Login (validaciones de tipo de usuario) / Home          |                                                         |
-| **Eduardo Llamas**      |                                                                |                                                         |
 | **Juan Pablo González** | BI-22: Login / Home                                                               |    Retraso por entrega del caso Zara en la clase magistral                                                     |
+| **Eduardo Llamas**      | BI-17: Solicitudes de cancelación de servicios | Entrega de caso en la clase magistral                   |
 
 ---
 
@@ -156,8 +159,8 @@ Este enfoque garantizará que los módulos principales estén operativos, permit
 | **Steven González**     | BI-02: Pago servicios                                          |                                    |
 | **Robin Buezo**         |                                                                |                                    |
 | **Danny Tejaxun**       | BI-13: Creación cuentas                                        | Visita al médico                   |
-| **Eduardo Llamas**      |                                                                |                                    |
 | **Juan Pablo González** |  BI-23: Registro empleado                                                            |    No supe como bien como estructurar la paginas y componentes para que no dieran error                                |
+| **Eduardo Llamas**      | BI-17: Solicitudes de cancelación de servicios |              |
 
 ---
 
@@ -182,8 +185,8 @@ Este enfoque garantizará que los módulos principales estén operativos, permit
 |                         | BI-05 : Consulta Saldos                                        |                                    |
 | **Robin Buezo**         |                                                                |                                    |
 | **Danny Tejaxun**       | BI-14: Actualización de datos cliente                          | Visita al médico                   |
-| **Eduardo Llamas**      |                                                                |                                    |
 | **Juan Pablo González** |  BI-24: Asignación de roles                                                              | Ninguno                                   |
+| **Eduardo Llamas**      | BI-19: Encuestas de satisfacción |              |
 
 ---
 
@@ -209,8 +212,8 @@ Este enfoque garantizará que los módulos principales estén operativos, permit
 |                         | BI-08: Depositos                                          |                                    |
 | **Robin Buezo**         |                                                           |                                    |
 | **Danny Tejaxun**       | BI-15: Crear nuevas tarjetas (crédito o débito)           |                                    |
-| **Eduardo Llamas**      |                                                           |                                    |
 | **Juan Pablo González** |                                                           |                                    |
+| **Eduardo Llamas**      | BI-21: Registro de quejas      |              |
 
 ---
 
@@ -228,14 +231,14 @@ Este enfoque garantizará que los módulos principales estén operativos, permit
 
 #### Avances e impedimentos
 
+| **Steven González**     | BI-10: Pago de Tarjetas                                        |                                    |
 | Integrante              | Tarea Realizada (Día Anterior)                                 | Impedimentos                       |
 |-------------------------|----------------------------------------------------------------|------------------------------------|
-| **Steven González**     | BI-10: Pago de Tarjetas                                        |                                    |
 |                         | BI-11: Dockerización  y Despliegue                             |                                    |
 | **Robin Buezo**         |                                                                |                                    |
 | **Danny Tejaxun**       | BI-16: Bloqueo de tarjetas                                     |                                    |
-| **Eduardo Llamas**      |                                                                |                                    |
 | **Juan Pablo González** |    BI-26: Login (validaciones de tipo de usuario) / Home                                                            | Ninguno pero me di cuenta al finalizar que ya estaba el menu, me enferme de estomago y gripe                         |
+| **Eduardo Llamas**      | BI-18: Permitir cuentas en dólares | Requerimiento ambiguo |
 
 ## Sprint Retrospective - Sprint 1
 
