@@ -2,8 +2,6 @@
 
 ## Sprint Backlog
 
-## Sprint Backlog
-
 | Persona | Área | Tareas | Estado | Comentario |
 |---------|------|--------|--------|------------|
 | **Steven** | **Cajero** | | | |
@@ -44,8 +42,8 @@
 |  |  | - BI-30: Ver registros de quejas | Completado | |
 |  |  | - BI-31: Registrar administrador de sistemas | Completado| |
 |  |  | - BI-32: Información de administradores de sistemas | Completado| |
-|  |  | - BI-33: Monitoreo de actividad en tiempo real |Completado | |
-|  |  | - BI-34: Gestión de inventarios bancarios |Completado | |
+|  |  | - BI-33: Monitoreo de actividad en tiempo real | Completado| |
+|  |  | - BI-34: Gestión de inventarios bancarios | Completado| |
 
 ---
 
@@ -133,7 +131,7 @@ Este enfoque garantizará que los módulos principales estén operativos, permit
 | Integrante              | Tarea Realizada (Día Anterior)                                 | Impedimentos                                            |
 |-------------------------|----------------------------------------------------------------|---------------------------------------------------------|
 | **Steven González**     | BI-01: Implementar JWT para Login                              | Retraso por entrega del caso Zara en la clase magistral |
-| **Robin Buezo**         |                                                                |                                                         |
+| **Robin Buezo**         | BI-28: BDD                                                               |                                                        |
 | **Danny Tejaxun**       | BI-12: Login (validaciones de tipo de usuario) / Home          |                                                         |
 | **Juan Pablo González** | BI-22: Login / Home                                                               |    Retraso por entrega del caso Zara en la clase magistral                                                     |
 | **Eduardo Llamas**      | BI-17: Solicitudes de cancelación de servicios | Entrega de caso en la clase magistral                   |
@@ -157,7 +155,7 @@ Este enfoque garantizará que los módulos principales estén operativos, permit
 | Integrante              | Tarea Realizada (Día Anterior)                                 | Impedimentos                       |
 |-------------------------|----------------------------------------------------------------|------------------------------------|
 | **Steven González**     | BI-02: Pago servicios                                          |                                    |
-| **Robin Buezo**         |                                                                |                                    |
+| **Robin Buezo**         | BI-39: DDL                                                               |                                    |
 | **Danny Tejaxun**       | BI-13: Creación cuentas                                        | Visita al médico                   |
 | **Juan Pablo González** |  BI-23: Registro empleado                                                            |    No supe como bien como estructurar la paginas y componentes para que no dieran error                                |
 | **Eduardo Llamas**      | BI-17: Solicitudes de cancelación de servicios |              |
@@ -183,7 +181,7 @@ Este enfoque garantizará que los módulos principales estén operativos, permit
 | **Steven González**     | BI-03: Pago Prestamos                                          |                                    |
 |                         | BI-04 Busqueda clientes                                        |                                    |
 |                         | BI-05 : Consulta Saldos                                        |                                    |
-| **Robin Buezo**         |                                                                |                                    |
+| **Robin Buezo**         | BI-30: Ver registros de quejas                                                               | Fue necesario crear la estructura del menú del Supervisor                                   |
 | **Danny Tejaxun**       | BI-14: Actualización de datos cliente                          | Visita al médico                   |
 | **Juan Pablo González** |  BI-24: Asignación de roles                                                              | Ninguno                                   |
 | **Eduardo Llamas**      | BI-19: Encuestas de satisfacción |              |
@@ -209,8 +207,8 @@ Este enfoque garantizará que los módulos principales estén operativos, permit
 | **Steven González**     | BI-06: Cambio Moneda                                      |                                    |
 |                         | BI-07: Comprobante                                        |                                    |
 |                         | BI-08: Retiros                                            |                                    |
-|                         | BI-08: Depositos                                          |                                    |
-| **Robin Buezo**         |                                                           |                                    |
+|                         | BI-09: Depositos                                          |                                    |
+| **Robin Buezo**         | BI-31: Registrar administrador de sistemas                                                          | Se cruzaron las tareas con la exposición de la clase magistral                                   |
 | **Danny Tejaxun**       | BI-15: Crear nuevas tarjetas (crédito o débito)           |                                    |
 | **Juan Pablo González** |                                                           |                                    |
 | **Eduardo Llamas**      | BI-21: Registro de quejas      |              |
@@ -235,7 +233,9 @@ Este enfoque garantizará que los módulos principales estén operativos, permit
 | Integrante              | Tarea Realizada (Día Anterior)                                 | Impedimentos                       |
 |-------------------------|----------------------------------------------------------------|------------------------------------|
 |                         | BI-11: Dockerización  y Despliegue                             |                                    |
-| **Robin Buezo**         |                                                                |                                    |
+| **Robin Buezo**         | BI-32: Información de administradores de sistemas                                                               | Se cruzaron las tareas con la exposición de la clase magistral                                   |
+|          | BI-33: Monitoreo de actividad en tiempo real bancarios                                                               |                                    |
+|          | BI-34: Gestión de inventarios                                                               |                                    |
 | **Danny Tejaxun**       | BI-16: Bloqueo de tarjetas                                     |                                    |
 | **Juan Pablo González** |    BI-26: Login (validaciones de tipo de usuario) / Home                                                            | Ninguno pero me di cuenta al finalizar que ya estaba el menu, me enferme de estomago y gripe                         |
 | **Eduardo Llamas**      | BI-18: Permitir cuentas en dólares | Requerimiento ambiguo |
@@ -261,7 +261,7 @@ Este enfoque garantizará que los módulos principales estén operativos, permit
 - **Steven Gonzalez:**: Que a pesar de la alta carga de actividades en la semana, logramos hacer entrega de todo, si bien no al 100% pero si todo. 
 - **Danny Tejaxun:** Hubo comunicación efectiva, pudimos ponernos de acuerdo en tiempos cortos.
 - **Eduardo Llamas:** Buena Asignación de tareas, fue facil repartir el trabajo, y como manejamos las ramas del proyecto. 
-- **Robin Buezo:** [Comentario positivo]  Se asignaron las tareas desde un inicio y eso ayudo a no retrasarnos, tambien que cuando algo estaba en el aire y no sabiamos quien debia hacer algo, siempre entre todos buscabamos una solución, no nos limitamos unicamente a nuestras asignaciones personales.
+- **Robin Buezo:** [Comentario positivo]  Se asignaron las tareas desde un inicio y eso ayudo a no retrasarnos, tambien que cuando algo estaba sin asignación y no sabiamos quien debia hacerlo, siempre entre todos buscabamos una solución, no nos limitamos unicamente a nuestras asignaciones personales.
 - **Pablo Gonzalez:** Todos nos apoyamos a resolver dudas, a pesar del poco tiempo, siempre entre otros miembros nos apoyamos.
 
 ---
@@ -273,7 +273,7 @@ Este enfoque garantizará que los módulos principales estén operativos, permit
 - **Steven Gonzalez:** Dimos un mal enfoque a las actividades, algunos dias dejamos de avanzar en el proyecto por avanzar en otros cursos o actividades de la magistral.
 - **Danny Tejaxun:** Subestimamos algunas tareas, y nos llevaron mas tiempo de lo que esperabamos.  
 - **Eduardo Llamas:** Mala priorización de actividades, lo que mas afectó fue el trabajo y otros cursos que estamos llevando.
-- **Robin Buezo:** Al momento de dividir las tareas, algunas estuvieron en el aire, algunos tuvimos mas carga que otros entonces algunas tareas quedaron pendientes.  
+- **Robin Buezo:** Al momento de dividir las tareas, algunas se quedaron en el limbo, esto derivó en que algunas tareas quedaron pendientes de realizar.
 - **Pablo Gonzalez:** Personalmente, de tanta carga semanal aveces uno terminaba bloqueado, el no saber manejar las cargas causó que se dieran esos bloqueos.
 
 ---
@@ -283,6 +283,6 @@ Este enfoque garantizará que los módulos principales estén operativos, permit
 - **Steven Gonzalez:** El enfoque hacia el curso, priorizarlo mas y tratar de hacer lo mas rapido posible las asignaciones de este curso.
 - **Danny Tejaxun:** Mejorar el enfoque de las reuniones, analizar mejor, mas precisas y un poco mas cortas. 
 - **Eduardo Llamas:** Tener una mejor planificación del lado personal, para terminar las asignaciones a tiempo y cumplir.
-- **Robin Buezo:** Tratar de analizar y granular mejor las tareas y tratar de dividirlas mejor, y organizarnos mejor y tratar de acoplar mejor nuestro tiempo.
+- **Robin Buezo:** Tratar de analizar y granular mejor las tareas al momento de asignarlas, y organizarnos mejor y tratar de acoplar mejor nuestro tiempo.
 - **Pablo Gonzalez:** Colocar objetivos diarios mas especificos, y mejorar mi organización personal de tiempo.
 

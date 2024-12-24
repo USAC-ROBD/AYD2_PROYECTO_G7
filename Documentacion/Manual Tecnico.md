@@ -1891,6 +1891,10 @@ Base de Datos
 
 ![DIAGRAMA DE COMPONENTES](./assets/Diagramas/Diagrama%20de%20Componentes.drawio.png)
 
+## DIAGRAMA DE BLOQUES
+
+![DIAGRAMA DE BLOQUES](./assets/Diagramas/Diagrama%20bloques.drawio.png)
+
 ## DIAGRAMA ENTIDAD RELACION
 
 ![DIAGRAMA ER](./assets/Diagramas/Relational.jpg)
@@ -2114,6 +2118,8 @@ La idea central del patrón Command es que, en lugar de ejecutar una acción dir
    Puedes almacenar y ejecutar una secuencia de comandos. También puedes hacer una cola de comandos y ejecutarlos de forma asíncrona.
 
 Dado todo lo anterior, hemos optado por este patron de diseño ya que nos será de mucha utilidad para la ejecución de las operaciones transaccionales del sistema como retiros, pagos, depósitos, etc. Incluso nos puede ser de gran ayuda con el manejo de solicitudes de clientes, como lo son las solicitudes de cancelación de servicios, la solicitudes de tarjetas, solicitudes de restablecimiento de contraseña, etc.
+
+![Middleware](./assets/Diagramas/command.png)
 
 ### 5. FACTORY PATTERN
 
