@@ -14,7 +14,7 @@ const login = async (req, res) => {
   try {
     // Consultar el usuario en la base de datos por nombre de usuario o correo
     const [rows] = await db.query(
-      "SELECT ID_USUARIO, USUARIO, CORREO, CONTRASENA, ID_ROL FROM USUARIO WHERE USUARIO = ? OR CORREO = ?",
+      "SELECT ID_USUARIO, USUARIO, CORREO, CONTRASENA, ID_ROL, ESTADO FROM USUARIO WHERE USUARIO = ? OR CORREO = ?",
       [username, username]
     );
 
@@ -28,6 +28,11 @@ const login = async (req, res) => {
     const validPassword = await bcrypt.compare(password, user.CONTRASENA);
     if (!validPassword) {
       return res.status(401).json({ status: 401, message: "Usuario o contraseña incorrectos" });
+    }
+
+    // Validar si la cuenta está activa
+    if (user.ESTADO !== 'A') {
+      return res.status(401).json({ status: 401, message: "Cuenta inactiva" });
     }
 
     // Generar el token JWT
