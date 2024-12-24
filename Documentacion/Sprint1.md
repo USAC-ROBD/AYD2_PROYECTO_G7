@@ -133,7 +133,7 @@ Este enfoque garantizará que los módulos principales estén operativos, permit
 | **Robin Buezo**         |                                                                |                                                         |
 | **Danny Tejaxun**       | BI-12: Login (validaciones de tipo de usuario) / Home          |                                                         |
 | **Eduardo Llamas**      |                                                                |                                                         |
-| **Juan Pablo González** |                                                                |                                                         |
+| **Juan Pablo González** | BI-22: Login / Home                                                               |    Retraso por entrega del caso Zara en la clase magistral                                                     |
 
 ---
 
@@ -157,7 +157,7 @@ Este enfoque garantizará que los módulos principales estén operativos, permit
 | **Robin Buezo**         |                                                                |                                    |
 | **Danny Tejaxun**       | BI-13: Creación cuentas                                        | Visita al médico                   |
 | **Eduardo Llamas**      |                                                                |                                    |
-| **Juan Pablo González** |                                                                |                                    |
+| **Juan Pablo González** |  BI-23: Registro empleado                                                            |    No supe como bien como estructurar la paginas y componentes para que no dieran error                                |
 
 ---
 
@@ -183,7 +183,7 @@ Este enfoque garantizará que los módulos principales estén operativos, permit
 | **Robin Buezo**         |                                                                |                                    |
 | **Danny Tejaxun**       | BI-14: Actualización de datos cliente                          | Visita al médico                   |
 | **Eduardo Llamas**      |                                                                |                                    |
-| **Juan Pablo González** |                                                                |                                    |
+| **Juan Pablo González** |  BI-24: Asignación de roles                                                              | Ninguno                                   |
 
 ---
 
@@ -235,7 +235,7 @@ Este enfoque garantizará que los módulos principales estén operativos, permit
 | **Robin Buezo**         |                                                                |                                    |
 | **Danny Tejaxun**       | BI-16: Bloqueo de tarjetas                                     |                                    |
 | **Eduardo Llamas**      |                                                                |                                    |
-| **Juan Pablo González** |                                                                |                                    |
+| **Juan Pablo González** |    BI-26: Login (validaciones de tipo de usuario) / Home                                                            | Ninguno pero me di cuenta al finalizar que ya estaba el menu, me enferme de estomago y gripe                         |
 
 ## Sprint Retrospective - Sprint 1
 

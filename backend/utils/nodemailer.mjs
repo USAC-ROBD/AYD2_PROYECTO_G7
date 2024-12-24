@@ -61,4 +61,22 @@ const deactiveCard = (usuario, tarjeta) => {
     }
 }
 
-export { transporter, confirmationAccountMail, updateAccountMail, deactiveCard }
+const credentialsUser = (user, email, pass) =>{
+    return {
+        from: process.env.EMAIL_ORIGIN ,
+        to: email ,
+        subject: 'Datos de usuario',
+        text: `Este es su usuario y contraseña para poder ingresar al sistema:\nUsuario: ${user}\nContraseña: ${pass}`,
+    }
+}
+
+const updatePassword = (email, pass) =>{
+    return{
+        from: process.env.EMAIL_ORIGIN ,
+        to: email,
+        subject: 'Nueva contraseña',
+        text: `Se ha generado una nueva contraseña para su usuario porfabor no la comparta con nadie mas: ${pass}`,
+    }
+}
+
+export { transporter, confirmationAccountMail, updateAccountMail, deactiveCard, credentialsUser, updatePassword}
