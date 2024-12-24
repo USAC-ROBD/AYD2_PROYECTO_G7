@@ -2,8 +2,6 @@
 
 ## Sprint Backlog
 
-## Sprint Backlog
-
 | Persona | Área | Tareas | Estado | Comentario |
 |---------|------|--------|--------|------------|
 | **Steven** | **Cajero** | | | |
@@ -44,8 +42,8 @@
 |  |  | - BI-30: Ver registros de quejas | Completado | |
 |  |  | - BI-31: Registrar administrador de sistemas | Completado| |
 |  |  | - BI-32: Información de administradores de sistemas | Completado| |
-|  |  | - BI-33: Monitoreo de actividad en tiempo real |Completado | |
-|  |  | - BI-34: Gestión de inventarios bancarios |Completado | |
+|  |  | - BI-33: Monitoreo de actividad en tiempo real | Completado| |
+|  |  | - BI-34: Gestión de inventarios bancarios | Completado| |
 
 ---
 
@@ -133,7 +131,7 @@ Este enfoque garantizará que los módulos principales estén operativos, permit
 | Integrante              | Tarea Realizada (Día Anterior)                                 | Impedimentos                                            |
 |-------------------------|----------------------------------------------------------------|---------------------------------------------------------|
 | **Steven González**     | BI-01: Implementar JWT para Login                              | Retraso por entrega del caso Zara en la clase magistral |
-| **Robin Buezo**         |                                                                |                                                         |
+| **Robin Buezo**         | BI-28: BDD                                                               |                                                        |
 | **Danny Tejaxun**       | BI-12: Login (validaciones de tipo de usuario) / Home          |                                                         |
 | **Juan Pablo González** | BI-22: Login / Home                                                               |    Retraso por entrega del caso Zara en la clase magistral                                                     |
 | **Eduardo Llamas**      | BI-17: Solicitudes de cancelación de servicios | Entrega de caso en la clase magistral                   |
@@ -157,7 +155,7 @@ Este enfoque garantizará que los módulos principales estén operativos, permit
 | Integrante              | Tarea Realizada (Día Anterior)                                 | Impedimentos                       |
 |-------------------------|----------------------------------------------------------------|------------------------------------|
 | **Steven González**     | BI-02: Pago servicios                                          |                                    |
-| **Robin Buezo**         |                                                                |                                    |
+| **Robin Buezo**         | BI-39: DDL                                                               |                                    |
 | **Danny Tejaxun**       | BI-13: Creación cuentas                                        | Visita al médico                   |
 | **Juan Pablo González** |  BI-23: Registro empleado                                                            |    No supe como bien como estructurar la paginas y componentes para que no dieran error                                |
 | **Eduardo Llamas**      | BI-17: Solicitudes de cancelación de servicios |              |
@@ -183,7 +181,7 @@ Este enfoque garantizará que los módulos principales estén operativos, permit
 | **Steven González**     | BI-03: Pago Prestamos                                          |                                    |
 |                         | BI-04 Busqueda clientes                                        |                                    |
 |                         | BI-05 : Consulta Saldos                                        |                                    |
-| **Robin Buezo**         |                                                                |                                    |
+| **Robin Buezo**         | BI-30: Ver registros de quejas                                                               | Fue necesario crear la estructura del menú del Supervisor                                   |
 | **Danny Tejaxun**       | BI-14: Actualización de datos cliente                          | Visita al médico                   |
 | **Juan Pablo González** |  BI-24: Asignación de roles                                                              | Ninguno                                   |
 | **Eduardo Llamas**      | BI-19: Encuestas de satisfacción |              |
@@ -209,8 +207,8 @@ Este enfoque garantizará que los módulos principales estén operativos, permit
 | **Steven González**     | BI-06: Cambio Moneda                                      |                                    |
 |                         | BI-07: Comprobante                                        |                                    |
 |                         | BI-08: Retiros                                            |                                    |
-|                         | BI-08: Depositos                                          |                                    |
-| **Robin Buezo**         |                                                           |                                    |
+|                         | BI-09: Depositos                                          |                                    |
+| **Robin Buezo**         | BI-31: Registrar administrador de sistemas                                                          | Se cruzaron las tareas con la exposición de la clase magistral                                   |
 | **Danny Tejaxun**       | BI-15: Crear nuevas tarjetas (crédito o débito)           |                                    |
 | **Juan Pablo González** |                                                           |                                    |
 | **Eduardo Llamas**      | BI-21: Registro de quejas      |              |
@@ -235,7 +233,9 @@ Este enfoque garantizará que los módulos principales estén operativos, permit
 | Integrante              | Tarea Realizada (Día Anterior)                                 | Impedimentos                       |
 |-------------------------|----------------------------------------------------------------|------------------------------------|
 |                         | BI-11: Dockerización  y Despliegue                             |                                    |
-| **Robin Buezo**         |                                                                |                                    |
+| **Robin Buezo**         | BI-32: Información de administradores de sistemas                                                               | Se cruzaron las tareas con la exposición de la clase magistral                                   |
+|          | BI-33: Monitoreo de actividad en tiempo real bancarios                                                               |                                    |
+|          | BI-34: Gestión de inventarios                                                               |                                    |
 | **Danny Tejaxun**       | BI-16: Bloqueo de tarjetas                                     |                                    |
 | **Juan Pablo González** |    BI-26: Login (validaciones de tipo de usuario) / Home                                                            | Ninguno pero me di cuenta al finalizar que ya estaba el menu, me enferme de estomago y gripe                         |
 | **Eduardo Llamas**      | BI-18: Permitir cuentas en dólares | Requerimiento ambiguo |
