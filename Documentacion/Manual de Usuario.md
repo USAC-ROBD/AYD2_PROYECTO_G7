@@ -15,7 +15,7 @@ Bienvenido al Manual de Usuario de MoneyBin. Este documento tiene como objetivo 
 
 El sistema es una aplicacion web al cual se accede a travez de internet y un navegador, por lo tanto no se requeriria de ninguna instalación.
 
-## Uso de la Aplicación
+## Módulo Cajero
 
 ### Inicio de Sesión
 
@@ -127,4 +127,34 @@ Es posible buscar cuentas de usuarios mediante el número de una de sus cuentas 
 
 #### Retiro de Dinero
 
+1. Presionar el btón "Retiros"
+
+    ![Descripción de la imagen](./assets/manual_usuario/retiros1.png)
+
+2. Ingresar el numero de cuenta
+
+    ![Descripción de la imagen](./assets/manual_usuario/retiros2.png)
+
+3. Verificar los datos e ingresar el monto a retirar
+
+    ![Descripción de la imagen](./assets/manual_usuario/retiros3.png)
+
+    1. Debe cingresar el numero de cuenta proporcionada por el cliente
+    2. Debe confirmar con el cliente la información que se muestra del servicio.
+    3. Se debe ingresar el monto indicado por el cliente.
+    4. Presionar el botón ""Retirar".
+
+4. Ver Confirmación de Retiro
+
+    ![Descripción de la imagen](./assets/manual_usuario/retiros4.png)
+
+        * Se debe generar el comprobante del pago presionando el botón "Generar Comprobante".
+
 #### Deposito de Dinero
+
+
+## Módulo Atencion al Cliente
+
+## Modulo Supervisor
+
+## Modulo Administrador de Sistemas
