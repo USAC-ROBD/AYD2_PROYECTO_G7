@@ -261,7 +261,7 @@ Este enfoque garantizará que los módulos principales estén operativos, permit
 - **Steven Gonzalez:**: Que a pesar de la alta carga de actividades en la semana, logramos hacer entrega de todo, si bien no al 100% pero si todo. 
 - **Danny Tejaxun:** Hubo comunicación efectiva, pudimos ponernos de acuerdo en tiempos cortos.
 - **Eduardo Llamas:** Buena Asignación de tareas, fue facil repartir el trabajo, y como manejamos las ramas del proyecto. 
-- **Robin Buezo:** [Comentario positivo]  Se asignaron las tareas desde un inicio y eso ayudo a no retrasarnos, tambien que cuando algo estaba en el aire y no sabiamos quien debia hacer algo, siempre entre todos buscabamos una solución, no nos limitamos unicamente a nuestras asignaciones personales.
+- **Robin Buezo:** [Comentario positivo]  Se asignaron las tareas desde un inicio y eso ayudo a no retrasarnos, tambien que cuando algo estaba sin asignación y no sabiamos quien debia hacerlo, siempre entre todos buscabamos una solución, no nos limitamos unicamente a nuestras asignaciones personales.
 - **Pablo Gonzalez:** Todos nos apoyamos a resolver dudas, a pesar del poco tiempo, siempre entre otros miembros nos apoyamos.
 
 ---
@@ -273,7 +273,7 @@ Este enfoque garantizará que los módulos principales estén operativos, permit
 - **Steven Gonzalez:** Dimos un mal enfoque a las actividades, algunos dias dejamos de avanzar en el proyecto por avanzar en otros cursos o actividades de la magistral.
 - **Danny Tejaxun:** Subestimamos algunas tareas, y nos llevaron mas tiempo de lo que esperabamos.  
 - **Eduardo Llamas:** Mala priorización de actividades, lo que mas afectó fue el trabajo y otros cursos que estamos llevando.
-- **Robin Buezo:** Al momento de dividir las tareas, algunas estuvieron en el aire, algunos tuvimos mas carga que otros entonces algunas tareas quedaron pendientes.  
+- **Robin Buezo:** Al momento de dividir las tareas, algunas se quedaron en el limbo, esto derivó en que algunas tareas quedaron pendientes de realizar.
 - **Pablo Gonzalez:** Personalmente, de tanta carga semanal aveces uno terminaba bloqueado, el no saber manejar las cargas causó que se dieran esos bloqueos.
 
 ---
@@ -283,6 +283,6 @@ Este enfoque garantizará que los módulos principales estén operativos, permit
 - **Steven Gonzalez:** El enfoque hacia el curso, priorizarlo mas y tratar de hacer lo mas rapido posible las asignaciones de este curso.
 - **Danny Tejaxun:** Mejorar el enfoque de las reuniones, analizar mejor, mas precisas y un poco mas cortas. 
 - **Eduardo Llamas:** Tener una mejor planificación del lado personal, para terminar las asignaciones a tiempo y cumplir.
-- **Robin Buezo:** Tratar de analizar y granular mejor las tareas y tratar de dividirlas mejor, y organizarnos mejor y tratar de acoplar mejor nuestro tiempo.
+- **Robin Buezo:** Tratar de analizar y granular mejor las tareas al momento de asignarlas, y organizarnos mejor y tratar de acoplar mejor nuestro tiempo.
 - **Pablo Gonzalez:** Colocar objetivos diarios mas especificos, y mejorar mi organización personal de tiempo.
 
