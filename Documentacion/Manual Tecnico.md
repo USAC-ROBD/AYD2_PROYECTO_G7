@@ -2091,6 +2091,7 @@ Presentational Components:
 - **Sobrecarga inicial**: Puede ser más complejo estructurar la aplicación en pequeños componentes si el equipo no está familiarizado con el patrón.
 - **Mayor número de componentes**: Aumenta el número total de archivos y componentes, lo que podría ser innecesario para aplicaciones pequeñas.
 - **Dependencia de bibliotecas**: Los Container Components a menudo dependen de herramientas como Redux o Context API, lo que puede aumentar la complejidad.
+  ![Container](./assets/Diagramas/container-presentation.png)
 
 ### 4. COMMAND
 
