@@ -182,10 +182,108 @@ const obtenerAdministradores = [auth.verifyToken, async (req, res) => {
     }
 }];
 
+const obtenerActividades = [auth.verifyToken, async (req, res) => {
+    try {
+        const [rows] = await db.query(
+            `SELECT 
+                CREACION as fecha,
+                CREA as empleado,
+                DESCRIPCION as actividad,
+                TIPO as tipo
+            FROM VISTA_ACTIVIDADES`
+        );
+
+        const response = {
+            "status": 200,
+            "message": "Actividades obtenidas correctamente",
+            "data": rows,
+        };
+
+        return res.status(200).json(response);
+    } catch (error) {
+        console.error("Error en obtenerActividades:", error.message);
+        return res.status(500).json({ "status": 500, "message": error.message });
+    }
+}];
+
+const obtenerMovimientos = [auth.verifyToken, async (req, res) => {
+    try {
+        const [rows] = await db.query(
+            `SELECT 
+                CREACION AS fecha,
+                CREA AS empleado,
+                DESCRIPCION AS movimiento,
+                MONTO AS monto,
+                TIPO AS tipo
+            FROM VISTA_MOVIMIENTOS`
+        );
+
+        const response = {
+            "status": 200,
+            "message": "Movimientos obtenidos correctamente",
+            "data": rows,
+        };
+
+        return res.status(200).json(response);
+    } catch (error) {
+        console.error("Error en obtenerMovimientos:", error.message);
+        return res.status(500).json({ "status": 500, "message": error.message });
+    }
+}];
+
+const obtenerDisponibilidad = [auth.verifyToken, async (req, res) => {
+    try {
+        const [rows] = await db.query(
+            `SELECT 
+                MONEDA AS moneda,
+                MONTO AS monto
+            FROM VISTA_DISPONIBILIDAD`
+        );
+
+        const response = {
+            "status": 200,
+            "message": "Disponibilidad obtenida correctamente",
+            "data": rows,
+        };
+
+        return res.status(200).json(response);
+    } catch (error) {
+        console.error("Error en obtenerDisponibilidad:", error.message);
+        return res.status(500).json({ "status": 500, "message": error.message });
+    }
+}];
+
+const obtenerDisponibilidadDia = [auth.verifyToken, async (req, res) => {
+    try {
+        const [rows] = await db.query(
+            `SELECT 
+                DIA AS dia,
+                QUETZALES AS quetzales,
+                DOLARES AS dolares
+            FROM VISTA_DISPONIBILIDAD_DIA`
+        );
+
+        const response = {
+            "status": 200,
+            "message": "Disponibilidad obtenida correctamente",
+            "data": rows,
+        };
+
+        return res.status(200).json(response);
+    } catch (error) {
+        console.error("Error en obtenerDisponibilidadDia:", error.message);
+        return res.status(500).json({ "status": 500, "message": error.message });
+    }
+}];
+
 export const supervisor = {
     obtenerQuejas,
     registrarAdministrador,
     actualizarAdministrador,
     eliminarAdministrador,
     obtenerAdministradores,
+    obtenerActividades,
+    obtenerMovimientos,
+    obtenerDisponibilidad,
+    obtenerDisponibilidadDia,
 };

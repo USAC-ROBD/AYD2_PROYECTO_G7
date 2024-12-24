@@ -6,7 +6,6 @@ VALUES
 ('Supervisor', 'Acceso a modulo supervisor', 'admin', 'admin'),
 ('Servicio al Cliente', 'Acceso a modulo callcenter', 'admin', 'admin');
 
-
 -- Insertar datos en la tabla USUARIO
 INSERT INTO USUARIO (
     USUARIO, 

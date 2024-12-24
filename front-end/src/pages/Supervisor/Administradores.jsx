@@ -213,6 +213,7 @@ function Administradores() {
                     ]}
                     data={administradores}
                     onRowClicked={(row) => handleShow(false, row)}
+                    expanded={true}
                 />
             </Container>
 

@@ -1,4 +1,6 @@
 import db from "../utils/db_connection.mjs";
+import { transporter, deactiveCard } from '../utils/nodemailer.mjs'
+import { UsuarioFactory } from "../models/UsuarioFactory.mjs";
 
 // Obtener Cliente
 const obtenerCliente = async (req, res) => {
@@ -20,10 +22,8 @@ const crearCliente = async (req, res, next) => {
 
     if (!existente) {
         try {
-            await db.query(
-                `INSERT INTO CLIENTE(CUI, NOMBRE, APELLIDO, TELEFONO, EMAIL, DIRECCION, PREGUNTA, RESPUESTA) VALUES(?, ?, ?, ?, ?, ?, ?, ?)`,
-                [cui, nombre, apellido, telefono, email, direccion, preguntaSeguridad, respuestaSeguridad]
-            );
+            const admin = UsuarioFactory.crearUsuario("cliente", null, null, cui, nombre, apellido, telefono, email, { values: null, query: null }, direccion, preguntaSeguridad, respuestaSeguridad);
+            await admin.registrar();
             next();
         } catch (error) {
             return res.status(500).json({ status: 500, message: "consulta erronea" });
@@ -111,7 +111,8 @@ const ejecutarActualizarCliente = async (req, res) => {
 
     try {
         if (values && values.length > 0) {
-            await db.query(`UPDATE CLIENTE SET ${query} WHERE CUI = ?;`, values);
+            const admin = UsuarioFactory.crearUsuario("cliente", null, null, null, null, null, null, null, { values, query }, null, null, null);
+            await admin.actualizar();
         }
         return res.status(200).json({ status: 200, message: "cliente actualizado" });
     } catch (error) {
@@ -204,7 +205,7 @@ const obtenerTarjeta = async (req, res) => {
     try {
         const { cuiNumeroCuenta, tipo } = req.query
         const [ rows ] = await db.query(
-            `SELECT TA.ID_TARJETA, TA.NUMERO, CONCAT(CL.NOMBRE, ' ', CL.APELLIDO) NOMBRE, TA.ESTADO
+            `SELECT TA.ID_TARJETA, TA.NUMERO, CONCAT(CL.NOMBRE, ' ', CL.APELLIDO) NOMBRE, CL.EMAIL, TA.ESTADO
             FROM MONEY_BIN.CLIENTE CL
             LEFT JOIN MONEY_BIN.TARJETA TA ON CL.CUI = TA.CUI
             LEFT JOIN MONEY_BIN.CUENTA CU ON CU.ID_CUENTA = TA.ID_CUENTA
@@ -262,13 +263,16 @@ const registrarBloqueoTarjeta = async (req, res, next) => {
 };
 
 const actualizarEstadoTarjeta = async (req, res) => {
-    const { noTarjeta } = req.body;
+    const { noTarjeta, titular, motivoBloqueo, correo } = req.body;
 
     try {
         await db.query(
             `UPDATE TARJETA SET ESTADO = 'I' WHERE NUMERO = ?;`,
             [noTarjeta]
         );
+
+        const mail = deactiveCard({ titular, correo }, { numero: noTarjeta, motivo: motivoBloqueo === 'P' ? 'Pérdida' : (motivoBloqueo === 'R' ? 'Robo' : 'Fraude') });
+        transporter.sendMail(mail);
 
         return res.status(200).json({ status: 200, message: "tarjeta bloqueada", bloqueada: true });
     } catch (error) {

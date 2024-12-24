@@ -10,6 +10,7 @@ import { atencionCliente } from '../controllers/AtencionCliente.mjs'
 import { cambioMoneda } from '../controllers/cambioMoneda.mjs';
 import { pagoTarjeta } from '../controllers/pagoTarjeta.mjs';
 import { supervisor } from '../controllers/supervisor.mjs';
+import { administrador } from '../controllers/administrador.mjs'
 
 const router = Router();
 //rutas de la api
@@ -86,12 +87,24 @@ router.post('/solicitud_cancelacion', atencionCliente.crearSolicitudCancelacion)
 
 
 
+/***********Adminitrador************/
+router.get('/rol-empleado', administrador.obtener_usuario_rol);
+router.post('/rol-empleado-actualizar', administrador.actualizar_usuario_rol);
+router.get('/empleado', administrador.obtener_usuario);
+router.post('/eliminar-empleado', administrador.eliminar_usuario);
+router.post('/cambiar-contrasena',administrador.cambiar_contrasena);
+router.post('/registrar-usuario',administrador.registrar_usuario)
 /******Supervisor*********/
 router.get('/obtener_quejas', supervisor.obtenerQuejas);
 router.get('/obtener_administradores', supervisor.obtenerAdministradores);
 router.post('/registrar_administrador', supervisor.registrarAdministrador);
 router.post('/actualizar_administrador', supervisor.actualizarAdministrador);
 router.post('/eliminar_administrador', supervisor.eliminarAdministrador);
+router.get('/obtener_actividades', supervisor.obtenerActividades);
+router.get('/obtener_movimientos', supervisor.obtenerMovimientos);
+router.get('/obtener_disponibilidad', supervisor.obtenerDisponibilidad);
+router.get('/obtener_disponibilidad_dia', supervisor.obtenerDisponibilidadDia);
+
 
 
 export default router;
