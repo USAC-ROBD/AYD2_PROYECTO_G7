@@ -5,3 +5,10 @@
 **/*DIAGRAMAER
 
 Documentacion/assets/cajero/general.vsdx
+
+backend/node_modules/
+backend/.env
+backend/package-lock.json
+front-end/.env
+
+Frontend/
