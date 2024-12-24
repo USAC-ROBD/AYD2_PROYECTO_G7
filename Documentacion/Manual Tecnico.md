@@ -2142,5 +2142,3 @@ Características:
 - Simplifica la creación de objetos complejos con múltiples configuraciones.
 - Garantiza que todos los objetos relacionados se creen de manera uniforme.
 - Favorece la separación de responsabilidades y el principio abierto/cerrado.
-
-## TABLERO KANBAN
