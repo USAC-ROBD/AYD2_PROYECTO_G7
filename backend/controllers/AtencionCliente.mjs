@@ -1,4 +1,6 @@
 import db from "../utils/db_connection.mjs";
+import { transporter, deactiveCard } from '../utils/nodemailer.mjs'
+import { UsuarioFactory } from "../models/UsuarioFactory.mjs";
 
 // Obtener Cliente
 const obtenerCliente = async (req, res) => {
@@ -20,10 +22,8 @@ const crearCliente = async (req, res, next) => {
 
     if (!existente) {
         try {
-            await db.query(
-                `INSERT INTO CLIENTE(CUI, NOMBRE, APELLIDO, TELEFONO, EMAIL, DIRECCION, PREGUNTA, RESPUESTA) VALUES(?, ?, ?, ?, ?, ?, ?, ?)`,
-                [cui, nombre, apellido, telefono, email, direccion, preguntaSeguridad, respuestaSeguridad]
-            );
+            const admin = UsuarioFactory.crearUsuario("cliente", null, null, cui, nombre, apellido, telefono, email, { values: null, query: null }, direccion, preguntaSeguridad, respuestaSeguridad);
+            await admin.registrar();
             next();
         } catch (error) {
             return res.status(500).json({ status: 500, message: "consulta erronea" });
@@ -111,7 +111,8 @@ const ejecutarActualizarCliente = async (req, res) => {
 
     try {
         if (values && values.length > 0) {
-            await db.query(`UPDATE CLIENTE SET ${query} WHERE CUI = ?;`, values);
+            const admin = UsuarioFactory.crearUsuario("cliente", null, null, null, null, null, null, null, { values, query }, null, null, null);
+            await admin.actualizar();
         }
         return res.status(200).json({ status: 200, message: "cliente actualizado" });
     } catch (error) {
@@ -204,7 +205,7 @@ const obtenerTarjeta = async (req, res) => {
     try {
         const { cuiNumeroCuenta, tipo } = req.query
         const [ rows ] = await db.query(
-            `SELECT TA.ID_TARJETA, TA.NUMERO, CONCAT(CL.NOMBRE, ' ', CL.APELLIDO) NOMBRE, TA.ESTADO
+            `SELECT TA.ID_TARJETA, TA.NUMERO, CONCAT(CL.NOMBRE, ' ', CL.APELLIDO) NOMBRE, CL.EMAIL, TA.ESTADO
             FROM MONEY_BIN.CLIENTE CL
             LEFT JOIN MONEY_BIN.TARJETA TA ON CL.CUI = TA.CUI
             LEFT JOIN MONEY_BIN.CUENTA CU ON CU.ID_CUENTA = TA.ID_CUENTA
@@ -262,7 +263,7 @@ const registrarBloqueoTarjeta = async (req, res, next) => {
 };
 
 const actualizarEstadoTarjeta = async (req, res) => {
-    const { noTarjeta } = req.body;
+    const { noTarjeta, titular, motivoBloqueo, correo } = req.body;
 
     try {
         await db.query(
@@ -270,11 +271,133 @@ const actualizarEstadoTarjeta = async (req, res) => {
             [noTarjeta]
         );
 
+        const mail = deactiveCard({ titular, correo }, { numero: noTarjeta, motivo: motivoBloqueo === 'P' ? 'Pérdida' : (motivoBloqueo === 'R' ? 'Robo' : 'Fraude') });
+        transporter.sendMail(mail);
+
         return res.status(200).json({ status: 200, message: "tarjeta bloqueada", bloqueada: true });
     } catch (error) {
         console.error(error);
         return res.status(500).json({ status: 500, message: "Error al actualizar el estado de la tarjeta" });
     }
+};
+
+// Obtener datos de la cuenta
+
+const consultarDatosCuenta = async (req, res) => {
+
+    try {
+        const { cuenta } = req.body;
+
+        if (!cuenta) {
+            return res.status(400).json({ "status": 400, "message": "Faltan Datos" });
+        }
+
+        console.log(cuenta);
+
+        const [rows, fields] = await db.query(`SELECT 
+                                               CONCAT(CLIENTE.NOMBRE, ' ', CLIENTE.APELLIDO) AS propietario, 
+                                               CUENTA.ID_CUENTA as cuenta,
+                                               CUENTA.CUI AS cui
+                                                FROM CUENTA
+                                                INNER JOIN CLIENTE ON CUENTA.CUI = CLIENTE.CUI
+                                                WHERE CUENTA.NUMERO = ?`, [cuenta]);
+
+        if (rows.length === 0) {
+            return res.status(404).json({ "status": 404, "message": "Cuenta no encontrada" });
+        }
+
+        const dataCuenta = rows[0];
+
+        const response = {
+            "status": 200,
+            "message": "Cuenta encontrada",
+            "data": {
+                "id_cuenta": dataCuenta.cuenta,
+                "cui": dataCuenta.cui,
+                "nombre": dataCuenta.propietario
+            }
+        };
+        return res.status(200).json(response);
+
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({ "status": 500, "message": error.message });
+    }
+};
+
+// Obtener datos de la cuenta
+
+const consultarDatosTarjeta = async (req, res) => {
+
+    try {
+        const { cuenta } = req.body;
+
+        if (!cuenta) {
+            return res.status(400).json({ "status": 400, "message": "Faltan Datos" });
+        }
+
+        console.log(cuenta);
+
+        const [rows, fields] = await db.query(`SELECT 
+                                               CONCAT(CLIENTE.NOMBRE, ' ', CLIENTE.APELLIDO) AS propietario, 
+                                               TARJETA.ID_TARJETA as cuenta,
+                                               TARJETA.CUI AS cui
+                                                FROM TARJETA
+                                                INNER JOIN CLIENTE ON TARJETA.CUI = CLIENTE.CUI
+                                                WHERE TARJETA.NUMERO = ?`, [cuenta]);
+
+        if (rows.length === 0) {
+            return res.status(404).json({ "status": 404, "message": "tarjeta no encontrada" });
+        }
+
+        const dataCuenta = rows[0];
+
+        const response = {
+            "status": 200,
+            "message": "Tarjeta encontrada",
+            "data": {
+                "id_cuenta": dataCuenta.cuenta,
+                "cui": dataCuenta.cui,
+                "nombre": dataCuenta.propietario
+            }
+        };
+        return res.status(200).json(response);
+
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({ "status": 500, "message": error.message });
+    }
+};
+
+
+// Crear solicitud de cancelación de servicios
+const crearSolicitudCancelacion = async (req, res) => {
+    const { tipo_servicio, cui, idCuenta, descripcion, crea } = req.body;
+
+    if(tipo_servicio === "cuenta"){
+        try {
+            await db.query(
+                `INSERT INTO SOLICITUD (CUI, ID_CUENTA, TIPO, TIPO_SERVICIO, ESTADO, DESCRIPCION, CREA) VALUES(?, ?, 'C', 'C', 'P', ?, ?)`,
+                [cui, idCuenta, descripcion, crea]
+            );
+            return res.status(200).json({ status: 200, message: "Solicitud de cancelación de cuenta creada" });
+        } catch (error) {
+            return res.status(500).json({ status: 500, message: error.message });
+        }
+    }
+    else{
+        try {
+            await db.query(
+                `INSERT INTO SOLICITUD (CUI, ID_TARJETA, TIPO, TIPO_SERVICIO, ESTADO, DESCRIPCION, CREA) VALUES(?, ?, 'C', 'T', 'P', ?, ?)`,
+                [cui, idCuenta, descripcion, crea]
+            );
+            return res.status(200).json({ status: 200, message: "Solicitud de cancelación de tarjeta creada" });
+        } catch (error) {
+            return res.status(500).json({ status: 500, message: "consulta erronea tarjeta" });
+        }
+    }
+
+    
 };
 
 const bloquearTarjeta = [
@@ -292,4 +415,8 @@ export const atencionCliente = {
     enviarSolicitudTarjeta,
     obtenerTarjeta,
     bloquearTarjeta,
+    consultarDatosCuenta,
+    consultarDatosTarjeta,
+    crearSolicitudCancelacion,
 };
+

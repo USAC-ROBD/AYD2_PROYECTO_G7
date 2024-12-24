@@ -123,7 +123,7 @@ CREATE TABLE SOLICITUD (
     ID_CUENTA INT,
     ID_TARJETA INT,
     TIPO CHAR(1) NOT NULL,    -- C: Cancelación de Servicio, S: Solicitud de Servicio
-    TIPO_SERVICIO CHAR(1) NOT NULL,    -- T: Tarjeta, P: Préstamo
+    TIPO_SERVICIO CHAR(1) NOT NULL,    -- T: Tarjeta, P: Préstamo, C: Cuenta
     TIPO_PRESTAMO CHAR(1),    -- P: Personal, H: Hipotecario, A: Automotriz
     MONTO DECIMAL(19,2),
     PLAZO INT,
@@ -136,11 +136,11 @@ CREATE TABLE SOLICITUD (
     CONSTRAINT FK_SOLICITUD_CLIENTE FOREIGN KEY (CUI) REFERENCES CLIENTE(CUI),
     CONSTRAINT FK_SOLICITUD_CUENTA FOREIGN KEY (ID_CUENTA) REFERENCES CUENTA(ID_CUENTA),
     CONSTRAINT FK_SOLICITUD_TARJETA FOREIGN KEY (ID_TARJETA) REFERENCES TARJETA(ID_TARJETA),
-    CONSTRAINT CK_TIPO_SERVICIO CHECK (TIPO IN ('T', 'P')),     -- T: Tarjeta, P: Préstamo
+    CONSTRAINT CK_TIPO_SERVICIO CHECK (TIPO_SERVICIO IN ('T', 'P', 'C')),     -- T: Tarjeta, P: Préstamo, C: Cuenta
     CONSTRAINT CK_ESTADO_SOLICITUD CHECK (ESTADO IN ('P', 'A', 'R')),     -- P: Pendiente, A: Aprobada, R: Rechazada
-    CONSTRAINT CK_TIPO_PRESTAMO CHECK (TIPO_PRESTAMO IN ('P', 'H', 'A') AND TIPO = 'P' OR TIPO_PRESTAMO IS NULL AND TIPO = 'T'),
-    CONSTRAINT CK_MONTO_SOLICITUD CHECK (MONTO > 0 AND TIPO = 'P' OR MONTO IS NULL AND TIPO = 'T'),
-    CONSTRAINT CK_PLAZO_SOLICITUD CHECK (PLAZO > 0 AND TIPO = 'P' OR PLAZO IS NULL AND TIPO = 'T'),
+    CONSTRAINT CK_TIPO_PRESTAMO CHECK (TIPO_PRESTAMO IN ('P', 'H', 'A') AND TIPO_SERVICIO = 'P' OR TIPO_PRESTAMO IS NULL AND TIPO_SERVICIO IN ('T', 'C')),
+    CONSTRAINT CK_MONTO_SOLICITUD CHECK (MONTO > 0 AND TIPO_SERVICIO = 'P' OR MONTO IS NULL AND TIPO_SERVICIO IN ('T', 'C')),
+    CONSTRAINT CK_PLAZO_SOLICITUD CHECK (PLAZO > 0 AND TIPO_SERVICIO = 'P' OR PLAZO IS NULL AND TIPO_SERVICIO IN ('T', 'C')),
     CONSTRAINT CK_TIPO_SOLICITUD CHECK (TIPO IN ('C', 'S'))     -- C: Cancelación de Servicio, S: Solicitud de Servicio
 );
 
@@ -319,3 +319,113 @@ BEGIN
 END //
 
 DELIMITER ;
+
+
+CREATE OR REPLACE VIEW VISTA_ACTIVIDADES AS
+SELECT CREACION, CREA, CONCAT('Se creó/actualizó el Usuario ', USUARIO, ' con ID ', ID_USUARIO) AS DESCRIPCION, 'Usuario' AS TIPO
+FROM USUARIO
+UNION
+SELECT CREACION, CREA, CONCAT('Se creó/actualizó el Cliente ', NOMBRE, ' ', APELLIDO, ' con CUI ', CUI), 'Cliente'
+FROM CLIENTE
+UNION
+SELECT CREACION, CREA, CONCAT('Se creó/actualizó la Cuenta ', CASE WHEN TIPO = 'M' THEN 'Monetaria' ELSE ' de Ahorro' END, ' con número ', NUMERO, ' y saldo ', SALDO), 'Cuenta'
+FROM CUENTA
+UNION
+SELECT CREACION, CREA, CONCAT('Se creó/actualizó la Tarjeta ', CASE WHEN TIPO = 'D' THEN ' de Débito' ELSE ' de Crédito' END, ' con número ', NUMERO, ' y saldo ', SALDO, ' para el cliente con CUI ', CUI), 'Tarjeta'
+FROM TARJETA
+UNION
+SELECT B.CREACION, B.CREA, CONCAT('Se realizó el bloqueo de la Tarjeta con número ', T.NUMERO, ' a nombre del cliente con CUI ', T.CUI, ' por motivo de ', CASE WHEN B.MOTIVO = 'R' THEN 'Robo' WHEN B.MOTIVO = 'P' THEN 'Pérdida' ELSE 'Fraude' END), 'Bloqueo'
+FROM BLOQUEO B
+    INNER JOIN TARJETA T ON B.ID_TARJETA = T.ID_TARJETA
+UNION
+SELECT CREACION, CREA, CONCAT('Se creó/actualizó la Solicitud ', CASE WHEN TIPO = 'C' THEN 'de Cancelación de Servicio' ELSE 'de Solicitud de Servicio' END, ' de tipo ', CASE WHEN TIPO_SERVICIO = 'T' THEN 'Tarjeta' ELSE 'Préstamo' END, ' con estado ', CASE WHEN ESTADO = 'P' THEN 'Pendiente' WHEN ESTADO = 'A' THEN 'Aprobada' ELSE 'Rechazada' END, ' para el cliente con CUI ', CUI), 'Solicitud'
+FROM SOLICITUD
+UNION
+SELECT CREACION, CREA, CONCAT('Se creó/actualizó la Encuesta con calificación ', ' para ', CASE WHEN CATEGORIA = 'A' THEN 'la Atención' WHEN CATEGORIA = 'P' THEN 'los Productos' ELSE 'los Servicios' END, ' del cliente con CUI ', CUI, ' y comentario ', COMENTARIO), 'Encuesta'
+FROM ENCUESTA
+UNION
+SELECT CREACION, CREA, CONCAT('Se creó/actualizó la Queja por ', CASE WHEN CATEGORIA = 'A' THEN 'Atención' WHEN CATEGORIA = 'P' THEN 'Productos' ELSE 'Servicios' END, ' del cliente con CUI ', CUI, ' y descripción ', DESCRIPCION), 'Queja'
+FROM QUEJA
+UNION
+SELECT CREACION, CREA, CONCAT('Se creó/actualizó el Servicio ', NOMBRE, ' de tipo ', CASE WHEN TIPO = '1' THEN 'Agua' WHEN TIPO = '2' THEN 'Electricidad' WHEN TIPO = '3' THEN 'Teléfono' ELSE 'Internet' END, ' con proveedor ', PROVEEDOR, ' y monto ', MONTO), 'Servicio'
+FROM SERVICIO
+UNION
+SELECT CREACION, CREA, CONCAT('Se creó/actualizó el Préstamo por monto ', MONTO, ' y saldo ', SALDO, ' para el cliente con CUI ', CUI), 'Préstamo'
+FROM PRESTAMO
+UNION
+SELECT CREACION, CREA, CONCAT('Se realizó el Pago de tipo ', CASE WHEN TIPO = 'S' THEN 'Servicio' WHEN TIPO = 'P' THEN 'Préstamo' ELSE 'Tarjeta' END, ' por monto ', MONTO, ' en modalidad ', CASE WHEN MODALIDAD = 'E' THEN 'Efectivo' ELSE 'Transferencia' END), 'Pago'
+FROM PAGO
+UNION
+SELECT R.CREACION, R.CREA, CONCAT('Se realizó el Retiro de tipo ', CASE WHEN R.TIPO = 'C' THEN 'Cajero' ELSE 'Ventanilla' END, ' por monto ', R.MONTO, ' en moneda ', CASE WHEN R.MONEDA = 'Q' THEN 'Quetzales' ELSE 'Dólares' END, ' para la cuenta número ', C.NUMERO, ' del cliente con CUI ', C.CUI), 'Retiro'
+FROM RETIRO R
+    INNER JOIN CUENTA C ON R.ID_CUENTA = C.ID_CUENTA
+UNION
+SELECT D.CREACION, D.CREA, CONCAT('Se realizó el Depósito de tipo ', CASE WHEN D.TIPO = 'E' THEN 'Efectivo' ELSE 'Transferencia' END, ' por monto ', D.MONTO, ' en moneda ', CASE WHEN D.MONEDA = 'Q' THEN 'Quetzales' ELSE 'Dólares' END, ' para la cuenta número ', C.NUMERO, ' del cliente con CUI ', C.CUI), 'Depósito'
+FROM DEPOSITO D
+    INNER JOIN CUENTA C ON D.ID_CUENTA = C.ID_CUENTA
+UNION
+SELECT CREACION, CREA, CONCAT('Se creó/actualizó la Divisa ', NOMBRE, ' con símbolo ', SIMBOLO, ' y valor de compra ', VALOR_COMPRA, ' y valor de venta ', VALOR_VENTA), 'Divisa'
+FROM DIVISA
+UNION
+SELECT FECHA_CAMBIO, CREA, CONCAT('Se realizó el Cambio de Moneda por monto ', MONTO, ' de ', MONEDA_ORIGEN, ' a ', MONEDA_DESTINO, ' para el cliente con CUI ', CUI), 'Cambio de Moneda'
+FROM CAMBIO_MONEDA
+ORDER BY CREACION DESC;
+
+-- Vista de entradas y salidas de dinero
+CREATE OR REPLACE VIEW VISTA_MOVIMIENTOS AS
+SELECT CREACION, CREA, CONCAT('Se brindó un prestamo de ', MONTO, ' al cliente con CUI ', CUI) AS DESCRIPCION, CONCAT('GTQ ', MONTO) AS MONTO, MONTO AS VALOR, 'Q' COLLATE utf8mb4_unicode_ci AS MONEDA, 'Salida' COLLATE utf8mb4_unicode_ci AS TIPO
+FROM PRESTAMO
+UNION
+SELECT CREACION, CREA, CONCAT('Se realizó un pago de ', CASE WHEN TIPO = 'S' THEN 'Servicios' WHEN TIPO = 'P' THEN 'Préstamo' ELSE 'Tarjeta' END, ' por monto ', MONTO), CONCAT('GTQ ', MONTO), MONTO, 'Q' COLLATE utf8mb4_unicode_ci, 'Entrada' COLLATE utf8mb4_unicode_ci
+FROM PAGO
+UNION
+SELECT R.CREACION, R.CREA, CONCAT('Se realizó un retiro de ', R.MONTO, ' en moneda ', CASE WHEN R.MONEDA = 'Q' THEN 'Quetzales' ELSE 'Dólares' END, ' para la cuenta número ', C.NUMERO, ' del cliente con CUI ', C.CUI), CONCAT(CASE WHEN R.MONEDA = 'Q' THEN 'GTQ ' ELSE 'USD ' END, R.MONTO), R.MONTO, R.MONEDA COLLATE utf8mb4_unicode_ci, 'Salida' COLLATE utf8mb4_unicode_ci
+FROM RETIRO R
+    INNER JOIN CUENTA C ON R.ID_CUENTA = C.ID_CUENTA
+UNION
+SELECT D.CREACION, D.CREA, CONCAT('Se realizó un depósito de ', D.MONTO, ' en moneda ', CASE WHEN D.MONEDA = 'Q' THEN 'Quetzales' ELSE 'Dólares' END, ' para la cuenta número ', C.NUMERO, ' del cliente con CUI ', C.CUI), CONCAT(CASE WHEN D.MONEDA = 'Q' THEN 'GTQ ' ELSE 'USD ' END, D.MONTO), D.MONTO, D.MONEDA COLLATE utf8mb4_unicode_ci, 'Entrada' COLLATE utf8mb4_unicode_ci
+FROM DEPOSITO D
+    INNER JOIN CUENTA C ON D.ID_CUENTA = C.ID_CUENTA
+ORDER BY CREACION DESC;
+
+-- Vista de disponibilidad de dinero (Dolares y Quetzales)
+CREATE OR REPLACE VIEW VISTA_DISPONIBILIDAD AS
+SELECT 
+    MONEDAS.MONEDA, 
+    COALESCE(SUM(DISPONIBILIDAD.MONTO), 0) AS MONTO
+FROM
+    (SELECT 'Quetzales' AS MONEDA UNION ALL
+     SELECT 'Dólares') MONEDAS
+LEFT JOIN (
+    SELECT 'Quetzales' AS MONEDA, VALOR * - 1 AS MONTO FROM VISTA_MOVIMIENTOS WHERE MONEDA = 'Q' AND TIPO = 'Salida'
+    UNION ALL
+    SELECT 'Dólares' AS MONEDA, VALOR * - 1 AS MONTO FROM VISTA_MOVIMIENTOS WHERE MONEDA != 'Q' AND TIPO = 'Salida'
+    UNION ALL
+    SELECT 'Quetzales' AS MONEDA, VALOR AS MONTO FROM VISTA_MOVIMIENTOS WHERE MONEDA = 'Q' AND TIPO = 'Entrada'
+    UNION ALL
+    SELECT 'Dólares' AS MONEDA, VALOR AS MONTO FROM VISTA_MOVIMIENTOS WHERE MONEDA != 'Q' AND TIPO = 'Entrada'
+) DISPONIBILIDAD
+ON MONEDAS.MONEDA = DISPONIBILIDAD.MONEDA
+GROUP BY MONEDAS.MONEDA;
+
+-- Vista de disponibilidad por día
+CREATE OR REPLACE VIEW VISTA_DISPONIBILIDAD_DIA AS
+SELECT 
+    DATE_FORMAT(DIAS.DIA, '%Y-%m-%d') AS DIA,
+    COALESCE(SUM(DISPONIBILIDAD.QUETZALES), 0) AS QUETZALES,
+    COALESCE(SUM(DISPONIBILIDAD.DOLARES), 0) AS DOLARES
+FROM
+    (SELECT DATE_FORMAT(CREACION, '%Y-%m-%d') AS DIA FROM VISTA_MOVIMIENTOS GROUP BY DATE_FORMAT(CREACION, '%Y-%m-%d')) DIAS
+    LEFT JOIN (
+        SELECT DATE_FORMAT(CREACION, '%Y-%m-%d') AS DIA, 
+            CASE WHEN MONEDA = 'Q' AND TIPO = 'Salida' THEN VALOR * - 1
+                 WHEN MONEDA = 'Q' AND TIPO = 'Entrada' THEN VALOR
+                 ELSE 0 END AS QUETZALES,
+            CASE WHEN MONEDA != 'Q' AND TIPO = 'Salida' THEN VALOR * - 1
+                 WHEN MONEDA != 'Q' AND TIPO = 'Entrada' THEN VALOR
+                 ELSE 0 END AS DOLARES
+        FROM VISTA_MOVIMIENTOS
+    ) DISPONIBILIDAD
+    ON DIAS.DIA = DISPONIBILIDAD.DIA
+GROUP BY DATE_FORMAT(DIA, '%Y-%m-%d')
+ORDER BY DIA DESC;

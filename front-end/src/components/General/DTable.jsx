@@ -19,7 +19,7 @@ const formatRow = (row) => {
 
 const ExpandedComponent = ({ data }) => <pre>{formatRow(data)}</pre>;
 
-const DTable = ({ title, columns, data, onRowClicked = () => {} }) => {
+const DTable = ({ title, columns, data, onRowClicked = () => {}, expanded=false, rowsPerPage=5 }) => {
     return (
         <div style={{ width: '100%' }}>
             <DataTable
@@ -27,13 +27,13 @@ const DTable = ({ title, columns, data, onRowClicked = () => {} }) => {
                 columns={columns}
                 data={data}
                 onRowClicked={onRowClicked}
-                expandableRows
+                expandableRows={expanded}
                 expandableRowsComponent={ExpandedComponent}
                 pagination
                 highlightOnHover
                 pointerOnHover
                 responsive
-                paginationPerPage={5}
+                paginationPerPage={rowsPerPage}
             />
         </div>
     );

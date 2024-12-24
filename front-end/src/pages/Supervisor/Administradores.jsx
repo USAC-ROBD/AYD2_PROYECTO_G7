@@ -13,7 +13,7 @@ function Administradores() {
     const { user, rol } = useAuth();  // Usamos el hook personalizado para obtener el usuario y rol
     const [show, setShow] = useState(false);
     const [isNew, setIsNew] = useState(false);
-    const [admin, setAdmin] = useState({nombre: '', apellido: '', telefono: '', email: '', edad: '', cui: '', genero: 'M', estadoCivil: 'S', papeleria: '', foto: ''});
+    const [admin, setAdmin] = useState({nombre: '', apellido: '', telefono: '', correo: '', edad: '', cui: '', genero: 'M', estado_civil: 'S', papeleria: '', foto: ''});
 
     useEffect(() => {
         if (!user || !rol) {
@@ -51,7 +51,7 @@ function Administradores() {
     const handleClose = () => setShow(false);
     const handleShow = (isNew, admin) => {
         if (isNew) {
-            setAdmin({nombre: '', apellido: '', telefono: '', email: '', edad: '', cui: '', genero: 'M', estadoCivil: 'S', papeleria: '', foto: ''});
+            setAdmin({nombre: '', apellido: '', telefono: '', correo: '', edad: '', cui: '', genero: 'M', estado_civil: 'S', papeleria: '', foto: ''});
         } else {
             setAdmin(admin);
         }
@@ -69,12 +69,12 @@ function Administradores() {
     };
 
     const validateForm = () => {
-        return admin.nombre && admin.apellido && admin.telefono && admin.email && admin.edad && admin.cui && admin.genero && admin.estadoCivil && admin.papeleria instanceof File && admin.foto instanceof File;
+        return admin.nombre && admin.apellido && admin.telefono && admin.correo && admin.edad && admin.cui && admin.genero && admin.estado_civil;
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (!validateForm()) {
+        if (!validateForm() || (isNew && (!admin.papeleria || !admin.foto))) {
             alert('Por favor, llene todos los campos');
             return;
         }
@@ -94,11 +94,11 @@ function Administradores() {
             formData.append('nombre', admin.nombre);
             formData.append('apellido', admin.apellido);
             formData.append('telefono', admin.telefono);
-            formData.append('email', admin.email);
+            formData.append('correo', admin.correo);
             formData.append('edad', admin.edad);
             formData.append('cui', admin.cui);
             formData.append('genero', admin.genero);
-            formData.append('estado_civil', admin.estadoCivil);
+            formData.append('estado_civil', admin.estado_civil);
             formData.append('papeleria', admin.papeleria, 'papeleria.pdf');
             formData.append('foto', admin.foto, 'foto.jpg');
 
@@ -116,14 +116,59 @@ function Administradores() {
         }
     };
 
-    const handleUpdate = () => {
-        console.log('Editar', admin);
-        fetchData();
+    const handleUpdate = async () => {
+        try {
+            const formData = new FormData();
+            formData.append('id_usuario', admin.id);
+            formData.append('usuario', admin.usuario);
+            formData.append('nombre', admin.nombre);
+            formData.append('apellido', admin.apellido);
+            formData.append('telefono', admin.telefono);
+            formData.append('correo', admin.correo);
+            formData.append('edad', admin.edad);
+            formData.append('cui', admin.cui);
+            formData.append('genero', admin.genero);
+            formData.append('estado_civil', admin.estado_civil);
+            admin.papeleria && admin.papeleria instanceof File ? formData.append('papeleria', admin.papeleria, 'papeleria.pdf') : null;
+            admin.foto && admin.papeleria instanceof File ? formData.append('foto', admin.foto, 'foto.jpg') : null;
+            
+            const response = await fetch(`${import.meta.env.VITE_API_HOST}/actualizar_administrador`, {
+                method: 'POST',
+                credentials: 'include',
+                body: formData,
+            });
+            const result = await response.json();
+            alert(result.message);
+            fetchData();
+        } catch (error) {
+            console.error('Error en handleUpdate:', error);
+            alert('Ocurrió un error al actualizar el administrador');
+        }
     };
 
-    const handleDelete = () => {
-        console.log('Eliminar', admin);
-        fetchData();
+    const handleDelete = async () => {
+        try {
+            if (!window.confirm('¿Está seguro de eliminar el administrador?')) {
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('id_usuario', admin.id);
+            formData.append('usuario', admin.usuario);
+
+            const response = await fetch(`${import.meta.env.VITE_API_HOST}/eliminar_administrador`, {
+                method: 'POST',
+                credentials: 'include',
+                body: formData,
+            });
+            const result = await response.json();
+            alert(result.message);
+            handleClose();
+            fetchData();
+        } catch (error) {
+            console.error('Error en handleDelete:', error);
+            alert('Ocurrió un error al eliminar el administrador');
+        }
     };
 
     if (!user || !rol) {
@@ -155,11 +200,20 @@ function Administradores() {
                         {name: 'Nombre', selector: row => `${row.nombre} ${row.apellido}`, sortable: true},
                         {name: 'Correo', selector: row => row.correo, sortable: true},
                         {name: 'Teléfono', selector: row => row.telefono, sortable: true},
-                        {name: 'Estado', selector: row => row.estado, sortable: true},
+                        {name: 'Estado', selector: row => {
+                            switch (row.estado) { 
+                                case 'P': return 'Pendiente'; 
+                                case 'A': return 'Activo'; 
+                                case 'I': return 'Inactivo'; 
+                                case 'B': return 'Bloqueado'; 
+                                default: return 'Desconocido';
+                            }
+                        }, sortable: true},
                         {name: 'Acciones', cell: row => <Button variant='primary' onClick={() => handleShow(false, row)}>Editar</Button>}
                     ]}
                     data={administradores}
                     onRowClicked={(row) => handleShow(false, row)}
+                    expanded={true}
                 />
             </Container>
 
@@ -191,9 +245,9 @@ function Administradores() {
                                 </Form.Group>
                             </Col>
                             <Col>
-                                <Form.Group className="mb-3" controlId="formBasicEmail">
-                                    <Form.Label>Email</Form.Label>
-                                    <Form.Control type="email" name="email" value={admin.email} onChange={handleInputChange} placeholder="Ingrese el email" required />
+                                <Form.Group className="mb-3" controlId="formBasicCorreo">
+                                    <Form.Label>Correo</Form.Label>
+                                    <Form.Control type="correo" name="correo" value={admin.correo} onChange={handleInputChange} placeholder="Ingrese el correo" required />
                                 </Form.Group>
                             </Col>
                         </Row>
@@ -224,7 +278,7 @@ function Administradores() {
                             <Col>
                                 <Form.Group className="mb-3" controlId="formBasicEstadoCivil">
                                     <Form.Label>Estado Civil</Form.Label>
-                                    <Form.Control as="select" name="estadoCivil" value={admin.estadoCivil} onChange={handleInputChange}>
+                                    <Form.Control as="select" name="estado_civil" value={admin.estado_civil} onChange={handleInputChange}>
                                         <option value="S">Soltero</option>
                                         <option value="C">Casado</option>
                                         <option value="D">Divorciado</option>
@@ -237,13 +291,13 @@ function Administradores() {
                             <Col>
                                 <Form.Group className="mb-3" controlId="formBasicPapeleria">
                                     <Form.Label>Papelería</Form.Label>
-                                    <Form.Control type='file' accept='application/pdf' name="papeleria" onChange={handleInputChange} required />
+                                    <Form.Control type='file' accept='application/pdf' name="papeleria" onChange={handleInputChange} />
                                 </Form.Group>
                             </Col>
                             <Col>
                                 <Form.Group className="mb-3" controlId="formBasicFoto">
                                     <Form.Label>Foto</Form.Label>
-                                    <Form.Control type='file' accept='image/*' name="foto" onChange={handleInputChange} required />
+                                    <Form.Control type='file' accept='image/*' name="foto" onChange={handleInputChange} />
                                 </Form.Group>
                             </Col>
                         </Row>

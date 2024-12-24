@@ -76,6 +76,7 @@ function Quejas() {
                     { name: 'Fecha', selector: row => formatDate(row.creado), sortable: true },
                 ]}
                 data={quejas}
+                expanded={true}
             />
         </Container>
     );
