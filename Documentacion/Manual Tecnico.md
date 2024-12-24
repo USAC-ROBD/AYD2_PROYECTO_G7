@@ -1891,6 +1891,10 @@ Base de Datos
 
 ![DIAGRAMA DE COMPONENTES](./assets/Diagramas/Diagrama%20de%20Componentes.drawio.png)
 
+## DIAGRAMA DE BLOQUES
+
+![DIAGRAMA DE BLOQUES](./assets/Diagramas/Diagrama%20bloques.drawio.png)
+
 ## DIAGRAMA ENTIDAD RELACION
 
 ![DIAGRAMA ER](./assets/Diagramas/Relational.jpg)
