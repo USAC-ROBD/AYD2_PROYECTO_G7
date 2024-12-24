@@ -115,9 +115,13 @@ El desarrollo de esta plataforma digital representa un paso más en la evolució
 
 ### CDU ALTO NIVEL
 
-
+![cdu alto nivel](./assets/cajero/general-corregido.png)
 
 #### Primera Descomposición
+
+![cdu alto nivel](./assets/cajero/general.png)
+
+### Diagramas de CDUs
 
 #### 1. ROL CAJERO
 
@@ -1609,82 +1613,270 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 
 ### a. Stakeholders vs Requerimientos
 
-| **Stakeholders / Requerimientos** | **RF-1.1** | **RF-1.2** | **RF-1.3** | **RF-1.4** | **RF-1.5** | **RF-1.6** | **RF-1.7** | **RF-1.8** | **RF-1.9** | **RF-1.10** |
-|------------------------------------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|
-| **Clientes**                      |           | X         | X         |           | X         | X         | X         | X         | X         | X         |
-| **Directivos y gerentes**         |           |           |           |           |           |           | X         |           |           | X         |
-| **Agentes de Servicio al Cliente**|           | X         | X         | X         | X         |           |           |           |           |           |
-| **Cajeros**                       | X         | X         | X         | X         | X         | X         | X         | X         | X         | X         |
-| **Administradores de sistemas**   | X         |           |           |           |           |           | X         | X         | X         | X         |
-| **Socios comerciales**            |           | X         | X         |           |           | X         | X         |           |           |           |
-| **Entidades regulatorias**        | X         |           |           |           |           |           | X         | X         | X         | X         |
+# Matriz de Requerimientos vs Stakeholders
+
+| Requerimiento                                     | Cajero | Empleado de Atención al Cliente | Administrador de Sistemas | Supervisor | Clientes |
+|---------------------------------------------------|--------|---------------------------------|----------------------------|------------|----------|
+| **RF-1.1. Gestión de Acceso: Login**              |   X    |  X                              |   X                        |  X         |          |
+| **RF-1.2. Pago de Servicios**                     |   X    |                                 |                            |            |    X     |
+| **RF-1.3. Pago de Préstamos**                     |   X    |                                 |                            |            |    X     |
+| **RF-1.4. Búsqueda de Clientes**                  |   X    |                                 |                            |            |    X     |
+| **RF-1.5. Consulta de Saldo**                     |   X    |                                 |                            |            |    X     |
+| **RF-1.6. Cambio de Moneda**                      |   X    |                                 |                            |            |    X     |
+| **RF-1.7. Generación de Comprobantes**            |   X    |                                 |                            |            |    X     |
+| **RF-1.8. Retiro de Dinero**                      |   X    |                                 |                            |            |    X     |
+| **RF-1.9. Depósito de Dinero**                    |   X    |                                 |                            |            |    X     |
+| **RF-1.10. Pago de Tarjetas de Crédito**          |   X    |                                 |                            |            |    X     |
+| **RF-2.1. Creación de Cuenta Bancaria Normal y en Dólares** |        |   X                             |                            |            |    X     |
+| **RF-2.2. Actualización de Datos del Cliente**    |        |   X                             |                            |            |    X     |
+| **RF-2.3. Creación de Tarjetas de Crédito o Débito** |        |   X                             |                            |            |    X     |
+| **RF-2.4. Bloqueo de Tarjetas de Crédito o Débito** |        |   X                             |                            |            |    X     |
+| **RF-2.5. Solicitud de Cancelación de Cuenta o Tarjeta** |        |   X                             |                            |     X      |    X     |
+| **RF-2.6. Encuesta de Satisfacción**              |        |   X                             |                            |     X      |    X     |
+| **RF-2.7. Solicitud de Préstamo**                 |        |   X                             |                            |     X      |    X     |
+| **RF-2.8. Registro de Quejas**                    |        |   X                             |                            |     X      |    X     |
+| **RF-3.1. Inicio de sesión de administrador de sistema** |        |                                 |   X                        |            |          |
+| **RF-3.2. Creación de nuevo empleado**            |        |                                 |   X                        |            |          |
+| **RF-3.3. Asignación de roles**                   |        |                                 |   X                        |            |          |
+| **RF-3.4. Eliminar empleados**                    |        |                                 |   X                        |     X      |          |
+| **RF-3.5. Cambio de contraseña de empleado**      |        |                                 |   X                        |     X      |          |
+| **RF-3.6. Gestión de copias de seguridad**        |        |                                 |   X                        |            |          |
+| **RF-4.1 - Login de Supervisor**                  |        |                                 |                            |     X      |          |
+| **RF-4.2 - Modificar información del empleado**  |        |                                 |                            |     X      |          |
+| **RF-4.3 - Aceptar Préstamo**                     |        |                                 |                            |     X      |    X     |
+| **RF-4.4 - Revisar encuestas de satisfacción**    |        |                                 |                            |     X      |    X     |
+| **RF-4.5 - Ver registros de quejas**              |        |                                 |                            |     X      |    X     |
+| **RF-4.6 - Registro de administradores**          |        |                                 |                            |     X      |          |
+| **RF-4.7 - Ver información de los administradores del sistema** |        |                                 |                            |     X      |          |
+| **RF-4.8 - Monitoreo de actividad en tiempo real**|        |                                 |                            |     X      |          |
+| **RF-4.9 - Gestión de inventarios bancarios**     |        |                                 |                            |     X      |          |
+| **RF-4.10 - Aprobación de tarjetas**              |        |                                 |                            |     X      |    X     |
+| **RF-4.11 - Aprobación de solicitudes de cancelación de servicios** |        |                                 |                            |     X      |    X     |
+| **RF-4.12 - Reportes**                            |        |                                 |                            |     X      |          |
 
 ### b. Stakeholders vs CDU
 
-| **Stakeholders / CDU**            | **CDU-1.1** | **CDU-1.2** | **CDU-1.3** | **CDU-1.4** | **CDU-1.5** | **CDU-1.6** | **CDU-1.7** | **CDU-1.8** | **CDU-1.9** | **CDU-1.10** |
-|------------------------------------|------------|------------|------------|------------|------------|------------|------------|------------|------------|------------|
-| **Clientes**                      |            | X          | X          |            | X          | X          | X          | X          | X          | X          |
-| **Directivos y gerentes**         |            |            |            |            |            |            | X          |            |            | X          |
-| **Agentes de Servicio al Cliente**|            | X          | X          | X          | X          |            |            |            |            |            |
-| **Cajeros**                       | X          | X          | X          | X          | X          | X          | X          | X          | X          | X          |
-| **Administradores de sistemas**   | X          |            |            |            |            |            | X          | X          | X          | X          |
-| **Socios comerciales**            |            | X          | X          |            |            | X          | X          |            |            |            |
-| **Entidades regulatorias**        | X          |            |            |            |            |            | X          | X          | X          | X          |
+| **CDUs / Stakeholders**          | **Clientes** | **Cajeros** | **Agentes de Servicio al Cliente** | **Supervisores** | **Administradores de Sistemas** |
+|----------------------------------|--------------|-------------|------------------------------------|------------------|----------------------------------|
+| **CDU-1.1** Gestión de Acceso    |              | X           |   X                                | X                | X                                |
+| **CDU-1.2** Pago de Servicios    | X            | X           |                                    |                  |                                  |
+| **CDU-1.3** Pago de Préstamos    | X            | X           |                                    |                  |                                  |
+| **CDU-1.4** Búsqueda de Clientes | X            | X           |                                    |                  |                                  |
+| **CDU-1.5** Consulta de Saldo    | X            | X           |                                    |                  |                                  |
+| **CDU-1.6** Cambio de Moneda     | X            | X           |                                    |                  |                                  |
+| **CDU-1.7** Generación de Comprobantes | X      | X           |                                    |                  |                                  |
+| **CDU-1.8** Retiro de Dinero     | X            | X           |                                    |                  |                                  |
+| **CDU-1.9** Depósito de Dinero   | X            | X           |                                    |                  |                                  |
+| **CDU-1.10** Pago de Tarjetas    | X            | X           |                                    |                  |                                  |
+| **CDU-2.1** Creación de Cuentas  | X            |             | X                                  |                  |                                  |
+| **CDU-2.2** Actualización de Datos | X          |             | X                                  |                  |                                  |
+| **CDU-2.3** Creación de Tarjetas | X            |             | X                                  | X                |                                  |
+| **CDU-2.4** Bloqueo de Tarjetas  | X            |             | X                                  |                  |                                  |
+| **CDU-2.5** Cancelación de Cuentas o Tarjetas | X |           | X                                  | X                |                                  |
+| **CDU-2.6** Encuesta de Satisfacción | X        |             | X                                  | X                |                                  |
+| **CDU-2.7** Solicitud de Préstamos | X          |             | X                                  | X                |                                  |
+| **CDU-2.8** Registro de Quejas   | X            |             | X                                  | X                |                                  |
+| **CDU-3.1** Login de Administrador |            |             |                                    |                  | X                                |
+| **CDU-3.2** Registro de Empleados|              |             |                                    |                  | X                                |
+| **CDU-3.3** Asignación de Roles  |              |             |                                    | X                | X                                |
+| **CDU-3.4** Eliminación de Empleados |          |             |                                    | X                | X                                |
+| **CDU-3.5** Cambio de Contraseñas |             |             |                                    | X                | X                                |
+| **CDU-3.6** Gestión de Copias de Seguridad |    |             |                                    |                  | X                                |
+| **CDU-4.1** Login de Supervisor  |              |             |                                    | X                |                                  |
+| **CDU-4.2** Verificar Clave      |              |             |                                    | X                |                                  |
+| **CDU-4.3** Modificar Información de Empleados | |             |                                    | X                |                                  |
+| **CDU-4.4** Reiniciar Contraseña |              |             |                                    | X                |                                  |
+| **CDU-4.5** Bloqueo de Acceso a Empleado |     |             |                                    | X                |                                  |
+| **CDU-4.6** Aceptar o Rechazar Préstamos | X   |             | X                                  | X                |                                  |
+| **CDU-4.7** Validar Préstamos Existentes | X   |             | X                                  | X                |                                  |
+| **CDU-4.8** Revisar Encuestas de Satisfacción | X |          | X                                  | X                |                                  |
+| **CDU-4.9** Ver Registro de Quejas | X         |             | X                                  | X                |                                  |
+| **CDU-4.10** Registro de Administradores |     |             |                                    | X                | X                                |
+| **CDU-4.11** Modificación de Administradores | |             |                                    | X                | X                                |
+| **CDU-4.12** Monitoreo en Tiempo Real |        |             |                                    | X                |                                  |
+| **CDU-4.13** Vista de Reportes   |              |             |                                    | X                |                                  |
+| **CDU-4.14** Gestión de Inventarios |          |             |                                    | X                |                                  |
+| **CDU-4.15** Aprobar o Rechazar Tarjetas | X   |             | X                                  | X                |                                  |
+| **CDU-4.16** Cancelación de Servicios | X     |             | X                                  | X                |                                  |
+| **CDU-4.17** Verificar Inconvenientes de Servicio | |         | X                                  | X                |                                  |
 
 ### c. Requerimientos vs CDU
 
-| **CDU / Requerimientos**          | **RF-1.1** | **RF-1.2** | **RF-1.3** | **RF-1.4** | **RF-1.5** | **RF-1.6** | **RF-1.7** | **RF-1.8** | **RF-1.9** | **RF-1.10** |
-|------------------------------------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|
-| **CDU-1.1: Gestión de Acceso**      | X         |           |           |           |           |           |           |           |           |           |
-| **CDU-1.2: Pago de Servicios**      |           | X         |           |           |           |           | X         |           |           |           |
-| **CDU-1.3: Pago de Préstamos**      |           |           | X         |           |           |           | X         |           |           |           |
-| **CDU-1.4: Búsqueda de Clientes**   |           |           |           | X         |           |           |           |           |           |           |
-| **CDU-1.5: Consulta de Saldo**      |           |           |           |           | X         |           |           |           |           |           |
-| **CDU-1.6: Cambio de Moneda**       |           |           |           |           |           | X         | X         |           |           |           |
-| **CDU-1.7: Generación de Comprobantes** |       | X         | X         |           | X         | X         | X         | X         | X         | X         |
-| **CDU-1.8: Retiro de Dinero**       |           |           |           |           |           |           | X         | X         |           |           |
-| **CDU-1.9: Depósito de Dinero**     |           |           |           |           |           |           | X         |           | X         |           |
-| **CDU-1.10: Pago de Tarjetas de Crédito** |       |           |           |           |           |           | X         |           |           | X         |
+| Requerimientos / CDUs                            | CDU-1.1 | CDU-1.2 | CDU-1.3 | CDU-1.4 | CDU-1.5 | CDU-1.6 | CDU-1.7 | CDU-1.8 | CDU-1.9 | CDU-1.10 |
+|--------------------------------------------------|---------|---------|---------|---------|---------|---------|---------|---------|---------|----------|
+| RF-1.1 Gestión de Acceso: Login                  | X       |         |         |         |         |         |         |         |         |          |
+| RF-1.2 Pago de Servicios                         |         | X       |         |         |         |         |         |         |         |          |
+| RF-1.3 Pago de Préstamos                         |         |         | X       |         |         |         |         |         |         |          |
+| RF-1.4 Búsqueda de Clientes                      |         |         |         | X       |         |         |         |         |         |          |
+| RF-1.5 Consulta de Saldo                         |         |         |         |         | X       |         |         |         |         |          |
+| RF-1.6 Cambio de Moneda                          |         |         |         |         |         | X       |         |         |         |          |
+| RF-1.7 Generación de Comprobantes                |         |         |         |         |         |         | X       |         |         |          |
+| RF-1.8 Retiro de Dinero                          |         |         |         |         |         |         |         | X       |         |          |
+| RF-1.9 Depósito de Dinero                        |         |         |         |         |         |         |         |         | X       |          |
+| RF-1.10 Pago de Tarjetas de Crédito              |         |         |         |         |         |         |         |         |         | X        |
+
+
+| Requerimientos / CDUs                            | CDU-2.1 | CDU-2.2 | CDU-2.3 | CDU-2.4 | CDU-2.5 | CDU-2.6 | CDU-2.7 | CDU-2.8 |
+|--------------------------------------------------|---------|---------|---------|---------|---------|---------|---------|---------|
+| RF-2.1 Creación de Cuenta Bancaria Normal y en Dólares | X       |         |         |         |         |         |         |         |
+| RF-2.2 Actualización de Datos del Cliente         |         | X       |         |         |         |         |         |         |
+| RF-2.3 Creación de Tarjetas de Crédito o Débito  |         |         | X       |         |         |         |         |         |
+| RF-2.4 Bloqueo de Tarjetas de Crédito o Débito   |         |         |         | X       |         |         |         |         |
+| RF-2.5 Solicitud de Cancelación de Cuenta o Tarjeta |         |         |         |         | X       |         |         |         |
+| RF-2.6 Encuesta de Satisfacción                  |         |         |         |         |         | X       |         |         |
+| RF-2.7 Solicitud de Préstamo                     |         |         |         |         |         |         | X       |         |
+| RF-2.8 Registro de Quejas                        |         |         |         |         |         |         |         | X       |
+
+| Requerimientos / CDUs | CDU-3.1 | CDU-3.2 | CDU-3.3 | CDU-3.4 | CDU-3.5 | CDU-3.6 |
+|------------------------|---------|---------|---------|---------|---------|---------|
+| RF-3.1 Inicio de sesión de administrador de sistema | X       |         |         |         |         |         |
+| RF-3.2 Creación de nuevo empleado |         | X       |         | X       |         |         |
+| RF-3.3 Asignación de roles |         |         | X       |         |         |         |
+| RF-3.4 Eliminar empleados |         | X       |         | X       |         |         |
+| RF-3.5 Cambio de contraseña de empleado |         |         |         |         | X       |         |
+| RF-3.6 Gestión de copias de seguridad |         |         |         |         |         | X       |
+
+| **Requerimientos / CDU**                                  | **CDU-4.1** | **CDU-4.2** | **CDU-4.3** | **CDU-4.4** | **CDU-4.5** | **CDU-4.6** | **CDU-4.7** | **CDU-4.8** | **CDU-4.9** | **CDU-4.10** | **CDU-4.11** | **CDU-4.12** |
+|------------------------------------------------------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|--------------|--------------|--------------|
+| **RF-4.1 Login de Supervisor**                             | X           |             |             |             |             |             |             |             |             |              |              |              |
+| **RF-4.2 Modificar información del empleado**              |             | X           |             |             |             |             |             |             |             |              |              |              |
+| **RF-4.3 Aceptar Préstamo**                                |             |             | X           |             |             |             |             |             |             |              |              |              |
+| **RF-4.4 Revisar encuestas de satisfacción**               |             |             |             | X           |             |             |             |             |             |              |              |              |
+| **RF-4.5 Ver registros de quejas**                         |             |             |             |             | X           |             |             |             |             |              |              |              |
+| **RF-4.6 Registro de administradores**                     |             |             |             |             |             | X           |             |             |             |              |              |              |
+| **RF-4.7 Ver información de los administradores del sistema** |             |             |             |             |             |             | X           |             |             |              |              |              |
+| **RF-4.8 Monitoreo de actividad en tiempo real**           |             |             |             |             |             |             |             | X           |             |              |              |              |
+| **RF-4.9 Gestión de inventarios bancarios**                |             |             |             |             |             |             |             |             | X           |              |              |              |
+| **RF-4.10 Aprobación de tarjetas**                         |             |             |             |             |             |             |             |             |             | X            |              |              |
+| **RF-4.11 Aprobación de solicitudes de cancelación de servicios** |             |             |             |             |             |             |             |             |             |              | X            |              |
+| **RF-4.12 Reportes**                                       |             |             |             |             |             |             |             |             |             |              |              | X            |
 
 ## ESTILOS ARQUITECTONICOS
 
-1. Organización y Mantenimiento:
-    La arquitectura en capas divide el sistema en módulos independientes con responsabilidades bien definidas (como capa de presentación, lógica de negocio y acceso a datos). Esto facilita:
+### Arquitectura en Capas
 
-    * Mantenimiento: Al estar el sistema dividido, cualquier modificación en una capa (como cambiar la base de datos o ajustar la interfaz de usuario) no afecta las otras capas, siempre y cuando se respeten las interfaces.
-    * Escalabilidad: Agregar nuevas funcionalidades, como un nuevo módulo de pago o gestión de clientes, puede hacerse extendiendo o modificando las capas necesarias sin romper el sistema existente.
-2. Separación de Responsabilidades:
-    Cada módulo (como Pago de Servicios, Gestión de Cuentas, o Registro de Quejas) se puede asignar a una capa específica:
+La arquitectura en capas es ideal para este sistema bancario porque proporciona una separación clara de responsabilidades, asegurando que cada capa (presentación, lógica de negocio y persistencia) se especialice en su función, lo que mejora la mantenibilidad y la claridad del sistema. Además, permite escalar de manera flexible cada capa según las necesidades, por ejemplo, incrementando la capacidad del backend sin afectar el frontend o la base de datos. Este diseño también refuerza la seguridad al centralizar la lógica crítica en el backend y evita accesos directos no autorizados a los datos. La modularidad facilita la incorporación de nuevas funcionalidades o cambios tecnológicos sin alterar el sistema completo, mientras que las APIs RESTful aseguran la reutilización de los servicios para diferentes clientes (web, móvil, etc.). Estas características son esenciales en un dominio bancario, donde la sensibilidad de las transacciones, la validación de reglas complejas y la integridad de los datos son prioridades fundamentales. A continuación, se desglosa cómo se estructura:
 
-    * Capa de presentación: Maneja la interfaz para los usuarios (cajeros, atención al cliente, administradores, etc.), garantizando una experiencia intuitiva y clara.
-    * Capa de lógica de negocio: Contiene las reglas de validación, cálculos y procesos como la validación del límite de cambios de moneda o cálculo de intereses en tarjetas de crédito.
-    * Capa de acceso a datos: Se encarga de interactuar con la base de datos para almacenar o recuperar información, como el historial de transacciones o los datos de las cuentas.
-3. Escalabilidad y Flexibilidad:
-    La arquitectura de capas es especialmente útil para un sistema bancario como este debido a:
+#### 1. Capa de Presentación (Frontend)
 
-    * Ampliaciones futuras: Si más adelante se desean añadir nuevas funcionalidades (como pagos internacionales o integración con billeteras digitales), estas pueden integrarse fácilmente en la capa de lógica de negocio.
-    * Flexibilidad tecnológica: Cambiar la base de datos o el frontend puede hacerse con mínimas repercusiones, ya que las capas están desacopladas.
-4. Seguridad:
-    La seguridad es crucial en un entorno bancario. Una arquitectura de capas permite:
+    Responsabilidad: Interactuar con los usuarios y proporcionar la interfaz gráfica.
 
-    * Control en cada nivel: Validaciones como autenticación en la capa de presentación y encriptación en la capa de datos aseguran que cada interacción con el sistema esté protegida.
-    * Protección de datos sensibles: Al restringir el acceso a la capa de datos mediante una capa intermedia de lógica de negocio, se reduce la posibilidad de que datos sensibles sean expuestos.
-5. Modularidad por Roles:
-    Cada rol (cajero, atención al cliente, administrador) tiene funcionalidades específicas, que pueden asignarse a módulos dentro de las capas:
+    Tecnologías: React, Bootstrap, JavaScript.
 
-    * El rol de cajero tiene acceso a funciones como pagos y consultas, pero no puede acceder a la gestión de empleados, lo cual queda en la capa de lógica de negocio y control de acceso.
-    * El rol de atención al cliente tiene capacidades como actualizar datos y gestionar quejas, integrando validaciones desde la capa de negocio para verificar permisos.
-    * El rol de administrador de sistemas realiza tareas sensibles como registro y eliminación de empleados, lo cual se aísla en módulos específicos.
+    Componentes:
 
-6. Cumplimiento de Buenas Prácticas de Desarrollo:
-    Esta arquitectura favorece:
+    * Formularios interactivos para la entrada de datos.
 
-    * Pruebas independientes: Cada capa puede ser probada de forma separada, garantizando calidad y reduciendo errores.
-    * Reutilización de componentes: Por ejemplo, el módulo de autenticación puede ser usado por todos los roles sin duplicar código.
+    * Tablas y elementos visuales para mostrar información.
+
+    Ejemplo: Componentes como Formularios y vistas de confirmación.
+
+#### 2. Capa de Aplicación (Backend)
+
+    Responsabilidad: Gestionar la lógica de negocio y actuar como intermediaria entre el frontend y la base de datos.
+
+    Tecnologías: Node.js, Express.js.
+
+    Componentes:
+
+    * Controladores RESTful que exponen servicios para realizar operaciones específicas.
+
+    * Controladores Middleware para la validacion de peticiones.
+
+    Ejemplo: Controladores para Transacciones, consultas, solicitudes etc.
+
+    Validaciones de negocio, como cálculo de intereses y verificación de condiciones.
+
+#### 3. Capa de Persistencia (Base de Datos)
+
+    Responsabilidad: Almacenar y gestionar los datos de la aplicación.
+
+    Tecnologías: MySQL.
+
+    Componentes:
+
+    * Tablas bien diseñadas con restricciones de integridad.
+
+    Ejemplo: Tablas USUARIO, TARJETA, PAGO.
+
+    Consultas SQL para realizar operaciones CRUD.
+
+### VENTAJAS
+
+#### 1. Organización y Mantenimiento
+
+  La arquitectura en capas divide el sistema en módulos independientes con responsabilidades bien definidas (como capa de presentación, lógica de negocio y acceso adatos). Esto facilita:
+
+* Mantenimiento: Al estar el sistema dividido, cualquier modificación en una capa (como cambiar la base de datos o ajustar la interfaz de usuario) no afecta las otrascapas, siempre y cuando se respeten las interfaces.
+  
+* Escalabilidad: Agregar nuevas funcionalidades, como un nuevo módulo de pago o gestión de clientes, puede hacerse extendiendo o modificando las capas necesarias sin romper el sistema existente.
+
+#### 2. Separación de Responsabilidades
+
+  Cada módulo (como Pago de Servicios, Gestión de Cuentas, o Registro de Quejas) se puede asignar a una capa específica:
+
+* Capa de presentación: Maneja la interfaz para los usuarios (cajeros, atención al cliente, administradores, etc.), garantizando una experiencia intuitiva y clara.
+* Capa de lógica de negocio: Contiene las reglas de validación, cálculos y procesos como la validación del límite de cambios de moneda o cálculo de intereses en tarjetas de crédito.
+* Capa de acceso a datos: Se encarga de interactuar con la base de datos para almacenar o recuperar información, como el historial de transacciones o los datos de las cuentas.
+
+#### 3. Escalabilidad y Flexibilidad
+
+  La arquitectura de capas es especialmente útil para un sistema bancario como este debido a:
+
+* Ampliaciones futuras: Si más adelante se desean añadir nuevas funcionalidades (como pagos internacionales o integración con billeteras digitales), estas pueden integrarse fácilmente en la capa de lógica de negocio.
+
+* Flexibilidad tecnológica: Cambiar la base de datos o el frontend puede hacerse con mínimas repercusiones, ya que las capas están desacopladas.
+
+#### 4. Seguridad
+
+  La seguridad es crucial en un entorno bancario. Una arquitectura de capas permite:
+
+* Control en cada nivel: Validaciones como autenticación en la capa de presentación y encriptación en la capa de datos aseguran que cada interacción con el sistema esté protegida.
+
+* Protección de datos sensibles: Al restringir el acceso a la capa de datos mediante una capa intermedia de lógica de negocio, se reduce la posibilidad de que datos sensibles sean expuestos.
+
+#### 5. Modularidad por Roles:
+
+  Cada rol (cajero, atención al cliente, administrador) tiene funcionalidades específicas, que pueden asignarse a módulos dentro de las capas:
+
+* El rol de cajero tiene acceso a funciones como pagos y consultas, pero no puede acceder a la gestión de empleados, lo cual queda en la capa de lógica de negocio y control de acceso.
+* El rol de atención al cliente tiene capacidades como actualizar datos y gestionar quejas, integrando validaciones desde la capa de negocio para verificar permisos.
+* El rol de administrador de sistemas realiza tareas sensibles como registro y eliminación de empleados, lo cual se aísla en módulos específicos.
+
+#### 6. Cumplimiento de Buenas Prácticas de Desarrollo
+
+  Esta arquitectura favorece:
+
+* Pruebas independientes: Cada capa puede ser probada de forma separada, garantizando calidad y reduciendo errores.
+* Reutilización de componentes: Por ejemplo, el módulo de autenticación puede ser usado por todos los roles sin duplicar código.
+
+### Tecnologías Utilizadas
+
+#### Frontend
+
+* React: Construcción de interfaces de usuario.
+
+* Bootstrap: Estilizado y diseño responsive.
+
+* SweetAlert2: Alertas personalizadas.
+
+Backend
+
+* Node.js: Servidor de aplicación.
+
+* Express.js: Framework para definir rutas y middleware.
+
+* JWT: Autenticación basada en tokens.
+
+Base de Datos
+
+* MySQL: Almacenamiento de datos.
+
+* Tablas diseñadas con integridad referencial y restricciones claras.
 
 ## DIAGRAMA DE DESPLIEGUE
 
-![DIAGRAMA DE DESPLIGUE](./assets/Diagramas/Diagrama%20de%20Despligue.drawio.png)
+![DIAGRAMA DE DESPLIGUE](./assets/Diagramas/despliegue%20proyecto%20ayd2.drawio.png)
 
 ## DIAGRAMA DE COMPONENTES
 
@@ -1701,75 +1893,107 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 
 #### PTPO-1.1 Login
 
- ![Login](./assets/cajero/maquetas/Login.png)
+![PTPO-1.](./assets/cajero/maquetas/Login.png)
 
 #### PTPO-1.2 Home
 
-![Home](./assets/cajero/maquetas/Home.png)
+![PTPO-1.2](./assets/cajero/maquetas/Home.png)
 
 #### PTPO-1.3 Pago de Servicios
 
-![Pago Servicios](./assets/cajero/maquetas/Pago%20de%20servicios.png)
+![PTPO-1.3](./assets/cajero/maquetas/Pago%20de%20servicios.png)
 
 #### PTPO-1.4 Pago de Prestamos
 
-![Login](./assets/cajero/maquetas/Pago%20de%20Prestamos.png)
+![PTPO-1.4](./assets/cajero/maquetas/Pago%20de%20Prestamos.png)
 
 #### PTPO-1.5 Busqueda de Cuentas
 
-![Login](./assets/cajero/maquetas/Busqueda%20de%20cuentas.png)
+![PTPO-1.5](./assets/cajero/maquetas/Busqueda%20de%20cuentas.png)
 
 #### PTPO-1.6 Consulta de Saldo
 
-![Login](./assets/cajero/maquetas/Consulta%20Saldo.png)
+![PTPO-1.6](./assets/cajero/maquetas/Consulta%20Saldo.png)
 
 #### PTPO-1.7 Cambio de moneda
 
-![Login](./assets/cajero/maquetas/Cambiar%20Moneda.png)
+![PTPO-1.7](./assets/cajero/maquetas/Cambiar%20Moneda.png)
 
 #### PTPO-1.8 Retiros
 
-![Login](./assets/cajero/maquetas/Retiro%20de%20Dinero.png)
+![PTPO-1.8](./assets/cajero/maquetas/Retiro%20de%20Dinero.png)
 
 #### PTPO-1.9 Depositos
 
-![Login](./assets/cajero/maquetas/Deposito%20de%20Dinero.png)
+![PTPO-1.9](./assets/cajero/maquetas/Deposito%20de%20Dinero.png)
 
 #### PTPO-1.10 Pago de Tarjeta
 
-![Login](./assets/cajero/maquetas/Pago%20de%20Trajeta.png)
+![PTPO-1.10](./assets/cajero/maquetas/Pago%20de%20Trajeta.png)
 
 ### 2. ATENCIÓN AL CLIENTE
+
+#### PTPO-2.1 Creacion de Cuenta Bancaria Normal y en Dólares
+
+![PTPO-2.1](./assets/atencion_al_cliente/prototipos/CrearCuenta.png)
+
+#### PTPO-2.2 Actualización de Datos del Cliente
+
+![PTPO-2.2](./assets/atencion_al_cliente/prototipos/ActualizarCuenta.png)
+
+#### PTPO-2.3 Creación de Tarjetas de Crédito o Débito
+
+![PTPO-2.3](./assets/atencion_al_cliente/prototipos/CrearTarjeta.png)
+
+#### PTPO-2.4 Bloqueo de Tarjetas de Crédito o Débito
+
+![PTPO-2.4](./assets/atencion_al_cliente/prototipos/BloquearTarjeta.png)
+
+#### PTPO-2.5 Solicitud de Cancelación de Cuenta o Tarjeta
+
+![PTPO-2.5](./assets/atencion_al_cliente/prototipos/CancelacionServicios.png)
+
+#### PTPO-2.6 Encuesta de Satisfacción
+
+![PTPO-2.6](./assets/atencion_al_cliente/prototipos/Encuesta.png)
+
+#### PTPO-2.7 Solicitud de Préstamo
+
+![PTPO-2.7](./assets/atencion_al_cliente/prototipos/Prestamo.png)
+
+#### PTPO-2.8 Registro de Quejas
+
+![PTPO-2.8](./assets/atencion_al_cliente/prototipos/Quejas.png)
 
 ### 3. ADMINISTRADOR DE SISTEMAS
 
 ### 4. SUPERVISOR
 
-### PTPO-4.1 - Login
+#### PTPO-4.1 - Login
 
 ![PTPO-4.1](./assets/ptpo-login.png)
 
-### PTPO-4.2 - Validar Clave
+#### PTPO-4.2 - Validar Clave
 
 ![PTPO-4.2](./assets/ptpo-aydkey.png)
 
-### PTPO-4.3 - Menú Supervisor
+#### PTPO-4.3 - Menú Supervisor
 
 ![PTPO-4.3](./assets/ptpo-supervisor.png)
 
-### PTPO-4.4 - Catálogos
+#### PTPO-4.4 - Catálogos
 
 ![PTPO-4.4](./assets/ptpo-listas.png)
 
-### PTPO-4.5 - Formularios
+#### PTPO-4.5 - Formularios
 
 ![PTPO-4.5](./assets/ptpo-formulario.png)
 
-### PTPO-4.6 - Monitor
+#### PTPO-4.6 - Monitor
 
 ![PTPO-4.6](./assets/ptpo-monitor.png)
 
-### PTPO-4.7 - Reportes
+#### PTPO-4.7 - Reportes
 
 ![PTPO-4.7](./assets/ptpo-reportes.png)
 
@@ -1779,12 +2003,14 @@ El sistema debe asegurar una buena disponibilidad en los reportes en tiempo real
 
 ### 1. SINGLETON
 
+![Singleton](./assets/Diagramas/Singleton.png)
+
 El patrón de diseño Singleton es un patrón creacional que garantiza que una clase tenga una única instancia en toda la aplicación y proporciona un punto de acceso global a esa instancia.
 
 Caractersticas:
 
 - Única instancia: Solo existe un objeto de la clase.
-- Punto de acceso global: Se puede acceder a esa instancia desde cualquier parte del código.
+- Punto de acceso global: Se puede acceder a esa instancia desde cualquier controlador o parte del codigo.
 
 #### Implementación
 
@@ -1800,31 +2026,32 @@ Caractersticas:
 
 - Proporciona un punto de acceso global en la aplicación para que sea facil de usar.
 
-### 2. PROXY
+### 2. MIDDLEWARE
 
-El patrón Proxy actúa como un intermediario o representante para otro objeto, permitiendo controlar el acceso a él. El objetivo principal es ofrecer una capa adicional de control antes de interactuar con el objeto real, ya sea para verificar permisos, optimizar recursos, o agregar funcionalidades sin modificar la implementación original.
+![Middleware](./assets/Diagramas/Middleware.png)
+
+Organiza el procesamiento de solicitudes en una aplicación mediante una cadena de componentes independientes que se ejecutan secuencialmente. Cada middleware realiza una tarea específica, como validación, autenticación o manipulación de datos, y puede decidir si continúa con el siguiente componente o interrumpe el flujo.
 
 Caractersticas:
 
-- **Intermediario**: Proporciona una capa de acceso indirecto al objeto real.
-- **Control de acceso**: Puede restringir o condicionar las operaciones en función de reglas predefinidas.
-- **Desacoplamiento**: Separa la lógica del cliente y del objeto real, manteniendo el sistema modular.
+- **Encadenamiento de funciones**: Los middlewares están diseñados para ejecutarse en secuencia, donde cada componente puede realizar una tarea específica y luego pasar el control al siguiente mediante un mecanismo como next(). Esto permite un flujo de procesamiento flexible y controlado.
+- **Separación de responsabilidades**: Cada middleware se enfoca en una única responsabilidad, como validación, autenticación o registro de datos, lo que facilita la modularidad y el mantenimiento del código al mantener las funciones bien definidas y reutilizables.
+- **Intercepción y control del flujo**: Los middlewares tienen la capacidad de interrumpir o modificar el flujo de ejecución antes de que la solicitud llegue a su destino final. Esto permite manejar errores, realizar verificaciones o cambiar los datos en el camino.
 
 #### Implementación
 
-- Validación de identidad en operaciones sensibles:
-  - Para Actualización de datos, bloqueo de tarjetas, y cancelación de servicios.
-  - Un Protection Proxy verifica que el cliente esté autorizado para realizar la operación (por ejemplo, usando una pregunta de seguridad).
-- Optimización en la creación de recursos:
-  - Para Creación de cuentas o tarjetas.
-  - Un Virtual Proxy asegura que el número de cuenta o tarjeta solo se genere tras completar validaciones previas.
+- Implementación de endpoints con `Express.js`
+- Implementación de rutas con `Express.js`
 
 #### Ventajas
 
-- Protege recursos críticos mediante validaciones antes de otorgar acceso.
-- Facilita la extensión o modificación de funcionalidades sin afectar directamente al objeto real.
-- Proporciona un punto de acceso global en la aplicación para que sea facil de usar.
-- Mantiene el código del objeto real más limpio y enfocado en sus funciones principales.
+- **Modularidad y reutilización**: Cada middleware se implementa como una función independiente con una responsabilidad clara. Esto permite reutilizarlo en diferentes rutas o procesos, reduciendo duplicación y mejorando el mantenimiento.
+
+- **Flexibilidad en el flujo de ejecución**: Los middlewares pueden controlar si una solicitud avanza al siguiente paso, regresan una respuesta inmediata o interrumpen el flujo en caso de errores. Esto facilita el manejo dinámico de solicitudes según las condiciones.
+
+- **Mantenimiento simplificado**: La separación de responsabilidades permite localizar y solucionar errores rápidamente, ya que cada middleware maneja una parte específica del proceso, haciendo el código más legible y fácil de depurar.
+
+- **Extensibilidad y escalabilidad**: Es sencillo agregar nuevas funciones al flujo, como validaciones adicionales, autenticación o registro, simplemente insertando nuevos middlewares en la cadena sin modificar los existentes. Esto permite que la aplicación crezca de manera ordenada.
 
 ### 3. CONTAINER-PRESENTATIONAL
 
@@ -1846,23 +2073,16 @@ Presentational Components:
 
 #### Ventajas
 
-Separación de responsabilidades:
-Facilita mantener y escalar la aplicación al separar lógica de negocio de la interfaz visual.
-Reutilización:
-Los Presentational Components son reutilizables en diferentes partes de la aplicación, ya que no dependen del estado global o la lógica de negocio.
-Facilita pruebas unitarias:
-Los Presentational Components son más fáciles de probar debido a su naturaleza pura (sin dependencias externas).
-Claridad:
-Facilita entender el propósito de cada componente, mejorando la legibilidad del código.
+- **Separación de responsabilidades**: Facilita mantener y escalar la aplicación al separar lógica de negocio de la interfaz visual.
+- **Reutilización**: Los Presentational Components son reutilizables en diferentes partes de la aplicación, ya que no dependen del estado global o la lógica de negocio.
+- **Facilita pruebas unitarias**: Los Presentational Components son más fáciles de probar debido a su naturaleza pura (sin dependencias externas).
+- **Claridad**: Facilita entender el propósito de cada componente, mejorando la legibilidad del código.
 
 #### Desventajas
 
-Sobrecarga inicial:
-Puede ser más complejo estructurar la aplicación en pequeños componentes si el equipo no está familiarizado con el patrón.
-Mayor número de componentes:
-Aumenta el número total de archivos y componentes, lo que podría ser innecesario para aplicaciones pequeñas.
-Dependencia de bibliotecas:
-Los Container Components a menudo dependen de herramientas como Redux o Context API, lo que puede aumentar la complejidad.
+- **Sobrecarga inicial**: Puede ser más complejo estructurar la aplicación en pequeños componentes si el equipo no está familiarizado con el patrón.
+- **Mayor número de componentes**: Aumenta el número total de archivos y componentes, lo que podría ser innecesario para aplicaciones pequeñas.
+- **Dependencia de bibliotecas**: Los Container Components a menudo dependen de herramientas como Redux o Context API, lo que puede aumentar la complejidad.
 
 ### 4. COMMAND
 
@@ -1895,6 +2115,8 @@ Características:
 - Oculta la lógica de creación al resto del sistema.
 - Crea objetos basados en clases abstractas o interfaces.
 - Facilita la configuración y validación de objetos al momento de su creación.
+
+![Factory](./assets/Diagramas/Factory.png)
 
 ### Implementación
 - Define una clase o método estático encargado de crear instancias.
