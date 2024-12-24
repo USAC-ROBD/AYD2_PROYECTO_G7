@@ -7,7 +7,7 @@ import AccionAdmin from "./pages/Adminitrador_de_Sistemas/AdminAccion"
 import Login from "./pages/General/Login";
 import Confirmacion from "./pages/General/ConfirmarCuenta";
 import HomeConsultas from "./pages/Cajero/Consultas";
-import Depositos from './pages/Cajero/Depositos';
+import Depositos from "./pages/Cajero/Depositos";
 import Retiros from "./pages/Cajero/Retiros";
 import CambioMoneda from "./pages/Cajero/CambioMoneda";
 import PagoTarjeta from "./pages/Cajero/PagoTarjeta";
@@ -29,6 +29,7 @@ import FormCreacion from "./components/AtencionCliente/Cuentas/Creacion";
 import FormActualizarInfo from "./components/AtencionCliente/Cuentas/Actualizacion";
 import FormCrearTarjeta from "./components/AtencionCliente/Tarjetas/Creacion";
 import FormBloqueoTarjeta from "./components/AtencionCliente/Tarjetas/Bloqueo";
+import FormCancelacion from "./pages/Cuentas/FormCancelacion";
 
 function App() {
   return (
@@ -44,14 +45,15 @@ function App() {
         <Route path="/cambio-moneda" element={<CambioMoneda />} />
       </Routes>
       <Routes>
-        <Route path="/modulo-depositos" element={<Depositos/>} />
+        <Route path="/modulo-depositos" element={<Depositos />} />
         <Route path="/modulo-retiro" element={<Retiros />} />
       </Routes>
       <Routes>
-        <Route path="/creacion-cuenta" element={<FormCreacion/>} />
-        <Route path="/actualizacion-cliente" element={<FormActualizarInfo/>} />
-        <Route path="/creacion-tarjeta" element={<FormCrearTarjeta/>} />
-        <Route path="/bloqueo-tarjeta" element={<FormBloqueoTarjeta/>} />
+        <Route path="/creacion-cuenta" element={<FormCreacion />} />
+        <Route path="/actualizacion-cliente" element={<FormActualizarInfo />} />
+        <Route path="/creacion-tarjeta" element={<FormCrearTarjeta />} />
+        <Route path="/bloqueo-tarjeta" element={<FormBloqueoTarjeta />} />
+        <Route path="/cancelar-servicio" element={<FormCancelacion />} />
       </Routes>
       <Routes>
         <Route path="/empleados" element={<Empleados />} />
