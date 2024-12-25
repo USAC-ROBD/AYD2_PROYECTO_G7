@@ -11,6 +11,7 @@ function FormDeposito({ handleConfirmacionDeposito, user }) {
     const [monedas, setMonedas] = useState(["GTQ", "USD"]);
     const [propietario, setPropietario] = useState("");
     const [monedaSeleccionada, setMonedaSeleccionada] = useState("");
+    const [cui, setCui] = useState("");
     const navigate = useNavigate();
 
     const handleVerificarCuenta = async () => {
@@ -71,7 +72,8 @@ function FormDeposito({ handleConfirmacionDeposito, user }) {
             destinoCuenta,
             montoDepositar,
             moneda: monedaSeleccionada,
-            crea: user
+            crea: user,
+            cui
         };
 
         try {
@@ -198,6 +200,15 @@ function FormDeposito({ handleConfirmacionDeposito, user }) {
                                             class="form-control"
                                             placeholder="Monto"
                                             onChange={(e) => setMontoDepositar(e.target.value)}
+                                            required />
+                                    </div>
+
+                                    <div className="m-1" >
+                                        <label htmlFor="" className="form-label">CUI</label>
+                                        <input type="number"
+                                            class="form-control"
+                                            placeholder="CUI"
+                                            onChange={(e) => setCui(e.target.value)}
                                             required />
                                     </div>
                                     {/* Botón de Depositar */}

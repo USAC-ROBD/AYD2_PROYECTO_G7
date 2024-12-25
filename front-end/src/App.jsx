@@ -26,6 +26,7 @@ import Cancelaciones from "./pages/Supervisor/Cancelaciones";
 
 // Atencion al cliente
 import FormCreacion from "./components/AtencionCliente/Cuentas/Creacion";
+import FormCreacionDolares from "./components/AtencionCliente/Cuentas/CreacionDolares";
 import FormActualizarInfo from "./components/AtencionCliente/Cuentas/Actualizacion";
 import FormCrearTarjeta from "./components/AtencionCliente/Tarjetas/Creacion";
 import FormBloqueoTarjeta from "./components/AtencionCliente/Tarjetas/Bloqueo";
@@ -50,6 +51,7 @@ function App() {
       </Routes>
       <Routes>
         <Route path="/creacion-cuenta" element={<FormCreacion />} />
+        <Route path="/creacion-cuenta-dolares" element={<FormCreacionDolares />} />
         <Route path="/actualizacion-cliente" element={<FormActualizarInfo />} />
         <Route path="/creacion-tarjeta" element={<FormCrearTarjeta />} />
         <Route path="/bloqueo-tarjeta" element={<FormBloqueoTarjeta />} />
