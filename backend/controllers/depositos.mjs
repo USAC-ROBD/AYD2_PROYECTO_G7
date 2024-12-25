@@ -56,9 +56,9 @@ const consultarCuenta = [auth.verifyToken, async (req, res) => {
 const deposito_efectivo = [auth.verifyToken, async (req, res) => {
     const connection = await db.getConnection(); // Obtener una conexión del pool
     try {
-        const { destinoCuenta, montoDepositar, moneda, crea } = req.body;
+        const { destinoCuenta, montoDepositar, moneda, crea, cui } = req.body;
 
-        if (!destinoCuenta || !montoDepositar || !moneda || !crea) {
+        if (!destinoCuenta || !montoDepositar || !moneda || !crea || !cui) {
             return res.status(400).json({ "status": 400, "message": "Faltan Datos" });
         }
 
@@ -80,6 +80,23 @@ const deposito_efectivo = [auth.verifyToken, async (req, res) => {
         // Validar que el monto sea mayor a 0
         if (montoDepositar <= 0) {
             return res.status(400).json({ "status": 400, "message": "El monto a depositar debe ser mayor a 0" });
+        }
+
+        // Validar que el CUI tenga al menos una cuenta asociada en dólares si el depósito es en dólares
+        if (monedaBD === 'D') {
+            const [cuentasDolares] = await connection.query(
+                `SELECT COUNT(*) AS cuentaDolares 
+                 FROM CUENTA 
+                 WHERE CUI = ? AND MONEDA = 'D'`,
+                [cui]
+            );
+
+            if (cuentasDolares[0].cuentaDolares === 0) {
+                return res.status(400).json({
+                    "status": 400,
+                    "message": "El cliente no tiene autorizado depositar en dolares"
+                });
+            }
         }
 
         // Validar que la cuenta destino exista

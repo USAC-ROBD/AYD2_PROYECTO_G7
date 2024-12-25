@@ -69,6 +69,7 @@ router.post('/tarjetas/pagar', pagoTarjeta.registrarPagoTarjeta);
 /*********Atención al cliente*********/
 router.get('/obtener_cliente', atencionCliente.obtenerCliente)
 router.post('/crear_cuenta_cliente', atencionCliente.crearCuentaCliente)
+router.post('/crear_cuenta_cliente_dolares', atencionCliente.crearCuentaClienteDolares)
 router.get('/obtener_cliente_cui', atencionCliente.obtenerClienteCui)
 router.post('/actualizar_cliente', atencionCliente.actualizarCliente)
 router.get('/obtener_cliente_cuenta', atencionCliente.obtenerClienteCuenta)

@@ -47,7 +47,23 @@ const crearCuenta = async (req, res) => {
     }
 };
 
+const crearCuentaDolares = async (req, res) => {
+    const { cui, tipoCuenta, monto } = req.body;
+
+    try {
+        await db.query(
+            `INSERT INTO CUENTA(CUI, TIPO, MONEDA, SALDO, LIMITE_RETIRO) VALUES(?, ?, ?, ?, ?)`,
+            [cui, tipoCuenta, "D", monto, "100"]
+        );
+        return res.status(200).json({ status: 200, message: "cuenta en dolares creada" });
+    } catch (error) {
+        return res.status(500).json({ status: 500, message: "consulta erronea" });
+    }
+};
+
 const crearCuentaCliente = [crearCliente, crearCuenta];
+
+const crearCuentaClienteDolares = [crearCliente, crearCuentaDolares];
 
 // Obtener CUI y Nombres
 const obtenerClienteCui = async (_, res) => {
@@ -409,6 +425,7 @@ const bloquearTarjeta = [
 export const atencionCliente = {
     obtenerCliente,
     crearCuentaCliente,
+    crearCuentaClienteDolares,
     obtenerClienteCui,
     actualizarCliente,
     obtenerClienteCuenta,
