@@ -49,7 +49,7 @@ const login = async (req, res) => {
       sameSite: 'strict',
     });
 
-    return res.json({ status: 200, message: "Login exitoso" });
+    return res.json({ status: 200, message: "Login exitoso", rol: user.ID_ROL });
   } catch (error) {
     console.error(error);
     return res.status(500).json({ status: 500, message: "Error en el servidor" });
@@ -75,7 +75,6 @@ const verifyToken = (req, res, next) => {
     }
 
     req.user = decoded; // Adjuntar la información del usuario decodificado al objeto req
-    console.log(decoded);
     next(); // Continuar con la siguiente función de middleware
   } catch (err) {
     return res.status(401).json({ status: 401, message: 'Sesión inválido.' });
