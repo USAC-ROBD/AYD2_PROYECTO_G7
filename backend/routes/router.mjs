@@ -11,6 +11,7 @@ import { cambioMoneda } from '../controllers/cambioMoneda.mjs';
 import { pagoTarjeta } from '../controllers/pagoTarjeta.mjs';
 import { supervisor } from '../controllers/supervisor.mjs';
 import { administrador } from '../controllers/administrador.mjs'
+import { loginSupervisor } from '../controllers/loginSupervisor.mjs';
 
 const router = Router();
 //rutas de la api
@@ -23,6 +24,7 @@ router.get('/test_db', test.test_db);
 
 /*******Autenticación*************/
 router.post('/login', auth.login);
+router.post('/login_supervisor', loginSupervisor);
 
 /*********Registro*********/
 router.get('/confirmar_cuenta', auth.confirmation);
