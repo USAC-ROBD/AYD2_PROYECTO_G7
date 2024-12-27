@@ -79,4 +79,14 @@ const updatePassword = (email, pass) =>{
     }
 }
 
-export { transporter, confirmationAccountMail, updateAccountMail, deactiveCard, credentialsUser, updatePassword}
+const complaint = (email, nombre) => {
+    return {
+        from: process.env.EMAIL_ORIGIN,
+        to: email,
+        subject: 'Nuevo registro de queja',
+        html: `<h3>Hola, ${nombre},</h3>
+            <p>Se ha recibido una nueva queja. Por favor ingresa al módulo de Supervisor para darle seguimiento.</p>`
+    }
+}
+
+export { transporter, confirmationAccountMail, updateAccountMail, deactiveCard, credentialsUser, updatePassword, complaint}

@@ -64,7 +64,7 @@ function RegistroQueja({ handleRegistroQueja, user }) {
         .then((data) => {
           if (data.status === 200) {
             Swal.fire({
-              title: "Solicitud generada con éxito",
+              title: "Queja generada con éxito",
               icon: "success",
               confirmButtonText: "Aceptar",
             });
