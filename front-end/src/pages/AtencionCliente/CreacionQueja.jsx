@@ -20,7 +20,7 @@ function CreacionQueja() {
   }
 
   const handleRegistroQueja = (data) => {
-    setShowComponent("RegistroQueja"); // Cambiamos el componente a mostrar a RegistroQueja
+    setShowComponent("RegistroQueja"); // Cambiamos el componente a mostrar a RegistroQueja s
   };
 
   return (
