@@ -14,7 +14,7 @@ const login = async (req, res) => {
   try {
     // Consultar el usuario en la base de datos por nombre de usuario o correo
     const [rows] = await db.query(
-      "SELECT ID_USUARIO, USUARIO, CORREO, CONTRASENA, ID_ROL FROM USUARIO WHERE USUARIO = ? OR CORREO = ?",
+      "SELECT ID_USUARIO, USUARIO, CORREO, CONTRASENA, ID_ROL, ESTADO FROM USUARIO WHERE USUARIO = ? OR CORREO = ?",
       [username, username]
     );
 
@@ -28,6 +28,11 @@ const login = async (req, res) => {
     const validPassword = await bcrypt.compare(password, user.CONTRASENA);
     if (!validPassword) {
       return res.status(401).json({ status: 401, message: "Usuario o contraseña incorrectos" });
+    }
+
+    // Validar si la cuenta está activa
+    if (user.ESTADO !== 'A') {
+      return res.status(401).json({ status: 401, message: "Cuenta inactiva" });
     }
 
     // Generar el token JWT
@@ -44,7 +49,7 @@ const login = async (req, res) => {
       sameSite: 'strict',
     });
 
-    return res.json({ status: 200, message: "Login exitoso" });
+    return res.json({ status: 200, message: "Login exitoso", rol: user.ID_ROL });
   } catch (error) {
     console.error(error);
     return res.status(500).json({ status: 500, message: "Error en el servidor" });
@@ -70,7 +75,6 @@ const verifyToken = (req, res, next) => {
     }
 
     req.user = decoded; // Adjuntar la información del usuario decodificado al objeto req
-    console.log(decoded);
     next(); // Continuar con la siguiente función de middleware
   } catch (err) {
     return res.status(401).json({ status: 401, message: 'Sesión inválido.' });

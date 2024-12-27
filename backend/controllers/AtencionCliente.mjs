@@ -47,7 +47,23 @@ const crearCuenta = async (req, res) => {
     }
 };
 
+const crearCuentaDolares = async (req, res) => {
+    const { cui, tipoCuenta, monto } = req.body;
+
+    try {
+        await db.query(
+            `INSERT INTO CUENTA(CUI, TIPO, MONEDA, SALDO, LIMITE_RETIRO) VALUES(?, ?, ?, ?, ?)`,
+            [cui, tipoCuenta, "D", monto, "100"]
+        );
+        return res.status(200).json({ status: 200, message: "cuenta en dolares creada" });
+    } catch (error) {
+        return res.status(500).json({ status: 500, message: "consulta erronea" });
+    }
+};
+
 const crearCuentaCliente = [crearCliente, crearCuenta];
+
+const crearCuentaClienteDolares = [crearCliente, crearCuentaDolares];
 
 // Obtener CUI y Nombres
 const obtenerClienteCui = async (_, res) => {
@@ -281,6 +297,144 @@ const actualizarEstadoTarjeta = async (req, res) => {
     }
 };
 
+// Obtener datos de la cuenta
+
+const consultarDatosCuenta = async (req, res) => {
+
+    try {
+        const { cuenta } = req.body;
+
+        if (!cuenta) {
+            return res.status(400).json({ "status": 400, "message": "Faltan Datos" });
+        }
+
+        console.log(cuenta);
+
+        const [rows, fields] = await db.query(`SELECT 
+                                               CONCAT(CLIENTE.NOMBRE, ' ', CLIENTE.APELLIDO) AS propietario, 
+                                               CUENTA.ID_CUENTA as cuenta,
+                                               CUENTA.CUI AS cui
+                                                FROM CUENTA
+                                                INNER JOIN CLIENTE ON CUENTA.CUI = CLIENTE.CUI
+                                                WHERE CUENTA.NUMERO = ?`, [cuenta]);
+
+        if (rows.length === 0) {
+            return res.status(404).json({ "status": 404, "message": "Cuenta no encontrada" });
+        }
+
+        const dataCuenta = rows[0];
+
+        const response = {
+            "status": 200,
+            "message": "Cuenta encontrada",
+            "data": {
+                "id_cuenta": dataCuenta.cuenta,
+                "cui": dataCuenta.cui,
+                "nombre": dataCuenta.propietario
+            }
+        };
+        return res.status(200).json(response);
+
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({ "status": 500, "message": error.message });
+    }
+};
+
+// Obtener datos de la tarjeta
+
+const consultarDatosTarjeta = async (req, res) => {
+
+    try {
+        const { cuenta } = req.body;
+
+        if (!cuenta) {
+            return res.status(400).json({ "status": 400, "message": "Faltan Datos" });
+        }
+
+        console.log(cuenta);
+
+        const [rows, fields] = await db.query(`SELECT 
+                                               CONCAT(CLIENTE.NOMBRE, ' ', CLIENTE.APELLIDO) AS propietario, 
+                                               TARJETA.ID_TARJETA as cuenta,
+                                               TARJETA.CUI AS cui
+                                                FROM TARJETA
+                                                INNER JOIN CLIENTE ON TARJETA.CUI = CLIENTE.CUI
+                                                WHERE TARJETA.NUMERO = ?`, [cuenta]);
+
+        if (rows.length === 0) {
+            return res.status(404).json({ "status": 404, "message": "tarjeta no encontrada" });
+        }
+
+        const dataCuenta = rows[0];
+
+        const response = {
+            "status": 200,
+            "message": "Tarjeta encontrada",
+            "data": {
+                "id_cuenta": dataCuenta.cuenta,
+                "cui": dataCuenta.cui,
+                "nombre": dataCuenta.propietario
+            }
+        };
+        return res.status(200).json(response);
+
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({ "status": 500, "message": error.message });
+    }
+};
+
+
+// Crear solicitud de cancelación de servicios
+const crearSolicitudCancelacion = async (req, res) => {
+    const { tipo_servicio, cui, idCuenta, descripcion, crea } = req.body;
+
+    if(tipo_servicio === "cuenta"){
+        try {
+            await db.query(
+                `INSERT INTO SOLICITUD (CUI, ID_CUENTA, TIPO, TIPO_SERVICIO, ESTADO, DESCRIPCION, CREA) VALUES(?, ?, 'C', 'C', 'P', ?, ?)`,
+                [cui, idCuenta, descripcion, crea]
+            );
+            return res.status(200).json({ status: 200, message: "Solicitud de cancelación de cuenta creada" });
+        } catch (error) {
+            return res.status(500).json({ status: 500, message: error.message });
+        }
+    }
+    else{
+        try {
+            await db.query(
+                `INSERT INTO SOLICITUD (CUI, ID_TARJETA, TIPO, TIPO_SERVICIO, ESTADO, DESCRIPCION, CREA) VALUES(?, ?, 'C', 'T', 'P', ?, ?)`,
+                [cui, idCuenta, descripcion, crea]
+            );
+            return res.status(200).json({ status: 200, message: "Solicitud de cancelación de tarjeta creada" });
+        } catch (error) {
+            return res.status(500).json({ status: 500, message: "consulta erronea tarjeta" });
+        }
+    }
+
+    
+};
+
+// registro de quejas
+
+const registroQueja = async (req, res) => {
+    const { cui, categoria, descripcion, crea } = req.body;
+
+    try {
+        await db.query(
+            `INSERT INTO QUEJA (CUI, CATEGORIA, DESCRIPCION, CREA) VALUES (?, ?, ?, ?)`,
+            [cui, categoria, descripcion, crea]
+        );
+        return res.status(200).json({ status: 200, message: "Queja registrada con éxito" });
+    } catch (error) {
+        return res.status(500).json({ status: 500, message: error.message });
+    }
+
+    
+};
+
+
 const bloquearTarjeta = [
     validarRespuestaSeguridad,
     registrarBloqueoTarjeta,
@@ -290,10 +444,16 @@ const bloquearTarjeta = [
 export const atencionCliente = {
     obtenerCliente,
     crearCuentaCliente,
+    crearCuentaClienteDolares,
     obtenerClienteCui,
     actualizarCliente,
     obtenerClienteCuenta,
     enviarSolicitudTarjeta,
     obtenerTarjeta,
     bloquearTarjeta,
+    consultarDatosCuenta,
+    consultarDatosTarjeta,
+    crearSolicitudCancelacion,
+    registroQueja,
 };
+
