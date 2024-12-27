@@ -1,41 +1,98 @@
 // Propósito: Controlador de ejemplo para mostrar el funcionamiento de la API
 import db from "../utils/db_connection.mjs";
-import nodemailer from 'nodemailer';
 import bcrypt from 'bcrypt';
 import { transporter, credentialsUser, updatePassword} from "../utils/nodemailer.mjs";
 import { spawn } from 'child_process';
 
+// Factoría para crear usuarios
+class UsuarioFactory {
+    static crearUsuario(data) {
+        const usuario = this.generarUsuario(data.nombre, data.apellido, data.edad);
+        const contrasena = this.generarContrasena();
+        const hashedPassword = bcrypt.hashSync(contrasena, bcrypt.genSaltSync(10));
+
+        return {
+            usuario,
+            contrasena,
+            hashedPassword,
+            ...data
+        };
+    }
+
+    static generarUsuario(nombre, apellido, edad) {
+        return nombre.replace(/\s+/g, '')[0].toUpperCase() + apellido.replace(/\s+/g, '').toUpperCase() + String(edad);
+    }
+
+    static generarContrasena() {
+        const caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        let contrasena = '';
+        for (let i = 0; i < 16; i++) {
+            const randomIndex = Math.floor(Math.random() * caracteres.length);
+            contrasena += caracteres[randomIndex];
+        }
+        return contrasena;
+    }
+}
+
+// Controlador principal
 const registrar_usuario = async (req, res) => {
     try {
         // Extrae los datos del cuerpo de la solicitud
         const { nombre, apellido, edad, telefono, dpi, rol, correo, papeleria, fotografia, genero, estado_civil } = req.body;
 
-        const usuario = Generar_Usuario(nombre, apellido, edad)
-        const contraseña = Generar_Contraseña()
+        // Usa la factoría para crear el usuario y la contraseña
+        const nuevoUsuario = UsuarioFactory.crearUsuario({
+            nombre,
+            apellido,
+            edad,
+            telefono,
+            dpi,
+            rol,
+            correo,
+            papeleria,
+            fotografia,
+            genero,
+            estado_civil
+        });
 
-        const hashed_password = bcrypt.hashSync(contraseña, bcrypt.genSaltSync(10))
-        
         // Ejecuta la consulta para registrar el usuario
         const [rows] = await db.query(
-            `INSERT INTO usuario (USUARIO, CONTRASENA, NOMBRE, APELLIDO, CORREO, ESTADO, ID_ROL, CREA, ACTUALIZA, TELEFONO, EDAD, PAPELERIA, FOTO, GENERO, CUI, ESTADO_CIVIL) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
-            [usuario,hashed_password,nombre,apellido,correo,'A',rol,'admin','admin',telefono,edad,papeleria,fotografia,genero,dpi,estado_civil]
+            `INSERT INTO USUARIO (USUARIO, CONTRASENA, NOMBRE, APELLIDO, CORREO, ESTADO, ID_ROL, CREA, ACTUALIZA, TELEFONO, EDAD, PAPELERIA, FOTO, GENERO, CUI, ESTADO_CIVIL) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+            [
+                nuevoUsuario.usuario,
+                nuevoUsuario.hashedPassword,
+                nuevoUsuario.nombre,
+                nuevoUsuario.apellido,
+                nuevoUsuario.correo,
+                'A',
+                nuevoUsuario.rol,
+                'admin',
+                'admin',
+                nuevoUsuario.telefono,
+                nuevoUsuario.edad,
+                nuevoUsuario.papeleria,
+                nuevoUsuario.fotografia,
+                nuevoUsuario.genero,
+                nuevoUsuario.dpi,
+                nuevoUsuario.estado_civil
+            ]
         );
 
         // Verifica si algún registro fue afectado
         if (rows.affectedRows > 0) {
-            const mail = credentialsUser(usuario,correo,contraseña);
+            const mail = credentialsUser(nuevoUsuario.usuario, nuevoUsuario.correo, nuevoUsuario.contrasena);
 
             transporter.sendMail(mail, (error, info) => {
                 if (error) {
                     console.error("Error al enviar el correo de actualización:", error.message);
-                }else{
-                    return res.status(200).json({ "status": 200, "message": "Datos para inicio de sesion Usuario" });
+                } else {
+                    return res.status(200).json({ status: 200, message: "Datos para inicio de sesión Usuario" });
                 }
             });
         } else {
             return res.status(404).json({
                 success: false,
-                message: "Error al intentar crear el usuario.",
+                message: "Error al intentar crear el usuario."
             });
         }
     } catch (error) {
@@ -43,25 +100,10 @@ const registrar_usuario = async (req, res) => {
         console.error("Error al crear el usuario:", error);
         return res.status(500).json({
             success: false,
-            message: "Error interno del servidor.",
+            message: "Error interno del servidor."
         });
     }
-}
-
-function Generar_Usuario(nombre, apellido, edad) {
-    let usuario = nombre.replace(/\s+/g, '')[0].toUpperCase() + apellido.replace(/\s+/g, '').toUpperCase() + String(edad);
-    return usuario;
-}
-
-function Generar_Contraseña() {
-    const caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    let contraseña = '';
-    for (let i = 0; i < 16; i++) {
-        const randomIndex = Math.floor(Math.random() * caracteres.length);
-        contraseña += caracteres[randomIndex];
-    }
-    return contraseña
-}
+};
 
 const obtener_usuario_rol = async (req, res) => {
     try {
@@ -70,8 +112,8 @@ const obtener_usuario_rol = async (req, res) => {
             u.ID_USUARIO,
             u.USUARIO,
             r.NOMBRE AS ROL
-            FROM usuario u
-            INNER JOIN rol r ON u.ID_ROL = r.ID_ROL
+            FROM USUARIO u
+            INNER JOIN ROL r ON u.ID_ROL = r.ID_ROL
         `);
 
         // Retorna los datos al frontend
@@ -97,8 +139,8 @@ const obtener_usuario = async (req, res) => {
             U.APELLIDO,
             u.USUARIO,
             r.NOMBRE AS ROL
-            FROM usuario u
-            INNER JOIN rol r ON u.ID_ROL = r.ID_ROL
+            FROM USUARIO u
+            INNER JOIN ROL r ON u.ID_ROL = r.ID_ROL
         `);
 
         // Retorna los datos al frontend
@@ -130,7 +172,7 @@ const actualizar_usuario_rol = async (req, res) => {
 
         // Ejecuta la consulta para actualizar el rol del usuario
         const [rows] = await db.query(
-            `UPDATE usuario 
+            `UPDATE USUARIO 
            SET ID_ROL = ?
            WHERE ID_USUARIO = ?`,
             [rol, id_usuario]
@@ -173,7 +215,7 @@ const eliminar_usuario = async (req, res) => {
 
         // Ejecuta la consulta para actualizar el rol del usuario
         const [rows] = await db.query(
-            `DELETE FROM usuario 
+            `DELETE FROM USUARIO 
            WHERE ID_USUARIO = ?`,
             [id_usuario]
         );
@@ -221,13 +263,6 @@ const cambiar_contrasena = async (req, res) => {
     const contraseña = Generar_Contraseña();
 
     const hashed_password = bcrypt.hashSync(contraseña, bcrypt.genSaltSync(10))
-    const transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-            user: 'juanpablogonzalez017@gmail.com',
-            pass: 'xzvu svpw dswo otfw'
-        }
-    });
 
     const [rows] = await db.query(
         `UPDATE usuario 
