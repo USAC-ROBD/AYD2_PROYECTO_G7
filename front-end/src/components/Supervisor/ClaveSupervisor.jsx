@@ -63,7 +63,7 @@ function ClaveSupervisor({ username }) {
     };
 
     return (
-        <div style={{ padding: '20px', maxWidth: '500px', margin: '0 auto', textAlign: 'center' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minWidth: '100vw', minHeight: '100vh' }}>
             <h2>Login Supervisor</h2>
             <input
                 type="file"
