@@ -52,6 +52,7 @@ function MenuCajero({ user, rol }) {
               flexDirection: "column",
               alignItems: "center",
             }}
+            name="pago-servicios"
           >
             <img
               src={ServiceIcon}
@@ -72,6 +73,7 @@ function MenuCajero({ user, rol }) {
               flexDirection: "column",
               alignItems: "center",
             }}
+            name="pago-prestamos"
           >
             <img
               src={LoanIcon}
@@ -92,6 +94,7 @@ function MenuCajero({ user, rol }) {
               flexDirection: "column",
               alignItems: "center",
             }}
+            name="modulo-depositos"
           >
             <img
               src={DepositoIcon}
@@ -112,6 +115,7 @@ function MenuCajero({ user, rol }) {
               flexDirection: "column",
               alignItems: "center",
             }}
+            name="modulo-retiro"
           >
             <img
               src={RetiroIcon}
@@ -132,6 +136,7 @@ function MenuCajero({ user, rol }) {
               flexDirection: "column",
               alignItems: "center",
             }}
+            name="modulo-consultas"
           >
             <img
               src={ConsultasIcon}
@@ -152,6 +157,7 @@ function MenuCajero({ user, rol }) {
               flexDirection: "column",
               alignItems: "center",
             }}
+            name="cambio-moneda"
           >
             <img
               src={DivisaIcon}
@@ -172,6 +178,7 @@ function MenuCajero({ user, rol }) {
               flexDirection: "column",
               alignItems: "center",
             }}
+            name="pago-tarjeta"
           >
             <img
               src={PagoTarjetaIcon}
@@ -195,6 +202,7 @@ function MenuCajero({ user, rol }) {
               flexDirection: "column",
               alignItems: "center",
             }}
+            name="logout"
           >
             <BiArrowFromRight style={{ width: "50%", height: "50%" }} />
             Cerrar Sesión
