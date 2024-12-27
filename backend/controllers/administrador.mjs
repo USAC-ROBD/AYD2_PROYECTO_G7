@@ -136,7 +136,7 @@ const obtener_usuario = async (req, res) => {
             SELECT 
             u.ID_USUARIO,
             u.NOMBRE,
-            U.APELLIDO,
+            u.APELLIDO,
             u.USUARIO,
             r.NOMBRE AS ROL
             FROM USUARIO u
