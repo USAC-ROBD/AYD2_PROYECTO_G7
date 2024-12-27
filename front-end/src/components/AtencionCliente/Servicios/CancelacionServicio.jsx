@@ -10,13 +10,7 @@ function CancelacionServicio({ handleCancelacionServicio, user }) {
   const [idCuenta, setIdCuenta] = useState("");
   const [cui, setCui] = useState("");
 
-  const [destinoCuenta, setDestinoCuenta] = useState("");
-  const [montoDepositar, setMontoDepositar] = useState("");
-  const [tipoCuenta, setTipoCuenta] = useState("");
-  const [moneda, setMoneda] = useState("");
-  const [monedas, setMonedas] = useState(["GTQ", "USD"]);
   const [propietario, setPropietario] = useState("");
-  const [monedaSeleccionada, setMonedaSeleccionada] = useState("");
   const navigate = useNavigate();
 
   const handleTipoServicio = async () => {

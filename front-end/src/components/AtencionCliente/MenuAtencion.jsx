@@ -176,7 +176,7 @@ function MenuCajero({ user, rol }) {
                 variant="outline-success"
                 size="lg"
                 className="w-100"
-                // onClick={() => navigate('/form-consulta')}
+                onClick={() => navigate("/encuesta")}
                 style={{
                   display: "flex",
                   flexDirection: "column",
@@ -208,7 +208,7 @@ function MenuCajero({ user, rol }) {
                 variant="outline-success"
                 size="lg"
                 className="w-100"
-                // onClick={() => navigate('/form-consulta')}
+                onClick={() => navigate("/registrar-queja")}
                 style={{
                   display: "flex",
                   flexDirection: "column",
@@ -222,28 +222,30 @@ function MenuCajero({ user, rol }) {
           </Row>
         </Carousel.Item>
         <Carousel.Item>
-        <Row className="g-4 justify-content-center"
+          <Row
+            className="g-4 justify-content-center"
             style={{
               justifyContent: "center",
               width: "100%",
-            }}>
-          <Col xs={12} sm={6} md={4} className="mb-3">
-            <Button
-              variant="outline-success"
-              size="lg"
-              className="w-100"
-              onClick={() => navigate("/creacion-cuenta-dolares")}
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-              }}
-            >
-              <FaDollarSign style={{ width: "40%", height: "40%" }} />
-              Nuevas Cuentas Dolares
-            </Button>
-          </Col>
-        </Row>
+            }}
+          >
+            <Col xs={12} sm={6} md={4} className="mb-3">
+              <Button
+                variant="outline-success"
+                size="lg"
+                className="w-100"
+                onClick={() => navigate("/creacion-cuenta-dolares")}
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                }}
+              >
+                <FaDollarSign style={{ width: "40%", height: "40%" }} />
+                Nuevas Cuentas Dolares
+              </Button>
+            </Col>
+          </Row>
         </Carousel.Item>
       </Carousel>
       <Row

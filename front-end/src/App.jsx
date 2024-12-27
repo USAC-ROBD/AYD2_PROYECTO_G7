@@ -2,8 +2,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import PagoServicios from "./pages/Cajero/PagoServicios";
 import PagoPrestamos from "./pages/Cajero/PagoPrestamos";
 import Menu from "./pages/General/Menu";
-import AdminEmpleado from "./pages/Adminitrador_de_Sistemas/AdminEmpleado"
-import AccionAdmin from "./pages/Adminitrador_de_Sistemas/AdminAccion"
+import AdminEmpleado from "./pages/Adminitrador_de_Sistemas/AdminEmpleado";
+import AccionAdmin from "./pages/Adminitrador_de_Sistemas/AdminAccion";
 import Login from "./pages/General/Login";
 import Confirmacion from "./pages/General/ConfirmarCuenta";
 import HomeConsultas from "./pages/Cajero/Consultas";
@@ -31,6 +31,8 @@ import FormActualizarInfo from "./components/AtencionCliente/Cuentas/Actualizaci
 import FormCrearTarjeta from "./components/AtencionCliente/Tarjetas/Creacion";
 import FormBloqueoTarjeta from "./components/AtencionCliente/Tarjetas/Bloqueo";
 import FormCancelacion from "./pages/Cuentas/FormCancelacion";
+import CreacionQueja from "./pages/AtencionCliente/CreacionQueja";
+import CreacionEncuesta from "./pages/AtencionCliente/CreacionEncuesta";
 
 function App() {
   return (
@@ -51,11 +53,16 @@ function App() {
       </Routes>
       <Routes>
         <Route path="/creacion-cuenta" element={<FormCreacion />} />
-        <Route path="/creacion-cuenta-dolares" element={<FormCreacionDolares />} />
+        <Route
+          path="/creacion-cuenta-dolares"
+          element={<FormCreacionDolares />}
+        />
         <Route path="/actualizacion-cliente" element={<FormActualizarInfo />} />
         <Route path="/creacion-tarjeta" element={<FormCrearTarjeta />} />
         <Route path="/bloqueo-tarjeta" element={<FormBloqueoTarjeta />} />
         <Route path="/cancelar-servicio" element={<FormCancelacion />} />
+        <Route path="/registrar-queja" element={<CreacionQueja />} />
+        <Route path="/encuesta" element={<CreacionEncuesta />} />
       </Routes>
       <Routes>
         <Route path="/empleados" element={<Empleados />} />
@@ -70,8 +77,8 @@ function App() {
         <Route path="/cancelaciones" element={<Cancelaciones />} />
       </Routes>
       <Routes>
-        <Route path="/menu-admin-empleado" element={<AdminEmpleado/>}/>
-        <Route path="/accion-admin" element={<AccionAdmin/>}/>
+        <Route path="/menu-admin-empleado" element={<AdminEmpleado />} />
+        <Route path="/accion-admin" element={<AccionAdmin />} />
       </Routes>
     </Router>
   );
