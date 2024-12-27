@@ -21,6 +21,7 @@ function TipoPago({handleSelectTipoPago}) { // Recibimos la función handleSelec
             className="w-100"
             onClick={() => handleSelectTipoPago('Parcial')}
             style={{ display: 'flex', flexDirection: 'column', alignItems: 'center'}}
+            name='parcial'
           >
             <BsCircleHalf style={{ width: '50%', height: '50%' }} />
             Parcial
@@ -33,6 +34,7 @@ function TipoPago({handleSelectTipoPago}) { // Recibimos la función handleSelec
             className="w-100"
             onClick={() => handleSelectTipoPago('Total')}
             style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
+            name='total'
           >
             <FaCircle style={{ width: '50%', height: '50%' }} />
             Total
