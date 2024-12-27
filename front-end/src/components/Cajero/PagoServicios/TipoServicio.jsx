@@ -15,7 +15,7 @@ function TipoServicio({ onSelectTipoServicio }) { // Recibimos la función onSel
       <h1>Tipo de Servicio</h1>
       <Row className="mt-4" style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', width: '100%'}}>
         <Col xs={12} sm={6} md={3} className="mb-3">
-          <Button variant="outline-success" size="lg" className="w-100" onClick={() => onSelectTipoServicio('Luz')} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <Button name='luz' variant="outline-success" size="lg" className="w-100" onClick={() => onSelectTipoServicio('Luz')} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <TiLightbulb style={{ width: '50%', height: '50%' }} />
             Luz
           </Button>

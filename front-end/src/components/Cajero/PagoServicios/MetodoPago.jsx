@@ -20,6 +20,7 @@ function MetodoPago({handleSelectTipoPago}) { // Recibimos la función handleSel
             className="w-100"
             onClick={() => handleSelectTipoPago('Efectivo')}
             style={{ display: 'flex', flexDirection: 'column', alignItems: 'center'}}
+            name='efectivo'
           >
             <FaMoneyBillWave style={{ width: '50%', height: '50%' }} />
             Efectivo
