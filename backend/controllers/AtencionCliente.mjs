@@ -451,8 +451,24 @@ const registroQueja = async (req, res) => {
     } catch (error) {
         return res.status(500).json({ status: 500, message: error.message });
     }
+};
 
-    
+
+// Encuestas de satisfacción
+
+const registroEncuesta = async (req, res) => {
+    const { cui, categoria,calificacion, comentario, crea } = req.body;
+
+    try {
+        await db.query(
+            `INSERT INTO ENCUESTA (CUI, CATEGORIA, CALIFICACION, COMENTARIO, CREA) VALUES (?, ?, ?, ?, ?)`,
+            [cui, categoria, calificacion, comentario, crea]
+        );
+        
+        return res.status(200).json({ status: 200, message: "Encuesta registrada con éxito" });
+    } catch (error) {
+        return res.status(500).json({ status: 500, message: error.message });
+    }
 };
 
 
@@ -476,5 +492,6 @@ export const atencionCliente = {
     consultarDatosTarjeta,
     crearSolicitudCancelacion,
     registroQueja,
+    registroEncuesta,
 };
 
