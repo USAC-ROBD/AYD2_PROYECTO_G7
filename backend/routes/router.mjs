@@ -87,6 +87,7 @@ router.post('/generar_token', test.generar_token);
 router.post('/consultar_datos_cuenta', atencionCliente.consultarDatosCuenta)
 router.post('/consultar_datos_tarjeta', atencionCliente.consultarDatosTarjeta)
 router.post('/solicitud_cancelacion', atencionCliente.crearSolicitudCancelacion)
+router.post('/registro_queja', atencionCliente.registroQueja)
 
 
 

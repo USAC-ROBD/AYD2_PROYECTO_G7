@@ -2,13 +2,12 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Logo from "../../assets/logo.png";
 import useAuth from "../../hook/useAuth";
-import CancelacionServicio from "../../components/AtencionCliente/Servicios/CancelacionServicio";
+import RegistroQueja from "../../components/AtencionCliente/Servicios/RegistroQueja";
 
-function FormCancelacion() {
+function CreacionQueja() {
   const navigate = useNavigate();
   const { user, rol } = useAuth(); // Usamos el hook personalizado para obtener el usuario y rol
-  const [dataPago, setDataPago] = useState(); // Estado para guardar los datos del pago confirmado
-  const [showComponent, setShowComponent] = useState("CancelacionServicio"); // Estado para saber que componente mostrar
+  const [showComponent, setShowComponent] = useState("RegistroQueja"); // Estado para saber que componente mostrar
 
   if (!user || !rol) {
     return <div>Loading...</div>; // Muestra un cargando mientras se obtiene el usuario
@@ -20,9 +19,8 @@ function FormCancelacion() {
     navigate("/menu");
   }
 
-  const handleCancelacionServicio = (data) => {
-    setDataPago(data);
-    setShowComponent("CancelacionServicio"); // Cambiamos el componente a mostrar a CancelacionServicio
+  const handleRegistroQueja = (data) => {
+    setShowComponent("RegistroQueja"); // Cambiamos el componente a mostrar a RegistroQueja
   };
 
   return (
@@ -39,14 +37,11 @@ function FormCancelacion() {
       <img src={Logo} style={{ width: "65%" }} alt="logo" />
 
       {/* Mostramos el componente FormularioPago */}
-      {showComponent == "CancelacionServicio" && (
-        <CancelacionServicio
-          handleCancelacionServicio={handleCancelacionServicio}
-          user={user}
-        />
+      {showComponent == "RegistroQueja" && (
+        <RegistroQueja handleRegistroQueja={handleRegistroQueja} user={user} />
       )}
     </div>
   );
 }
 
-export default FormCancelacion;
+export default CreacionQueja;

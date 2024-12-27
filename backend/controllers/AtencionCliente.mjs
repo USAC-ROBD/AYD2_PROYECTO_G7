@@ -341,7 +341,7 @@ const consultarDatosCuenta = async (req, res) => {
     }
 };
 
-// Obtener datos de la cuenta
+// Obtener datos de la tarjeta
 
 const consultarDatosTarjeta = async (req, res) => {
 
@@ -416,6 +416,25 @@ const crearSolicitudCancelacion = async (req, res) => {
     
 };
 
+// registro de quejas
+
+const registroQueja = async (req, res) => {
+    const { cui, categoria, descripcion, crea } = req.body;
+
+    try {
+        await db.query(
+            `INSERT INTO QUEJA (CUI, CATEGORIA, DESCRIPCION, CREA) VALUES (?, ?, ?, ?)`,
+            [cui, categoria, descripcion, crea]
+        );
+        return res.status(200).json({ status: 200, message: "Queja registrada con éxito" });
+    } catch (error) {
+        return res.status(500).json({ status: 500, message: error.message });
+    }
+
+    
+};
+
+
 const bloquearTarjeta = [
     validarRespuestaSeguridad,
     registrarBloqueoTarjeta,
@@ -435,5 +454,6 @@ export const atencionCliente = {
     consultarDatosCuenta,
     consultarDatosTarjeta,
     crearSolicitudCancelacion,
+    registroQueja,
 };
 
