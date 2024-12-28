@@ -65,7 +65,7 @@ jobs:
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_KEY }}
           script: |
+            docker stop backend-moneybin || true
+            docker rm backend-moneybin || true
             docker pull ${{ secrets.DOCKER_USERNAME }}/backend-moneybin:latest
-            docker stop ${{ secrets.DOCKER_USERNAME }}/backend-moneybin:latest || true
-            docker rm ${{ secrets.DOCKER_USERNAME }}/backend-moneybin:latest || true
             docker run -d --name backend-moneybin --env-file /home/ubuntu/ayd2/.env -p ${{ secrets.PORT }}:4000 ${{ secrets.DOCKER_USERNAME }}/backend-moneybin:latest
