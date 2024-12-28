@@ -464,7 +464,7 @@ const registroEncuesta = async (req, res) => {
             `INSERT INTO ENCUESTA (CUI, CATEGORIA, CALIFICACION, COMENTARIO, CREA) VALUES (?, ?, ?, ?, ?)`,
             [cui, categoria, calificacion, comentario, crea]
         );
-        
+
         return res.status(200).json({ status: 200, message: "Encuesta registrada con éxito" });
     } catch (error) {
         return res.status(500).json({ status: 500, message: error.message });
@@ -477,6 +477,72 @@ const bloquearTarjeta = [
     registrarBloqueoTarjeta,
     actualizarEstadoTarjeta,
 ];
+
+// Solicitar Préstamo
+const obtenerClientePrestamo = async (req, res) => {
+    try {
+        const {numeroCuenta} = req.query
+        const [ rows ] = await db.query(
+            `(
+                SELECT CL.CUI, CONCAT(CL.NOMBRE, ' ', CL.APELLIDO) NOMBRE, CU.ID_CUENTA
+                FROM MONEY_BIN.CLIENTE CL
+                INNER JOIN MONEY_BIN.CUENTA CU ON CU.CUI = CL.CUI
+                WHERE CL.CUI = ?
+            ) UNION (
+                SELECT CL.CUI, CONCAT(CL.NOMBRE, ' ', CL.APELLIDO) NOMBRE, CU.ID_CUENTA
+                FROM MONEY_BIN.CLIENTE CL
+                INNER JOIN MONEY_BIN.CUENTA CU ON CU.CUI = CL.CUI
+                WHERE CU.NUMERO = ?
+            );`,
+            [numeroCuenta, numeroCuenta]
+        )
+        if(rows.length > 0) {
+            return res.status(200).json({ status: 200, message: "cliente encontrado", cliente: rows[0] });
+        }
+        return res.status(200).json({ status: 200, message: "cliente no encontrado" });
+    } catch (error) {
+        return res.status(500).json({ status: 500, message: error.message });
+    }
+}
+
+const solicitarPrestamo = async (req, res) => {
+    try {
+        const { tipoPrestamo, montoSolicitado, plazo, documentacion, idcuenta, cui } = req.body
+
+        const [ rows ] = await db.query(
+            `SELECT 1 FROM MONEY_BIN.SOLICITUD S WHERE S.CUI = ? AND S.ESTADO = 'P';`,
+            [ cui ]
+        )
+
+        if(rows.length === 0) {
+            const descripcion = `Préstamo de Q. ${montoSolicitado} por cliente con CUI ${cui}.`
+            const [ rows ] = await db.query(
+                `INSERT INTO MONEY_BIN.SOLICITUD(
+                    CUI,
+                    ID_CUENTA,
+                    TIPO,
+                    TIPO_SERVICIO,
+                    TIPO_PRESTAMO,
+                    MONTO,
+                    PLAZO,
+                    ESTADO,
+                    DESCRIPCION
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+                [cui, idcuenta, 'S', 'P', tipoPrestamo, montoSolicitado, plazo, 'P', descripcion]
+            )
+            await db.query(
+                `INSERT INTO MONEY_BIN.SOLICITUD_DOCUMENTO(ID_SOLICITUD, NOMBRE, RUTA, CONTENIDO)
+                VALUES(?, ?, ?, ?)`,
+                [rows.insertId, `PRESTAMO_${cui}_${idcuenta}`, '', documentacion]
+            )
+            return res.status(200).json({ status: 200, message: "solicitud enviada", pendiente: false });
+        }
+        return res.status(200).json({ status: 200, message: "solicitud enviada", pendiente: true });
+    } catch (error) {
+        console.log(error)
+        return res.status(500).json({ status: 500, message: error.message });
+    }
+}
 
 export const atencionCliente = {
     obtenerCliente,
@@ -493,5 +559,7 @@ export const atencionCliente = {
     crearSolicitudCancelacion,
     registroQueja,
     registroEncuesta,
+    obtenerClientePrestamo,
+    solicitarPrestamo,
 };
 
