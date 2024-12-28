@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test:e2e": "cypress open",
+    "test:e2e:run": "cypress run"
   },
   "dependencies": {
     "axios": "^1.7.9",

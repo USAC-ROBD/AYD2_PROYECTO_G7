@@ -75,6 +75,7 @@ function Login() {
                       value={username}
                       onChange={(e) => setUsername(e.target.value)}
                       required
+                      name="username"
                     />
                   </Form.Group>
 
@@ -86,6 +87,7 @@ function Login() {
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
                       required
+                      name="password"
                     />
                   </Form.Group>
 

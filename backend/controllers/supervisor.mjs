@@ -287,9 +287,9 @@ const obtenerEncuestas = async (req, res) => {
                 e.CALIFICACION,
                 e.COMENTARIO          
             FROM 
-                encuesta as e
+                ENCUESTA as e
             INNER JOIN
-                cliente as c
+                CLIENTE as c
             ON
             c.CUI = e.CUI`
         );

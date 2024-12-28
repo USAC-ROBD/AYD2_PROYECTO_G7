@@ -183,7 +183,7 @@ export default function FormConsulta({ query }) {
                                     <Col>
                                         {/* Botón de Enviar */}
                                         <div className="d-grid">
-                                            <Button variant="success" type="button" onClick={handleConsultar1}>
+                                            <Button name="consultar1" variant="success" type="button" onClick={handleConsultar1}>
                                                 Consultar
                                             </Button>
                                         </div>

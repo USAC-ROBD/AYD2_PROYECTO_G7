@@ -3,11 +3,12 @@ import { Container, Row, Col, Card, Form, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
-function RegistroQueja({ handleRegistroQueja, user }) {
+function RegistroEncuesta({ handleRegistroEncuesta, user }) {
   const [cui, setCui] = useState("");
   const [cliente, setCliente] = useState("");
-  const [queja, setQueja] = useState("");
+  const [comentario, setComentario] = useState("");
   const [categoria, setCategoria] = useState("");
+  const [calificacion, setCalificacion] = useState("");
 
   const navigate = useNavigate();
 
@@ -47,12 +48,13 @@ function RegistroQueja({ handleRegistroQueja, user }) {
     const data = {
       cui,
       categoria,
-      descripcion: queja,
+      calificacion,
+      comentario: comentario,
       crea: user,
     };
 
     try {
-      fetch(`${import.meta.env.VITE_API_HOST}/registro_queja`, {
+      fetch(`${import.meta.env.VITE_API_HOST}/registro_encuesta`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -64,15 +66,16 @@ function RegistroQueja({ handleRegistroQueja, user }) {
         .then((data) => {
           if (data.status === 200) {
             Swal.fire({
-              title: "Queja generada con éxito",
+              title: "Encuesta guardada con éxito",
               icon: "success",
               confirmButtonText: "Aceptar",
             });
-            handleRegistroQueja(
+            handleRegistroEncuesta(
               (data = {
                 cui,
                 categoria,
-                descripcion: queja,
+                calificacion,
+                comentario: comentario,
                 crea: user,
               })
             );
@@ -89,7 +92,7 @@ function RegistroQueja({ handleRegistroQueja, user }) {
       console.error("Error:", error);
       Swal.fire({
         title: "Error",
-        text: "Ocurrió un error al generar la solicitud",
+        text: "Ocurrió un error al registrar la encuesta",
         icon: "error",
         confirmButtonText: "Aceptar",
       });
@@ -104,7 +107,7 @@ function RegistroQueja({ handleRegistroQueja, user }) {
       <Col md={8}>
         <Card>
           <Card.Header className="bg-primary text-white text-center">
-            <h4>Registro de quejas</h4>
+            <h4>Registro de encuestas</h4>
           </Card.Header>
           <Card.Body>
             <Form onSubmit={handleSubmit}>
@@ -173,21 +176,41 @@ function RegistroQueja({ handleRegistroQueja, user }) {
 
                   <div className="m-1">
                     <label htmlFor="" className="form-label">
-                      Descripción
+                      Calificación
+                    </label>
+                    <Form.Control
+                      as="select"
+                      name="calificacion"
+                      value={calificacion}
+                      onChange={(e) => setCalificacion(e.target.value)}
+                      required
+                    >
+                      <option value="">Seleccione...</option>
+                      <option value="5">Muy satisfecho</option>
+                      <option value="4">Satisfecho</option>
+                      <option value="3">Neutral</option>
+                      <option value="2">Insatisfecho</option>
+                      <option value="1">Muy insatisfecho</option>
+                    </Form.Control>
+                  </div>
+
+                  <div className="m-1">
+                    <label htmlFor="" className="form-label">
+                      Comentario
                     </label>
                     <input
                       type="text"
                       className="form-control"
-                      placeholder="Descripción de la queja"
-                      value={queja}
-                      onChange={(e) => setQueja(e.target.value)}
+                      placeholder="Comentario"
+                      value={comentario}
+                      onChange={(e) => setComentario(e.target.value)}
                       required
                     />
                   </div>
                   {/* Botón de Crear */}
                   <div className="d-grid mt-3">
                     <Button variant="success" type="submit">
-                      Registrar queja
+                      Registrar Encuesta
                     </Button>
                   </div>
                 </Row>
@@ -211,4 +234,4 @@ function RegistroQueja({ handleRegistroQueja, user }) {
   );
 }
 
-export default RegistroQueja;
+export default RegistroEncuesta;

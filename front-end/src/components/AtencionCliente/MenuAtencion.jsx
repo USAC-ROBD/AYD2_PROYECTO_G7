@@ -176,7 +176,7 @@ function MenuCajero({ user, rol }) {
                 variant="outline-success"
                 size="lg"
                 className="w-100"
-                // onClick={() => navigate('/form-consulta')}
+                onClick={() => navigate("/encuesta")}
                 style={{
                   display: "flex",
                   flexDirection: "column",
