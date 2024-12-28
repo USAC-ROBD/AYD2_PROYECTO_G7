@@ -16,7 +16,7 @@ describe('Pago de prestamos', () => {
         cy.get('input[name="loanCode"]').type('1');
         cy.get('button[name="consultar"]').click();
         cy.get('input[name="amountPay"]').type('1.00');
-        cy.get('input[name="cuenta"]').type('8659137425');
+        cy.get('input[name="cuenta"]').type('8285710546');
         cy.get('button[name="pagar"]').click();
         cy.get('button[class="swal2-confirm swal2-styled"]').click();
         cy.contains('Pago realizado con éxito');
