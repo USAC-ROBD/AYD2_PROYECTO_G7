@@ -330,6 +330,16 @@ Es posible buscar cuentas de usuarios mediante el número de una de sus cuentas 
 2. El supervisor podrá visualizar el inventario actual en cada moneda, las tendencias de ganancias o pérdidas y los movimientos en los cuales podrá ordenar o filtrar.
 ![Inventario](./assets/manual_usuario/supervisor-inventario.png)
 
+### Solicitudes de Cancelación de Servicios
+1. El supervisor debe hacer click en la opción 'Cancelación de Servicios'.
+![Menu-Cancelación](./assets/manual_usuario/supervisor-cancelacion-menu.png)
+
+2. El supervisor podrá visualizar la lista de solicitudes, las cuales podrá aceptar o rechazar, pulsando el botón correspondiente.
+![Cancelación](./assets/manual_usuario/supervisor-cancelacion.png)
+
+3. El sistema siempre solicitará la confirmación dependiendo de la acción solicitada. El usuario deberá dar click en Sí para confirmar o No para cancelar la acción.
+![Confirmar-Cancelacion](./assets/manual_usuario/supervisor-confirmar-cancelacion.png)
+
 ## Modulo Administrador de Sistemas
 
 ![Descripción de la imagen](./assets/administrador/Prototipo/Menu%20admin.png)

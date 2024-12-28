@@ -18,6 +18,7 @@ export default function TipoConsultas({handleSelectTipoConsulta}) {
                     className="w-100"
                     onClick={() => handleSelectTipoConsulta('Busqueda Cliente')}
                     style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
+                    name='busqueda-cliente'
                 >
                     <FaSearch style={{ width: '50%', height: '50%' }} />
                     Buscar Cliente
@@ -30,6 +31,7 @@ export default function TipoConsultas({handleSelectTipoConsulta}) {
                     className="w-100"
                     onClick={() => handleSelectTipoConsulta('Saldo Actual')}
                     style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
+                    name='saldo-actual'
                 >
                     <FaMoneyBillWave style={{ width: '50%', height: '50%' }} />
                     Saldo Actual
