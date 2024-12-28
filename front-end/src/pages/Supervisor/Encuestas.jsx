@@ -62,7 +62,7 @@ function Encuestas() {
         
               <Card style={{ width: "80%" }}>
                 <Card.Header className="bg-primary text-white text-center">
-                  <h4> Empleados </h4>
+                  <h4> Encuestas </h4>
                 </Card.Header>
                 <Card.Body>
                   <Form >

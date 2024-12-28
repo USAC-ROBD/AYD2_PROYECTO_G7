@@ -111,6 +111,9 @@ router.get('/obtener_actividades', supervisor.obtenerActividades);
 router.get('/obtener_movimientos', supervisor.obtenerMovimientos);
 router.get('/obtener_disponibilidad', supervisor.obtenerDisponibilidad);
 router.get('/obtener_disponibilidad_dia', supervisor.obtenerDisponibilidadDia);
+router.get('/solicitudes_cancelacion', supervisor.obtenerSolicitudesCancelacion);
+router.post('/aceptar_cancelacion', supervisor.aceptarCancelacion);
+router.post('/rechazar_cancelacion', supervisor.rechazarCancelacion);
 
 
 
