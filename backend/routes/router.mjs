@@ -28,9 +28,7 @@ router.post('/login_supervisor', loginSupervisor);
 
 /*********Registro*********/
 router.get('/confirmar_cuenta', auth.confirmation);
-
 router.get('/buscarcuenta', Consultas.buscarcuenta)
-
 
 /******Consultas*********/
 router.get('/buscarcuenta', Consultas.buscarcuenta)
@@ -57,16 +55,13 @@ router.post('/deposito', depositos.deposito_efectivo);
 router.post('/retiros/consultar_cuenta', retiros.consultarCuenta);
 router.post('/retiro', retiros.retiro_efectivo);
 
-
 /******Cambio de Moneda ******/
 router.get('/divisa/venta-usd', cambioMoneda.precioVenta);
 router.post('/cambio', cambioMoneda.realizarCambioMoneda);
 
-
 /******Pago de Tarjeta*********/
 router.post('/tarjetas/buscar', pagoTarjeta.consultarTarjetaCredito);
 router.post('/tarjetas/pagar', pagoTarjeta.registrarPagoTarjeta);
-
 
 /*********Atención al cliente*********/
 router.get('/obtener_cliente', atencionCliente.obtenerCliente)
@@ -89,8 +84,8 @@ router.post('/consultar_datos_tarjeta', atencionCliente.consultarDatosTarjeta)
 router.post('/solicitud_cancelacion', atencionCliente.crearSolicitudCancelacion)
 router.post('/registro_queja', atencionCliente.registroQueja)
 router.post('/registro_encuesta', atencionCliente.registroEncuesta)
-
-
+router.get('/obtener_cliente_prestamo', atencionCliente.obtenerClientePrestamo)
+router.post('/solicitar_prestamo', atencionCliente.solicitarPrestamo)
 
 /***********Adminitrador************/
 router.get('/rol-empleado', administrador.obtener_usuario_rol);
@@ -100,6 +95,7 @@ router.post('/eliminar-empleado', administrador.eliminar_usuario);
 router.post('/cambiar-contrasena',administrador.cambiar_contrasena);
 router.post('/registrar-usuario',administrador.registrar_usuario);
 router.get('/backup',administrador.backup);
+
 /******Supervisor*********/
 router.get('/obtener_encuetas', supervisor.obtenerEncuestas)
 router.get('/obtener_quejas', supervisor.obtenerQuejas);

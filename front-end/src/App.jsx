@@ -33,6 +33,7 @@ import FormBloqueoTarjeta from "./components/AtencionCliente/Tarjetas/Bloqueo";
 import FormCancelacion from "./pages/Cuentas/FormCancelacion";
 import CreacionQueja from "./pages/AtencionCliente/CreacionQueja";
 import CreacionEncuesta from "./pages/AtencionCliente/CreacionEncuesta";
+import FormSolicitudPrestamo from "./components/AtencionCliente/Prestamos/FormPrestamo";
 
 function App() {
   return (
@@ -63,6 +64,7 @@ function App() {
         <Route path="/cancelar-servicio" element={<FormCancelacion />} />
         <Route path="/registrar-queja" element={<CreacionQueja />} />
         <Route path="/encuesta" element={<CreacionEncuesta />} />
+        <Route path="/solicitud-prestamo" element={<FormSolicitudPrestamo />} />
       </Routes>
       <Routes>
         <Route path="/empleados" element={<Empleados />} />
