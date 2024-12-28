@@ -1,5 +1,5 @@
-describe('Pago de servicios', () => {
-    it('debería realizar el pago de un servicio pero el servicio ya esta pagado', () => {
+describe('Depositos', () => {
+    it('debería realizar el deposito de 100 quetzales en la cuenta del cliente', () => {
         cy.visit('/'); // Visita la raíz del proyecto
         cy.contains('Login'); // Busca texto específico en la página
         cy.get('input[name="username"]').type('tiky');

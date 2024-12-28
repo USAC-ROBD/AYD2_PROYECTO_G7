@@ -1,5 +1,5 @@
 describe('Pago de prestamos', () => {
-    it('debería realizar el pago de un prestamo', () => {
+    it('debería realizar el pago de un prestamo parcial', () => {
         cy.visit('/'); // Visita la raíz del proyecto
         cy.contains('Login'); // Busca texto específico en la página
         cy.get('input[name="username"]').type('tiky');
