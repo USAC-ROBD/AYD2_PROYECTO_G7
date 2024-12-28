@@ -1,5 +1,5 @@
 import db from "../utils/db_connection.mjs";
-import { transporter, deactiveCard } from '../utils/nodemailer.mjs'
+import { transporter, deactiveCard, complaint } from '../utils/nodemailer.mjs'
 import { UsuarioFactory } from "../models/UsuarioFactory.mjs";
 
 // Obtener Cliente
@@ -47,7 +47,23 @@ const crearCuenta = async (req, res) => {
     }
 };
 
+const crearCuentaDolares = async (req, res) => {
+    const { cui, tipoCuenta, monto } = req.body;
+
+    try {
+        await db.query(
+            `INSERT INTO CUENTA(CUI, TIPO, MONEDA, SALDO, LIMITE_RETIRO) VALUES(?, ?, ?, ?, ?)`,
+            [cui, tipoCuenta, "D", monto, "100"]
+        );
+        return res.status(200).json({ status: 200, message: "cuenta en dolares creada" });
+    } catch (error) {
+        return res.status(500).json({ status: 500, message: "consulta erronea" });
+    }
+};
+
 const crearCuentaCliente = [crearCliente, crearCuenta];
+
+const crearCuentaClienteDolares = [crearCliente, crearCuentaDolares];
 
 // Obtener CUI y Nombres
 const obtenerClienteCui = async (_, res) => {
@@ -325,7 +341,7 @@ const consultarDatosCuenta = async (req, res) => {
     }
 };
 
-// Obtener datos de la cuenta
+// Obtener datos de la tarjeta
 
 const consultarDatosTarjeta = async (req, res) => {
 
@@ -400,6 +416,62 @@ const crearSolicitudCancelacion = async (req, res) => {
     
 };
 
+// registro de quejas
+
+const registroQueja = async (req, res) => {
+    const { cui, categoria, descripcion, crea } = req.body;
+
+    try {
+        await db.query(
+            `INSERT INTO QUEJA (CUI, CATEGORIA, DESCRIPCION, CREA) VALUES (?, ?, ?, ?)`,
+            [cui, categoria, descripcion, crea]
+        );
+
+        try {
+            const [ rows ] = await db.query(
+                `SELECT * FROM USUARIO WHERE ID_ROL = 3;`
+            )
+            if(rows.length > 0) {
+                //return res.status(200).json({ status: 200, message: "cuenta encontrada", encontrado: true, cliente: rows[0] });
+                
+                const mail = complaint(rows[0].CORREO, rows[0].NOMBRE);
+                transporter.sendMail(mail);
+                console.log(rows[0].CORREO);
+                
+            }
+            
+            
+            
+        } catch (error) {
+            return res.status(200).json({ status: 200, message: "Queja registrada con éxito. No se pudo enviar el correo electrónico" });
+        }
+        
+        
+        return res.status(200).json({ status: 200, message: "Queja registrada con éxito" });
+    } catch (error) {
+        return res.status(500).json({ status: 500, message: error.message });
+    }
+};
+
+
+// Encuestas de satisfacción
+
+const registroEncuesta = async (req, res) => {
+    const { cui, categoria,calificacion, comentario, crea } = req.body;
+
+    try {
+        await db.query(
+            `INSERT INTO ENCUESTA (CUI, CATEGORIA, CALIFICACION, COMENTARIO, CREA) VALUES (?, ?, ?, ?, ?)`,
+            [cui, categoria, calificacion, comentario, crea]
+        );
+        
+        return res.status(200).json({ status: 200, message: "Encuesta registrada con éxito" });
+    } catch (error) {
+        return res.status(500).json({ status: 500, message: error.message });
+    }
+};
+
+
 const bloquearTarjeta = [
     validarRespuestaSeguridad,
     registrarBloqueoTarjeta,
@@ -409,6 +481,7 @@ const bloquearTarjeta = [
 export const atencionCliente = {
     obtenerCliente,
     crearCuentaCliente,
+    crearCuentaClienteDolares,
     obtenerClienteCui,
     actualizarCliente,
     obtenerClienteCuenta,
@@ -418,5 +491,7 @@ export const atencionCliente = {
     consultarDatosCuenta,
     consultarDatosTarjeta,
     crearSolicitudCancelacion,
+    registroQueja,
+    registroEncuesta,
 };
 

@@ -1,9 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import MenuCajero from "../../components/Cajero/MenuCajero";
-import MenuSupervisor from "../../components/Supervisor/MenuSupervisor";
 import MenuAtencion from "../../components/AtencionCliente/MenuAtencion";
 import MenuAdmin from "../../components/Administrador/Menu";
 import useAuth from "../../hook/useAuth";  // Importamos el hook personalizado
+import MenuSupervisor from "../../components/Supervisor/MenuSupervisor";
 
 function Menu() {
   const navigate = useNavigate();

@@ -2,8 +2,11 @@ import express from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
 import cookieParser from 'cookie-parser';
+import dotenv from 'dotenv';
 import router from './routes/router.mjs';
 import configurations from './utils/configurations.mjs';
+
+dotenv.config();
 
 const app = express();
 

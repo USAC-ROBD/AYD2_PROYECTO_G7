@@ -3,7 +3,6 @@ import { useState } from "react";
 import Logo from "../../assets/logo.png";
 import useAuth from "../../hook/useAuth";
 import CancelacionServicio from "../../components/AtencionCliente/Servicios/CancelacionServicio";
-import ConfirmacionDeposito from "../../components/Cajero/Depositos/ConfirmacionDeposito";
 
 function FormCancelacion() {
   const navigate = useNavigate();

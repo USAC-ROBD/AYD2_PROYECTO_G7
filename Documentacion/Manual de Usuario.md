@@ -127,7 +127,7 @@ Es posible buscar cuentas de usuarios mediante el número de una de sus cuentas 
 
 #### Retiro de Dinero
 
-1. Presionar el btón "Retiros"
+1. Presionar el botón "Retiros"
 
     ![Descripción de la imagen](./assets/manual_usuario/retiros1.png)
 
@@ -178,6 +178,111 @@ Es posible buscar cuentas de usuarios mediante el número de una de sus cuentas 
 
 ## Módulo Atencion al Cliente
 
+### Menú
+
+* Permite navegar a los distintos modulos de la aplicación presionando los respectivos botones.
+
+![Menu](./assets/atencion_al_cliente/manualusuario/menu.png)
+
+### Funciones Principales
+#### Creación de Cliente y Cuenta
+
+1. Ingresar el CUI del cliente.
+    - Si el cliente no existe en el sistema aún, se ingresarán los datos manualmente para que pueda ser registrado junto con su cuenta bancaria.
+    - Si el cliente ya existe en el sistema los campos correspondientes se autocompletan.
+
+    ![Menu](./assets/atencion_al_cliente/manualusuario/crear1.png)
+
+2. Completar el formulario seleccionando el tipo de cuenta y el monto inicial.
+
+    ![Menu](./assets/atencion_al_cliente/manualusuario/crear2.png)
+
+3. Se muestra la ventana de confirmación antes de finalizar el proceso.
+
+    ![Menu](./assets/atencion_al_cliente/manualusuario/confirma1.png)
+
+4. Se muestra el mensaje de confirmación y se redirije al menú.
+
+    ![Menu](./assets/atencion_al_cliente/manualusuario/confirma2.png)
+
+#### Actualización de Cliente
+1. Seleccionar el cliente que se necesite modificar y los campos respectivos se autocompletarán.
+
+    ![Menu](./assets/atencion_al_cliente/manualusuario/seleccion1.png)
+
+2. Modificar los campos que se requieran. Los campos editables son:
+    - Teléfono
+    - Correo Electrónico
+    - Dirección
+    - Pregunta de Seguridad
+    - Respuesta de Seguridad
+
+    ![Menu](./assets/atencion_al_cliente/manualusuario/modifica1.png)
+
+3. Se muestra la ventana de confirmación antes de finalizar el proceso.
+
+    ![Menu](./assets/atencion_al_cliente/manualusuario/confirma3.png)
+
+4. Se muestra el mensaje de confirmación y se redirije al menú.
+
+    ![Menu](./assets/atencion_al_cliente/manualusuario/confirma4.png)
+
+#### Solicitar Tarjeta
+
+* Se debe seleccionar el tipo de tarjeta de crédito.
+
+![Menu](./assets/atencion_al_cliente/manualusuario/seleccion2.png)
+
+##### Tarjeta de Crédito
+
+1. Se debe de ingresar el límite de crédito e ingresar el CUI del cliente. El campo con los datos del titular se autocompletará si el CUI es correcto. De lo contrario no se puede completar la solicitud.
+
+    ![Menu](./assets/atencion_al_cliente/manualusuario/crear3.png)
+
+2. Se muestra la ventana de confirmación antes de finalizar el proceso.
+
+    ![Menu](./assets/atencion_al_cliente/manualusuario/confirma5.png)
+
+##### Tarjeta de Débito
+
+1. Se debe de ingresar el número de cuenta a la que se quiere asociar la tarjeta. El campo con los datos del titular se autocompletará si el número de cuenta es correcto. De lo contrario no se puede completar la solicitud.
+
+    ![Menu](./assets/atencion_al_cliente/manualusuario/crear4.png)
+
+2. Se muestra la ventana de confirmación antes de finalizar el proceso.
+
+    ![Menu](./assets/atencion_al_cliente/manualusuario/confirma6.png)
+
+* Si el cliente ha solicitado una tarjeta de cualquier tipo y aún hay una solicitud sin aprovación no se podrá finalizar el proceso actual.
+
+    ![Menu](./assets/atencion_al_cliente/manualusuario/alerta1.png)
+
+* Se muestra el mensaje de confirmación y se redirije al menú.
+
+    ![Menu](./assets/atencion_al_cliente/manualusuario/confirma7.png)
+
+#### Bloquear Tarjeta
+
+1. Después de seleccionar el tipo de tarjeta se ingresa el CUI o número de cuenta asociado a la tarjeta.
+
+    ![Menu](./assets/atencion_al_cliente/manualusuario/bloquea1.png)
+
+2. Si el CUI o número de cuenta es correcto los campos se autocompletan. De lo contrario no se puede completar el proceso.
+
+    ![Menu](./assets/atencion_al_cliente/manualusuario/bloquea2.png)
+
+3. Se muestra la ventana de confirmación antes de finalizar el proceso.
+
+    ![Menu](./assets/atencion_al_cliente/manualusuario/confirma8.png)
+
+4. Si la respuesta de seguridad es incorrecta se muestra la alerta.
+
+    ![Menu](./assets/atencion_al_cliente/manualusuario/alerta2.png)
+
+5. Se muestra el mensaje de confirmación y se redirije al menú.
+
+    ![Menu](./assets/atencion_al_cliente/manualusuario/confirma9.png)
+
 ## Modulo Supervisor
 ### Menú Principal
 ![Menu-Supervisor](./assets/manual_usuario/supervisor-menu.png)
@@ -226,3 +331,28 @@ Es posible buscar cuentas de usuarios mediante el número de una de sus cuentas 
 ![Inventario](./assets/manual_usuario/supervisor-inventario.png)
 
 ## Modulo Administrador de Sistemas
+
+![Descripción de la imagen](./assets/administrador/Prototipo/Menu%20admin.png)
+* opcion para entrar a gestionar empleado
+* opcion para hacer un backup
+
+![Descripción de la imagen](./assets/administrador/Prototipo/gestion%20para%20empleados.png)
+* Registro de empleado
+* Asignacion de roles
+* Eliminar empleado
+* Cambiar contraseña
+
+![Descripción de la imagen](./assets/administrador/Prototipo/registrar%20empleado.png)
+* Llenar los campos solicitados
+* Al se le enviara un mensaje al empleado su contraseña y usuario
+
+![Descripción de la imagen](./assets/administrador/Prototipo/cambiar%20contrasena.png)
+* boton para cada uno de los empleado y enviarles su nueva contraseña a su correo
+
+![Descripción de la imagen](./assets/administrador/Prototipo/cambio%20rol.png)
+* Por cada usuario seleccionado se mostrar el rol actual que posee
+* Seleccionar el nuevo rol
+
+![Descripción de la imagen](./assets/administrador/Prototipo/eliminar%20empleado.png)
+
+* Un boton que hace que elimine al empleado 

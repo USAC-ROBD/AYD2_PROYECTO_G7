@@ -4,6 +4,8 @@ import { auth } from "./auth.mjs";
 import { transporter, confirmationAccountMail, updateAccountMail } from "../utils/nodemailer.mjs";
 import { UsuarioFactory } from "../models/UsuarioFactory.mjs";
 import upload from "../utils/multer.mjs";
+import { AceptarCommand } from "../commands/AceptarCommand.mjs";
+import { RechazarCommand } from "../commands/RechazarCommand.mjs";
 
 const obtenerQuejas = [auth.verifyToken, async (req, res) => {
     try {
@@ -276,7 +278,121 @@ const obtenerDisponibilidadDia = [auth.verifyToken, async (req, res) => {
     }
 }];
 
+const obtenerEncuestas = async (req, res) => {
+    try {
+        const [rows] = await db.query(
+            `SELECT 
+                c.NOMBRE,
+                c.APELLIDO,
+                c.CUI,
+                e.CATEGORIA,
+                e.CALIFICACION,
+                e.COMENTARIO          
+            FROM 
+                ENCUESTA as e
+            INNER JOIN
+                CLIENTE as c
+            ON
+            c.CUI = e.CUI`
+        );
+
+        const response = {
+            "status": 200,
+            "data": rows,
+        };
+
+        return res.status(200).json(response);
+    } catch (error) {
+        console.error("Error en obtenerQuejas:", error.message);
+        return res.status(500).json({ "status": 500, "message": error.message });
+    }
+};
+
+const obtenerSolicitudesCancelacion = async (req, res) => {
+    try {
+        const [rows] = await db.query(
+            `SELECT 
+                S.ID_SOLICITUD as id,
+                S.CUI as cui,
+                CONCAT(C.NOMBRE, ' ', C.APELLIDO) as cliente,
+                CASE
+                    WHEN S.TIPO_SERVICIO = 'T' THEN 'Tarjeta'
+                    WHEN S.TIPO_SERVICIO = 'C' THEN 'Cuenta'
+                    ELSE 'Otro'
+                END AS servicio,
+                CASE
+                    WHEN S.TIPO_SERVICIO = 'T' THEN
+                        (SELECT T.NUMERO FROM TARJETA T WHERE T.ID_TARJETA = S.ID_TARJETA)
+                    WHEN S.TIPO_SERVICIO = 'C' THEN
+                        (SELECT C.NUMERO FROM CUENTA C WHERE C.ID_CUENTA = S.ID_CUENTA)
+                    ELSE 'Otro'
+                END AS numero,
+                CASE
+                    WHEN S.TIPO_SERVICIO = 'T' THEN
+                        (SELECT IFNULL(T.SALDO, 0) FROM TARJETA T WHERE T.ID_TARJETA = S.ID_TARJETA)
+                    WHEN S.TIPO_SERVICIO = 'C' THEN
+                        (SELECT IFNULL(C.SALDO, 0) FROM CUENTA C WHERE C.ID_CUENTA = S.ID_CUENTA)
+                    ELSE 'Otro'
+                END AS saldo,
+                S.DESCRIPCION as motivo,
+                S.CREACION as creado,
+                S.CREA as crea
+            FROM SOLICITUD S
+                INNER JOIN CLIENTE C ON S.CUI = C.CUI
+            WHERE S.ESTADO = 'P'
+                AND TIPO = 'C'
+            ORDER BY S.CREACION DESC`
+        );
+
+        const response = {
+            "status": 200,
+            "message": "Solicitudes de cancelación obtenidas correctamente",
+            "data": rows,
+        };
+
+        return res.status(200).json(response);
+    } catch (error) {
+        console.error("Error en obtenerSolicitudesCancelacion:", error.message);
+        return res.status(500).json({ "status": 500, "message": error.message });
+    }
+};
+
+const aceptarCancelacion = async (req, res) => {
+    const { id, tipo } = req.body;
+
+    if (!id || !tipo) {
+        return res.status(400).json({ "status": 400, "message": "Faltan campos obligatorios" });
+    }
+
+    try {
+        const command = new AceptarCommand(id, tipo, db);
+        const result = await command.execute();
+        return res.status(result.status).json({ "status": result.status, "message": result.message });
+    } catch (error) {
+        console.error("Error en aceptarCancelacion:", error.message);
+        return res.status(500).json({ "status": 500, "message": error.message });
+    }
+};
+
+const rechazarCancelacion = async (req, res) => {
+    const { id } = req.body;
+
+    if (!id) {
+        return res.status(400).json({ "status": 400, "message": "Faltan campos obligatorios" });
+    }
+
+    try {
+        const command = new RechazarCommand(id, db);
+        const result = await command.execute();
+        return res.status(result.status).json({ "status": result.status, "message": result.message });
+    } catch (error) {
+        console.error("Error en rechazarCancelacion:", error.message);
+        return res.status(500).json({ "status": 500, "message": error.message });
+    }
+};
+
 export const supervisor = {
+    obtenerEncuestas,
     obtenerQuejas,
     registrarAdministrador,
     actualizarAdministrador,
@@ -286,4 +402,7 @@ export const supervisor = {
     obtenerMovimientos,
     obtenerDisponibilidad,
     obtenerDisponibilidadDia,
+    obtenerSolicitudesCancelacion,
+    aceptarCancelacion,
+    rechazarCancelacion,
 };

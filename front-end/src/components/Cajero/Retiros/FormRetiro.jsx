@@ -143,6 +143,7 @@ function FormRetiro({ handleConfirmacionRetiro, user }) {
                                         placeholder="xxxxxxx"
                                         value={origenCuenta}
                                         onChange={(e) => setOrigenCuenta(e.target.value)}
+                                        name="origenCuenta"
                                         required
                                     />
                                 </Col>
@@ -152,6 +153,7 @@ function FormRetiro({ handleConfirmacionRetiro, user }) {
                                         type="button"
                                         style={{ width: "100%" }}
                                         onClick={handleVerificarCuenta}
+                                        name="consultar"
                                     >
                                         Verificar
                                     </Button>
@@ -203,12 +205,13 @@ function FormRetiro({ handleConfirmacionRetiro, user }) {
                                             type="number"
                                             className="form-control"
                                             placeholder="Monto"
+                                            name="montoRetirar"
                                             onChange={(e) => setMontoRetirar(parseFloat(e.target.value))}
                                             required
                                         />
                                     </Col>
                                     <div className="d-grid mt-3">
-                                        <Button variant="success" type="submit">
+                                        <Button name="retirar" variant="success" type="submit">
                                             Retirar
                                         </Button>
                                     </div>
