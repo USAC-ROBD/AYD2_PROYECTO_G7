@@ -367,7 +367,7 @@ const obtenerPrestamos = async (req, res) => {
             MONTO, 
             PLAZO
             FROM 
-            solicitud s
+            SOLICITUD s
             WHERE 
             TIPO = 'S'
             AND TIPO_SERVICIO = 'P'

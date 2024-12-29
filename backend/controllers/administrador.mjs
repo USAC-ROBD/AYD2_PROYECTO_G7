@@ -275,7 +275,7 @@ const cambiar_contrasena = async (req, res) => {
     const hashed_password = bcrypt.hashSync(contraseña, bcrypt.genSaltSync(10))
 
     const [rows] = await db.query(
-        `UPDATE usuario 
+        `UPDATE USUARIO 
          SET CONTRASENA = ?
          WHERE ID_USUARIO = ?`,
         [hashed_password, id_usuario]
