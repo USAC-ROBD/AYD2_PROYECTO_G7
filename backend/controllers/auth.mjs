@@ -46,7 +46,7 @@ const login = async (req, res) => {
       httpOnly: false,
       secure: false,
       maxAge: 3600000, // 1 hora
-      sameSite: 'strict',
+      sameSite: 'none',
     });
 
     return res.json({ status: 200, message: "Login exitoso", rol: user.ID_ROL });
