@@ -68,7 +68,7 @@ Durante este sprint, el objetivo principal terminar de desarrollar la plataforma
 | Integrante              | Tarea Realizada (Día Anterior) | Impedimentos                                                   |
 | ----------------------- | ------------------------------ | -------------------------------------------------------------- |
 | **Steven González**     | BI-01 Pruebas E2E              |               |
-| **Robin Buezo**         |                                |               |
+| **Robin Buezo**         | BI-12: Pruebas Unitarias                               |               |
 | **Danny Tejaxun**       | BI-06: AC - Solicitud de prestamos al banco |               |
 | **Eduardo Llamas**      |                                |               |
 | **Juan Pablo González** |                                |               |
@@ -94,7 +94,8 @@ Durante este sprint, el objetivo principal terminar de desarrollar la plataforma
 | **Steven González**     | BI-02: CICD Backend                                            |                                                         |
 |                         | BI-03: Terraform                                               |                                                         |
 |                         | BI-04: Ansible                                                 |                                                         |
-| **Robin Buezo**         |                                                                |                                                         |
+| **Robin Buezo**         | BI-11: Aprobar Cancelación de Servicios                                                 |
+|                         | BI-13: Implementación de patron Command                                                           |                                                         |
 | **Danny Tejaxun**       | BI-05: Pruebas Aceptación                                      |                                                         |
 | **Juan Pablo González** |                                                                |                                                         |
 | **Eduardo Llamas**      |                                                                |                                                         |
