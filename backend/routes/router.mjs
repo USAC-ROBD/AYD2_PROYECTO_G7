@@ -100,6 +100,8 @@ router.post('/cambiar-contrasena',administrador.cambiar_contrasena);
 router.post('/registrar-usuario',administrador.registrar_usuario);
 router.get('/backup',administrador.backup);
 /******Supervisor*********/
+router.post('/actualizar_prestamo', supervisor.actualizar_prestamo)
+router.get('/obtener_prestamos', supervisor.obtenerPrestamos)
 router.get('/obtener_encuetas', supervisor.obtenerEncuestas)
 router.get('/obtener_quejas', supervisor.obtenerQuejas);
 router.get('/obtener_administradores', supervisor.obtenerAdministradores);

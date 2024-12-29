@@ -59,10 +59,9 @@ function Encuestas() {
     return (
         <Container className="mt-5" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minWidth: '100vw', minHeight: '100vh' }}>
               <img src={Logo} style={{ width: '65%' }} alt="logo" />
-        
               <Card style={{ width: "80%" }}>
                 <Card.Header className="bg-primary text-white text-center">
-                  <h4> Empleados </h4>
+                  <h4> Encuestas </h4>
                 </Card.Header>
                 <Card.Body>
                   <Form >
