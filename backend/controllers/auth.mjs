@@ -45,8 +45,8 @@ const login = async (req, res) => {
     res.cookie('token', token, {
       httpOnly: false,
       secure: false,
-      maxAge: 3600000, // 1 hora
       sameSite: 'strict',
+      maxAge: 3600000,
     });
 
     return res.json({ status: 200, message: "Login exitoso", rol: user.ID_ROL });
@@ -82,14 +82,14 @@ const verifyToken = (req, res, next) => {
 };
 
 const confirmation = async (req, res) => {
-  const {id} = req.query
+  const { id } = req.query
   const [rows, fields] = await db.query(`SELECT USUARIO FROM USUARIO WHERE ID_USUARIO = ? AND ESTADO = ?`, [id, 'P'])
 
-  if(rows.length > 0) {
-      await db.query(`UPDATE USUARIO SET ESTADO = ? WHERE ID_USUARIO = ?`, ['A', id])
-      return res.status(200).json({status: 200, message: 'Cuenta confirmada'})
+  if (rows.length > 0) {
+    await db.query(`UPDATE USUARIO SET ESTADO = ? WHERE ID_USUARIO = ?`, ['A', id])
+    return res.status(200).json({ status: 200, message: 'Cuenta confirmada' })
   }
-  return res.status(400).json({status: 400, message: 'Cuenta no encontrada o ya confirmada'})
+  return res.status(400).json({ status: 400, message: 'Cuenta no encontrada o ya confirmada' })
 }
 
 

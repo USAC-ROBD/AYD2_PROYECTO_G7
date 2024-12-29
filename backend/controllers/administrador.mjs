@@ -34,6 +34,16 @@ class UsuarioFactory {
     }
 }
 
+const generar_Contrasena = () =>{
+    const caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let contrasena = '';
+    for (let i = 0; i < 16; i++) {
+        const randomIndex = Math.floor(Math.random() * caracteres.length);
+        contrasena += caracteres[randomIndex];
+    }
+    return contrasena;
+}
+
 // Controlador principal
 const registrar_usuario = async (req, res) => {
     try {
@@ -244,7 +254,7 @@ const eliminar_usuario = async (req, res) => {
 
 const cambiar_contrasena = async (req, res) => {
     const { id_usuario } = req.body;
-
+    console.log(id_usuario)
     const [rowsUser] = await
         db.query(`SELECT 
         CORREO FROM USUARIO
@@ -260,7 +270,7 @@ const cambiar_contrasena = async (req, res) => {
     }
 
     const email = rowsUser[0].CORREO;
-    const contraseña = Generar_Contraseña();
+    const contraseña = generar_Contrasena();
 
     const hashed_password = bcrypt.hashSync(contraseña, bcrypt.genSaltSync(10))
 

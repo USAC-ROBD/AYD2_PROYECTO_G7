@@ -1893,7 +1893,7 @@ Base de Datos
 
 ## DIAGRAMA DE BLOQUES
 
-![DIAGRAMA DE BLOQUES](./assets/Diagramas/Diagrama%20bloques.drawio.png)
+![DIAGRAMA DE BLOQUES](./assets/Diagramas/Diagrama%20bloques.png)
 
 ## DIAGRAMA ENTIDAD RELACION
 
