@@ -16,7 +16,7 @@
 |  |  | - BI-07: Modificar información de empleado | Completado | |
 |  |  | - BI-08: Pruebas de Integración |Completado | |
 | **Juanpa** || | | |
-|  |  | - BI-09: Aceptar Prestamos | | |
+|  |  | - BI-09: Aceptar Prestamos | Completado| |
 |  |  | - BI-10: Pruebas no funcionales | Completado| |
 | **Robin** | | | | |
 |  |  | - BI-11: Aprobar Cancelación de Servicios | Completado | |
@@ -70,8 +70,8 @@ Durante este sprint, el objetivo principal terminar de desarrollar la plataforma
 | **Steven González**     | BI-01 Pruebas E2E              |               |
 | **Robin Buezo**         | BI-12: Pruebas Unitarias                               |               |
 | **Danny Tejaxun**       | BI-06: AC - Solicitud de prestamos al banco |               |
-| **Eduardo Llamas**      |                                |               |
-| **Juan Pablo González** |                                |               |
+| **Eduardo Llamas**      |                |               |
+| **Juan Pablo González** | BI-10: Pruebas no funcionales      |    No, sabia nada del tema ni herramientas           |
 
 ---
 
@@ -97,7 +97,7 @@ Durante este sprint, el objetivo principal terminar de desarrollar la plataforma
 | **Robin Buezo**         | BI-11: Aprobar Cancelación de Servicios                                                 |
 |                         | BI-13: Implementación de patron Command                                                           |                                                         |
 | **Danny Tejaxun**       | BI-05: Pruebas Aceptación                                      |                                                         |
-| **Juan Pablo González** |                                                                |                                                         |
+| **Juan Pablo González** |     BI-09: Aceptar Prestamos                                                           |           Ninguno                                             |
 | **Eduardo Llamas**      |                                                                |                                                         |
 
 ---
