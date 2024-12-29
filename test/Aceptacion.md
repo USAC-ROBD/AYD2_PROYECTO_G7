@@ -2,12 +2,12 @@
 
 ## Resumen
 | Código |        Prueba        |    Rol Asociado     | Resultado |
-|   -    |          -           |          -          |     -     |
+|  :-:   |          -           |          -          |    :-:    |
 | PA-01  | Inicio de Sesión     | Todos los roles     | APROBADO  |
 | PA-02  | Pago de Servicios    | Cajero              | APROBADO  |
 | PA-03  | Creación de Cuentas  | Atención al Cliente | APROBADO  |
 | PA-04  | Creación de Tarjetas | Atención al Cliente | APROBADO  |
-| PA-05  | - | - | APROBADO |
+| PA-05  | Gestión de Copias de Seguridad | Administrador | APROBADO |
 
 ## PA-01. Inicio de Sesión
 * **Objetivo**: Verificar que los usuarios pueden iniciar sesión correctamente y que se validan las credenciales.
@@ -125,3 +125,15 @@
 * **Resultados**
     * Las solicitudes de creación de tarjetas se enviaron correctamente al llenar el formulario de la forma debida.
     * Mensajes de alerta claros cuando alguno de los campos permaneció vacío o hay una solicitud vigente
+
+## PA-05. Gestión de Copias de Seguridad (Módulo Administrador de Sistemas)
+* **Objetivo**: Validar que se pueden crear copias de seguridad y almacenarlas en la nube.
+* **Precondiciones**: Configuración del almacenamiento en la nube.
+* **Entradas**: Ninguna.
+* **Escenarios**
+    * Generar una copia de seguridad.
+        ![PA-05](./PA-05/1.png)
+        ![PA-05](./PA-05/2.png)
+        ![PA-05](./PA-05/3.png)
+* **Resultados**
+    * Copia de seguridad creada correctamente.
