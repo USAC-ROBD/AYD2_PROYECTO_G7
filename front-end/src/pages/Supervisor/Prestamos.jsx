@@ -73,7 +73,7 @@ function Prestamos() {
       const errorData = await response.json();
   
       if (response.ok) {
-        alert("Prestamo aprobado!");
+        alert("Solicitud de prestamo actualizada");
         navigate("/menu");
       } else if (response.status === 404) {
         alert(`Error: ${errorData.message}`);
