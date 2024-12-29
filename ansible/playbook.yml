@@ -1,0 +1,66 @@
+---
+- name: Configure server with Docker and deploy frontend container
+  hosts: frontend
+  become: yes
+
+  tasks:
+    # 1. Actualizar e instalar paquetes requeridos
+    - name: Update and install required packages
+      apt:
+        update_cache: yes
+        name:
+          - apt-transport-https
+          - ca-certificates
+          - curl
+          - software-properties-common
+        state: present
+
+    # 2. Agregar la clave GPG de Docker
+    - name: Add Docker GPG key
+      apt_key:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        state: present
+
+    # 3. Agregar el repositorio de Docker
+    - name: Add Docker repository
+      apt_repository:
+        repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable
+        state: present
+
+    # 4. Instalar Docker
+    - name: Install Docker
+      apt:
+        name: docker-ce
+        state: present
+
+    # 5. Agregar usuario al grupo Docker
+    - name: Add user to Docker group
+      user:
+        name: ubuntu
+        groups: docker
+        append: yes
+
+    # 6. Asegurar que Docker esté activo
+    - name: Ensure Docker service is running
+      service:
+        name: docker
+        state: started
+        enabled: yes
+
+    # 7. Descargar la imagen desde Docker Hub
+    - name: Pull Docker image
+      docker_image:
+        name: "{{ docker_image }}"
+        source: pull
+
+    # 8. Iniciar el contenedor
+    - name: Run Docker container
+      docker_container:
+        name: "{{ docker_container_name }}"
+        image: "{{ docker_image }}"
+        state: started
+        restart_policy: always
+        env:
+          VITE_API_HOST: "{{ env_variables.VITE_API_HOST }}"
+        ports:
+          - "80:80"  # Mapea el puerto 80 del host al contenedor
