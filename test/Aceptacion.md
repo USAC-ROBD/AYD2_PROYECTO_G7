@@ -49,3 +49,20 @@
 * **Resultados**
     * Todos los pagos se realizaron exitosamente cuando se ingresaron datos en todos los campos obligatorios.
     * Mensaje de error cuando algún campo obligatorio permaneció vacío.
+
+## PA-03. Creación de Cuentas (Módulo Atención al Cliente)
+* **Objetivo**: Validar que el sistema permita la creación de cuentas bancarias correctamente.
+* **Precondiciones**: Contar con datos del cliente y conexión al módulo de validación de identidad.
+* **Entradas**: Datos del cliente, tipo de cuenta, tipo de moneda, monto inicial.
+* **Escenarios**
+    * Crear una cuenta bancaria monetaria en quetzales.
+        ![PA-03](./PA-03/1.png)
+        ![PA-03](./PA-03/2.png)
+    * Crear una cuenta bancaria de ahorro en dólares.
+        ![PA-03](./PA-03/3.png)
+        ![PA-03](./PA-03/4.png)
+    * Intentar crear una cuenta con datos incompletos.
+        ![PA-03](./PA-03/5.png)
+* **Resultados**
+    * Las cuentas fueron creadas exitosamente cuando se ingresaron los datos correspondientes con sus respectivas validaciones.
+    * Mensajes de alerta claros cuando alguno de los campos obligatorios permaneció vacío.
