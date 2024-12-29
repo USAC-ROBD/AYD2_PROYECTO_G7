@@ -35,6 +35,11 @@ VALUES
 ('lisat', '$2a$10$sLiWO.iG/Qlyjk4hLGWsYuygk9u2VqcVrI6p6Z74sCKfP8B1gqW3e', 'Lisa', 'Taylor', 'ltaylor@example.com', '78945612', 31, '4445556667778', 'F', 'S', NULL, NULL, 'A', 1, 'admin', 'admin'),
 ('samj', '$2a$10$sLiWO.iG/Qlyjk4hLGWsYuygk9u2VqcVrI6p6Z74sCKfP8B1gqW3e', 'Sam', 'Johnson', 'sjohnson@example.com', '65498732', 45, '7778889990001', 'M', 'D', NULL, NULL, 'A', 4, 'admin', 'admin');
 
+-- Insertar datos en la tabla CLAVE_SUPERVISOR
+
+INSERT INTO CLAVE_SUPERVISOR (ID_USUARIO, CLAVE, CREA) VALUES (3, '$2a$10$BNQCzHQfdCY3nDZKVPqAkONoI6b56avRrn0qYowE6CGWFraYx3CA6', 'admin');
+INSERT INTO CLAVE_SUPERVISOR (ID_USUARIO, CLAVE, CREA) VALUES (6, '$2a$10$BNQCzHQfdCY3nDZKVPqAkONoI6b56avRrn0qYowE6CGWFraYx3CA6', 'admin');
+
 -- Insertar datos en la tabla SERVICIO
 insert into SERVICIO (NOMBRE, PROVEEDOR, MONTO, TIPO) values ('Steven Gonzalez', 'Empresa de Agua de Guatemala', 250.00, '1');
 insert into SERVICIO (NOMBRE, PROVEEDOR, MONTO, TIPO) values ('Robin Buezo', 'Empresa Electrica de Guatemala', 300.00, '2');

@@ -1,5 +1,5 @@
 import db from "../utils/db_connection.mjs";
-import { transporter, deactiveCard } from '../utils/nodemailer.mjs'
+import { transporter, deactiveCard, complaint } from '../utils/nodemailer.mjs'
 import { UsuarioFactory } from "../models/UsuarioFactory.mjs";
 
 // Obtener Cliente
@@ -47,7 +47,23 @@ const crearCuenta = async (req, res) => {
     }
 };
 
+const crearCuentaDolares = async (req, res) => {
+    const { cui, tipoCuenta, monto } = req.body;
+
+    try {
+        await db.query(
+            `INSERT INTO CUENTA(CUI, TIPO, MONEDA, SALDO, LIMITE_RETIRO) VALUES(?, ?, ?, ?, ?)`,
+            [cui, tipoCuenta, "D", monto, "100"]
+        );
+        return res.status(200).json({ status: 200, message: "cuenta en dolares creada" });
+    } catch (error) {
+        return res.status(500).json({ status: 500, message: "consulta erronea" });
+    }
+};
+
 const crearCuentaCliente = [crearCliente, crearCuenta];
+
+const crearCuentaClienteDolares = [crearCliente, crearCuentaDolares];
 
 // Obtener CUI y Nombres
 const obtenerClienteCui = async (_, res) => {
@@ -325,7 +341,7 @@ const consultarDatosCuenta = async (req, res) => {
     }
 };
 
-// Obtener datos de la cuenta
+// Obtener datos de la tarjeta
 
 const consultarDatosTarjeta = async (req, res) => {
 
@@ -400,15 +416,138 @@ const crearSolicitudCancelacion = async (req, res) => {
     
 };
 
+// registro de quejas
+
+const registroQueja = async (req, res) => {
+    const { cui, categoria, descripcion, crea } = req.body;
+
+    try {
+        await db.query(
+            `INSERT INTO QUEJA (CUI, CATEGORIA, DESCRIPCION, CREA) VALUES (?, ?, ?, ?)`,
+            [cui, categoria, descripcion, crea]
+        );
+
+        try {
+            const [ rows ] = await db.query(
+                `SELECT * FROM USUARIO WHERE ID_ROL = 3;`
+            )
+            if(rows.length > 0) {
+                //return res.status(200).json({ status: 200, message: "cuenta encontrada", encontrado: true, cliente: rows[0] });
+                
+                const mail = complaint(rows[0].CORREO, rows[0].NOMBRE);
+                transporter.sendMail(mail);
+                console.log(rows[0].CORREO);
+                
+            }
+            
+            
+            
+        } catch (error) {
+            return res.status(200).json({ status: 200, message: "Queja registrada con éxito. No se pudo enviar el correo electrónico" });
+        }
+        
+        
+        return res.status(200).json({ status: 200, message: "Queja registrada con éxito" });
+    } catch (error) {
+        return res.status(500).json({ status: 500, message: error.message });
+    }
+};
+
+
+// Encuestas de satisfacción
+
+const registroEncuesta = async (req, res) => {
+    const { cui, categoria,calificacion, comentario, crea } = req.body;
+
+    try {
+        await db.query(
+            `INSERT INTO ENCUESTA (CUI, CATEGORIA, CALIFICACION, COMENTARIO, CREA) VALUES (?, ?, ?, ?, ?)`,
+            [cui, categoria, calificacion, comentario, crea]
+        );
+
+        return res.status(200).json({ status: 200, message: "Encuesta registrada con éxito" });
+    } catch (error) {
+        return res.status(500).json({ status: 500, message: error.message });
+    }
+};
+
+
 const bloquearTarjeta = [
     validarRespuestaSeguridad,
     registrarBloqueoTarjeta,
     actualizarEstadoTarjeta,
 ];
 
+// Solicitar Préstamo
+const obtenerClientePrestamo = async (req, res) => {
+    try {
+        const {numeroCuenta} = req.query
+        const [ rows ] = await db.query(
+            `(
+                SELECT CL.CUI, CONCAT(CL.NOMBRE, ' ', CL.APELLIDO) NOMBRE, CU.ID_CUENTA
+                FROM MONEY_BIN.CLIENTE CL
+                INNER JOIN MONEY_BIN.CUENTA CU ON CU.CUI = CL.CUI
+                WHERE CL.CUI = ?
+            ) UNION (
+                SELECT CL.CUI, CONCAT(CL.NOMBRE, ' ', CL.APELLIDO) NOMBRE, CU.ID_CUENTA
+                FROM MONEY_BIN.CLIENTE CL
+                INNER JOIN MONEY_BIN.CUENTA CU ON CU.CUI = CL.CUI
+                WHERE CU.NUMERO = ?
+            );`,
+            [numeroCuenta, numeroCuenta]
+        )
+        if(rows.length > 0) {
+            return res.status(200).json({ status: 200, message: "cliente encontrado", cliente: rows[0] });
+        }
+        return res.status(200).json({ status: 200, message: "cliente no encontrado" });
+    } catch (error) {
+        return res.status(500).json({ status: 500, message: error.message });
+    }
+}
+
+const solicitarPrestamo = async (req, res) => {
+    try {
+        const { tipoPrestamo, montoSolicitado, plazo, documentacion, idcuenta, cui } = req.body
+
+        const [ rows ] = await db.query(
+            `SELECT 1 FROM MONEY_BIN.SOLICITUD S WHERE S.CUI = ? AND S.ESTADO = 'P';`,
+            [ cui ]
+        )
+
+        if(rows.length === 0) {
+            const descripcion = `Préstamo de Q. ${montoSolicitado} por cliente con CUI ${cui}.`
+            const [ rows ] = await db.query(
+                `INSERT INTO MONEY_BIN.SOLICITUD(
+                    CUI,
+                    ID_CUENTA,
+                    TIPO,
+                    TIPO_SERVICIO,
+                    TIPO_PRESTAMO,
+                    MONTO,
+                    PLAZO,
+                    ESTADO,
+                    DESCRIPCION
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+                [cui, idcuenta, 'S', 'P', tipoPrestamo, montoSolicitado, plazo, 'P', descripcion]
+            )
+            await db.query(
+                `INSERT INTO MONEY_BIN.SOLICITUD_DOCUMENTO(ID_SOLICITUD, NOMBRE, RUTA, CONTENIDO)
+                VALUES(?, ?, ?, ?)`,
+                [rows.insertId, `PRESTAMO_${cui}_${idcuenta}`, '', documentacion]
+            )
+            return res.status(200).json({ status: 200, message: "solicitud enviada", pendiente: false });
+        }
+        return res.status(200).json({ status: 200, message: "solicitud enviada", pendiente: true });
+    } catch (error) {
+        console.log(error)
+        return res.status(500).json({ status: 500, message: error.message });
+    }
+}
+
 export const atencionCliente = {
     obtenerCliente,
     crearCuentaCliente,
+    crearCuentaClienteDolares,
     obtenerClienteCui,
     actualizarCliente,
     obtenerClienteCuenta,
@@ -418,5 +557,9 @@ export const atencionCliente = {
     consultarDatosCuenta,
     consultarDatosTarjeta,
     crearSolicitudCancelacion,
+    registroQueja,
+    registroEncuesta,
+    obtenerClientePrestamo,
+    solicitarPrestamo,
 };
 

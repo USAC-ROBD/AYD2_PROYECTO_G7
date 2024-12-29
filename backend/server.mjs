@@ -2,15 +2,18 @@ import express from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
 import cookieParser from 'cookie-parser';
+import dotenv from 'dotenv';
 import router from './routes/router.mjs';
 import configurations from './utils/configurations.mjs';
+
+dotenv.config();
 
 const app = express();
 
 // Configuración de CORS
 const corsOptions = {
   origin: (origin, callback) => {
-    const allowedOrigins = ['http://3.86.208.255', process.env.FRONT_URL || 'http://localhost:3000'];
+    const allowedOrigins = ['http://52.90.228.209', process.env.FRONT_URL || 'http://localhost:3000', 'http://localhost:5173'];
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {

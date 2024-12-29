@@ -4,6 +4,8 @@ import { auth } from "./auth.mjs";
 import { transporter, confirmationAccountMail, updateAccountMail } from "../utils/nodemailer.mjs";
 import { UsuarioFactory } from "../models/UsuarioFactory.mjs";
 import upload from "../utils/multer.mjs";
+import { AceptarCommand } from "../commands/AceptarCommand.mjs";
+import { RechazarCommand } from "../commands/RechazarCommand.mjs";
 
 const obtenerQuejas = [auth.verifyToken, async (req, res) => {
     try {
@@ -39,7 +41,7 @@ const obtenerQuejas = [auth.verifyToken, async (req, res) => {
     }
 }];
 
-const registrarAdministrador = [auth.verifyToken, upload.fields([{ name: "papeleria"}, { name: "foto"}]), async (req, res) => {
+const registrarAdministrador = [auth.verifyToken, upload.fields([{ name: "papeleria" }, { name: "foto" }]), async (req, res) => {
     try {
         const { nombre, apellido, telefono, correo, edad, cui, genero, estado_civil } = req.body;
 
@@ -80,7 +82,7 @@ const registrarAdministrador = [auth.verifyToken, upload.fields([{ name: "papele
     }
 }];
 
-const actualizarAdministrador = [auth.verifyToken, upload.fields([{ name: "papeleria"}, { name: "foto"}]), async (req, res) => {
+const actualizarAdministrador = [auth.verifyToken, upload.fields([{ name: "papeleria" }, { name: "foto" }]), async (req, res) => {
     try {
         const { id_usuario, usuario, nombre, apellido, telefono, correo, edad, cui, genero, estado_civil } = req.body;
 
@@ -276,7 +278,196 @@ const obtenerDisponibilidadDia = [auth.verifyToken, async (req, res) => {
     }
 }];
 
+const obtenerEncuestas = async (req, res) => {
+    try {
+        const [rows] = await db.query(
+            `SELECT 
+                c.NOMBRE,
+                c.APELLIDO,
+                c.CUI,
+                e.CATEGORIA,
+                e.CALIFICACION,
+                e.COMENTARIO          
+            FROM 
+                ENCUESTA as e
+            INNER JOIN
+                CLIENTE as c
+            ON
+            c.CUI = e.CUI`
+        );
+
+        const response = {
+            "status": 200,
+            "data": rows,
+        };
+
+        return res.status(200).json(response);
+    } catch (error) {
+        console.error("Error en obtenerEncuestas:", error.message);
+        return res.status(500).json({ "status": 500, "message": error.message });
+    }
+};
+
+
+const obtenerSolicitudesCancelacion = async (req, res) => {
+    try {
+        const [rows] = await db.query(
+            `SELECT 
+                S.ID_SOLICITUD as id,
+                S.CUI as cui,
+                CONCAT(C.NOMBRE, ' ', C.APELLIDO) as cliente,
+                CASE
+                    WHEN S.TIPO_SERVICIO = 'T' THEN 'Tarjeta'
+                    WHEN S.TIPO_SERVICIO = 'C' THEN 'Cuenta'
+                    ELSE 'Otro'
+                END AS servicio,
+                CASE
+                    WHEN S.TIPO_SERVICIO = 'T' THEN
+                        (SELECT T.NUMERO FROM TARJETA T WHERE T.ID_TARJETA = S.ID_TARJETA)
+                    WHEN S.TIPO_SERVICIO = 'C' THEN
+                        (SELECT C.NUMERO FROM CUENTA C WHERE C.ID_CUENTA = S.ID_CUENTA)
+                    ELSE 'Otro'
+                END AS numero,
+                CASE
+                    WHEN S.TIPO_SERVICIO = 'T' THEN
+                        (SELECT IFNULL(T.SALDO, 0) FROM TARJETA T WHERE T.ID_TARJETA = S.ID_TARJETA)
+                    WHEN S.TIPO_SERVICIO = 'C' THEN
+                        (SELECT IFNULL(C.SALDO, 0) FROM CUENTA C WHERE C.ID_CUENTA = S.ID_CUENTA)
+                    ELSE 'Otro'
+                END AS saldo,
+                S.DESCRIPCION as motivo,
+                S.CREACION as creado,
+                S.CREA as crea
+            FROM SOLICITUD S
+                INNER JOIN CLIENTE C ON S.CUI = C.CUI
+            WHERE S.ESTADO = 'P'
+                AND TIPO = 'C'
+            ORDER BY S.CREACION DESC`
+        );
+
+        const response = {
+            "status": 200,
+            "message": "Solicitudes de cancelación obtenidas correctamente",
+            "data": rows,
+        };
+        return res.status(200).json(response);
+    } catch (error) {
+        console.error("Error en obtenerSolicitudesCancelacion:", error.message);
+        return res.status(500).json({ "status": 500, "message": error.message });
+    }
+};
+
+const obtenerPrestamos = async (req, res) => {
+    try {
+        const [rows] = await db.query(
+            `SELECT
+            ID_SOLICITUD, 
+            CUI, 
+            TIPO_PRESTAMO, 
+            MONTO, 
+            PLAZO
+            FROM 
+            SOLICITUD s
+            WHERE 
+            TIPO = 'S'
+            AND TIPO_SERVICIO = 'P'
+            AND ESTADO = 'P'`
+        );
+
+        const response = {
+            "status": 200,
+            "data": rows,
+        };
+
+        return res.status(200).json(response);
+    } catch (error) {
+        console.error("Error en obtenerPrestamo:", error.message);
+        return res.status(500).json({ "status": 500, "message": error.message });
+    }
+};
+
+const aceptarCancelacion = async (req, res) => {
+    const { id, tipo } = req.body;
+
+    if (!id || !tipo) {
+        return res.status(400).json({ "status": 400, "message": "Faltan campos obligatorios" });
+    }
+
+    try {
+        const command = new AceptarCommand(id, tipo, db);
+        const result = await command.execute();
+        return res.status(result.status).json({ "status": result.status, "message": result.message });
+    } catch (error) {
+        console.error("Error en aceptarCancelacion:", error.message);
+        return res.status(500).json({ "status": 500, "message": error.message });
+    }
+};
+
+const rechazarCancelacion = async (req, res) => {
+    const { id } = req.body;
+
+    if (!id) {
+        return res.status(400).json({ "status": 400, "message": "Faltan campos obligatorios" });
+    }
+
+    try {
+        const command = new RechazarCommand(id, db);
+        const result = await command.execute();
+        return res.status(result.status).json({ "status": result.status, "message": result.message });
+    } catch (error) {
+        console.error("Error en rechazarCancelacion:", error.message);
+        return res.status(500).json({ "status": 500, "message": error.message });
+    }
+};
+
+const actualizar_prestamo = async (req, res) => {
+    try {
+        // Extrae los datos del cuerpo de la solicitud
+        const { id_solicitud, estado} = req.body;
+
+        // Verifica que los datos necesarios estén presentes
+        if (!id_solicitud || !estado) {
+            return res.status(400).json({
+                success: false,
+                message: "Se requiere el id_usuario y el rol para actualizar.",
+            });
+        }
+
+        // Ejecuta la consulta para actualizar el rol del usuario
+        const [rows] = await db.query(
+            `UPDATE SOLICITUD 
+           SET ESTADO = ?
+           WHERE ID_SOLICITUD = ?`,
+            [estado, id_solicitud]
+        );
+
+        // Verifica si algún registro fue afectado
+        if (rows.affectedRows > 0) {
+            return res.status(200).json({
+                success: true,
+                message: "Aprobacion de prestamo con exito.",
+            });
+        } else {
+            return res.status(404).json({
+                success: false,
+                message: "Solicitud de prestamo no encontrado.",
+            });
+        }
+    } catch (error) {
+        // Manejo de errores
+        console.error("Error al actualizar el estado de la solicitud prestamo", error);
+        return res.status(500).json({
+            success: false,
+            message: "Error interno del servidor.",
+        });
+    }
+}
+
+
 export const supervisor = {
+    actualizar_prestamo,
+    obtenerPrestamos,
+    obtenerEncuestas,
     obtenerQuejas,
     registrarAdministrador,
     actualizarAdministrador,
@@ -286,4 +477,7 @@ export const supervisor = {
     obtenerMovimientos,
     obtenerDisponibilidad,
     obtenerDisponibilidadDia,
+    obtenerSolicitudesCancelacion,
+    aceptarCancelacion,
+    rechazarCancelacion,
 };

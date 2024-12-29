@@ -11,6 +11,7 @@ function FormDeposito({ handleConfirmacionDeposito, user }) {
     const [monedas, setMonedas] = useState(["GTQ", "USD"]);
     const [propietario, setPropietario] = useState("");
     const [monedaSeleccionada, setMonedaSeleccionada] = useState("");
+    const [cui, setCui] = useState("");
     const navigate = useNavigate();
 
     const handleVerificarCuenta = async () => {
@@ -71,7 +72,8 @@ function FormDeposito({ handleConfirmacionDeposito, user }) {
             destinoCuenta,
             montoDepositar,
             moneda: monedaSeleccionada,
-            crea: user
+            crea: user,
+            cui
         };
 
         try {
@@ -131,15 +133,17 @@ function FormDeposito({ handleConfirmacionDeposito, user }) {
                                         placeholder="xxxxxxx"
                                         value={destinoCuenta}
                                         onChange={(e) => setDestinoCuenta(e.target.value)}
+                                        name="destinoCuenta"
                                         required />
                                 </Col>
                                 <Col xs={6} md={4} style={{ width: '50%' }}>
-                                    <Button variant="primary" 
-                                            type="button" 
-                                            style={{ width: '100%' }}
-                                            onClick={handleVerificarCuenta}
+                                    <Button variant="primary"
+                                        name="consultar"
+                                        type="button"
+                                        style={{ width: '100%' }}
+                                        onClick={handleVerificarCuenta}
                                     >
-                                    Verificar 
+                                        Verificar
                                     </Button>
                                 </Col>
                             </Row>
@@ -181,6 +185,7 @@ function FormDeposito({ handleConfirmacionDeposito, user }) {
                                             className="form-control"
                                             value={monedaSeleccionada}
                                             onChange={(e) => setMonedaSeleccionada(e.target.value)}
+                                            name="moneda"
                                             required
                                         >
                                             <option value="" disabled>Seleccione una moneda</option>
@@ -198,12 +203,24 @@ function FormDeposito({ handleConfirmacionDeposito, user }) {
                                             class="form-control"
                                             placeholder="Monto"
                                             onChange={(e) => setMontoDepositar(e.target.value)}
+                                            name="monto"
+                                            required />
+                                    </div>
+
+                                    <div className="m-1" >
+                                        <label htmlFor="" className="form-label">CUI</label>
+                                        <input type="number"
+                                            class="form-control"
+                                            placeholder="CUI"
+                                            onChange={(e) => setCui(e.target.value)}
+                                            name="cui"
                                             required />
                                     </div>
                                     {/* Botón de Depositar */}
                                     <div className="d-grid mt-3">
                                         <Button variant="success"
                                             type="submit"
+                                            name="depositar"
                                         >
                                             Depositar
                                         </Button>

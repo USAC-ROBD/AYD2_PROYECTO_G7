@@ -147,6 +147,7 @@ function RegistroEmpleado() {
                 <div className="col-3 m-4">
                   <label htmlFor="" className="form-label">Estado Civil</label>
                   <select name="" id="" className="form-select" aria-label="Default select example" onChange={(e) => setEstadoCivil(e.target.value)}>
+                    <option value="">Seleccione un estado civil</option>
                     <option value="S">Soltero</option>
                     <option value="C">Casado</option>
                     <option value="D">Divorciado</option>
@@ -156,6 +157,7 @@ function RegistroEmpleado() {
                 <div className="col-3 m-4">
                   <label htmlFor="" className="form-label">Genero</label>
                   <select name="" id="" className="form-select" aria-label="Default select example" onChange={(e) => setGenero(e.target.value)}>
+                    <option value="">Seleccione un sexo</option>
                     <option value="M">Masculino</option>
                     <option value="F">Femenino</option>
                   </select>
@@ -163,6 +165,7 @@ function RegistroEmpleado() {
                 <div className="col-3 m-4">
                   <label htmlFor="" className="form-label">Rol</label>
                   <select name="" id="" className="form-select" aria-label="Default select example" onChange={(e) => setRol(e.target.value)}>
+                    <option value="">Seleccione un rol</option>
                     <option value="1">Administrador</option>
                     <option value="2">Cajero</option>
                     <option value="3">Supervisor</option>

@@ -322,7 +322,7 @@ function FormPagoServicios({handleConfirmacionPago, user, service, paymentMethod
                                     <Col xs={12} md={4} className="d-flex align-items-end">
                                         {/* Botón de Enviar */}
                                         <div className=" pb-3">
-                                            <Button variant="success" type="button" onClick={handleConsultarServicio} style={{ width: '100%' }}>
+                                            <Button name="consultar" variant="success" type="button" onClick={handleConsultarServicio} style={{ width: '100%' }}>
                                                 Consultar
                                             </Button>
                                         </div>
@@ -409,7 +409,7 @@ function FormPagoServicios({handleConfirmacionPago, user, service, paymentMethod
 
                                         {/* Botón de Enviar */}
                                         <div className="d-grid">
-                                            <Button variant="success" type="button" onClick={handleSubmit}>
+                                            <Button name="pagar" variant="success" type="button" onClick={handleSubmit}>
                                                 Realizar Pago
                                             </Button>
                                         </div>

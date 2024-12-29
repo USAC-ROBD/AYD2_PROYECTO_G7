@@ -150,7 +150,7 @@ function MenuCajero({ user, rol }) {
                 variant="outline-success"
                 size="lg"
                 className="w-100"
-                // onClick={() => navigate('/form-consulta')}
+                onClick={() => navigate("/creacion-cuenta-dolares")}
                 style={{
                   display: "flex",
                   flexDirection: "column",
@@ -158,7 +158,7 @@ function MenuCajero({ user, rol }) {
                 }}
               >
                 <FaDollarSign style={{ width: "40%", height: "40%" }} />
-                Cambio a Dólar
+                Nuevas Cuentas Dolares
               </Button>
             </Col>
           </Row>
@@ -176,7 +176,7 @@ function MenuCajero({ user, rol }) {
                 variant="outline-success"
                 size="lg"
                 className="w-100"
-                // onClick={() => navigate('/form-consulta')}
+                onClick={() => navigate("/encuesta")}
                 style={{
                   display: "flex",
                   flexDirection: "column",
@@ -192,7 +192,7 @@ function MenuCajero({ user, rol }) {
                 variant="outline-success"
                 size="lg"
                 className="w-100"
-                // onClick={() => navigate('/form-consulta')}
+                onClick={() => navigate('/solicitud-prestamo')}
                 style={{
                   display: "flex",
                   flexDirection: "column",
@@ -208,7 +208,7 @@ function MenuCajero({ user, rol }) {
                 variant="outline-success"
                 size="lg"
                 className="w-100"
-                // onClick={() => navigate('/form-consulta')}
+                onClick={() => navigate("/registrar-queja")}
                 style={{
                   display: "flex",
                   flexDirection: "column",

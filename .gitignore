@@ -12,3 +12,10 @@ backend/package-lock.json
 front-end/.env
 
 Frontend/
+
+**.ayd
+terraform/terraform.tfvars
+
+terraform/.terraform/
+
+ansible/group_vars/frontend.yml
