@@ -34,6 +34,14 @@ resource "aws_security_group" "terraform_sg" {
     cidr_blocks = ["0.0.0.0/0"] # Permite acceso HTTP desde cualquier IP
   }
 
+  # Regla para permitir acceso al puerto 4000 (API)
+  ingress {
+    from_port   = 4000
+    to_port     = 4000
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"] # Permite acceso HTTP desde cualquier IP
+  }
+
   # Reglas de salida
   egress {
     from_port   = 0
