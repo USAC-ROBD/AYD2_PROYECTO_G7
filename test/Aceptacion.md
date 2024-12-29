@@ -29,3 +29,23 @@
 * **Resultados**
     - Todos los inicios de sesión resultaron exitosos con cada uno de los distintos roles.
     - Mensaje de error para credenciales incorrectas.
+
+## PA-02. Pago de Servicios
+* **Objetivo**: Validar que el sistema permita registrar pagos de servicios básicos correctamente.
+* **Precondiciones**: Tener configurados servicios básicos y cuentas bancarias en el sistema.
+* **Entradas**: Datos del titular, código de servicio, monto, y número de cuenta (si aplica).
+* **Escenarios**
+    * Realizar un pago en efectivo.
+        - Pago de Servicio de Luz.  
+            ![PA-02](./PA-02/1.png)
+            ![PA-02](./PA-02/2.png)
+    * Realizar un pago desde una cuenta bancaria.
+        - Pago de Servicio de Agua.  
+            ![PA-02](./PA-02/3.png)
+            ![PA-02](./PA-02/4.png)
+    * Intentar realizar un pago con datos incompletos.
+        - Se muestra un mensaje de error en caso de que alguno de los campos permanezca vacío y se intente completar la operación.  
+            ![PA-02](./PA-02/5.png)
+* **Resultados**
+    * Todos los pagos se realizaron exitosamente cuando se ingresaron datos en todos los campos obligatorios.
+    * Mensaje de error cuando algún campo obligatorio permaneció vacío.
