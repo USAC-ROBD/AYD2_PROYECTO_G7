@@ -2,26 +2,26 @@
 
 ## Sprint Backlog
 
-| Persona | Área | Tareas | Estado | Comentario |
-|---------|------|--------|--------|------------|
-| **Steven** | | | |
-|  |  | - BI-01: Pruebas E2E | Completado | |
-|  |  | - BI-02: CICD Backend | Completado | |
-|  |  | - BI-03: Terraform | Completado | |
-|  |  | - BI-04: Ansible| Completado | |
-| **Danny** || | | |
-|  |  | - BI-05: Pruebas Aceptación| Completado | |
-|  |  | - BI-06: AC - Solicitud de prestamos al banco | Completado | |
-| **Eduardo** || | | |
-|  |  | - BI-07: Modificar información de empleado | Completado | |
-|  |  | - BI-08: Pruebas de Integración |Completado | |
-| **Juanpa** || | | |
-|  |  | - BI-09: Aceptar Prestamos | Completado| |
-|  |  | - BI-10: Pruebas no funcionales | Completado| |
-| **Robin** | | | | |
-|  |  | - BI-11: Aprobar Cancelación de Servicios | Completado | |
-|  |  | - BI-12: Pruebas Unitarias | Completado | |
-|  |  | - BI-13: Implementación de patron Command | Completado | |
+| Persona     | Área | Tareas                                        | Estado     | Comentario |
+| ----------- | ---- | --------------------------------------------- | ---------- | ---------- |
+| **Steven**  |      |                                               |            |
+|             |      | - BI-01: Pruebas E2E                          | Completado |            |
+|             |      | - BI-02: CICD Backend                         | Completado |            |
+|             |      | - BI-03: Terraform                            | Completado |            |
+|             |      | - BI-04: Ansible                              | Completado |            |
+| **Danny**   |      |                                               |            |            |
+|             |      | - BI-05: Pruebas Aceptación                   | Completado |            |
+|             |      | - BI-06: AC - Solicitud de prestamos al banco | Completado |            |
+| **Eduardo** |      |                                               |            |            |
+|             |      | - BI-07: Modificar información de empleado    | Completado |            |
+|             |      | - BI-08: Pruebas de Integración               | Completado |            |
+| **Juanpa**  |      |                                               |            |            |
+|             |      | - BI-09: Aceptar Prestamos                    | Completado |            |
+|             |      | - BI-10: Pruebas no funcionales               | Completado |            |
+| **Robin**   |      |                                               |            |            |
+|             |      | - BI-11: Aprobar Cancelación de Servicios     | Completado |            |
+|             |      | - BI-12: Pruebas Unitarias                    | Completado |            |
+|             |      | - BI-13: Implementación de patron Command     | Completado |            |
 
 ---
 
@@ -65,13 +65,13 @@ Durante este sprint, el objetivo principal terminar de desarrollar la plataforma
 
 #### Avances e impedimentos
 
-| Integrante              | Tarea Realizada (Día Anterior) | Impedimentos                                                   |
-| ----------------------- | ------------------------------ | -------------------------------------------------------------- |
-| **Steven González**     | BI-01 Pruebas E2E              |               |
-| **Robin Buezo**         | BI-12: Pruebas Unitarias                               |               |
-| **Danny Tejaxun**       | BI-06: AC - Solicitud de prestamos al banco |               |
-| **Eduardo Llamas**      |                |               |
-| **Juan Pablo González** | BI-10: Pruebas no funcionales      |    No, sabia nada del tema ni herramientas           |
+| Integrante              | Tarea Realizada (Día Anterior)              | Impedimentos                                |
+| ----------------------- | ------------------------------------------- | ------------------------------------------- |
+| **Steven González**     | BI-01 Pruebas E2E                           |                                             |
+| **Robin Buezo**         | BI-12: Pruebas Unitarias                    |                                             |
+| **Danny Tejaxun**       | BI-06: AC - Solicitud de prestamos al banco |                                             |
+| **Eduardo Llamas**      | BI-07: Modificar información de préstamos   | No se completó la tarea por falta de tiempo |
+| **Juan Pablo González** | BI-10: Pruebas no funcionales               | No, sabia nada del tema ni herramientas     |
 
 ---
 
@@ -89,16 +89,16 @@ Durante este sprint, el objetivo principal terminar de desarrollar la plataforma
 
 #### Avances e impedimentos
 
-| Integrante              | Tarea Realizada (Día Anterior)                                 | Impedimentos                                            |
-|-------------------------|----------------------------------------------------------------|---------------------------------------------------------|
-| **Steven González**     | BI-02: CICD Backend                                            |                                                         |
-|                         | BI-03: Terraform                                               |                                                         |
-|                         | BI-04: Ansible                                                 |                                                         |
-| **Robin Buezo**         | BI-11: Aprobar Cancelación de Servicios                                                 |
-|                         | BI-13: Implementación de patron Command                                                           |                                                         |
-| **Danny Tejaxun**       | BI-05: Pruebas Aceptación                                      |                                                         |
-| **Juan Pablo González** |     BI-09: Aceptar Prestamos                                                           |           Ninguno                                             |
-| **Eduardo Llamas**      |                                                                |                                                         |
+| Integrante              | Tarea Realizada (Día Anterior)          | Impedimentos |
+| ----------------------- | --------------------------------------- | ------------ |
+| **Steven González**     | BI-02: CICD Backend                     |              |
+|                         | BI-03: Terraform                        |              |
+|                         | BI-04: Ansible                          |              |
+| **Robin Buezo**         | BI-11: Aprobar Cancelación de Servicios |
+|                         | BI-13: Implementación de patron Command |              |
+| **Danny Tejaxun**       | BI-05: Pruebas Aceptación               |              |
+| **Juan Pablo González** | BI-09: Aceptar Prestamos                | Ninguno      |
+| **Eduardo Llamas**      | BI-01: Pruebas de integración           |              |
 
 ---
 
@@ -106,19 +106,19 @@ Durante este sprint, el objetivo principal terminar de desarrollar la plataforma
 
 **Fecha:** 28-12-2024
 **Enlace de video:** [retrospective](https://drive.google.com/file/d/191IjHtq1-dOGL1OvOx0SJZyWxYZhDVyV/view?usp=sharing)
-**Participantes:**  
+**Participantes:**
 
-1. Steven Gonzalez  
-2. Danny Tejaxun  
-3. Eduardo Llamas  
-4. Robin Buezo  
+1. Steven Gonzalez
+2. Danny Tejaxun
+3. Eduardo Llamas
+4. Robin Buezo
 5. Pablo Gonzalez
 
 ---
 
 ## **1. Qué funcionó bien**
 
-**Comentarios del equipo:**  
+**Comentarios del equipo:**
 
 - **Steven Gonzalez:**: Todos asistieron a las reuniones, todos colaboraron activamente en el grupo y comunicandose, y todos ayudaron en el planning poker
 - **Danny Tejaxun:** Ahorramos timempo adelantando tareas de esta fase en la fase anterior.
@@ -130,7 +130,7 @@ Durante este sprint, el objetivo principal terminar de desarrollar la plataforma
 
 ## **2. Qué no funcionó**
 
-**Comentarios del equipo:**  
+**Comentarios del equipo:**
 
 - **Steven Gonzalez:**: Que el sprint quedó en fechas festivas (Navidad y noche buena) esto afecto en el timepo para realizar las asignaciones.
 - **Danny Tejaxun:**: Desconociamos que hacer para ciertos tipos de pruebas lo cual generó dudas incluso en el planning poker.
@@ -146,4 +146,4 @@ Durante este sprint, el objetivo principal terminar de desarrollar la plataforma
 - **Danny Tejaxun:** Desde un inicio investigar que es cada que no entendamos para tener claro que hacer.
 - **Eduardo Llamas:** Debemos tomar cierta cadencia a pesar de los asuetos y fechas festivas, debemos tratar de llevar un ritmo al ir agregando valor al proyecto.
 - **Robin Buezo:** Tener una vision mas amplia no solo del sprint actual, sino tener una vision mas amplia del backlog completo, y asi al definir los sprints tomar en cuenta los dias festivos y retrasos que pudieran haber en cuanto a fechas, para hacer una mejor distribucion del backlog.
-- **Pablo Gonzalez:** Tratar de avanzar y adelantar ciertas tareas, tomar la iniciativa de avances y no  dejar nada para posteriores sprints.
+- **Pablo Gonzalez:** Tratar de avanzar y adelantar ciertas tareas, tomar la iniciativa de avances y no dejar nada para posteriores sprints.
