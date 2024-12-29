@@ -17,3 +17,5 @@ Frontend/
 terraform/terraform.tfvars
 
 terraform/.terraform/
+
+ansible/group_vars/frontend.yml
