@@ -65,6 +65,24 @@ jobs:
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_KEY }}
           script: |
+            # Crear o sobrescribir el archivo .env en la ruta especificada
+            cat <<EOT > /home/ubuntu/ayd2/.env
+            HOST=${{ secrets.HOST }}
+            PORT=${{ secrets.PORT }}
+            DB_HOST=${{ secrets.DB_HOST }}
+            DB_PORT=${{ secrets.DB_PORT }}
+            DB_NAME=${{ secrets.DB_NAME }}
+            DB_USER=${{ secrets.DB_USER }}
+            DB_PASSWORD=${{ secrets.DB_PASSWORD }}
+            FRONT_URL=${{ secrets.FRONT_URL }}
+            EMAIL_ORIGIN=${{ secrets.EMAIL_ORIGIN }}
+            APP_KEY=${{ secrets.APP_KEY }}
+            EMAIL_HOST=${{ secrets.EMAIL_HOST }}
+            REACT_APP_API_HOST=${{ secrets.REACT_APP_API_HOST }}
+            SECRET_KEY_JWT=${{ secrets.SECRET_KEY_JWT }}
+            EOT
+
+            
             docker stop backend-moneybin || true
             docker rm backend-moneybin || true
             docker pull ${{ secrets.DOCKER_USERNAME }}/backend-moneybin:latest
